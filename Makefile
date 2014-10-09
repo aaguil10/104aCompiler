@@ -12,7 +12,10 @@ teststring : main.o stringset.o
 	${GPP} -c $<
 
 ci :
-	cid + Makefile stringset.h stringset.cpp main.cpp
+	make spotless
+	git add .
+	git commit
+	#cid + Makefile stringset.h stringset.cpp main.cpp
 
 spotless : clean
 	- rm teststring Listing.ps Listing.pdf test.out test.err
@@ -30,4 +33,4 @@ lis : test
 # Depencencies.
 main.o: main.cpp stringset.h
 stringset.o: stringset.cpp stringset.h
-
+cppstrtok.o: cppstrtok.cpp
