@@ -23,7 +23,9 @@ clean :
 	-rm stringset.o main.o cppstrtok.o
 
 test : oc
-	${GRIND} oc * * * >test.out 2>test.err
+	#${GRIND} oc * * * >test.out 2>test.err
+	./oc -ly -@ Set_debugflags -D OCLIB_OH test3.oc
+
 
 lis : test
 	mkpspdf Listing.ps stringset.h stringset.cpp main.cpp \
