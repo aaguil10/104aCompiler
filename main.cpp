@@ -10,6 +10,7 @@ using namespace std;
 #include <unistd.h>
 
 #include "stringset.h"
+#include "auxlib.h"
 
 int main (int argc, char **argv) {
    int c;
@@ -17,6 +18,7 @@ int main (int argc, char **argv) {
    bool yFlag = false;
    string atOpt = "";
    string dOpt = "";
+   string fileName = argv[argc - 1];
    //for (int i = 1; i < argc; ++i) {
    while ((c = getopt (argc, argv, "ly@:D:")) != -1){
       switch (c){
@@ -48,9 +50,11 @@ int main (int argc, char **argv) {
       printf ("intern (\"%s\") returned %p->\"%s\"\n",
               argv[i], str->c_str(), str->c_str());*/
    }
-   cout << "****" << argv[argc - 1] << "****" << endl;
+   cout << "****" << fileName << "****" << endl;
    cout << "l: " << lFlag << " y: " << yFlag << endl;
    cout << "d: " << dOpt << " @: " << atOpt << endl;
+
+   set_execname (argv[0]);
 
    dump_stringset (stdout);
    return EXIT_SUCCESS;

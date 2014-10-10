@@ -5,8 +5,8 @@ GRIND = valgrind --leak-check=full --show-reachable=yes
 
 all : oc
 
-oc : main.o stringset.o cppstrtok.o
-	${GPP} main.o stringset.o cppstrtok.o -o oc
+oc : main.o stringset.o cppstrtok.o auxlib.o
+	${GPP} main.o stringset.o cppstrtok.o auxlib.o -o oc
 
 %.o : %.cpp
 	${GPP} -c $<
@@ -20,7 +20,7 @@ spotless : clean
 	- rm oc Listing.ps Listing.pdf test.out test.err
 
 clean :
-	-rm stringset.o main.o cppstrtok.o
+	-rm stringset.o main.o cppstrtok.o auxlib.o
 
 test : oc
 	#${GRIND} oc * * * >test.out 2>test.err
@@ -34,4 +34,6 @@ lis : test
 # Depencencies.
 main.o: main.cpp stringset.h
 stringset.o: stringset.cpp stringset.h
-cppstrtok.o: cppstrtok.cpp
+auxlib.o: auxlib.cpp auxlib.h
+cppstrtok.o: cppstrtok.cpp auxlib.h
+
