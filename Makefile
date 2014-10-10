@@ -3,28 +3,27 @@
 GPP   = g++ -g -O0 -Wall -Wextra -std=gnu++11
 GRIND = valgrind --leak-check=full --show-reachable=yes
 
-all : teststring
+all : oc
 
-teststring : main.o stringset.o
-	${GPP} main.o stringset.o -o teststring
+oc : main.o stringset.o cppstrtok.o
+	${GPP} main.o stringset.o cppstrtok.o -o oc
 
 %.o : %.cpp
 	${GPP} -c $<
 
-ci :
-	make spotless
+ci : spotless
 	git add .
 	git commit
 	#cid + Makefile stringset.h stringset.cpp main.cpp
 
 spotless : clean
-	- rm teststring Listing.ps Listing.pdf test.out test.err
+	- rm oc Listing.ps Listing.pdf test.out test.err
 
 clean :
-	-rm stringset.o main.o
+	-rm stringset.o main.o cppstrtok.o
 
-test : teststring
-	${GRIND} teststring * * * >test.out 2>test.err
+test : oc
+	${GRIND} oc * * * >test.out 2>test.err
 
 lis : test
 	mkpspdf Listing.ps stringset.h stringset.cpp main.cpp \
