@@ -35,5 +35,5 @@ lis : test
 main.o: main.cpp stringset.h
 stringset.o: stringset.cpp stringset.h
 auxlib.o: auxlib.cpp auxlib.h
-cppstrtok.o: cppstrtok.cpp auxlib.h
+cppstrtok.o: cppstrtok.cpp cppstrtok.h auxlib.h
 

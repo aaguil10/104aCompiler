@@ -4,7 +4,7 @@
 // Print out each input line read in, then strtok it for
 // tokens.
 
-#include <string>
+/*#include <string>
 using namespace std;
 
 #include <errno.h>
@@ -13,8 +13,9 @@ using namespace std;
 #include <stdlib.h>
 #include <string.h>
 #include <wait.h>
-
-#include "auxlib.h"
+*/
+#include "cppstrtok.h"
+#include "stringset.h"
 
 const string CPP = "/usr/bin/cpp";
 const size_t LINESIZE = 1024;
@@ -52,6 +53,7 @@ void cpplines (FILE* pipe, char* filename) {
          char* token = strtok_r (bufptr, " \t\n", &savepos);
          bufptr = NULL;
          if (token == NULL) break;
+         intern_stringset (token);
          printf ("token %d.%d: [%s]\n",
                  linenr, tokenct, token);
       }
