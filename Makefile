@@ -17,7 +17,7 @@ ci :
 	#cid + Makefile stringset.h stringset.cpp main.cpp
 
 spotless : clean
-	- rm oc Listing.ps Listing.pdf test.out test.err
+	- rm oc
 
 clean :
 	-rm stringset.o main.o cppstrtok.o auxlib.o
@@ -35,8 +35,11 @@ lis : test
 	mkpspdf Listing.ps stringset.h stringset.cpp main.cpp \
 	        Makefile test.out test.err
 
-submit : main.cpp stringset.cpp stringset.h auxlib.cpp auxlib.h cppstrtok.cpp cppstrtok.h Makefile oclib.c oclib.oh README
-	submit cmps104a-wm.f14 asg1 main.cpp stringset.cpp stringset.h auxlib.cpp auxlib.h cppstrtok.cpp cppstrtok.h Makefile oclib.c oclib.oh README
+submit : main.cpp stringset.cpp stringset.h auxlib.cpp auxlib.h \
+         cppstrtok.cpp cppstrtok.h Makefile oclib.c oclib.oh README
+	submit cmps104a-wm.f14 asg1 main.cpp stringset.cpp \
+        stringset.h auxlib.cpp auxlib.h cppstrtok.cpp cppstrtok.h \
+        Makefile oclib.c oclib.oh README
 # Depencencies.
 main.o: main.cpp stringset.h
 stringset.o: stringset.cpp stringset.h

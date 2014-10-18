@@ -25,7 +25,6 @@ int main (int argc, char **argv) {
    string atOpt = "";
    string dOpt = "";
    char* fileName = argv[argc - 1];
-   //for (int i = 1; i < argc; ++i) {
    while ((c = getopt (argc, argv, "ly@:D:")) != -1){
       switch (c){
          case 'l':
@@ -38,25 +37,15 @@ int main (int argc, char **argv) {
             continue;
          case '@':
             db("Set @ flag!");
-            //cout << "   " << optarg << endl;
             set_debugflags (optarg);
             atOpt = optarg;
             debug = true;
             continue;
          case 'D':
             db("Set '-D' flag!");
-            //cout << "   " << optarg << endl;
             dOpt = optarg;
             continue;
-
       }
-      //cout << "l: " << lFlag << " y: " << yFlag << endl;
-      //cout << "d: " << dOpt << " @: " << atOpt << endl;
-
-      //cout << argv[i] << endl;
-      /*const string* str = intern_stringset (argv[i]);
-      printf ("intern (\"%s\") returned %p->\"%s\"\n",
-              argv[i], str->c_str(), str->c_str());*/
    }
    string m = "l: " + lFlag;
    string n = " y: " + yFlag;
@@ -65,43 +54,27 @@ int main (int argc, char **argv) {
 
    set_execname (argv[0]);
    string command = CPP + " " + fileName;
-   //printf ("command=\"%s\"\n", command.c_str());
-      FILE* pipe = popen (command.c_str(), "r");
-      if (pipe == NULL) {
-         syserrprintf (command.c_str());
-      }else {
-         cpplines (pipe, fileName);
-         int pclose_rc = pclose (pipe);
-         eprint_status (command.c_str(), pclose_rc);
-      }
+   FILE* pipe = popen (command.c_str(), "r");
+   if (pipe == NULL) {
+      syserrprintf (command.c_str());
+   }else {
+      cpplines (pipe, fileName);
+      int pclose_rc = pclose (pipe);
+      eprint_status (command.c_str(), pclose_rc);
+   }
 
    int len = strlen(fileName);
-   fileName[len-2] = 's';
-   fileName[len-1] = 't';
-   fileName[len] = 'r';
-   fileName[len+1] = '\0';
-   //ofstream outputFile(fileName);
-   FILE* str_name = fopen(fileName, "w+");
+   char* file_str = (char*)malloc(len + 1); 
+   strcpy(file_str, fileName);
+   file_str[len-2] = 's';
+   file_str[len-1] = 't';
+   file_str[len] = 'r';
+   file_str[len+1] = '\0';
+   FILE* str_name = fopen(file_str, "w+");
 
    dump_stringset (str_name);
+   free(file_str);
    return EXIT_SUCCESS;
 }
 
-
-/*   set_execname (argv[0]);
-   for (int argi = 1; argi < argc; ++argi) {
-      char* filename = argv[argi];
-      string command = CPP + " " + filename;
-      printf ("command=\"%s\"\n", command.c_str());
-      FILE* pipe = popen (command.c_str(), "r");
-      if (pipe == NULL) {
-         syserrprintf (command.c_str());
-      }else {
-         cpplines (pipe, filename);
-         int pclose_rc = pclose (pipe);
-         eprint_status (command.c_str(), pclose_rc);
-      }
-   }
-   return get_exitstatus();
-*/
 

@@ -1,5 +1,1 @@
-g++ -g -O0 -Wall -Wextra -std=gnu++11 -c main.cpp
-g++ -g -O0 -Wall -Wextra -std=gnu++11 -c stringset.cpp
-g++ -g -O0 -Wall -Wextra -std=gnu++11 -c cppstrtok.cpp
-g++ -g -O0 -Wall -Wextra -std=gnu++11 -c auxlib.cpp
-g++ -g -O0 -Wall -Wextra -std=gnu++11 main.o stringset.o cppstrtok.o auxlib.o -o oc
+gmake: Nothing to be done for `all'.
