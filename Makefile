@@ -12,10 +12,10 @@ YREPORT = yyparse.output
 
 all : oc
 
-oc : ${CLGEN} ${HYGEN} ${CYGEN} main.o stringset.o cppstrtok.o auxlib.o \
-     astree.o lyutils.o
+oc : ${CLGEN} ${CYGEN} main.o stringset.o cppstrtok.o auxlib.o \
+     astree.o lyutils.o yylex.o yyparse.o
 	${GPP} main.o stringset.o cppstrtok.o auxlib.o astree.o \
-               lyutils.o -o oc
+               lyutils.o yylex.o yyparse.o -o oc
 
 %.o : %.cpp
 	${GPP} -c $<
@@ -34,7 +34,9 @@ spotless : clean
 	- rm yyparse.output
 
 clean :
-	-rm stringset.o main.o cppstrtok.o auxlib.o astree.o lyutils.o
+	-rm stringset.o main.o cppstrtok.o auxlib.o astree.o lyutils.o \
+            yylex.o yyparse.o
+	#rm *~
 	#rm *.oc
 	#rm *.oc.err
 	#rm *.oc.out
@@ -71,5 +73,5 @@ main.o: main.cpp stringset.h
 stringset.o: stringset.cpp stringset.h
 auxlib.o: auxlib.cpp auxlib.h
 cppstrtok.o: cppstrtok.cpp cppstrtok.h auxlib.h
-astree.o: astree.h astree.cpp
-lyutils.o: lyutils.h lyutils.cpp
+lyutils.o: astree.h auxlib.h lyutils.h lyutils.cpp
+astree.o: auxlib.h astree.h astree.cpp 

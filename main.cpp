@@ -17,7 +17,6 @@ using namespace std;
 #include "lyutils.h"
 
 
-
 bool debug = false;
 void  db(string m){ if(debug){ cerr << m << endl;} };
 const string CPP = "/usr/bin/cpp";
