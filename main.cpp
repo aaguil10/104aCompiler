@@ -13,7 +13,11 @@ using namespace std;
 #include "stringset.h"
 #include "auxlib.h"
 #include "cppstrtok.h"
- 
+#include "astree.h"
+#include "lyutils.h"
+
+
+
 bool debug = false;
 void  db(string m){ if(debug){ cerr << m << endl;} };
 const string CPP = "/usr/bin/cpp";
