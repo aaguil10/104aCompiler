@@ -64,7 +64,7 @@ int main (int argc, char **argv) {
    }
 
    int len = strlen(fileName);
-   char* file_str = (char*)malloc(len + 1); 
+   char* file_str = (char*)malloc(len + 2); 
    strcpy(file_str, fileName);
    file_str[len-2] = 's';
    file_str[len-1] = 't';
