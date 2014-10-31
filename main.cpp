@@ -12,7 +12,7 @@ using namespace std;
 
 #include "stringset.h"
 #include "auxlib.h"
-#include "cppstrtok.h"
+//#include "cppstrtok.h"
 #include "astree.h"
 #include "lyutils.h"
 
@@ -20,14 +20,64 @@ using namespace std;
 bool debug = false;
 void  db(string m){ if(debug){ cerr << m << endl;} };
 const string CPP = "/usr/bin/cpp";
+const string cpp_name = "/usr/bin/cpp";
+string yyin_cpp_command;
+
+bool want_echo () {
+   return not (isatty (fileno (stdin)) and isatty (fileno (stdout)));
+}
+
+void yyin_cpp_popen (const char* filename) {
+   yyin_cpp_command = cpp_name;
+   yyin_cpp_command += " ";
+   yyin_cpp_command += filename;
+   yyin = popen (yyin_cpp_command.c_str(), "r");
+   if (yyin == NULL) {
+      syserrprintf (yyin_cpp_command.c_str());
+      exit (get_exitstatus());
+   }
+}
+
+void yyin_cpp_pclose (void) {
+   int pclose_rc = pclose (yyin);
+   eprint_status (yyin_cpp_command.c_str(), pclose_rc);
+   if (pclose_rc != 0) set_exitstatus (EXIT_FAILURE);
+}
+
+FILE* make_str_file(char* filename){
+   int len = strlen(filename);
+   char* file_str = (char*)malloc(len + 2); 
+   strcpy(file_str, filename);
+   file_str[len-2] = 's';
+   file_str[len-1] = 't';
+   file_str[len] = 'r';
+   file_str[len+1] = '\0';
+   FILE* str_name = fopen(file_str, "w+");
+   free(file_str);
+   return str_name;
+}
+
+FILE* make_tok_file(char* filename){
+   int len = strlen(filename);
+   char* file_str = (char*)malloc(len + 2); 
+   strcpy(file_str, filename);
+   file_str[len-2] = 't';
+   file_str[len-1] = 'o';
+   file_str[len] = 'k';
+   file_str[len+1] = '\0';
+   FILE* str_name = fopen(file_str, "w+");
+   free(file_str);
+   return str_name;
+}
 
 int main (int argc, char **argv) {
+   int parsecode = 0;
    int c;
    bool lFlag = false;
    bool yFlag = false;
    string atOpt = "";
    string dOpt = "";
-   char* fileName = argv[argc - 1];
+   char* filename = argv[argc - 1];
    while ((c = getopt (argc, argv, "ly@:D:")) != -1){
       switch (c){
          case 'l':
@@ -40,7 +90,7 @@ int main (int argc, char **argv) {
             continue;
          case '@':
             db("Set @ flag!");
-            set_debugflags (optarg);
+            //set_debugflags (optarg);
             atOpt = optarg;
             debug = true;
             continue;
@@ -56,27 +106,42 @@ int main (int argc, char **argv) {
    db("d: " + dOpt + " @: " + atOpt);
 
    set_execname (argv[0]);
-   string command = CPP + " " + fileName;
+   yyin_cpp_popen (filename);
+   /*string command = CPP + " " + fileName;
    FILE* pipe = popen (command.c_str(), "r");
    if (pipe == NULL) {
       syserrprintf (command.c_str());
    }else {
-      cpplines (pipe, fileName);
-      int pclose_rc = pclose (pipe);
-      eprint_status (command.c_str(), pclose_rc);
+      //cpplines (pipe, fileName);
+      //int pclose_rc = pclose (pipe);
+      //eprint_status (command.c_str(), pclose_rc);
+   }*/
+   FILE* tok_file = make_tok_file(filename);
+   //scanner_setecho (want_echo());
+   parsecode = yyparse();
+   if (parsecode) {
+      //errprintf ("%:parse failed (%d)\n", parsecode);
+   }else {
+      //DEBUGSTMT ('a', dump_astree (tok_file, yyparse_astree); );
+      //emit_sm_code (yyparse_astree);
    }
+   free_ast (yyparse_astree);
+   yyin_cpp_pclose();
 
-   int len = strlen(fileName);
+
+   /*int len = strlen(filename);
    char* file_str = (char*)malloc(len + 2); 
-   strcpy(file_str, fileName);
+   strcpy(file_str, filename);
    file_str[len-2] = 's';
    file_str[len-1] = 't';
    file_str[len] = 'r';
    file_str[len+1] = '\0';
-   FILE* str_name = fopen(file_str, "w+");
+   FILE* str_name = fopen(file_str, "w+");*/
+
+   FILE* str_name = make_str_file(filename);
 
    dump_stringset (str_name);
-   free(file_str);
+   //free(file_str);
    return EXIT_SUCCESS;
 }
 
