@@ -22,6 +22,7 @@ void  db(string m){ if(debug){ cerr << m << endl;} };
 const string CPP = "/usr/bin/cpp";
 const string cpp_name = "/usr/bin/cpp";
 string yyin_cpp_command;
+extern FILE* yyin;
 
 bool want_echo () {
    return not (isatty (fileno (stdin)) and isatty (fileno (stdout)));
@@ -74,7 +75,9 @@ int main (int argc, char **argv) {
    int parsecode = 0;
    int c;
    bool lFlag = false;
+   //int yy_flex_debug = 0;
    bool yFlag = false;
+   //int yydebug = 0;
    string atOpt = "";
    string dOpt = "";
    char* filename = argv[argc - 1];
@@ -83,10 +86,12 @@ int main (int argc, char **argv) {
          case 'l':
             db( "Set 'l' flag!");
             lFlag = true;
+            yy_flex_debug = 1;
             continue;
          case 'y':
             db("Set 'y' flag!");
             yFlag = true;
+            yydebug = 1;
             continue;
          case '@':
             db("Set @ flag!");
@@ -118,14 +123,29 @@ int main (int argc, char **argv) {
    }*/
    FILE* tok_file = make_tok_file(filename);
    scanner_setecho (want_echo());
-   parsecode = yyparse();
+   //parsecode = yyparse();
+   //cout << "parsecode: " << parsecode << endl;
+   //cout << "yytext: " << get_yytname << endl;
+
+   /*yylval_token(1);
+   cout <<  "symbol: " << yylval->symbol;  
+   cout <<  " filenr: " << yylval->filenr;
+   cout <<  " linenr: " << yylval->linenr;
+   cout <<  " offset: " << yylval->offset;
+   cout <<  " lexinfo: " << *(yylval->lexinfo) << endl; */  
+   while(yylex() != YYEOF){
+    cout << "S: " << yytext << endl;
+
+   }
+
+
    if (parsecode) {
       //errprintf ("%:parse failed (%d)\n", parsecode);
    }else {
       //DEBUGSTMT ('a', dump_astree (tok_file, yyparse_astree); );
       //emit_sm_code (yyparse_astree);
    }
-   free_ast (yyparse_astree);
+   //free_ast (yyparse_astree);
    yyin_cpp_pclose();
 
 

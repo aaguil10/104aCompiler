@@ -27,7 +27,6 @@ d: OCLIB_OH @: Set_debugflags
 --accepting rule at line 35 ("void")
 --accepting rule at line 31 (" ")
 --accepting rule at line 35 ("__assert_fail")
-oc: oc-programs/oclib.oh: 30: syntax error, unexpected IDENT
 --accepting rule at line 31 (" ")
 --accepting rule at line 43 ("(")
 --accepting rule at line 35 ("string")
@@ -216,7 +215,6 @@ oc: oc-programs/oclib.oh: 41: invalid source character (])
 --accepting rule at line 35 ("puti")
 --accepting rule at line 31 (" ")
 --accepting rule at line 43 ("(")
-oc: oc-programs/03-test3.oc: 9: syntax error, unexpected '('
 --accepting rule at line 35 ("a")
 --accepting rule at line 44 (")")
 --accepting rule at line 45 (";")
