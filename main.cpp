@@ -72,96 +72,76 @@ FILE* make_tok_file(char* filename){
 }
 
 int main (int argc, char **argv) {
-   int parsecode = 0;
    int c;
-   bool lFlag = false;
-   //int yy_flex_debug = 0;
-   bool yFlag = false;
-   //int yydebug = 0;
-   string atOpt = "";
-   string dOpt = "";
    char* filename = argv[argc - 1];
    while ((c = getopt (argc, argv, "ly@:D:")) != -1){
       switch (c){
          case 'l':
             db( "Set 'l' flag!");
-            lFlag = true;
             yy_flex_debug = 1;
             continue;
          case 'y':
             db("Set 'y' flag!");
-            yFlag = true;
             yydebug = 1;
             continue;
          case '@':
             db("Set @ flag!");
-            set_debugflags ("");
-            atOpt = optarg;
+            set_debugflags (optarg);
             debug = true;
             continue;
          case 'D':
             db("Set '-D' flag!");
-            dOpt = optarg;
             continue;
       }
    }
-   string m = "l: " + lFlag;
-   string n = " y: " + yFlag;
-   db(m + n);
-   db("d: " + dOpt + " @: " + atOpt);
 
    set_execname (argv[0]);
    yyin_cpp_popen (filename);
-   /*string command = CPP + " " + fileName;
-   FILE* pipe = popen (command.c_str(), "r");
-   if (pipe == NULL) {
-      syserrprintf (command.c_str());
-   }else {
-      //cpplines (pipe, fileName);
-      //int pclose_rc = pclose (pipe);
-      //eprint_status (command.c_str(), pclose_rc);
-   }*/
+
    FILE* tok_file = make_tok_file(filename);
-   scanner_setecho (want_echo());
-   //parsecode = yyparse();
-   //cout << "parsecode: " << parsecode << endl;
-   //cout << "yytext: " << get_yytname << endl;
 
-   /*yylval_token(1);
-   cout <<  "symbol: " << yylval->symbol;  
-   cout <<  " filenr: " << yylval->filenr;
-   cout <<  " linenr: " << yylval->linenr;
-   cout <<  " offset: " << yylval->offset;
-   cout <<  " lexinfo: " << *(yylval->lexinfo) << endl; */  
-   while(yylex() != YYEOF){
-    cout << "S: " << yytext << endl;
+   /*while(yylex() != YYEOF){
+      cout << "S: " << yytext << endl;
+   }*/
+   int linenr = 0;
 
+
+   for (;;) {
+      int token = yylex();
+      if (yy_flex_debug) fflush (NULL);
+      switch (token) {
+         case YYEOF:
+            printf ("END OF FILE\n");
+            return 0;
+         case IDENT:
+            printf ("IDENT \(%s\)\n", yytext);
+            break;
+         case NUMBER:
+            printf ("NUMBER \(%s\)\n", yytext);
+            break;
+         case '+':
+         case '-':
+         case '*':
+         case '/':
+         case '=':
+         case ';':
+            printf ("OPERATOR \(%s\)\n", yytext);
+            break;
+         case '\n':
+            printf ("NEWLINE\n");
+            ++linenr;
+            break;
+         default:
+            printf ("ERROR \(%s\)\n", yytext);
+      }
    }
 
 
-   if (parsecode) {
-      //errprintf ("%:parse failed (%d)\n", parsecode);
-   }else {
-      //DEBUGSTMT ('a', dump_astree (tok_file, yyparse_astree); );
-      //emit_sm_code (yyparse_astree);
-   }
-   //free_ast (yyparse_astree);
    yyin_cpp_pclose();
-
-
-   /*int len = strlen(filename);
-   char* file_str = (char*)malloc(len + 2); 
-   strcpy(file_str, filename);
-   file_str[len-2] = 's';
-   file_str[len-1] = 't';
-   file_str[len] = 'r';
-   file_str[len+1] = '\0';
-   FILE* str_name = fopen(file_str, "w+");*/
 
    FILE* str_name = make_str_file(filename);
 
    dump_stringset (str_name);
-   //free(file_str);
    return EXIT_SUCCESS;
 }
 

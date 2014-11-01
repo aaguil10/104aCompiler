@@ -39,7 +39,7 @@ void scanner_setecho (bool echoflag) {
 void scanner_useraction (void) {
    if (scan_echo) {
       if (scan_offset == 0) printf (";%5d: ", scan_linenr);
-      printf ("%s: she is made up", yytext);
+      printf ("%s", yytext);
    }
    scan_offset += yyleng;
 }
@@ -82,6 +82,7 @@ astree* new_parseroot (void) {
 
 
 void scanner_include (void) {
+   printf("Ohhh\n");
    scanner_newline();
    char filename[strlen (yytext) + 1];
    int linenr;
@@ -90,6 +91,8 @@ void scanner_include (void) {
       errprintf ("%: %d: [%s]: invalid directive, ignored\n",
                  scan_rc, yytext);
    }else {
+      printf("Ohhh\n");
+      fflush(stdout);
       printf (";# %d \"%s\"\n", linenr, filename);
       scanner_newfilename (filename);
       scan_linenr = linenr - 1;
