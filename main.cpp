@@ -90,7 +90,7 @@ int main (int argc, char **argv) {
             continue;
          case '@':
             db("Set @ flag!");
-            //set_debugflags (optarg);
+            set_debugflags ("");
             atOpt = optarg;
             debug = true;
             continue;
@@ -117,7 +117,7 @@ int main (int argc, char **argv) {
       //eprint_status (command.c_str(), pclose_rc);
    }*/
    FILE* tok_file = make_tok_file(filename);
-   //scanner_setecho (want_echo());
+   scanner_setecho (want_echo());
    parsecode = yyparse();
    if (parsecode) {
       //errprintf ("%:parse failed (%d)\n", parsecode);

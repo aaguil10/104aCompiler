@@ -44,7 +44,8 @@ clean :
 
 test : oc
 	#${GRIND} oc * * * >test.out 2>test.err
-	./oc -ly -@ Set_debugflags -D OCLIB_OH oc-programs/03-test3.oc 
+	./oc -ly -@ Set_debugflags -D OCLIB_OH oc-programs/03-test3.oc \
+        2> error.log 
 
 
 lis : test

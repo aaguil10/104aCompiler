@@ -39,7 +39,7 @@ void scanner_setecho (bool echoflag) {
 void scanner_useraction (void) {
    if (scan_echo) {
       if (scan_offset == 0) printf (";%5d: ", scan_linenr);
-      printf ("%s", yytext);
+      printf ("%s: she is made up", yytext);
    }
    scan_offset += yyleng;
 }
