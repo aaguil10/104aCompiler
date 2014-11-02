@@ -119,14 +119,57 @@ int main (int argc, char **argv) {
       if (yy_flex_debug) fflush (NULL);
       switch (token) {
          case YYEOF:
-            printf ("END OF FILE\n");
+            fprintf (tok_file, "END OF FILE\n");
             return 0;
-         case IDENT:
-            print_tok(tok_file, yylval, (char*)"IDENT");
+         case VOID:
+            print_tok(tok_file, yylval, (char*)"TOK_REV_VOID");
             break;
-         case NUMBER:
-            print_tok(tok_file, yylval, (char*)"NUMBER");
+         case BOOL:
+            print_tok(tok_file, yylval, (char*)"TOK_REV_BOOL");
             break;
+         case CHAR:
+            print_tok(tok_file, yylval, (char*)"TOK_REV_CHAR");
+            break;
+         case INT:
+            print_tok(tok_file, yylval, (char*)"TOK_REV_INT");
+            break;
+         case STRING:
+            print_tok(tok_file, yylval, (char*)"TOK_REV_STRING");
+            break;
+         case STRUCT:
+            print_tok(tok_file, yylval, (char*)"TOK_REV_STRUCT");
+            break;
+         case IF:
+            print_tok(tok_file, yylval, (char*)"TOK_REV_IF");
+            break;
+         case ELSE:
+            print_tok(tok_file, yylval, (char*)"TOK_REV_ELSE");
+            break;
+         case WHILE:
+            print_tok(tok_file, yylval, (char*)"TOK_REV_WHILE");
+            break;
+         case RETURN:
+            print_tok(tok_file, yylval, (char*)"TOK_REV_RETURN");
+            break;
+         case FALSE:
+            print_tok(tok_file, yylval, (char*)"TOK_REV_FALSE");
+            break;
+         case TRUE:
+            print_tok(tok_file, yylval, (char*)"TOK_REV_TRUE");
+            break;
+         case TOK_NULL:
+            print_tok(tok_file, yylval, (char*)"TOK_REV_NULL");
+            break;
+         case ORD:
+            print_tok(tok_file, yylval, (char*)"TOK_REV_ORD");
+            break;
+         case CHR:
+            print_tok(tok_file, yylval, (char*)"TOK_REV_CHR");
+            break;
+         case NEW:
+            print_tok(tok_file, yylval, (char*)"TOK_REV_NEW");
+            break;
+
          case '+':
             print_tok(tok_file, yylval, (char*)"'+' ");
             break;
@@ -195,6 +238,12 @@ int main (int argc, char **argv) {
             break;
          case GREAEQU:
             print_tok(tok_file, yylval, (char*)"'>='");
+            break;
+        case NUMBER:
+            print_tok(tok_file, yylval, (char*)"NUMBER");
+            break;
+         case IDENT:
+            print_tok(tok_file, yylval, (char*)"IDENT");
             break;
          case '\n':
             printf ("NEWLINE\n");

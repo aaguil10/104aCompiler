@@ -25,6 +25,8 @@ static void* yycalloc (size_t size);
 
 %destructor { error_destructor ($$); } <>
 
+%token  VOID BOOL CHAR INT STRING STRUCT IF ELSE WHILE RETURN FALSE
+%token  TRUE TOK_NULL ORD CHR NEW
 %token  ROOT IDENT NUMBER SQUBRACKETS GREAEQU LESSEQU NEQUAL EQUALS
 
 %right  '='

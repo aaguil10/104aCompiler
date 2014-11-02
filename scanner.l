@@ -25,6 +25,22 @@ EQUALS		==
 NEQUAL		!=
 LESSEQU		<=
 GREAEQU		>=
+VOID		void
+BOOL		bool
+CHAR		char
+INT		int
+STRING		string
+STRUCT		sturct
+IF		if
+ELSE		else
+WHILE		while
+RETURN		return
+FALSE		false
+TRUE		true
+TOK_NULL	null
+ORD		ord
+CHR		chr
+NEW		new
 MANTISSA        ({DIGIT}+\.?{DIGIT}*|\.{DIGIT}+)
 EXPONENT        ([Ee][+-]?{DIGIT}+)
 NUMBER          ({MANTISSA}{EXPONENT}?)
@@ -37,6 +53,24 @@ IDENT           ({LETTER}({LETTER}|{DIGIT})*)
 [ \t]+          { IGNORE (white space) }
 \n              { scanner_newline(); }
 
+
+
+{VOID}        { return yylval_token (VOID); }
+{BOOL}        { return yylval_token (BOOL); }
+{CHAR}        { return yylval_token (CHAR); }
+{INT}        { return yylval_token (INT); }
+{STRING}        { return yylval_token (STRING); }
+{STRUCT}        { return yylval_token (STRUCT); }
+{IF}        { return yylval_token (IF); }
+{ELSE}        { return yylval_token (ELSE); }
+{WHILE}        { return yylval_token (WHILE); }
+{RETURN}        { return yylval_token (RETURN); }
+{FALSE}        { return yylval_token (FALSE); }
+{TRUE}        { return yylval_token (TRUE); }
+{TOK_NULL}        { return yylval_token (TOK_NULL); }
+{ORD}        { return yylval_token (ORD); }
+{CHR}        { return yylval_token (CHR); }
+{NEW}        { return yylval_token (NEW); }
 {NUMBER}        { return yylval_token (NUMBER); }
 {IDENT}         { return yylval_token (IDENT); }
 {SQUBRACKETS}   { return yylval_token (SQUBRACKETS); }
