@@ -12,7 +12,6 @@ using namespace std;
 
 #include "stringset.h"
 #include "auxlib.h"
-//#include "cppstrtok.h"
 #include "astree.h"
 #include "lyutils.h"
 
@@ -71,6 +70,14 @@ FILE* make_tok_file(char* filename){
    return str_name;
 }
 
+void print_tok(FILE* out, astree* val, char* cas){
+   float num = (float)(val->offset)/1000 + (val->linenr);
+   fprintf (out, "%d %.3f %d %s \t \(%s\) \n",
+            (int)val->filenr, num, (int)val->symbol, cas, yytext);
+
+
+}
+
 int main (int argc, char **argv) {
    int c;
    char* filename = argv[argc - 1];
@@ -115,24 +122,79 @@ int main (int argc, char **argv) {
             printf ("END OF FILE\n");
             return 0;
          case IDENT:
-            num = (float)(yylval->offset)/1000 + (yylval->linenr);
-            fprintf (tok_file, "%d %.3f %d IDENT \(%s\) \n",
-                    (int)yylval->filenr, num, (int)yylval->symbol, yytext);
+            print_tok(tok_file, yylval, (char*)"IDENT");
             break;
          case NUMBER:
-            num = (float)(yylval->offset)/1000 + (yylval->linenr);
-            fprintf (tok_file, "%d %.3f %d NUMBER \(%s\) \n",
-                    (int)yylval->filenr, num, (int)yylval->symbol, yytext);
+            print_tok(tok_file, yylval, (char*)"NUMBER");
             break;
          case '+':
+            print_tok(tok_file, yylval, (char*)"'+' ");
+            break;
          case '-':
+            print_tok(tok_file, yylval, (char*)"'-'");
+            break;
          case '*':
+            print_tok(tok_file, yylval, (char*)"'*'");
+            break;
          case '/':
+            print_tok(tok_file, yylval, (char*)"'/'");
+            break;
          case '=':
+            print_tok(tok_file, yylval, (char*)"'=' ");
+            break;
+         case '}':
+            print_tok(tok_file, yylval, (char*)"'}'");
+            break;
+         case '{':
+            print_tok(tok_file, yylval, (char*)"'{'");
+            break;
+         case ',':
+            print_tok(tok_file, yylval, (char*)"','");
+            break;
+         case '[':
+            print_tok(tok_file, yylval, (char*)"'['");
+            break;
+         case ']':
+            print_tok(tok_file, yylval, (char*)"']'");
+            break;
+         case '.':
+            print_tok(tok_file, yylval, (char*)"'.'");
+            break;
+         case '>':
+            print_tok(tok_file, yylval, (char*)"'>'");
+            break;
+         case '<':
+            print_tok(tok_file, yylval, (char*)"'<'");
+            break;
+         case '%':
+            print_tok(tok_file, yylval, (char*)"'%'");
+            break;
+         case '!':
+            print_tok(tok_file, yylval, (char*)"'!'");
+            break;
+         case '(':
+            print_tok(tok_file, yylval, (char*)"'(' ");
+            break;
+         case ')':
+            print_tok(tok_file, yylval, (char*)"')' ");
+            break;
          case ';':
-            num = (float)(yylval->offset)/1000 + (yylval->linenr);
-            fprintf (tok_file, "%d %.3f %d OPERATOR \(%s\) \n",
-                    (int)yylval->filenr, num, (int)yylval->symbol, yytext);
+            print_tok(tok_file, yylval, (char*)"';' ");
+            break;
+         case SQUBRACKETS:
+            print_tok(tok_file, yylval, (char*)"'[]'");
+            break;
+         case EQUALS:
+            print_tok(tok_file, yylval, (char*)"'=='");
+            break;
+         case NEQUAL:
+            print_tok(tok_file, yylval, (char*)"'!='");
+            break;
+         case LESSEQU:
+            print_tok(tok_file, yylval, (char*)"'<='");
+            break;
+         case GREAEQU:
+            print_tok(tok_file, yylval, (char*)"'>='");
             break;
          case '\n':
             printf ("NEWLINE\n");

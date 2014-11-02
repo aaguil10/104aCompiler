@@ -9,7 +9,3 @@ a = b + c;
 puti (a);
 putc ('\n');
 myarray[];
-if(a == b){
-   char foo = 'u';
-   return foo;
-}

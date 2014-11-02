@@ -17,8 +17,14 @@
 %option verbose
 %option warn
 
+
 LETTER          [A-Za-z_]
 DIGIT           [0-9]
+SQUBRACKETS	\[\]
+EQUALS		==
+NEQUAL		!=
+LESSEQU		<=
+GREAEQU		>=
 MANTISSA        ({DIGIT}+\.?{DIGIT}*|\.{DIGIT}+)
 EXPONENT        ([Ee][+-]?{DIGIT}+)
 NUMBER          ({MANTISSA}{EXPONENT}?)
@@ -33,13 +39,28 @@ IDENT           ({LETTER}({LETTER}|{DIGIT})*)
 
 {NUMBER}        { return yylval_token (NUMBER); }
 {IDENT}         { return yylval_token (IDENT); }
+{SQUBRACKETS}   { return yylval_token (SQUBRACKETS); }
+{EQUALS}   	{ return yylval_token (EQUALS); }
+{NEQUAL}   	{ return yylval_token (NEQUAL); }
+{LESSEQU}   	{ return yylval_token (LESSEQU); }
+{GREAEQU}	{ return yylval_token (GREAEQU); }
 
+
+"}"             { return yylval_token ('}'); }
+"{"             { return yylval_token ('{'); }
+","             { return yylval_token (','); }
+"["             { return yylval_token ('['); }
+"]"             { return yylval_token (']'); }
+"."             { return yylval_token ('.'); }
+"<"             { return yylval_token ('<'); }
+">"             { return yylval_token ('>'); }
 "="             { return yylval_token ('='); }
 "+"             { return yylval_token ('+'); }
 "-"             { return yylval_token ('-'); }
 "*"             { return yylval_token ('*'); }
 "/"             { return yylval_token ('/'); }
-"^"             { return yylval_token ('^'); }
+"%"             { return yylval_token ('%'); }
+"!"             { return yylval_token ('!'); }
 "("             { return yylval_token ('('); }
 ")"             { return yylval_token (')'); }
 ";"             { return yylval_token (';'); }
