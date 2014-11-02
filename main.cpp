@@ -116,14 +116,13 @@ int main (int argc, char **argv) {
             return 0;
          case IDENT:
             num = (float)(yylval->offset)/1000 + (yylval->linenr);
-            cout << yylval->filenr << " ";
-            cout << num << " ";
-            cout << yylval->symbol << " IDENT ";
-            cout << "\t (" << yytext << ") " << endl;
-
+            fprintf (tok_file, "%d %.3f %d IDENT \(%s\) \n",
+                    (int)yylval->filenr, num, (int)yylval->symbol, yytext);
             break;
          case NUMBER:
-            printf ("NUMBER \(%s\)\n", yytext);
+            num = (float)(yylval->offset)/1000 + (yylval->linenr);
+            fprintf (tok_file, "%d %.3f %d NUMBER \(%s\) \n",
+                    (int)yylval->filenr, num, (int)yylval->symbol, yytext);
             break;
          case '+':
          case '-':
@@ -131,14 +130,16 @@ int main (int argc, char **argv) {
          case '/':
          case '=':
          case ';':
-            printf ("OPERATOR \(%s\)\n", yytext);
+            num = (float)(yylval->offset)/1000 + (yylval->linenr);
+            fprintf (tok_file, "%d %.3f %d OPERATOR \(%s\) \n",
+                    (int)yylval->filenr, num, (int)yylval->symbol, yytext);
             break;
          case '\n':
             printf ("NEWLINE\n");
             ++linenr;
             break;
          default:
-            printf ("ERROR \(%s\)\n", yytext);
+            printf ("ERROR \(%s\) \n", yytext);
       }
    }
 
