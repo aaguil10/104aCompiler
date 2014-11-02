@@ -108,13 +108,19 @@ int main (int argc, char **argv) {
 
    for (;;) {
       int token = yylex();
+      float num = 0;
       if (yy_flex_debug) fflush (NULL);
       switch (token) {
          case YYEOF:
             printf ("END OF FILE\n");
             return 0;
          case IDENT:
-            printf ("IDENT \(%s\)\n", yytext);
+            num = (float)(yylval->offset)/1000 + (yylval->linenr);
+            cout << yylval->filenr << " ";
+            cout << num << " ";
+            cout << yylval->symbol << " IDENT ";
+            cout << "\t (" << yytext << ") " << endl;
+
             break;
          case NUMBER:
             printf ("NUMBER \(%s\)\n", yytext);
