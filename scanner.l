@@ -41,6 +41,8 @@ TOK_NULL	null
 ORD		ord
 CHR		chr
 NEW		new
+CHAR_CONST	(’([^\\’\n]|\\[\\’"0nt])’)
+STRING_CONST	(\"([^\\"\n]|\\[\\’"0nt])*\")
 MANTISSA        ({DIGIT}+\.?{DIGIT}*|\.{DIGIT}+)
 EXPONENT        ([Ee][+-]?{DIGIT}+)
 NUMBER          ({MANTISSA}{EXPONENT}?)
@@ -71,6 +73,8 @@ IDENT           ({LETTER}({LETTER}|{DIGIT})*)
 {ORD}        { return yylval_token (ORD); }
 {CHR}        { return yylval_token (CHR); }
 {NEW}        { return yylval_token (NEW); }
+{CHAR_CONST}        { return yylval_token (CHAR_CONST); }
+{STRING_CONST}        { return yylval_token (STRING_CONST); }
 {NUMBER}        { return yylval_token (NUMBER); }
 {IDENT}         { return yylval_token (IDENT); }
 {SQUBRACKETS}   { return yylval_token (SQUBRACKETS); }

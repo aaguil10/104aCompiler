@@ -239,9 +239,17 @@ int main (int argc, char **argv) {
          case GREAEQU:
             print_tok(tok_file, yylval, (char*)"'>='");
             break;
-        case NUMBER:
-            print_tok(tok_file, yylval, (char*)"NUMBER");
+
+        case CHAR_CONST:
+            print_tok(tok_file, yylval, (char*)"TOK_LIT_CHAR");
             break;
+        case STRING_CONST:
+            print_tok(tok_file, yylval, (char*)"TOK_LIT_STRING");
+            break;
+        case NUMBER:
+            print_tok(tok_file, yylval, (char*)"TOK_LIT_INT");
+            break;
+
          case IDENT:
             print_tok(tok_file, yylval, (char*)"IDENT");
             break;
