@@ -142,9 +142,9 @@ int main (int argc, char **argv) {
          case CHAR:
             print_tok(tok_file, yylval, (char*)"TOK_REV_CHAR");
             break;
-         case NOTCHAR:
+         /*case NOTCHAR:
             print_tok(stdout , yylval, (char*)"TOK_REV_notCHAR");
-            break;
+            break;*/
          case INT:
             print_tok(tok_file, yylval, (char*)"TOK_REV_INT");
             break;
@@ -269,7 +269,7 @@ int main (int argc, char **argv) {
             print_tok(tok_file, yylval, (char*)"IDENT");
             break;
          case NOTIDENT:
-            print_tok(stdout, yylval, (char*)"NOTIDENT");
+            print_tok(stderr, yylval, (char*)"NOTIDENT");
             break;
 
          case '\n':

@@ -25,6 +25,7 @@ void yyerror (const char* message);
 int yylex_destroy (void);
 const char* get_yytname (int symbol);
 bool is_defined_token (int symbol);
+void print_tok(FILE* out, astree* val, char* cas);
 
 const string* scanner_filename (int filenr);
 void scanner_newfilename (const char* filename);

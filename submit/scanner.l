@@ -1,6 +1,7 @@
 %{
 // $Id: scanner.l,v 1.4 2014-10-20 14:27:17-07 - - $
-
+//NOTCHAR               '.*
+///*{NOTCHAR}        { return yylval_token (NOTCHAR); }*/ 
 #include "auxlib.h"
 #include "lyutils.h"
 
@@ -41,12 +42,14 @@ ORD		ord
 CHR		chr
 NEW		new
 CHAR_CONST	(’([^\\’\n]|\\[\\’"0nt])’)
+
 STRING_CONST	(\"([^\\"\n]|\\[\\’"0nt])*\")
 MANTISSA        ({DIGIT}+\.?{DIGIT}*|\.{DIGIT}+)
 EXPONENT        ([Ee][+-]?{DIGIT}+)
-NUMBER          ({MANTISSA}{EXPONENT}?)
+NUMBER          {DIGIT}+
 NOTNUMBER       ({MANTISSA}[Ee][+-]?)
 IDENT           ({LETTER}({LETTER}|{DIGIT})*)
+NOTIDENT	{DIGIT}+{IDENT}
 
 %%
 
@@ -76,6 +79,7 @@ IDENT           ({LETTER}({LETTER}|{DIGIT})*)
 {STRING_CONST}        { return yylval_token (STRING_CONST); }
 {NUMBER}        { return yylval_token (NUMBER); }
 {IDENT}         { return yylval_token (IDENT); }
+{NOTIDENT}         { return yylval_token (NOTIDENT); }
 {SQUBRACKETS}   { return yylval_token (SQUBRACKETS); }
 {EQUALS}   	{ return yylval_token (EQUALS); }
 {NEQUAL}   	{ return yylval_token (NEQUAL); }

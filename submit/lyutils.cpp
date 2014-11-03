@@ -17,7 +17,7 @@ int scan_linenr = 1;
 int scan_offset = 0;
 bool scan_echo = false;
 vector<string> included_filenames;
-/*extern FILE* tok_file;*/
+extern FILE* tok_file;
 //FILE* tok_file = make_tok_file(filename);
 
 const string* scanner_filename (int filenr) {
@@ -82,13 +82,13 @@ astree* new_parseroot (void) {
    return yyparse_astree;
 }
 
-/*void print_tok(FILE* out, astree* val, char* cas){
+void print_tok(FILE* out, astree* val, char* cas){
    float num = (float)(val->offset)/1000 + (val->linenr);
    fprintf (out, "%d %.3f %d %s \t \(%s\) \n",
             (int)val->filenr, num, (int)val->symbol, cas, yytext);
-}*/
+}
 
-FILE* mk_tk_fl(char* filename, int first){
+/*FILE* mk_tk_fl(char* filename, int first){
    int len = strlen(filename);
    char* file_str = (char*)malloc(len + 2);
    strcpy(file_str, filename);
@@ -104,7 +104,7 @@ FILE* mk_tk_fl(char* filename, int first){
    }
    free(file_str);
    return str_name;
-}
+}*/
 
 
 void scanner_include (void) {
@@ -118,7 +118,8 @@ void scanner_include (void) {
                  scan_rc, yytext);
    }else {
       fflush(stdout);
-      FILE* mytokfile = mk_tk_fl(filename, 1);
+      //FILE* mytokfile = mk_tk_fl(filename, 1);
+      FILE* mytokfile = tok_file;
       fprintf (mytokfile, "# %d \"%s\"\n", linenr, filename);
       scanner_newfilename (filename);
       scan_linenr = linenr - 1;

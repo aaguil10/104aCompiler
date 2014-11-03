@@ -1,7 +1,7 @@
 # $Id: Makefile,v 1.8 2014-10-07 17:37:02-07 - - $
 
 #GPP   = g++ -g -O0 -Wall -Wextra -std=gnu++11
-GPP   = g++ -g -O0 -std=gnu++11
+GPP   = g++ -g -O0 -Wall -std=gnu++11
 GRIND = valgrind --leak-check=full --show-reachable=yes
 LSOURCES = scanner.l
 YSOURCES = parser.y
@@ -56,9 +56,9 @@ lis : test
 
 submit : main.cpp stringset.cpp stringset.h auxlib.cpp auxlib.h \
          Makefile oclib.c oclib.oh README
-	submit cmps104a-wm.f14 asg1 main.cpp stringset.cpp \
-        stringset.h auxlib.cpp auxlib.h \
-        Makefile oclib.c oclib.oh README
+	submit cmps104a-wm.f14 asg2 main.cpp stringset.cpp scanner.l\
+        stringset.h auxlib.cpp auxlib.h parser.y lyutils.h lyutils.cpp\
+        astree.h astree.cpp Makefile oclib.c oclib.oh README
 
 ## Build the scanner.
 ${CLGEN} : ${LSOURCES}
