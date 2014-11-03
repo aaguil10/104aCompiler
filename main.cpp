@@ -74,8 +74,12 @@ void print_tok(FILE* out, astree* val, char* cas){
    float num = (float)(val->offset)/1000 + (val->linenr);
    fprintf (out, "%d %.3f %d %s \t \(%s\) \n",
             (int)val->filenr, num, (int)val->symbol, cas, yytext);
+}
 
-
+void print_str(char* filename){
+   yyin_cpp_pclose();
+   FILE* str_name = make_str_file(filename);
+   dump_stringset (str_name);
 }
 
 int main (int argc, char **argv) {
@@ -115,12 +119,13 @@ int main (int argc, char **argv) {
 
    for (;;) {
       int token = yylex();
-      float num = 0;
       if (yy_flex_debug) fflush (NULL);
       switch (token) {
          case YYEOF:
             fprintf (tok_file, "END OF FILE\n");
+            print_str(filename);
             return 0;
+            //break;
          case VOID:
             print_tok(tok_file, yylval, (char*)"TOK_REV_VOID");
             break;
@@ -262,11 +267,11 @@ int main (int argc, char **argv) {
       }
    }
 
-
+printf("Of the wild ones!\n");
    yyin_cpp_pclose();
 
    FILE* str_name = make_str_file(filename);
-
+   printf("BBAAAABBBBAAA!");
    dump_stringset (str_name);
    return EXIT_SUCCESS;
 }
