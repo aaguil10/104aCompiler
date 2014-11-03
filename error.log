@@ -1,566 +1,600 @@
 Set '-D' flag!
 --(end of buffer or a NUL)
---accepting rule at line 53 ("# 1 "oc-programs/03-test3.oc"")
---accepting rule at line 55 ("
+oc-programs/03-test3.oc:17:16: warning: missing terminating ' character
+oc-programs/03-test3.oc:18:18: warning: missing terminating " character
+--accepting rule at line 55 ("# 1 "oc-programs/03-test3.oc"")
+--accepting rule at line 57 ("
 ")
---accepting rule at line 53 ("# 1 "<built-in>"")
---accepting rule at line 55 ("
+--accepting rule at line 55 ("# 1 "<built-in>"")
+--accepting rule at line 57 ("
 ")
---accepting rule at line 53 ("# 1 "<command-line>"")
---accepting rule at line 55 ("
+--accepting rule at line 55 ("# 1 "<command-line>"")
+--accepting rule at line 57 ("
 ")
---accepting rule at line 53 ("# 1 "oc-programs/03-test3.oc"")
---accepting rule at line 55 ("
+--accepting rule at line 55 ("# 1 "oc-programs/03-test3.oc"")
+--accepting rule at line 57 ("
 ")
---accepting rule at line 55 ("
+--accepting rule at line 57 ("
 ")
---accepting rule at line 55 ("
+--accepting rule at line 57 ("
 ")
---accepting rule at line 53 ("# 1 "oc-programs/oclib.oh" 1")
---accepting rule at line 55 ("
+--accepting rule at line 55 ("# 1 "oc-programs/oclib.oh" 1")
+--accepting rule at line 57 ("
 ")
---accepting rule at line 53 ("# 30 "oc-programs/oclib.oh"")
---accepting rule at line 55 ("
+--accepting rule at line 55 ("# 30 "oc-programs/oclib.oh"")
+--accepting rule at line 57 ("
 ")
---accepting rule at line 59 ("void")
+--accepting rule at line 61 ("void")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c64d0->{5:30.0: VOID: "void"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("__assert_fail")
+astree 0x141d700->{5:30.0: VOID: "void"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("__assert_fail")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c6520->{5:30.5: IDENT: "__assert_fail"}
---accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
+astree 0x141d750->{5:30.5: IDENT: "__assert_fail"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c6570->{5:30.19: '(': "("}
---accepting rule at line 63 ("string")
+astree 0x141d7f0->{5:30.19: '(': "("}
+--accepting rule at line 66 ("string")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c6610->{5:30.20: STRING: "string"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("expr")
+astree 0x141d890->{5:30.20: STRING: "string"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("expr")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c66b0->{5:30.27: IDENT: "expr"}
---accepting rule at line 88 (",")
+astree 0x141d930->{5:30.27: IDENT: "expr"}
+--accepting rule at line 92 (",")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c6750->{5:30.31: $undefined: ","}
---accepting rule at line 54 (" ")
---accepting rule at line 63 ("string")
+astree 0x141d9d0->{5:30.31: $undefined: ","}
+--accepting rule at line 56 (" ")
+--accepting rule at line 66 ("string")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c67f0->{5:30.33: STRING: "string"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("file")
+astree 0x141da70->{5:30.33: STRING: "string"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("file")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c6870->{5:30.40: IDENT: "file"}
---accepting rule at line 88 (",")
+astree 0x141daf0->{5:30.40: IDENT: "file"}
+--accepting rule at line 92 (",")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c68e0->{5:30.44: $undefined: ","}
---accepting rule at line 54 (" ")
---accepting rule at line 62 ("int")
+astree 0x141db60->{5:30.44: $undefined: ","}
+--accepting rule at line 56 (" ")
+--accepting rule at line 65 ("int")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c6960->{5:30.46: INT: "int"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("line")
+astree 0x141dbe0->{5:30.46: INT: "int"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("line")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c69d0->{5:30.50: IDENT: "line"}
---accepting rule at line 102 (")")
+astree 0x141dc50->{5:30.50: IDENT: "line"}
+--accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c6a70->{5:30.54: ')': ")"}
---accepting rule at line 103 (";")
+astree 0x141dcf0->{5:30.54: ')': ")"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c6b10->{5:30.55: ';': ";"}
---accepting rule at line 55 ("
+astree 0x141dd90->{5:30.55: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 55 ("
+--accepting rule at line 57 ("
 ")
---accepting rule at line 55 ("
+--accepting rule at line 57 ("
 ")
---accepting rule at line 59 ("void")
+--accepting rule at line 61 ("void")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c6c70->{5:33.0: VOID: "void"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("putb")
+astree 0x141def0->{5:33.0: VOID: "void"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("putb")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c6cf0->{5:33.5: IDENT: "putb"}
---accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
+astree 0x141df70->{5:33.5: IDENT: "putb"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c6d60->{5:33.10: '(': "("}
---accepting rule at line 60 ("bool")
+astree 0x141dfe0->{5:33.10: '(': "("}
+--accepting rule at line 62 ("bool")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c6de0->{5:33.11: BOOL: "bool"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("b")
+astree 0x141e060->{5:33.11: BOOL: "bool"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("b")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c6e50->{5:33.16: IDENT: "b"}
---accepting rule at line 102 (")")
+astree 0x141e0d0->{5:33.16: IDENT: "b"}
+--accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c6ef0->{5:33.17: ')': ")"}
---accepting rule at line 103 (";")
+astree 0x141e170->{5:33.17: ')': ")"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c6f70->{5:33.18: ';': ";"}
---accepting rule at line 55 ("
+astree 0x141e1f0->{5:33.18: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 59 ("void")
+--accepting rule at line 61 ("void")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c6fc0->{5:34.0: VOID: "void"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("putc")
+astree 0x141e240->{5:34.0: VOID: "void"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("putc")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7010->{5:34.5: IDENT: "putc"}
---accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
+astree 0x141e290->{5:34.5: IDENT: "putc"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7080->{5:34.10: '(': "("}
---accepting rule at line 61 ("char")
+astree 0x141e300->{5:34.10: '(': "("}
+--accepting rule at line 63 ("char")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7100->{5:34.11: CHAR: "char"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("c")
+astree 0x141e380->{5:34.11: CHAR: "char"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("c")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7170->{5:34.16: IDENT: "c"}
---accepting rule at line 102 (")")
+astree 0x141e3f0->{5:34.16: IDENT: "c"}
+--accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7210->{5:34.17: ')': ")"}
---accepting rule at line 103 (";")
+astree 0x141e490->{5:34.17: ')': ")"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7290->{5:34.18: ';': ";"}
---accepting rule at line 55 ("
+astree 0x141e510->{5:34.18: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 59 ("void")
+--accepting rule at line 61 ("void")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c72e0->{5:35.0: VOID: "void"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("puti")
+astree 0x141e560->{5:35.0: VOID: "void"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("puti")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7330->{5:35.5: IDENT: "puti"}
---accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
+astree 0x141e5b0->{5:35.5: IDENT: "puti"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c73a0->{5:35.10: '(': "("}
---accepting rule at line 62 ("int")
+astree 0x141e620->{5:35.10: '(': "("}
+--accepting rule at line 65 ("int")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7420->{5:35.11: INT: "int"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("i")
+astree 0x141e6a0->{5:35.11: INT: "int"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("i")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7470->{5:35.15: IDENT: "i"}
---accepting rule at line 102 (")")
+astree 0x141e6f0->{5:35.15: IDENT: "i"}
+--accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c74e0->{5:35.16: ')': ")"}
---accepting rule at line 103 (";")
+astree 0x141e760->{5:35.16: ')': ")"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7560->{5:35.17: ';': ";"}
---accepting rule at line 55 ("
+astree 0x141e7e0->{5:35.17: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 59 ("void")
+--accepting rule at line 61 ("void")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c75b0->{5:36.0: VOID: "void"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("puts")
+astree 0x141e830->{5:36.0: VOID: "void"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("puts")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7600->{5:36.5: IDENT: "puts"}
---accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
+astree 0x141e880->{5:36.5: IDENT: "puts"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7670->{5:36.10: '(': "("}
---accepting rule at line 63 ("string")
+astree 0x141e8f0->{5:36.10: '(': "("}
+--accepting rule at line 66 ("string")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c76f0->{5:36.11: STRING: "string"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("s")
+astree 0x141e970->{5:36.11: STRING: "string"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("s")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7740->{5:36.18: IDENT: "s"}
---accepting rule at line 102 (")")
+astree 0x141e9c0->{5:36.18: IDENT: "s"}
+--accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c77b0->{5:36.19: ')': ")"}
---accepting rule at line 103 (";")
+astree 0x141ea30->{5:36.19: ')': ")"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7830->{5:36.20: ';': ";"}
---accepting rule at line 55 ("
+astree 0x141eab0->{5:36.20: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 59 ("void")
+--accepting rule at line 61 ("void")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7880->{5:37.0: VOID: "void"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("endl")
+astree 0x141eb00->{5:37.0: VOID: "void"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("endl")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c78d0->{5:37.5: IDENT: "endl"}
---accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
+astree 0x141eb50->{5:37.5: IDENT: "endl"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7940->{5:37.10: '(': "("}
---accepting rule at line 102 (")")
+astree 0x141ebc0->{5:37.10: '(': "("}
+--accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c79c0->{5:37.11: ')': ")"}
---accepting rule at line 103 (";")
+astree 0x141ec40->{5:37.11: ')': ")"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7a10->{5:37.12: ';': ";"}
---accepting rule at line 55 ("
+astree 0x141ec90->{5:37.12: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 62 ("int")
+--accepting rule at line 65 ("int")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7a60->{5:38.0: INT: "int"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("getc")
+astree 0x141ece0->{5:38.0: INT: "int"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("getc")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7ab0->{5:38.4: IDENT: "getc"}
---accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
+astree 0x141ed30->{5:38.4: IDENT: "getc"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c6bb0->{5:38.9: '(': "("}
---accepting rule at line 102 (")")
+astree 0x141de30->{5:38.9: '(': "("}
+--accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7ca0->{5:38.10: ')': ")"}
---accepting rule at line 103 (";")
+astree 0x141ef20->{5:38.10: ')': ")"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7cf0->{5:38.11: ';': ";"}
---accepting rule at line 55 ("
+astree 0x141ef70->{5:38.11: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 63 ("string")
+--accepting rule at line 66 ("string")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7d40->{5:39.0: STRING: "string"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("getw")
+astree 0x141efc0->{5:39.0: STRING: "string"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("getw")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7d90->{5:39.7: IDENT: "getw"}
---accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
+astree 0x141f010->{5:39.7: IDENT: "getw"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7de0->{5:39.12: '(': "("}
---accepting rule at line 102 (")")
+astree 0x141f060->{5:39.12: '(': "("}
+--accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7e60->{5:39.13: ')': ")"}
---accepting rule at line 103 (";")
+astree 0x141f0e0->{5:39.13: ')': ")"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7eb0->{5:39.14: ';': ";"}
---accepting rule at line 55 ("
+astree 0x141f130->{5:39.14: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 63 ("string")
+--accepting rule at line 66 ("string")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7f00->{5:40.0: STRING: "string"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("getln")
+astree 0x141f180->{5:40.0: STRING: "string"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("getln")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7f50->{5:40.7: IDENT: "getln"}
---accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
+astree 0x141f1d0->{5:40.7: IDENT: "getln"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c7fa0->{5:40.13: '(': "("}
---accepting rule at line 102 (")")
+astree 0x141f220->{5:40.13: '(': "("}
+--accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8020->{5:40.14: ')': ")"}
---accepting rule at line 103 (";")
+astree 0x141f2a0->{5:40.14: ')': ")"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8070->{5:40.15: ';': ";"}
---accepting rule at line 55 ("
+astree 0x141f2f0->{5:40.15: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 63 ("string")
+--accepting rule at line 66 ("string")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c80c0->{5:41.0: STRING: "string"}
---accepting rule at line 79 ("[]")
+astree 0x141f340->{5:41.0: STRING: "string"}
+--accepting rule at line 83 ("[]")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8110->{5:41.6: SQUBRACKETS: "[]"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("getargv")
+astree 0x141f390->{5:41.6: SQUBRACKETS: "[]"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("getargv")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8180->{5:41.9: IDENT: "getargv"}
---accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
+astree 0x141f400->{5:41.9: IDENT: "getargv"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8220->{5:41.17: '(': "("}
---accepting rule at line 102 (")")
+astree 0x141f4a0->{5:41.17: '(': "("}
+--accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c82a0->{5:41.18: ')': ")"}
---accepting rule at line 103 (";")
+astree 0x141f520->{5:41.18: ')': ")"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c82f0->{5:41.19: ';': ";"}
---accepting rule at line 55 ("
+astree 0x141f570->{5:41.19: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 59 ("void")
+--accepting rule at line 61 ("void")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8340->{5:42.0: VOID: "void"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("exit")
+astree 0x141f5c0->{5:42.0: VOID: "void"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("exit")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8390->{5:42.5: IDENT: "exit"}
---accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
+astree 0x141f610->{5:42.5: IDENT: "exit"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8400->{5:42.10: '(': "("}
---accepting rule at line 62 ("int")
+astree 0x141f680->{5:42.10: '(': "("}
+--accepting rule at line 65 ("int")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8480->{5:42.11: INT: "int"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("status")
+astree 0x141f700->{5:42.11: INT: "int"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("status")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c84d0->{5:42.15: IDENT: "status"}
---accepting rule at line 102 (")")
+astree 0x141f750->{5:42.15: IDENT: "status"}
+--accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8540->{5:42.21: ')': ")"}
---accepting rule at line 103 (";")
+astree 0x141f7c0->{5:42.21: ')': ")"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c85c0->{5:42.22: ';': ";"}
---accepting rule at line 55 ("
+astree 0x141f840->{5:42.22: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 53 ("# 4 "oc-programs/03-test3.oc" 2")
---accepting rule at line 55 ("
+--accepting rule at line 55 ("# 4 "oc-programs/03-test3.oc" 2")
+--accepting rule at line 57 ("
 ")
---accepting rule at line 55 ("
+--accepting rule at line 57 ("
 ")
---accepting rule at line 62 ("int")
+--accepting rule at line 65 ("int")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8890->{6:5.0: INT: "int"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("a")
+astree 0x141f8d0->{6:5.0: INT: "int"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("a")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c88e0->{6:5.4: IDENT: "a"}
---accepting rule at line 54 (" ")
---accepting rule at line 94 ("=")
+astree 0x141f920->{6:5.4: IDENT: "a"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 98 ("=")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8950->{6:5.6: '=': "="}
---accepting rule at line 54 (" ")
---accepting rule at line 77 ("3")
+astree 0x141f990->{6:5.6: '=': "="}
+--accepting rule at line 56 (" ")
+--accepting rule at line 80 ("3")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c89f0->{6:5.8: NUMBER: "3"}
---accepting rule at line 103 (";")
+astree 0x141fa30->{6:5.8: NUMBER: "3"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8a90->{6:5.9: ';': ";"}
---accepting rule at line 55 ("
+astree 0x141fad0->{6:5.9: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 62 ("int")
+--accepting rule at line 65 ("int")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8b10->{6:6.0: INT: "int"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("b")
+astree 0x141fb50->{6:6.0: INT: "int"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("b")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8b60->{6:6.4: IDENT: "b"}
---accepting rule at line 54 (" ")
---accepting rule at line 94 ("=")
+astree 0x141fba0->{6:6.4: IDENT: "b"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 98 ("=")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8bb0->{6:6.6: '=': "="}
---accepting rule at line 54 (" ")
---accepting rule at line 77 ("8")
+astree 0x141fbf0->{6:6.6: '=': "="}
+--accepting rule at line 56 (" ")
+--accepting rule at line 80 ("8")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8c00->{6:6.8: NUMBER: "8"}
---accepting rule at line 103 (";")
+astree 0x141fc40->{6:6.8: NUMBER: "8"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8c70->{6:6.9: ';': ";"}
---accepting rule at line 55 ("
+astree 0x141fcb0->{6:6.9: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 62 ("int")
+--accepting rule at line 65 ("int")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8cf0->{6:7.0: INT: "int"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("c")
+astree 0x141fd30->{6:7.0: INT: "int"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("c")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8d40->{6:7.4: IDENT: "c"}
---accepting rule at line 54 (" ")
---accepting rule at line 94 ("=")
+astree 0x141fd80->{6:7.4: IDENT: "c"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 98 ("=")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8d90->{6:7.6: '=': "="}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("a")
+astree 0x141fdd0->{6:7.6: '=': "="}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("a")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8de0->{6:7.8: IDENT: "a"}
---accepting rule at line 54 (" ")
---accepting rule at line 95 ("+")
+astree 0x141fe20->{6:7.8: IDENT: "a"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 99 ("+")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8e30->{6:7.10: '+': "+"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("b")
+astree 0x141fe70->{6:7.10: '+': "+"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("b")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8ea0->{6:7.12: IDENT: "b"}
---accepting rule at line 103 (";")
+astree 0x141fee0->{6:7.12: IDENT: "b"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8f20->{6:7.13: ';': ";"}
---accepting rule at line 55 ("
+astree 0x141ff60->{6:7.13: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 78 ("a")
+--accepting rule at line 81 ("a")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8f70->{6:8.0: IDENT: "a"}
---accepting rule at line 54 (" ")
---accepting rule at line 94 ("=")
+astree 0x141ffb0->{6:8.0: IDENT: "a"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 98 ("=")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c8fc0->{6:8.2: '=': "="}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("b")
+astree 0x1420000->{6:8.2: '=': "="}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("b")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9010->{6:8.4: IDENT: "b"}
---accepting rule at line 54 (" ")
---accepting rule at line 95 ("+")
+astree 0x1420050->{6:8.4: IDENT: "b"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 99 ("+")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9060->{6:8.6: '+': "+"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("c")
+astree 0x14200a0->{6:8.6: '+': "+"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("c")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c90b0->{6:8.8: IDENT: "c"}
---accepting rule at line 103 (";")
+astree 0x14200f0->{6:8.8: IDENT: "c"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9100->{6:8.9: ';': ";"}
---accepting rule at line 55 ("
+astree 0x1420140->{6:8.9: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 78 ("puti")
+--accepting rule at line 81 ("puti")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9150->{6:9.0: IDENT: "puti"}
---accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
+astree 0x1420190->{6:9.0: IDENT: "puti"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c91a0->{6:9.5: '(': "("}
---accepting rule at line 78 ("a")
+astree 0x14201e0->{6:9.5: '(': "("}
+--accepting rule at line 81 ("a")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c91f0->{6:9.6: IDENT: "a"}
---accepting rule at line 102 (")")
+astree 0x1420230->{6:9.6: IDENT: "a"}
+--accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9240->{6:9.7: ')': ")"}
---accepting rule at line 103 (";")
+astree 0x1420280->{6:9.7: ')': ")"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9290->{6:9.8: ';': ";"}
---accepting rule at line 55 ("
+astree 0x14202d0->{6:9.8: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 78 ("putc")
+--accepting rule at line 81 ("putc")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c92e0->{6:10.0: IDENT: "putc"}
---accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
+astree 0x1420320->{6:10.0: IDENT: "putc"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9330->{6:10.5: '(': "("}
---accepting rule at line 108 ("'")
-oc: oc-programs/03-test3.oc: 10: invalid source character (')
---accepting rule at line 108 ("\")
-oc: oc-programs/03-test3.oc: 10: invalid source character (\)
---accepting rule at line 78 ("n")
+astree 0x1420370->{6:10.5: '(': "("}
+--accepting rule at line 64 ("'\n');")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9380->{6:10.8: IDENT: "n"}
---accepting rule at line 108 ("'")
-oc: oc-programs/03-test3.oc: 10: invalid source character (')
---accepting rule at line 102 (")")
-DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c93f0->{6:10.10: ')': ")"}
---accepting rule at line 103 (";")
-DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9470->{6:10.11: ';': ";"}
---accepting rule at line 55 ("
+astree 0x14203c0->{6:10.6: NOTCHAR: "'\n');"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 78 ("myarray")
+--accepting rule at line 81 ("myarray")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c94c0->{6:11.0: IDENT: "myarray"}
---accepting rule at line 79 ("[]")
+astree 0x1420430->{6:11.0: IDENT: "myarray"}
+--accepting rule at line 83 ("[]")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9530->{6:11.7: SQUBRACKETS: "[]"}
---accepting rule at line 103 (";")
+astree 0x14204d0->{6:11.7: SQUBRACKETS: "[]"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c95b0->{6:11.9: ';': ";"}
---accepting rule at line 55 ("
+astree 0x1420550->{6:11.9: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 65 ("if")
+--accepting rule at line 68 ("if")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9600->{6:12.0: IF: "if"}
---accepting rule at line 101 ("(")
+astree 0x14205a0->{6:12.0: IF: "if"}
+--accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9670->{6:12.2: '(': "("}
---accepting rule at line 78 ("a")
+astree 0x1420610->{6:12.2: '(': "("}
+--accepting rule at line 81 ("a")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c96f0->{6:12.3: IDENT: "a"}
---accepting rule at line 54 (" ")
---accepting rule at line 80 ("==")
+astree 0x1420690->{6:12.3: IDENT: "a"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 84 ("==")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9740->{6:12.5: EQUALS: "=="}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("b")
+astree 0x14206e0->{6:12.5: EQUALS: "=="}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("b")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c97b0->{6:12.8: IDENT: "b"}
---accepting rule at line 102 (")")
+astree 0x1420750->{6:12.8: IDENT: "b"}
+--accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9830->{6:12.9: ')': ")"}
---accepting rule at line 87 ("{")
+astree 0x14207d0->{6:12.9: ')': ")"}
+--accepting rule at line 91 ("{")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9880->{6:12.10: $undefined: "{"}
---accepting rule at line 55 ("
+astree 0x1420820->{6:12.10: $undefined: "{"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 54 ("   ")
---accepting rule at line 61 ("char")
+--accepting rule at line 56 ("   ")
+--accepting rule at line 63 ("char")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c98f0->{6:13.3: CHAR: "char"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("foo")
+astree 0x1420890->{6:13.3: CHAR: "char"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("foo")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9970->{6:13.8: IDENT: "foo"}
---accepting rule at line 54 (" ")
---accepting rule at line 94 ("=")
+astree 0x1420910->{6:13.8: IDENT: "foo"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 98 ("=")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c99e0->{6:13.12: '=': "="}
---accepting rule at line 54 (" ")
---accepting rule at line 108 ("'")
-oc: oc-programs/03-test3.oc: 13: invalid source character (')
---accepting rule at line 78 ("u")
+astree 0x1420980->{6:13.12: '=': "="}
+--accepting rule at line 56 (" ")
+--accepting rule at line 64 ("'u';")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9a60->{6:13.15: IDENT: "u"}
---accepting rule at line 108 ("'")
-oc: oc-programs/03-test3.oc: 13: invalid source character (')
---accepting rule at line 103 (";")
-DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9ad0->{6:13.17: ';': ";"}
---accepting rule at line 55 ("
+astree 0x1420a00->{6:13.14: NOTCHAR: "'u';"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 54 ("   ")
---accepting rule at line 63 ("string")
+--accepting rule at line 56 ("   ")
+--accepting rule at line 66 ("string")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9b50->{6:14.3: STRING: "string"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("retoric")
+astree 0x1420a70->{6:14.3: STRING: "string"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("retoric")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9ba0->{6:14.10: IDENT: "retoric"}
---accepting rule at line 54 (" ")
---accepting rule at line 94 ("=")
+astree 0x1420af0->{6:14.10: IDENT: "retoric"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 98 ("=")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9c10->{6:14.18: '=': "="}
---accepting rule at line 54 (" ")
---accepting rule at line 76 (""OHhhh"")
+astree 0x1420b60->{6:14.18: '=': "="}
+--accepting rule at line 56 (" ")
+--accepting rule at line 79 (""OHhhh"")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9c90->{6:14.20: STRING_CONST: ""OHhhh""}
---accepting rule at line 103 (";")
+astree 0x1420be0->{6:14.20: STRING_CONST: ""OHhhh""}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9d00->{6:14.27: ';': ";"}
---accepting rule at line 55 ("
+astree 0x1420c50->{6:14.27: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 54 ("   ")
---accepting rule at line 62 ("int")
+--accepting rule at line 56 ("   ")
+--accepting rule at line 65 ("int")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9d80->{6:15.3: INT: "int"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("gunit")
+astree 0x1420cd0->{6:15.3: INT: "int"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("gunit")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9dd0->{6:15.7: IDENT: "gunit"}
---accepting rule at line 54 (" ")
---accepting rule at line 94 ("=")
+astree 0x1420d20->{6:15.7: IDENT: "gunit"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 98 ("=")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9e40->{6:15.13: '=': "="}
---accepting rule at line 54 (" ")
---accepting rule at line 77 ("2345")
+astree 0x1420d90->{6:15.13: '=': "="}
+--accepting rule at line 56 (" ")
+--accepting rule at line 80 ("2345")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9ec0->{6:15.15: NUMBER: "2345"}
---accepting rule at line 103 (";")
+astree 0x1420e10->{6:15.15: NUMBER: "2345"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9f30->{6:15.19: ';': ";"}
---accepting rule at line 55 ("
+astree 0x1420e80->{6:15.19: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 54 ("   ")
---accepting rule at line 68 ("return")
+--accepting rule at line 56 ("   ")
+--accepting rule at line 71 ("return")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6c9fb0->{6:16.3: RETURN: "return"}
---accepting rule at line 54 (" ")
---accepting rule at line 78 ("foo")
+astree 0x1420f00->{6:16.3: RETURN: "return"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("foo")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6ca020->{6:16.10: IDENT: "foo"}
---accepting rule at line 103 (";")
+astree 0x1420f70->{6:16.10: IDENT: "foo"}
+--accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6ca0a0->{6:16.13: ';': ";"}
---accepting rule at line 55 ("
+astree 0x1420ff0->{6:16.13: ';': ";"}
+--accepting rule at line 57 ("
 ")
---accepting rule at line 86 ("}")
+--accepting rule at line 56 ("   ")
+--accepting rule at line 63 ("char")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x6ca0f0->{6:17.0: $undefined: "}"}
---accepting rule at line 55 ("
+astree 0x1421040->{6:17.3: CHAR: "char"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("badc")
+DEBUGF(f): astree.cpp[23] new_astree():
+astree 0x1421090->{6:17.8: IDENT: "badc"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 98 ("=")
+DEBUGF(f): astree.cpp[23] new_astree():
+astree 0x141eda0->{6:17.13: '=': "="}
+--accepting rule at line 56 (" ")
+--accepting rule at line 64 ("'a;")
+DEBUGF(f): astree.cpp[23] new_astree():
+astree 0x141ee20->{6:17.15: NOTCHAR: "'a;"}
+--accepting rule at line 57 ("
+")
+--accepting rule at line 56 ("   ")
+--accepting rule at line 66 ("string")
+DEBUGF(f): astree.cpp[23] new_astree():
+astree 0x141ee90->{6:18.3: STRING: "string"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 81 ("bads")
+DEBUGF(f): astree.cpp[23] new_astree():
+astree 0x1421410->{6:18.10: IDENT: "bads"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 98 ("=")
+DEBUGF(f): astree.cpp[23] new_astree():
+astree 0x14214b0->{6:18.15: '=': "="}
+--accepting rule at line 56 (" ")
+--accepting rule at line 112 (""")
+oc: oc-programs/03-test3.oc: 18: invalid source character (")
+--accepting rule at line 81 ("boo")
+DEBUGF(f): astree.cpp[23] new_astree():
+astree 0x1421530->{6:18.18: IDENT: "boo"}
+--accepting rule at line 107 (";")
+DEBUGF(f): astree.cpp[23] new_astree():
+astree 0x14215a0->{6:18.21: ';': ";"}
+--accepting rule at line 56 (" ")
+--accepting rule at line 57 ("
+")
+--accepting rule at line 56 ("   ")
+--accepting rule at line 82 ("2fffwww")
+DEBUGF(f): astree.cpp[23] new_astree():
+astree 0x1421620->{6:19.3: NOTIDENT: "2fffwww"}
+--accepting rule at line 107 (";")
+DEBUGF(f): astree.cpp[23] new_astree():
+astree 0x1421690->{6:19.10: ';': ";"}
+--accepting rule at line 57 ("
+")
+--accepting rule at line 90 ("}")
+DEBUGF(f): astree.cpp[23] new_astree():
+astree 0x1421710->{6:20.0: $undefined: "}"}
+--accepting rule at line 57 ("
 ")
 --(end of buffer or a NUL)
 --EOF (start condition 0)

@@ -17,7 +17,7 @@ int scan_linenr = 1;
 int scan_offset = 0;
 bool scan_echo = false;
 vector<string> included_filenames;
-/*extern FILE* tok_file;*/
+extern FILE* tok_file;
 //FILE* tok_file = make_tok_file(filename);
 
 const string* scanner_filename (int filenr) {
@@ -118,7 +118,8 @@ void scanner_include (void) {
                  scan_rc, yytext);
    }else {
       fflush(stdout);
-      FILE* mytokfile = mk_tk_fl(filename, 1);
+      //FILE* mytokfile = mk_tk_fl(filename, 1);
+      FILE* mytokfile = tok_file;
       fprintf (mytokfile, "# %d \"%s\"\n", linenr, filename);
       scanner_newfilename (filename);
       scan_linenr = linenr - 1;

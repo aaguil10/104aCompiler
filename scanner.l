@@ -41,12 +41,14 @@ ORD		ord
 CHR		chr
 NEW		new
 CHAR_CONST	(’([^\\’\n]|\\[\\’"0nt])’)
+NOTCHAR		'.*
 STRING_CONST	(\"([^\\"\n]|\\[\\’"0nt])*\")
 MANTISSA        ({DIGIT}+\.?{DIGIT}*|\.{DIGIT}+)
 EXPONENT        ([Ee][+-]?{DIGIT}+)
-NUMBER          ({MANTISSA}{EXPONENT}?)
+NUMBER          {DIGIT}+
 NOTNUMBER       ({MANTISSA}[Ee][+-]?)
 IDENT           ({LETTER}({LETTER}|{DIGIT})*)
+NOTIDENT	{DIGIT}+{IDENT}
 
 %%
 
@@ -59,6 +61,7 @@ IDENT           ({LETTER}({LETTER}|{DIGIT})*)
 {VOID}        { return yylval_token (VOID); }
 {BOOL}        { return yylval_token (BOOL); }
 {CHAR}        { return yylval_token (CHAR); }
+{NOTCHAR}        { return yylval_token (NOTCHAR); }
 {INT}        { return yylval_token (INT); }
 {STRING}        { return yylval_token (STRING); }
 {STRUCT}        { return yylval_token (STRUCT); }
@@ -76,6 +79,7 @@ IDENT           ({LETTER}({LETTER}|{DIGIT})*)
 {STRING_CONST}        { return yylval_token (STRING_CONST); }
 {NUMBER}        { return yylval_token (NUMBER); }
 {IDENT}         { return yylval_token (IDENT); }
+{NOTIDENT}         { return yylval_token (NOTIDENT); }
 {SQUBRACKETS}   { return yylval_token (SQUBRACKETS); }
 {EQUALS}   	{ return yylval_token (EQUALS); }
 {NEQUAL}   	{ return yylval_token (NEQUAL); }

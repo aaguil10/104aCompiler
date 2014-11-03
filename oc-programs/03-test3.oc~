@@ -11,5 +11,9 @@ putc ('\n');
 myarray[];
 if(a == b){
    char foo = 'u';
+   string retoric = "OHhhh";
+   int gunit = 2345;
    return foo;
+   char badc = 'a;
+   2fffwww;
 }

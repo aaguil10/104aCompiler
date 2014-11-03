@@ -22,7 +22,7 @@ const string CPP = "/usr/bin/cpp";
 const string cpp_name = "/usr/bin/cpp";
 string yyin_cpp_command;
 extern FILE* yyin;
-extern FILE* tok_file;
+FILE* tok_file;
 
 bool want_echo () {
    return not (isatty (fileno (stdin)) and isatty (fileno (stdout)));
@@ -91,7 +91,7 @@ void print_str(char* filename){
 int main (int argc, char **argv) {
    int c;
    char* filename = argv[argc - 1];
-   FILE* tok_file = make_tok_file(filename, 0);
+   tok_file = make_tok_file(filename, 1);
    while ((c = getopt (argc, argv, "ly@:D:")) != -1){
       switch (c){
          case 'l':
@@ -141,6 +141,9 @@ int main (int argc, char **argv) {
             break;
          case CHAR:
             print_tok(tok_file, yylval, (char*)"TOK_REV_CHAR");
+            break;
+         case NOTCHAR:
+            print_tok(stdout , yylval, (char*)"TOK_REV_notCHAR");
             break;
          case INT:
             print_tok(tok_file, yylval, (char*)"TOK_REV_INT");
@@ -265,6 +268,10 @@ int main (int argc, char **argv) {
          case IDENT:
             print_tok(tok_file, yylval, (char*)"IDENT");
             break;
+         case NOTIDENT:
+            print_tok(stdout, yylval, (char*)"NOTIDENT");
+            break;
+
          case '\n':
             printf ("NEWLINE\n");
             ++linenr;
