@@ -82,13 +82,13 @@ astree* new_parseroot (void) {
    return yyparse_astree;
 }
 
-/*void print_tok(FILE* out, astree* val, char* cas){
+void print_tok(FILE* out, astree* val, char* cas){
    float num = (float)(val->offset)/1000 + (val->linenr);
    fprintf (out, "%d %.3f %d %s \t \(%s\) \n",
             (int)val->filenr, num, (int)val->symbol, cas, yytext);
-}*/
+}
 
-FILE* mk_tk_fl(char* filename, int first){
+/*FILE* mk_tk_fl(char* filename, int first){
    int len = strlen(filename);
    char* file_str = (char*)malloc(len + 2);
    strcpy(file_str, filename);
@@ -104,7 +104,7 @@ FILE* mk_tk_fl(char* filename, int first){
    }
    free(file_str);
    return str_name;
-}
+}*/
 
 
 void scanner_include (void) {

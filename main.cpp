@@ -76,11 +76,11 @@ FILE* make_tok_file(char* filename, int first){
    return str_name;
 }
 
-void print_tok(FILE* out, astree* val, char* cas){
+/*void print_tok(FILE* out, astree* val, char* cas){
    float num = (float)(val->offset)/1000 + (val->linenr);
    fprintf (out, "%d %.3f %d %s \t \(%s\) \n",
             (int)val->filenr, num, (int)val->symbol, cas, yytext);
-}
+}*/
 
 void print_str(char* filename){
    yyin_cpp_pclose();
