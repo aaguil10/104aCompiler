@@ -6,7 +6,6 @@
 
 #define YY_USER_ACTION  { scanner_useraction (); }
 #define IGNORE(THING)   { }
-
 %}
 
 %option 8bit

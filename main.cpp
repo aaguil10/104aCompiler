@@ -22,6 +22,7 @@ const string CPP = "/usr/bin/cpp";
 const string cpp_name = "/usr/bin/cpp";
 string yyin_cpp_command;
 extern FILE* yyin;
+extern FILE* tok_file;
 
 bool want_echo () {
    return not (isatty (fileno (stdin)) and isatty (fileno (stdout)));
@@ -52,12 +53,12 @@ FILE* make_str_file(char* filename){
    file_str[len-1] = 't';
    file_str[len] = 'r';
    file_str[len+1] = '\0';
-   FILE* str_name = fopen(file_str, "w+");
+   FILE* str_name = fopen(file_str, "a+");
    free(file_str);
    return str_name;
 }
 
-FILE* make_tok_file(char* filename){
+FILE* make_tok_file(char* filename, int first){
    int len = strlen(filename);
    char* file_str = (char*)malloc(len + 2); 
    strcpy(file_str, filename);
@@ -65,7 +66,12 @@ FILE* make_tok_file(char* filename){
    file_str[len-1] = 'o';
    file_str[len] = 'k';
    file_str[len+1] = '\0';
-   FILE* str_name = fopen(file_str, "w+");
+   FILE* str_name;
+   if(first == 1){
+      str_name = fopen(file_str, "w+");
+   }else{
+      str_name = fopen(file_str, "a+");
+   }
    free(file_str);
    return str_name;
 }
@@ -85,6 +91,7 @@ void print_str(char* filename){
 int main (int argc, char **argv) {
    int c;
    char* filename = argv[argc - 1];
+   FILE* tok_file = make_tok_file(filename, 0);
    while ((c = getopt (argc, argv, "ly@:D:")) != -1){
       switch (c){
          case 'l':
@@ -109,7 +116,7 @@ int main (int argc, char **argv) {
    set_execname (argv[0]);
    yyin_cpp_popen (filename);
 
-   FILE* tok_file = make_tok_file(filename);
+   //extern FILE* tok_file = make_tok_file(filename);
 
    /*while(yylex() != YYEOF){
       cout << "S: " << yytext << endl;
