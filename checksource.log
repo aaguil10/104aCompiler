@@ -1,7 +1,7 @@
 checksource: improper character \x09 = ^I (tab)
-   file "scanner.l": 46 errors: lines 23--45, 81--84
+   file "scanner.l": 46 errors: lines 22--44, 80--83
 checksource: improper character \x80
-   file "scanner.l": 5 errors: lines 44--45
+   file "scanner.l": 5 errors: lines 43--44
 checksource: improper character \x99
-   file "scanner.l": 5 errors: lines 44--45
+   file "scanner.l": 5 errors: lines 43--44
 checksource: TOTAL COMPLAINTS: 56

@@ -1,4 +1,6 @@
+--(end of buffer or a NUL)
 cpp: nosuch.oc: No such file or directory
 cpp: warning: '-x c' after last input file has no effect
 cpp: no input files
+--EOF (start condition 0)
 /usr/bin/cpp nosuch.oc: status 0x0100, exit 1

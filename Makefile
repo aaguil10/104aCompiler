@@ -38,11 +38,11 @@ clean :
 	-rm stringset.o main.o auxlib.o astree.o lyutils.o \
             yylex.o yyparse.o
 	#rm *~
-	#rm *.oc
-	#rm *.oc.err
-	#rm *.oc.out
-	#rm *.str
-	#rm *.tok
+	rm *.oc
+	rm *.oc.err
+	rm *.oc.out
+	rm *.str
+	rm *.tok
 
 test : oc
 	#${GRIND} oc * * * >test.out 2>test.err
@@ -56,9 +56,9 @@ lis : test
 
 submit : main.cpp stringset.cpp stringset.h auxlib.cpp auxlib.h \
          Makefile oclib.c oclib.oh README
-	submit cmps104a-wm.f14 asg1 main.cpp stringset.cpp \
-        stringset.h auxlib.cpp auxlib.h \
-        Makefile oclib.c oclib.oh README
+	submit cmps104a-wm.f14 asg2 main.cpp stringset.cpp scanner.l\
+        stringset.h auxlib.cpp auxlib.h parser.y lyutils.h lyutils.cpp\
+        astree.h astree.cpp Makefile oclib.c oclib.oh README
 
 ## Build the scanner.
 ${CLGEN} : ${LSOURCES}
