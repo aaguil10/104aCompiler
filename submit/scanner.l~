@@ -20,7 +20,7 @@
 
 LETTER          [A-Za-z_]
 DIGIT           [0-9]
-SQUBRACKETS     \[\]
+SQUBRACKETS	\[\]
 EQUALS		==
 NEQUAL		!=
 LESSEQU		<=

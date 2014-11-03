@@ -59,14 +59,15 @@
      STRING_CONST = 275,
      ROOT = 276,
      IDENT = 277,
-     NUMBER = 278,
-     SQUBRACKETS = 279,
-     GREAEQU = 280,
-     LESSEQU = 281,
-     NEQUAL = 282,
-     EQUALS = 283,
-     NEG = 286,
-     POS = 287
+     NOTIDENT = 278,
+     NUMBER = 279,
+     SQUBRACKETS = 280,
+     GREAEQU = 281,
+     LESSEQU = 282,
+     NEQUAL = 283,
+     EQUALS = 284,
+     NEG = 287,
+     POS = 288
    };
 #endif
 

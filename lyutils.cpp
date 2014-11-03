@@ -84,7 +84,7 @@ astree* new_parseroot (void) {
 
 void print_tok(FILE* out, astree* val, char* cas){
    float num = (float)(val->offset)/1000 + (val->linenr);
-   fprintf (out, "%d %.3f %d %s \t \(%s\) \n",
+   fprintf (out, "%d %.3f %d %s \t (%s) \n",
             (int)val->filenr, num, (int)val->symbol, cas, yytext);
 }
 

@@ -92,6 +92,8 @@ int main (int argc, char **argv) {
    int c;
    char* filename = argv[argc - 1];
    tok_file = make_tok_file(filename, 1);
+   yy_flex_debug = 0;
+   yydebug = 0;
    while ((c = getopt (argc, argv, "ly@:D:")) != -1){
       switch (c){
          case 'l':
@@ -115,14 +117,7 @@ int main (int argc, char **argv) {
 
    set_execname (argv[0]);
    yyin_cpp_popen (filename);
-
-   //extern FILE* tok_file = make_tok_file(filename);
-
-   /*while(yylex() != YYEOF){
-      cout << "S: " << yytext << endl;
-   }*/
    int linenr = 0;
-
 
    for (;;) {
       int token = yylex();
@@ -142,9 +137,9 @@ int main (int argc, char **argv) {
          case CHAR:
             print_tok(tok_file, yylval, (char*)"TOK_REV_CHAR");
             break;
-         /*case NOTCHAR:
-            print_tok(stdout , yylval, (char*)"TOK_REV_notCHAR");
-            break;*/
+         case NOTCHAR:
+            print_tok(stderr , yylval, (char*)"TOK_REV_notCHAR");
+            break;
          case INT:
             print_tok(tok_file, yylval, (char*)"TOK_REV_INT");
             break;
@@ -277,7 +272,7 @@ int main (int argc, char **argv) {
             ++linenr;
             break;
          default:
-            printf ("ERROR \(%s\) \n", yytext);
+            printf ("ERROR (%s) \n", yytext);
       }
    }
 

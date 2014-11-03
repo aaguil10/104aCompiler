@@ -1,21 +1,6 @@
 flex --outfile=yylex.cpp scanner.l 2>yylex.output
 grep -v '^  ' yylex.output
 flex version 2.5.35 usage statistics:
-bison --defines=yyparse.h --output=yyparse.cpp parser.y
-g++ -g -O0 -Wall -std=gnu++11 -c main.cpp
-main.cpp: In function ‘int main(int, char**)’:
-main.cpp:280:21: warning: unknown escape sequence: '\)' [enabled by default]
-             printf ("ERROR \(%s\) \n", yytext);
-                     ^
-g++ -g -O0 -Wall -std=gnu++11 -c stringset.cpp
-g++ -g -O0 -Wall -std=gnu++11 -c auxlib.cpp
-g++ -g -O0 -Wall -std=gnu++11 -c astree.cpp
-g++ -g -O0 -Wall -std=gnu++11 -c lyutils.cpp
-lyutils.cpp: In function ‘void print_tok(FILE*, astree*, char*)’:
-lyutils.cpp:87:18: warning: unknown escape sequence: '\)' [enabled by default]
-    fprintf (out, "%d %.3f %d %s \t \(%s\) \n",
-                  ^
 g++ -g -O0 -Wall -std=gnu++11 -c yylex.cpp
-g++ -g -O0 -Wall -std=gnu++11 -c yyparse.cpp
 g++ -g -O0 -Wall -std=gnu++11 main.o stringset.o auxlib.o astree.o \
                lyutils.o yylex.o yyparse.o -o oc
