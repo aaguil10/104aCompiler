@@ -1,3 +1,4 @@
-g++ -g -O0 -Wall -std=gnu++11 -c main.cpp
+bison --defines=yyparse.h --output=yyparse.cpp parser.y
+g++ -g -O0 -Wall -std=gnu++11 -c yyparse.cpp
 g++ -g -O0 -Wall -std=gnu++11 main.o stringset.o auxlib.o astree.o \
                lyutils.o yylex.o yyparse.o -o oc

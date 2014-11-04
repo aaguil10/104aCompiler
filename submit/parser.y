@@ -25,15 +25,17 @@ static void* yycalloc (size_t size);
 
 %destructor { error_destructor ($$); } <>
 
-%token  VOID BOOL CHAR INT STRING STRUCT IF ELSE WHILE RETURN FALSE
-%token  TRUE TOK_NULL ORD CHR NEW CHAR_CONST STRING_CONST NOTCHAR
-%token  ROOT IDENT NOTIDENT NUMBER SQUBRACKETS GREAEQU LESSEQU
-%token  NEQUAL EQUALS
+%token  TOK_KW_VOID TOK_KW_BOOL TOK_KW_CHAR TOK_KW_INT TOK_KW_STRING TOK_KW_STRUCT TOK_KW_IF 
+%token  TOK_KW_ELSE TOK_KW_WHILE TOK_KW_RETURN TOK_KW_FALSE TOK_KW_TRUE TOK_KW_NULL
+%token  TOK_KW_ORD TOK_KW_CHR TOK_KW_NEW TOK_LIT_CHAR TOK_LIT_STRING NOTCHAR
+%token  ROOT TOK_KW_IDENT NOTIDENT TOK_LIT_INT TOK_NEWARRAY TOK_GREAEQU TOK_LESSEQU
+%token  TOK_NEQUAL TOK_EQUALS
 
-%right  '='
+%right  '=' '%' '!'
 %left   '+' '-'
 %left   '*' '/'
-%right  '^'
+%right  '^' ';' ',' '.' '<' '>'
+%right  '{' '}' '[' ']' '(' ')'
 %right  POS "u+" NEG "u-"
 
 %start  program
@@ -59,8 +61,31 @@ expr    : expr '=' expr         { $$ = adopt2 ($2, $1, $3); }
         | '+' expr %prec POS    { $$ = adopt1sym ($1, $2, POS); }
         | '-' expr %prec NEG    { $$ = adopt1sym ($1, $2, NEG); }
         | '(' expr ')'          { free_ast2 ($1, $3); $$ = $2; }
-        | IDENT                 { $$ = $1; }
-        | NUMBER                { $$ = $1; }
+        | '{' expr '}'          { free_ast2 ($1, $3); $$ = $2; }
+        | '[' expr ']'          { free_ast2 ($1, $3); $$ = $2; }
+        | TOK_NEWARRAY          { $$ = $1; }
+        | TOK_EQUALS            { $$ = $1; }
+        | TOK_NEQUAL            { $$ = $1; }
+        | TOK_LESSEQU           { $$ = $1; }
+        | TOK_GREAEQU           { $$ = $1; }
+        | TOK_KW_VOID           { $$ = $1; }
+        | TOK_KW_BOOL           { $$ = $1; }
+        | TOK_KW_CHAR           { $$ = $1; }
+        | TOK_KW_INT            { $$ = $1; }
+        | TOK_KW_STRING         { $$ = $1; }
+        | TOK_KW_STRUCT         { $$ = $1; }
+        | TOK_KW_IF             { $$ = $1; }
+        | TOK_KW_ELSE           { $$ = $1; }
+        | TOK_KW_WHILE          { $$ = $1; }
+        | TOK_KW_RETURN         { $$ = $1; }
+        | TOK_KW_FALSE          { $$ = $1; }
+        | TOK_KW_TRUE           { $$ = $1; }
+        | TOK_KW_NULL           { $$ = $1; }
+        | TOK_KW_ORD            { $$ = $1; }
+        | TOK_KW_CHR            { $$ = $1; }
+        | TOK_KW_NEW            { $$ = $1; }
+        | TOK_KW_IDENT          { $$ = $1; }
+        | TOK_LIT_INT           { $$ = $1; }
         ;
 
 %%
