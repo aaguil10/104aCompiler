@@ -1,7 +1,6 @@
 %{
-// $Id: scanner.l,v 1.4 2014-10-20 14:27:17-07 - - $
-//NOTCHAR               '.*
-///*{NOTCHAR}        { return yylval_token (NOTCHAR); }*/ 
+// $Id: scanner.l,v 1.4 2014-10-20 14:27:17-07 - - $ 
+
 #include "auxlib.h"
 #include "lyutils.h"
 
@@ -21,35 +20,35 @@
 LETTER          [A-Za-z_]
 DIGIT           [0-9]
 SQUBRACKETS     \[\]
-EQUALS		==
-NEQUAL		!=
-LESSEQU		<=
-GREAEQU		>=
-VOID		void
-BOOL		bool
-CHAR		char
-INT		int
-STRING		string
-STRUCT		sturct
-IF		if
-ELSE		else
-WHILE		while
-RETURN		return
-FALSE		false
-TRUE		true
-TOK_NULL	null
-ORD		ord
-CHR		chr
-NEW		new
-CHAR_CONST	(’([^\\’\n]|\\[\\’"0nt])’)
-
-STRING_CONST	(\"([^\\"\n]|\\[\\’"0nt])*\")
+EQUALS          ==
+NEQUAL	        !=
+LESSEQU	        <=
+GREAEQU	        >=
+VOID	        void
+BOOL	        bool
+CHAR	        char
+INT	        int
+STRING	        string
+STRUCT	        sturct
+IF	        if
+ELSE	        else
+WHILE	        while
+RETURN	        return
+FALSE	        false
+TRUE	        true
+TOK_NULL        null
+ORD	        ord
+CHR	        chr
+NEW	        new
+CHAR_CONST      (’([^\\’\n]|\\[\\’"0nt])’)
+NOTCHAR         '([^\\’\n]|\\[\\’"0nt])([^’\n]|\\[\\’"0nt])
+STRING_CONST    (\"([^\\"\n]|\\[\\’"0nt])*\")
 MANTISSA        ({DIGIT}+\.?{DIGIT}*|\.{DIGIT}+)
 EXPONENT        ([Ee][+-]?{DIGIT}+)
 NUMBER          {DIGIT}+
 NOTNUMBER       ({MANTISSA}[Ee][+-]?)
 IDENT           ({LETTER}({LETTER}|{DIGIT})*)
-NOTIDENT	{DIGIT}+{IDENT}
+NOTIDENT        {DIGIT}+{IDENT}
 
 %%
 
@@ -76,6 +75,7 @@ NOTIDENT	{DIGIT}+{IDENT}
 {CHR}        { return yylval_token (CHR); }
 {NEW}        { return yylval_token (NEW); }
 {CHAR_CONST}        { return yylval_token (CHAR_CONST); }
+{NOTCHAR}        { return yylval_token (NOTCHAR); }
 {STRING_CONST}        { return yylval_token (STRING_CONST); }
 {NUMBER}        { return yylval_token (NUMBER); }
 {IDENT}         { return yylval_token (IDENT); }

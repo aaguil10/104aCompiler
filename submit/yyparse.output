@@ -18,6 +18,7 @@ Terminals unused in grammar
    NEW
    CHAR_CONST
    STRING_CONST
+   NOTCHAR
    ROOT
    NOTIDENT
    SQUBRACKETS
@@ -84,30 +85,31 @@ CHR (272)
 NEW (273)
 CHAR_CONST (274)
 STRING_CONST (275)
-ROOT (276)
-IDENT (277) 15
-NOTIDENT (278)
-NUMBER (279) 16
-SQUBRACKETS (280)
-GREAEQU (281)
-LESSEQU (282)
-NEQUAL (283)
-EQUALS (284)
-"u+" (285)
-"u-" (286)
-NEG (287)
-POS (288)
+NOTCHAR (276)
+ROOT (277)
+IDENT (278) 15
+NOTIDENT (279)
+NUMBER (280) 16
+SQUBRACKETS (281)
+GREAEQU (282)
+LESSEQU (283)
+NEQUAL (284)
+EQUALS (285)
+"u+" (286)
+"u-" (287)
+NEG (288)
+POS (289)
 
 
 Nonterminals, with rules where they appear
 
-$accept (43)
+$accept (44)
     on left: 0
-program (44)
+program (45)
     on left: 1, on right: 0
-stmtseq (45)
+stmtseq (46)
     on left: 2 3 4 5, on right: 1 2 3 4
-expr (46)
+expr (47)
     on left: 6 7 8 9 10 11 12 13 14 15 16, on right: 2 6 7 8 9 10 11
     12 13 14
 

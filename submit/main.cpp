@@ -76,12 +76,6 @@ FILE* make_tok_file(char* filename, int first){
    return str_name;
 }
 
-/*void print_tok(FILE* out, astree* val, char* cas){
-   float num = (float)(val->offset)/1000 + (val->linenr);
-   fprintf (out, "%d %.3f %d %s \t \(%s\) \n",
-            (int)val->filenr, num, (int)val->symbol, cas, yytext);
-}*/
-
 void print_str(char* filename){
    yyin_cpp_pclose();
    FILE* str_name = make_str_file(filename);
@@ -92,6 +86,8 @@ int main (int argc, char **argv) {
    int c;
    char* filename = argv[argc - 1];
    tok_file = make_tok_file(filename, 1);
+   yy_flex_debug = 0;
+   yydebug = 0;
    while ((c = getopt (argc, argv, "ly@:D:")) != -1){
       switch (c){
          case 'l':
@@ -115,14 +111,7 @@ int main (int argc, char **argv) {
 
    set_execname (argv[0]);
    yyin_cpp_popen (filename);
-
-   //extern FILE* tok_file = make_tok_file(filename);
-
-   /*while(yylex() != YYEOF){
-      cout << "S: " << yytext << endl;
-   }*/
    int linenr = 0;
-
 
    for (;;) {
       int token = yylex();
@@ -132,7 +121,6 @@ int main (int argc, char **argv) {
             fprintf (tok_file, "END OF FILE\n");
             print_str(filename);
             return 0;
-            //break;
          case VOID:
             print_tok(tok_file, yylval, (char*)"TOK_REV_VOID");
             break;
@@ -142,9 +130,9 @@ int main (int argc, char **argv) {
          case CHAR:
             print_tok(tok_file, yylval, (char*)"TOK_REV_CHAR");
             break;
-         /*case NOTCHAR:
-            print_tok(stdout , yylval, (char*)"TOK_REV_notCHAR");
-            break;*/
+         case NOTCHAR:
+            //print_tok(stderr , yylval, (char*)"TOK_REV_notCHAR");
+            break;
          case INT:
             print_tok(tok_file, yylval, (char*)"TOK_REV_INT");
             break;
@@ -277,16 +265,10 @@ int main (int argc, char **argv) {
             ++linenr;
             break;
          default:
-            printf ("ERROR \(%s\) \n", yytext);
+            printf ("ERROR (%s) \n", yytext);
       }
    }
 
-printf("Of the wild ones!\n");
-   yyin_cpp_pclose();
-
-   FILE* str_name = make_str_file(filename);
-   printf("BBAAAABBBBAAA!");
-   dump_stringset (str_name);
    return EXIT_SUCCESS;
 }
 

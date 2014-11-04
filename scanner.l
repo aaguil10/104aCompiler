@@ -1,7 +1,5 @@
 %{
-// $Id: scanner.l,v 1.4 2014-10-20 14:27:17-07 - - $
-//NOTCHAR               '.*
-///*{NOTCHAR}        { return yylval_token (NOTCHAR); }*/ 
+// $Id: scanner.l,v 1.4 2014-10-20 14:27:17-07 - - $ 
 
 #include "auxlib.h"
 #include "lyutils.h"
@@ -22,7 +20,7 @@
 LETTER          [A-Za-z_]
 DIGIT           [0-9]
 SQUBRACKETS     \[\]
-EQUALS	        ==
+EQUALS          ==
 NEQUAL	        !=
 LESSEQU	        <=
 GREAEQU	        >=

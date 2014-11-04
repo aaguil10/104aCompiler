@@ -57,17 +57,18 @@
      NEW = 273,
      CHAR_CONST = 274,
      STRING_CONST = 275,
-     ROOT = 276,
-     IDENT = 277,
-     NOTIDENT = 278,
-     NUMBER = 279,
-     SQUBRACKETS = 280,
-     GREAEQU = 281,
-     LESSEQU = 282,
-     NEQUAL = 283,
-     EQUALS = 284,
-     NEG = 287,
-     POS = 288
+     NOTCHAR = 276,
+     ROOT = 277,
+     IDENT = 278,
+     NOTIDENT = 279,
+     NUMBER = 280,
+     SQUBRACKETS = 281,
+     GREAEQU = 282,
+     LESSEQU = 283,
+     NEQUAL = 284,
+     EQUALS = 285,
+     NEG = 288,
+     POS = 289
    };
 #endif
 
