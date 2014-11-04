@@ -108,12 +108,21 @@ int main (int argc, char **argv) {
             continue;
       }
    }
-
+   int parsecode = 0;
    set_execname (argv[0]);
    yyin_cpp_popen (filename);
-   int linenr = 0;
-
-   for (;;) {
+   parsecode = yyparse();
+   if (parsecode) {
+      errprintf ("%:parse failed (%d)\n", parsecode);
+   }else {
+      DEBUGSTMT ('a', dump_astree (stderr, yyparse_astree); );
+      //emit_sm_code (yyparse_astree);
+   }
+   free_ast (yyparse_astree);
+   yyin_cpp_pclose();
+   DEBUGSTMT ('s', dump_stringset (stderr); );
+   yylex_destroy();
+   /*for (;;) {
       int token = yylex();
       if (yy_flex_debug) fflush (NULL);
       switch (token) {
@@ -267,7 +276,7 @@ int main (int argc, char **argv) {
          default:
             printf ("ERROR (%s) \n", yytext);
       }
-   }
+   }*/
 
    return EXIT_SUCCESS;
 }

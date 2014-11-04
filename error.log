@@ -1,5 +1,13 @@
 Set '-D' flag!
---(end of buffer or a NUL)
+Starting parse
+Entering state 0
+Reducing stack by rule 5 (line 50):
+DEBUGF(f): astree.cpp[23] new_astree():
+astree 0xd694f0->{0:0.0: ROOT: "<<ROOT>>"}
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --(end of buffer or a NUL)
 oc-programs/03-test3.oc:17:16: warning: missing terminating ' character
 oc-programs/03-test3.oc:18:18: warning: missing terminating " character
 --accepting rule at line 55 ("# 1 "oc-programs/03-test3.oc"")
@@ -26,51 +34,327 @@ oc-programs/03-test3.oc:18:18: warning: missing terminating " character
 ")
 --accepting rule at line 61 ("void")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20da700->{5:30.0: VOID: "void"}
---accepting rule at line 56 (" ")
+astree 0xd6d7c0->{5:30.0: VOID: "void"}
+Next token is token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6d7c0
+0xd6d7c0->{VOID(258) 5:30.000 "void" []})
+oc: oc-programs/oclib.oh: 30: syntax error, unexpected VOID
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d7c0
+error(256)
+)
+Entering state 4
+Next token is token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6d7c0
+0xd6d7c0->{VOID(258) 5:30.000 "void" []})
+Error: discarding token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6d7c0
+0xd6d7c0->{VOID(258) 5:30.000 "void" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+void 0xd6d7c0->{VOID(258) 5:30.000 "void" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6D7C0]-> 5:30.0: VOID: "void")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d7c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d7c0
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("__assert_fail")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20da750->{5:30.5: IDENT: "__assert_fail"}
---accepting rule at line 56 (" ")
+astree 0xd6d7c0->{5:30.5: IDENT: "__assert_fail"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6d7c0
+0xd6d7c0->{IDENT(278) 5:30.005 "__assert_fail" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6d7c0
+0xd6d7c0->{IDENT(278) 5:30.005 "__assert_fail" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+__assert_fail 0xd6d7c0->{IDENT(278) 5:30.005 "__assert_fail" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6D7C0]-> 5:30.5: IDENT: "__assert_fail")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d7c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d7c0
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20da7f0->{5:30.19: '(': "("}
---accepting rule at line 65 ("string")
+astree 0xd6d7c0->{5:30.19: '(': "("}
+Next token is token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6d7c0
+0xd6d7c0->{'('(40) 5:30.019 "(" []})
+Error: discarding token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6d7c0
+0xd6d7c0->{'('(40) 5:30.019 "(" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+( 0xd6d7c0->{'('(40) 5:30.019 "(" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6D7C0]-> 5:30.19: '(': "(")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d7c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d7c0
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 65 ("string")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20da890->{5:30.20: STRING: "string"}
---accepting rule at line 56 (" ")
+astree 0xd6d7c0->{5:30.20: STRING: "string"}
+Next token is token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6d7c0
+0xd6d7c0->{STRING(262) 5:30.020 "string" []})
+Error: discarding token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6d7c0
+0xd6d7c0->{STRING(262) 5:30.020 "string" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+string 0xd6d7c0->{STRING(262) 5:30.020 "string" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6D7C0]-> 5:30.20: STRING: "string")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d7c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d7c0
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("expr")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20da930->{5:30.27: IDENT: "expr"}
---accepting rule at line 92 (",")
+astree 0xd6d7c0->{5:30.27: IDENT: "expr"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6d7c0
+0xd6d7c0->{IDENT(278) 5:30.027 "expr" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6d7c0
+0xd6d7c0->{IDENT(278) 5:30.027 "expr" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+expr 0xd6d7c0->{IDENT(278) 5:30.027 "expr" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6D7C0]-> 5:30.27: IDENT: "expr")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d7c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d7c0
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 92 (",")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20da9d0->{5:30.31: $undefined: ","}
---accepting rule at line 56 (" ")
+astree 0xd6d7c0->{5:30.31: $undefined: ","}
+Next token is token $undefined (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 257, yyvaluep = 0xd6d7c0
+$undefined(257)
+)
+Error: discarding token $undefined (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 257, yyvaluep = 0xd6d7c0
+$undefined(257)
+)
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d7c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d7c0
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 65 ("string")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20daa70->{5:30.33: STRING: "string"}
---accepting rule at line 56 (" ")
+astree 0xd6d980->{5:30.33: STRING: "string"}
+Next token is token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6d980
+0xd6d980->{STRING(262) 5:30.033 "string" []})
+Error: discarding token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6d980
+0xd6d980->{STRING(262) 5:30.033 "string" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+string 0xd6d980->{STRING(262) 5:30.033 "string" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6D980]-> 5:30.33: STRING: "string")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d7c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d980
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("file")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20daaf0->{5:30.40: IDENT: "file"}
---accepting rule at line 92 (",")
+astree 0xd6d980->{5:30.40: IDENT: "file"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6d980
+0xd6d980->{IDENT(278) 5:30.040 "file" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6d980
+0xd6d980->{IDENT(278) 5:30.040 "file" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+file 0xd6d980->{IDENT(278) 5:30.040 "file" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6D980]-> 5:30.40: IDENT: "file")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d980
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d980
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 92 (",")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dab60->{5:30.44: $undefined: ","}
---accepting rule at line 56 (" ")
+astree 0xd6d980->{5:30.44: $undefined: ","}
+Next token is token $undefined (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 257, yyvaluep = 0xd6d980
+$undefined(257)
+)
+Error: discarding token $undefined (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 257, yyvaluep = 0xd6d980
+$undefined(257)
+)
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d980
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d980
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 64 ("int")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dabe0->{5:30.46: INT: "int"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:30.46: INT: "int"}
+Next token is token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6da50
+0xd6da50->{INT(261) 5:30.046 "int" []})
+Error: discarding token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6da50
+0xd6da50->{INT(261) 5:30.046 "int" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+int 0xd6da50->{INT(261) 5:30.046 "int" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:30.46: INT: "int")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6d980
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("line")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dac50->{5:30.50: IDENT: "line"}
---accepting rule at line 106 (")")
+astree 0xd6da50->{5:30.50: IDENT: "line"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:30.050 "line" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:30.050 "line" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+line 0xd6da50->{IDENT(278) 5:30.050 "line" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:30.50: IDENT: "line")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dacf0->{5:30.54: ')': ")"}
---accepting rule at line 107 (";")
+astree 0xd6da50->{5:30.54: ')': ")"}
+Next token is token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:30.054 ")" []})
+Error: discarding token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:30.054 ")" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+) 0xd6da50->{')'(41) 5:30.054 ")" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:30.54: ')': ")")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dad90->{5:30.55: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6da50->{5:30.55: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:30.055 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:30.055 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:30.055 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:30.55: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 57 ("
 ")
@@ -78,231 +362,1592 @@ astree 0x20dad90->{5:30.55: ';': ";"}
 ")
 --accepting rule at line 61 ("void")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20daef0->{5:33.0: VOID: "void"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:33.0: VOID: "void"}
+Next token is token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6da50
+0xd6da50->{VOID(258) 5:33.000 "void" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Next token is token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6da50
+0xd6da50->{VOID(258) 5:33.000 "void" []})
+Error: discarding token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6da50
+0xd6da50->{VOID(258) 5:33.000 "void" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+void 0xd6da50->{VOID(258) 5:33.000 "void" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:33.0: VOID: "void")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("putb")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20daf70->{5:33.5: IDENT: "putb"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:33.5: IDENT: "putb"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:33.005 "putb" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:33.005 "putb" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+putb 0xd6da50->{IDENT(278) 5:33.005 "putb" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:33.5: IDENT: "putb")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dafe0->{5:33.10: '(': "("}
---accepting rule at line 62 ("bool")
+astree 0xd6da50->{5:33.10: '(': "("}
+Next token is token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:33.010 "(" []})
+Error: discarding token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:33.010 "(" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+( 0xd6da50->{'('(40) 5:33.010 "(" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:33.10: '(': "(")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 62 ("bool")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db060->{5:33.11: BOOL: "bool"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:33.11: BOOL: "bool"}
+Next token is token BOOL (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 259, yyvaluep = 0xd6da50
+0xd6da50->{BOOL(259) 5:33.011 "bool" []})
+Error: discarding token BOOL (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 259, yyvaluep = 0xd6da50
+0xd6da50->{BOOL(259) 5:33.011 "bool" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+bool 0xd6da50->{BOOL(259) 5:33.011 "bool" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:33.11: BOOL: "bool")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("b")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db0d0->{5:33.16: IDENT: "b"}
---accepting rule at line 106 (")")
+astree 0xd6da50->{5:33.16: IDENT: "b"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:33.016 "b" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:33.016 "b" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+b 0xd6da50->{IDENT(278) 5:33.016 "b" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:33.16: IDENT: "b")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db170->{5:33.17: ')': ")"}
---accepting rule at line 107 (";")
+astree 0xd6da50->{5:33.17: ')': ")"}
+Next token is token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:33.017 ")" []})
+Error: discarding token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:33.017 ")" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+) 0xd6da50->{')'(41) 5:33.017 ")" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:33.17: ')': ")")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db1f0->{5:33.18: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6da50->{5:33.18: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:33.018 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:33.018 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:33.018 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:33.18: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 61 ("void")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db240->{5:34.0: VOID: "void"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:34.0: VOID: "void"}
+Next token is token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6da50
+0xd6da50->{VOID(258) 5:34.000 "void" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Next token is token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6da50
+0xd6da50->{VOID(258) 5:34.000 "void" []})
+Error: discarding token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6da50
+0xd6da50->{VOID(258) 5:34.000 "void" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+void 0xd6da50->{VOID(258) 5:34.000 "void" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:34.0: VOID: "void")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("putc")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db290->{5:34.5: IDENT: "putc"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:34.5: IDENT: "putc"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:34.005 "putc" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:34.005 "putc" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+putc 0xd6da50->{IDENT(278) 5:34.005 "putc" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:34.5: IDENT: "putc")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db300->{5:34.10: '(': "("}
---accepting rule at line 63 ("char")
+astree 0xd6da50->{5:34.10: '(': "("}
+Next token is token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:34.010 "(" []})
+Error: discarding token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:34.010 "(" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+( 0xd6da50->{'('(40) 5:34.010 "(" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:34.10: '(': "(")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 63 ("char")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db380->{5:34.11: CHAR: "char"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:34.11: CHAR: "char"}
+Next token is token CHAR (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 260, yyvaluep = 0xd6da50
+0xd6da50->{CHAR(260) 5:34.011 "char" []})
+Error: discarding token CHAR (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 260, yyvaluep = 0xd6da50
+0xd6da50->{CHAR(260) 5:34.011 "char" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+char 0xd6da50->{CHAR(260) 5:34.011 "char" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:34.11: CHAR: "char")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("c")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db3f0->{5:34.16: IDENT: "c"}
---accepting rule at line 106 (")")
+astree 0xd6da50->{5:34.16: IDENT: "c"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:34.016 "c" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:34.016 "c" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+c 0xd6da50->{IDENT(278) 5:34.016 "c" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:34.16: IDENT: "c")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db490->{5:34.17: ')': ")"}
---accepting rule at line 107 (";")
+astree 0xd6da50->{5:34.17: ')': ")"}
+Next token is token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:34.017 ")" []})
+Error: discarding token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:34.017 ")" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+) 0xd6da50->{')'(41) 5:34.017 ")" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:34.17: ')': ")")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db510->{5:34.18: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6da50->{5:34.18: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:34.018 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:34.018 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:34.018 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:34.18: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 61 ("void")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db560->{5:35.0: VOID: "void"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:35.0: VOID: "void"}
+Next token is token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6da50
+0xd6da50->{VOID(258) 5:35.000 "void" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Next token is token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6da50
+0xd6da50->{VOID(258) 5:35.000 "void" []})
+Error: discarding token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6da50
+0xd6da50->{VOID(258) 5:35.000 "void" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+void 0xd6da50->{VOID(258) 5:35.000 "void" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:35.0: VOID: "void")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("puti")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db5b0->{5:35.5: IDENT: "puti"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:35.5: IDENT: "puti"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:35.005 "puti" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:35.005 "puti" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+puti 0xd6da50->{IDENT(278) 5:35.005 "puti" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:35.5: IDENT: "puti")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db620->{5:35.10: '(': "("}
---accepting rule at line 64 ("int")
+astree 0xd6da50->{5:35.10: '(': "("}
+Next token is token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:35.010 "(" []})
+Error: discarding token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:35.010 "(" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+( 0xd6da50->{'('(40) 5:35.010 "(" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:35.10: '(': "(")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 64 ("int")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db6a0->{5:35.11: INT: "int"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:35.11: INT: "int"}
+Next token is token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6da50
+0xd6da50->{INT(261) 5:35.011 "int" []})
+Error: discarding token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6da50
+0xd6da50->{INT(261) 5:35.011 "int" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+int 0xd6da50->{INT(261) 5:35.011 "int" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:35.11: INT: "int")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("i")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db6f0->{5:35.15: IDENT: "i"}
---accepting rule at line 106 (")")
+astree 0xd6da50->{5:35.15: IDENT: "i"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:35.015 "i" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:35.015 "i" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+i 0xd6da50->{IDENT(278) 5:35.015 "i" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:35.15: IDENT: "i")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db760->{5:35.16: ')': ")"}
---accepting rule at line 107 (";")
+astree 0xd6da50->{5:35.16: ')': ")"}
+Next token is token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:35.016 ")" []})
+Error: discarding token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:35.016 ")" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+) 0xd6da50->{')'(41) 5:35.016 ")" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:35.16: ')': ")")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db7e0->{5:35.17: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6da50->{5:35.17: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:35.017 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:35.017 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:35.017 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:35.17: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 61 ("void")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db830->{5:36.0: VOID: "void"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:36.0: VOID: "void"}
+Next token is token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6da50
+0xd6da50->{VOID(258) 5:36.000 "void" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Next token is token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6da50
+0xd6da50->{VOID(258) 5:36.000 "void" []})
+Error: discarding token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6da50
+0xd6da50->{VOID(258) 5:36.000 "void" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+void 0xd6da50->{VOID(258) 5:36.000 "void" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:36.0: VOID: "void")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("puts")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db880->{5:36.5: IDENT: "puts"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:36.5: IDENT: "puts"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:36.005 "puts" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:36.005 "puts" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+puts 0xd6da50->{IDENT(278) 5:36.005 "puts" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:36.5: IDENT: "puts")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db8f0->{5:36.10: '(': "("}
---accepting rule at line 65 ("string")
+astree 0xd6da50->{5:36.10: '(': "("}
+Next token is token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:36.010 "(" []})
+Error: discarding token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:36.010 "(" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+( 0xd6da50->{'('(40) 5:36.010 "(" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:36.10: '(': "(")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 65 ("string")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db970->{5:36.11: STRING: "string"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:36.11: STRING: "string"}
+Next token is token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6da50
+0xd6da50->{STRING(262) 5:36.011 "string" []})
+Error: discarding token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6da50
+0xd6da50->{STRING(262) 5:36.011 "string" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+string 0xd6da50->{STRING(262) 5:36.011 "string" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:36.11: STRING: "string")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("s")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20db9c0->{5:36.18: IDENT: "s"}
---accepting rule at line 106 (")")
+astree 0xd6da50->{5:36.18: IDENT: "s"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:36.018 "s" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:36.018 "s" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+s 0xd6da50->{IDENT(278) 5:36.018 "s" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:36.18: IDENT: "s")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dba30->{5:36.19: ')': ")"}
---accepting rule at line 107 (";")
+astree 0xd6da50->{5:36.19: ')': ")"}
+Next token is token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:36.019 ")" []})
+Error: discarding token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:36.019 ")" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+) 0xd6da50->{')'(41) 5:36.019 ")" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:36.19: ')': ")")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dbab0->{5:36.20: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6da50->{5:36.20: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:36.020 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:36.020 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:36.020 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:36.20: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 61 ("void")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dbb00->{5:37.0: VOID: "void"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:37.0: VOID: "void"}
+Next token is token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6da50
+0xd6da50->{VOID(258) 5:37.000 "void" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Next token is token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6da50
+0xd6da50->{VOID(258) 5:37.000 "void" []})
+Error: discarding token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6da50
+0xd6da50->{VOID(258) 5:37.000 "void" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+void 0xd6da50->{VOID(258) 5:37.000 "void" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:37.0: VOID: "void")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("endl")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dbb50->{5:37.5: IDENT: "endl"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:37.5: IDENT: "endl"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:37.005 "endl" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:37.005 "endl" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+endl 0xd6da50->{IDENT(278) 5:37.005 "endl" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:37.5: IDENT: "endl")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dbbc0->{5:37.10: '(': "("}
---accepting rule at line 106 (")")
+astree 0xd6da50->{5:37.10: '(': "("}
+Next token is token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:37.010 "(" []})
+Error: discarding token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:37.010 "(" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+( 0xd6da50->{'('(40) 5:37.010 "(" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:37.10: '(': "(")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dbc40->{5:37.11: ')': ")"}
---accepting rule at line 107 (";")
+astree 0xd6da50->{5:37.11: ')': ")"}
+Next token is token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:37.011 ")" []})
+Error: discarding token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:37.011 ")" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+) 0xd6da50->{')'(41) 5:37.011 ")" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:37.11: ')': ")")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dbc90->{5:37.12: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6da50->{5:37.12: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:37.012 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:37.012 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:37.012 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:37.12: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 64 ("int")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dbce0->{5:38.0: INT: "int"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:38.0: INT: "int"}
+Next token is token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6da50
+0xd6da50->{INT(261) 5:38.000 "int" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Next token is token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6da50
+0xd6da50->{INT(261) 5:38.000 "int" []})
+Error: discarding token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6da50
+0xd6da50->{INT(261) 5:38.000 "int" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+int 0xd6da50->{INT(261) 5:38.000 "int" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:38.0: INT: "int")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("getc")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dbd30->{5:38.4: IDENT: "getc"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:38.4: IDENT: "getc"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:38.004 "getc" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:38.004 "getc" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+getc 0xd6da50->{IDENT(278) 5:38.004 "getc" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:38.4: IDENT: "getc")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dae30->{5:38.9: '(': "("}
---accepting rule at line 106 (")")
+astree 0xd6da50->{5:38.9: '(': "("}
+Next token is token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:38.009 "(" []})
+Error: discarding token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:38.009 "(" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+( 0xd6da50->{'('(40) 5:38.009 "(" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:38.9: '(': "(")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dbf20->{5:38.10: ')': ")"}
---accepting rule at line 107 (";")
+astree 0xd6da50->{5:38.10: ')': ")"}
+Next token is token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:38.010 ")" []})
+Error: discarding token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:38.010 ")" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+) 0xd6da50->{')'(41) 5:38.010 ")" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:38.10: ')': ")")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dbf70->{5:38.11: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6da50->{5:38.11: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:38.011 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:38.011 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:38.011 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:38.11: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 65 ("string")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dbfc0->{5:39.0: STRING: "string"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:39.0: STRING: "string"}
+Next token is token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6da50
+0xd6da50->{STRING(262) 5:39.000 "string" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Next token is token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6da50
+0xd6da50->{STRING(262) 5:39.000 "string" []})
+Error: discarding token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6da50
+0xd6da50->{STRING(262) 5:39.000 "string" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+string 0xd6da50->{STRING(262) 5:39.000 "string" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:39.0: STRING: "string")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("getw")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc010->{5:39.7: IDENT: "getw"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:39.7: IDENT: "getw"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:39.007 "getw" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:39.007 "getw" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+getw 0xd6da50->{IDENT(278) 5:39.007 "getw" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:39.7: IDENT: "getw")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc060->{5:39.12: '(': "("}
---accepting rule at line 106 (")")
+astree 0xd6da50->{5:39.12: '(': "("}
+Next token is token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:39.012 "(" []})
+Error: discarding token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:39.012 "(" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+( 0xd6da50->{'('(40) 5:39.012 "(" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:39.12: '(': "(")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc0e0->{5:39.13: ')': ")"}
---accepting rule at line 107 (";")
+astree 0xd6da50->{5:39.13: ')': ")"}
+Next token is token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:39.013 ")" []})
+Error: discarding token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:39.013 ")" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+) 0xd6da50->{')'(41) 5:39.013 ")" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:39.13: ')': ")")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc130->{5:39.14: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6da50->{5:39.14: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:39.014 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:39.014 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:39.014 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:39.14: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 65 ("string")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc180->{5:40.0: STRING: "string"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:40.0: STRING: "string"}
+Next token is token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6da50
+0xd6da50->{STRING(262) 5:40.000 "string" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Next token is token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6da50
+0xd6da50->{STRING(262) 5:40.000 "string" []})
+Error: discarding token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6da50
+0xd6da50->{STRING(262) 5:40.000 "string" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+string 0xd6da50->{STRING(262) 5:40.000 "string" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:40.0: STRING: "string")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("getln")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc1d0->{5:40.7: IDENT: "getln"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:40.7: IDENT: "getln"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:40.007 "getln" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:40.007 "getln" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+getln 0xd6da50->{IDENT(278) 5:40.007 "getln" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:40.7: IDENT: "getln")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc220->{5:40.13: '(': "("}
---accepting rule at line 106 (")")
+astree 0xd6da50->{5:40.13: '(': "("}
+Next token is token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:40.013 "(" []})
+Error: discarding token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:40.013 "(" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+( 0xd6da50->{'('(40) 5:40.013 "(" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:40.13: '(': "(")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc2a0->{5:40.14: ')': ")"}
---accepting rule at line 107 (";")
+astree 0xd6da50->{5:40.14: ')': ")"}
+Next token is token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:40.014 ")" []})
+Error: discarding token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:40.014 ")" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+) 0xd6da50->{')'(41) 5:40.014 ")" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:40.14: ')': ")")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc2f0->{5:40.15: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6da50->{5:40.15: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:40.015 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:40.015 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:40.015 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:40.15: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 65 ("string")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc340->{5:41.0: STRING: "string"}
---accepting rule at line 83 ("[]")
+astree 0xd6da50->{5:41.0: STRING: "string"}
+Next token is token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6da50
+0xd6da50->{STRING(262) 5:41.000 "string" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Next token is token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6da50
+0xd6da50->{STRING(262) 5:41.000 "string" []})
+Error: discarding token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6da50
+0xd6da50->{STRING(262) 5:41.000 "string" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+string 0xd6da50->{STRING(262) 5:41.000 "string" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:41.0: STRING: "string")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 83 ("[]")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc390->{5:41.6: SQUBRACKETS: "[]"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:41.6: SQUBRACKETS: "[]"}
+Next token is token SQUBRACKETS (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 281, yyvaluep = 0xd6da50
+0xd6da50->{SQUBRACKETS(281) 5:41.006 "[]" []})
+Error: discarding token SQUBRACKETS (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 281, yyvaluep = 0xd6da50
+0xd6da50->{SQUBRACKETS(281) 5:41.006 "[]" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+[] 0xd6da50->{SQUBRACKETS(281) 5:41.006 "[]" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:41.6: SQUBRACKETS: "[]")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("getargv")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc400->{5:41.9: IDENT: "getargv"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:41.9: IDENT: "getargv"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:41.009 "getargv" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:41.009 "getargv" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+getargv 0xd6da50->{IDENT(278) 5:41.009 "getargv" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:41.9: IDENT: "getargv")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc4a0->{5:41.17: '(': "("}
---accepting rule at line 106 (")")
+astree 0xd6da50->{5:41.17: '(': "("}
+Next token is token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:41.017 "(" []})
+Error: discarding token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:41.017 "(" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+( 0xd6da50->{'('(40) 5:41.017 "(" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:41.17: '(': "(")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc520->{5:41.18: ')': ")"}
---accepting rule at line 107 (";")
+astree 0xd6da50->{5:41.18: ')': ")"}
+Next token is token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:41.018 ")" []})
+Error: discarding token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:41.018 ")" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+) 0xd6da50->{')'(41) 5:41.018 ")" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:41.18: ')': ")")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc570->{5:41.19: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6da50->{5:41.19: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:41.019 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:41.019 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:41.019 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:41.19: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 61 ("void")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc5c0->{5:42.0: VOID: "void"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:42.0: VOID: "void"}
+Next token is token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6da50
+0xd6da50->{VOID(258) 5:42.000 "void" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Next token is token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6da50
+0xd6da50->{VOID(258) 5:42.000 "void" []})
+Error: discarding token VOID (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 258, yyvaluep = 0xd6da50
+0xd6da50->{VOID(258) 5:42.000 "void" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+void 0xd6da50->{VOID(258) 5:42.000 "void" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:42.0: VOID: "void")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("exit")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc610->{5:42.5: IDENT: "exit"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:42.5: IDENT: "exit"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:42.005 "exit" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:42.005 "exit" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+exit 0xd6da50->{IDENT(278) 5:42.005 "exit" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:42.5: IDENT: "exit")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc680->{5:42.10: '(': "("}
---accepting rule at line 64 ("int")
+astree 0xd6da50->{5:42.10: '(': "("}
+Next token is token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:42.010 "(" []})
+Error: discarding token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6da50
+0xd6da50->{'('(40) 5:42.010 "(" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+( 0xd6da50->{'('(40) 5:42.010 "(" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:42.10: '(': "(")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 64 ("int")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc700->{5:42.11: INT: "int"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{5:42.11: INT: "int"}
+Next token is token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6da50
+0xd6da50->{INT(261) 5:42.011 "int" []})
+Error: discarding token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6da50
+0xd6da50->{INT(261) 5:42.011 "int" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+int 0xd6da50->{INT(261) 5:42.011 "int" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:42.11: INT: "int")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("status")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc750->{5:42.15: IDENT: "status"}
---accepting rule at line 106 (")")
+astree 0xd6da50->{5:42.15: IDENT: "status"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:42.015 "status" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 5:42.015 "status" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+status 0xd6da50->{IDENT(278) 5:42.015 "status" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:42.15: IDENT: "status")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc7c0->{5:42.21: ')': ")"}
---accepting rule at line 107 (";")
+astree 0xd6da50->{5:42.21: ')': ")"}
+Next token is token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:42.021 ")" []})
+Error: discarding token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6da50
+0xd6da50->{')'(41) 5:42.021 ")" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+) 0xd6da50->{')'(41) 5:42.021 ")" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:42.21: ')': ")")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc840->{5:42.22: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6da50->{5:42.22: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:42.022 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:42.022 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 5:42.022 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 5:42.22: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 55 ("# 4 "oc-programs/03-test3.oc" 2")
 --accepting rule at line 57 ("
@@ -311,303 +1956,1996 @@ astree 0x20dc840->{5:42.22: ';': ";"}
 ")
 --accepting rule at line 64 ("int")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc8d0->{6:5.0: INT: "int"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{6:5.0: INT: "int"}
+Next token is token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6da50
+0xd6da50->{INT(261) 6:5.000 "int" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Next token is token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6da50
+0xd6da50->{INT(261) 6:5.000 "int" []})
+Error: discarding token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6da50
+0xd6da50->{INT(261) 6:5.000 "int" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+int 0xd6da50->{INT(261) 6:5.000 "int" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 6:5.0: INT: "int")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("a")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc920->{6:5.4: IDENT: "a"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{6:5.4: IDENT: "a"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 6:5.004 "a" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 6:5.004 "a" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+a 0xd6da50->{IDENT(278) 6:5.004 "a" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 6:5.4: IDENT: "a")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 98 ("=")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dc990->{6:5.6: '=': "="}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{6:5.6: '=': "="}
+Next token is token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6da50
+0xd6da50->{'='(61) 6:5.006 "=" []})
+Error: discarding token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6da50
+0xd6da50->{'='(61) 6:5.006 "=" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+= 0xd6da50->{'='(61) 6:5.006 "=" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 6:5.6: '=': "=")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 80 ("3")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dca30->{6:5.8: NUMBER: "3"}
---accepting rule at line 107 (";")
+astree 0xd6da50->{6:5.8: NUMBER: "3"}
+Next token is token NUMBER (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 280, yyvaluep = 0xd6da50
+0xd6da50->{NUMBER(280) 6:5.008 "3" []})
+Error: discarding token NUMBER (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 280, yyvaluep = 0xd6da50
+0xd6da50->{NUMBER(280) 6:5.008 "3" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+3 0xd6da50->{NUMBER(280) 6:5.008 "3" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 6:5.8: NUMBER: "3")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dcad0->{6:5.9: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6da50->{6:5.9: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 6:5.009 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 6:5.009 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 6:5.009 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 6:5.9: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 64 ("int")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dcb50->{6:6.0: INT: "int"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{6:6.0: INT: "int"}
+Next token is token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6da50
+0xd6da50->{INT(261) 6:6.000 "int" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Next token is token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6da50
+0xd6da50->{INT(261) 6:6.000 "int" []})
+Error: discarding token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6da50
+0xd6da50->{INT(261) 6:6.000 "int" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+int 0xd6da50->{INT(261) 6:6.000 "int" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 6:6.0: INT: "int")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("b")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dcba0->{6:6.4: IDENT: "b"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{6:6.4: IDENT: "b"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 6:6.004 "b" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 6:6.004 "b" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+b 0xd6da50->{IDENT(278) 6:6.004 "b" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 6:6.4: IDENT: "b")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 98 ("=")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dcbf0->{6:6.6: '=': "="}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{6:6.6: '=': "="}
+Next token is token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6da50
+0xd6da50->{'='(61) 6:6.006 "=" []})
+Error: discarding token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6da50
+0xd6da50->{'='(61) 6:6.006 "=" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+= 0xd6da50->{'='(61) 6:6.006 "=" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 6:6.6: '=': "=")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 80 ("8")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dcc40->{6:6.8: NUMBER: "8"}
---accepting rule at line 107 (";")
+astree 0xd6da50->{6:6.8: NUMBER: "8"}
+Next token is token NUMBER (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 280, yyvaluep = 0xd6da50
+0xd6da50->{NUMBER(280) 6:6.008 "8" []})
+Error: discarding token NUMBER (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 280, yyvaluep = 0xd6da50
+0xd6da50->{NUMBER(280) 6:6.008 "8" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+8 0xd6da50->{NUMBER(280) 6:6.008 "8" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 6:6.8: NUMBER: "8")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dccb0->{6:6.9: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6da50->{6:6.9: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 6:6.009 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 6:6.009 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 6:6.009 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 6:6.9: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 64 ("int")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dcd30->{6:7.0: INT: "int"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{6:7.0: INT: "int"}
+Next token is token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6da50
+0xd6da50->{INT(261) 6:7.000 "int" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Next token is token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6da50
+0xd6da50->{INT(261) 6:7.000 "int" []})
+Error: discarding token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6da50
+0xd6da50->{INT(261) 6:7.000 "int" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+int 0xd6da50->{INT(261) 6:7.000 "int" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 6:7.0: INT: "int")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("c")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dcd80->{6:7.4: IDENT: "c"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{6:7.4: IDENT: "c"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 6:7.004 "c" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 6:7.004 "c" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+c 0xd6da50->{IDENT(278) 6:7.004 "c" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 6:7.4: IDENT: "c")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 98 ("=")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dcdd0->{6:7.6: '=': "="}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{6:7.6: '=': "="}
+Next token is token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6da50
+0xd6da50->{'='(61) 6:7.006 "=" []})
+Error: discarding token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6da50
+0xd6da50->{'='(61) 6:7.006 "=" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+= 0xd6da50->{'='(61) 6:7.006 "=" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 6:7.6: '=': "=")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("a")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dce20->{6:7.8: IDENT: "a"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{6:7.8: IDENT: "a"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 6:7.008 "a" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 6:7.008 "a" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+a 0xd6da50->{IDENT(278) 6:7.008 "a" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 6:7.8: IDENT: "a")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 99 ("+")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dce70->{6:7.10: '+': "+"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{6:7.10: '+': "+"}
+Next token is token '+' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 43, yyvaluep = 0xd6da50
+0xd6da50->{'+'(43) 6:7.010 "+" []})
+Error: discarding token '+' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 43, yyvaluep = 0xd6da50
+0xd6da50->{'+'(43) 6:7.010 "+" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
++ 0xd6da50->{'+'(43) 6:7.010 "+" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 6:7.10: '+': "+")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("b")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dcee0->{6:7.12: IDENT: "b"}
---accepting rule at line 107 (";")
+astree 0xd6da50->{6:7.12: IDENT: "b"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 6:7.012 "b" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 6:7.012 "b" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+b 0xd6da50->{IDENT(278) 6:7.012 "b" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 6:7.12: IDENT: "b")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dcf60->{6:7.13: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6da50->{6:7.13: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 6:7.013 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 6:7.013 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6da50
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6da50
+0xd6da50->{';'(59) 6:7.013 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 6:7.13: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 81 ("a")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dcfb0->{6:8.0: IDENT: "a"}
---accepting rule at line 56 (" ")
+astree 0xd6da50->{6:8.0: IDENT: "a"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 6:8.000 "a" []})
+Shifting token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 6:8.000 "a" []})
+Entering state 5
+Reducing stack by rule 15 (line 62):
+   $1 = token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6da50
+0xd6da50->{IDENT(278) 6:8.000 "a" []})
+-> $$ = nterm expr ()
+Stack now 0 2
+Entering state 11
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 98 ("=")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd000->{6:8.2: '=': "="}
---accepting rule at line 56 (" ")
+astree 0xd6e4d0->{6:8.2: '=': "="}
+Next token is token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6e4d0
+0xd6e4d0->{'='(61) 6:8.002 "=" []})
+Shifting token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6e4d0
+0xd6e4d0->{'='(61) 6:8.002 "=" []})
+Entering state 16
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("b")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd050->{6:8.4: IDENT: "b"}
---accepting rule at line 56 (" ")
+astree 0xd6e520->{6:8.4: IDENT: "b"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e520
+0xd6e520->{IDENT(278) 6:8.004 "b" []})
+Shifting token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e520
+0xd6e520->{IDENT(278) 6:8.004 "b" []})
+Entering state 5
+Reducing stack by rule 15 (line 62):
+   $1 = token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e520
+0xd6e520->{IDENT(278) 6:8.004 "b" []})
+-> $$ = nterm expr ()
+Stack now 0 2 11 16
+Entering state 24
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 99 ("+")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd0a0->{6:8.6: '+': "+"}
---accepting rule at line 56 (" ")
+astree 0xd6e570->{6:8.6: '+': "+"}
+Next token is token '+' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 43, yyvaluep = 0xd6e570
+0xd6e570->{'+'(43) 6:8.006 "+" []})
+Shifting token '+' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 43, yyvaluep = 0xd6e570
+0xd6e570->{'+'(43) 6:8.006 "+" []})
+Entering state 17
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("c")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd0f0->{6:8.8: IDENT: "c"}
---accepting rule at line 107 (";")
+astree 0xd6e5c0->{6:8.8: IDENT: "c"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e5c0
+0xd6e5c0->{IDENT(278) 6:8.008 "c" []})
+Shifting token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e5c0
+0xd6e5c0->{IDENT(278) 6:8.008 "c" []})
+Entering state 5
+Reducing stack by rule 15 (line 62):
+   $1 = token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e5c0
+0xd6e5c0->{IDENT(278) 6:8.008 "c" []})
+-> $$ = nterm expr ()
+Stack now 0 2 11 16 24 17
+Entering state 25
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd140->{6:8.9: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6e610->{6:8.9: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:8.009 ";" []})
+Reducing stack by rule 7 (line 54):
+   $1 = nterm expr ()
+   $2 = token '+' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 43, yyvaluep = 0xd6e570
+0xd6e570->{'+'(43) 6:8.006 "+" []})
+   $3 = nterm expr ()
+DEBUGF(a): astree.cpp[32] adopt1():
+0xd6e570 (+) adopting 0xd6e520 (b)
+DEBUGF(a): astree.cpp[32] adopt1():
+0xd6e570 (+) adopting 0xd6e5c0 (c)
+-> $$ = nterm expr ()
+Stack now 0 2 11 16
+Entering state 24
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:8.009 ";" []})
+Reducing stack by rule 6 (line 53):
+   $1 = nterm expr ()
+   $2 = token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6e4d0
+0xd6e4d0->{'='(61) 6:8.002 "=" []})
+   $3 = nterm expr ()
+DEBUGF(a): astree.cpp[32] adopt1():
+0xd6e4d0 (=) adopting 0xd6da50 (a)
+DEBUGF(a): astree.cpp[32] adopt1():
+0xd6e4d0 (=) adopting 0xd6e570 (+)
+-> $$ = nterm expr ()
+Stack now 0 2
+Entering state 11
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:8.009 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:8.009 ";" []})
+Entering state 22
+Reducing stack by rule 2 (line 47):
+   $1 = nterm stmtseq ()
+   $2 = nterm expr ()
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:8.009 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:8.9: ';': ";")
+DEBUGF(a): astree.cpp[32] adopt1():
+0xd694f0 (<<ROOT>>) adopting 0xd6e4d0 (=)
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 81 ("puti")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd190->{6:9.0: IDENT: "puti"}
---accepting rule at line 56 (" ")
+astree 0xd6e610->{6:9.0: IDENT: "puti"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:9.000 "puti" []})
+Shifting token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:9.000 "puti" []})
+Entering state 5
+Reducing stack by rule 15 (line 62):
+   $1 = token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:9.000 "puti" []})
+-> $$ = nterm expr ()
+Stack now 0 2
+Entering state 11
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd1e0->{6:9.5: '(': "("}
---accepting rule at line 81 ("a")
+astree 0xd6e6c0->{6:9.5: '(': "("}
+Next token is token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6e6c0
+0xd6e6c0->{'('(40) 6:9.005 "(" []})
+oc: oc-programs/03-test3.oc: 9: syntax error, unexpected '('
+Error: popping nterm expr ()
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+puti 0xd6e610->{IDENT(278) 6:9.000 "puti" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:9.0: IDENT: "puti")
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Entering state 4
+Next token is token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6e6c0
+0xd6e6c0->{'('(40) 6:9.005 "(" []})
+Error: discarding token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6e6c0
+0xd6e6c0->{'('(40) 6:9.005 "(" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+( 0xd6e6c0->{'('(40) 6:9.005 "(" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E6C0]-> 6:9.5: '(': "(")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 81 ("a")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd230->{6:9.6: IDENT: "a"}
---accepting rule at line 106 (")")
+astree 0xd6e6c0->{6:9.6: IDENT: "a"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e6c0
+0xd6e6c0->{IDENT(278) 6:9.006 "a" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e6c0
+0xd6e6c0->{IDENT(278) 6:9.006 "a" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+a 0xd6e6c0->{IDENT(278) 6:9.006 "a" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E6C0]-> 6:9.6: IDENT: "a")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd280->{6:9.7: ')': ")"}
---accepting rule at line 107 (";")
+astree 0xd6e6c0->{6:9.7: ')': ")"}
+Next token is token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6e6c0
+0xd6e6c0->{')'(41) 6:9.007 ")" []})
+Error: discarding token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6e6c0
+0xd6e6c0->{')'(41) 6:9.007 ")" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+) 0xd6e6c0->{')'(41) 6:9.007 ")" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E6C0]-> 6:9.7: ')': ")")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd2d0->{6:9.8: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6e6c0->{6:9.8: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e6c0
+0xd6e6c0->{';'(59) 6:9.008 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e6c0
+0xd6e6c0->{';'(59) 6:9.008 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e6c0
+0xd6e6c0->{';'(59) 6:9.008 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E6C0]-> 6:9.8: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 81 ("putc")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd320->{6:10.0: IDENT: "putc"}
---accepting rule at line 56 (" ")
+astree 0xd6e6c0->{6:10.0: IDENT: "putc"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e6c0
+0xd6e6c0->{IDENT(278) 6:10.000 "putc" []})
+Shifting token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e6c0
+0xd6e6c0->{IDENT(278) 6:10.000 "putc" []})
+Entering state 5
+Reducing stack by rule 15 (line 62):
+   $1 = token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e6c0
+0xd6e6c0->{IDENT(278) 6:10.000 "putc" []})
+-> $$ = nterm expr ()
+Stack now 0 2
+Entering state 11
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd370->{6:10.5: '(': "("}
---accepting rule at line 78 ("'\n'")
+astree 0xd6e610->{6:10.5: '(': "("}
+Next token is token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6e610
+0xd6e610->{'('(40) 6:10.005 "(" []})
+Error: popping nterm expr ()
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+putc 0xd6e6c0->{IDENT(278) 6:10.000 "putc" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E6C0]-> 6:10.0: IDENT: "putc")
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Next token is token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6e610
+0xd6e610->{'('(40) 6:10.005 "(" []})
+Error: discarding token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6e610
+0xd6e610->{'('(40) 6:10.005 "(" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+( 0xd6e610->{'('(40) 6:10.005 "(" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:10.5: '(': "(")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 78 ("'\n'")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd3c0->{6:10.6: NOTCHAR: "'\n'"}
-6 10.006 276 TOK_REV_notCHAR 	 ('\n') 
---accepting rule at line 106 (")")
+astree 0xd6e610->{6:10.6: NOTCHAR: "'\n'"}
+Next token is token NOTCHAR (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 276, yyvaluep = 0xd6e610
+0xd6e610->{NOTCHAR(276) 6:10.006 "'\n'" []})
+Error: discarding token NOTCHAR (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 276, yyvaluep = 0xd6e610
+0xd6e610->{NOTCHAR(276) 6:10.006 "'\n'" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+'\n' 0xd6e610->{NOTCHAR(276) 6:10.006 "'\n'" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:10.6: NOTCHAR: "'\n'")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd430->{6:10.10: ')': ")"}
---accepting rule at line 107 (";")
+astree 0xd6e610->{6:10.10: ')': ")"}
+Next token is token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6e610
+0xd6e610->{')'(41) 6:10.010 ")" []})
+Error: discarding token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6e610
+0xd6e610->{')'(41) 6:10.010 ")" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+) 0xd6e610->{')'(41) 6:10.010 ")" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:10.10: ')': ")")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd4b0->{6:10.11: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6e610->{6:10.11: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:10.011 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:10.011 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:10.011 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:10.11: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 81 ("myarray")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd500->{6:11.0: IDENT: "myarray"}
---accepting rule at line 83 ("[]")
+astree 0xd6e610->{6:11.0: IDENT: "myarray"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:11.000 "myarray" []})
+Shifting token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:11.000 "myarray" []})
+Entering state 5
+Reducing stack by rule 15 (line 62):
+   $1 = token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:11.000 "myarray" []})
+-> $$ = nterm expr ()
+Stack now 0 2
+Entering state 11
+Reading a token: --accepting rule at line 83 ("[]")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd570->{6:11.7: SQUBRACKETS: "[]"}
---accepting rule at line 107 (";")
+astree 0xd6e6c0->{6:11.7: SQUBRACKETS: "[]"}
+Next token is token SQUBRACKETS (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 281, yyvaluep = 0xd6e6c0
+0xd6e6c0->{SQUBRACKETS(281) 6:11.007 "[]" []})
+Error: popping nterm expr ()
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+myarray 0xd6e610->{IDENT(278) 6:11.000 "myarray" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:11.0: IDENT: "myarray")
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Entering state 4
+Next token is token SQUBRACKETS (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 281, yyvaluep = 0xd6e6c0
+0xd6e6c0->{SQUBRACKETS(281) 6:11.007 "[]" []})
+Error: discarding token SQUBRACKETS (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 281, yyvaluep = 0xd6e6c0
+0xd6e6c0->{SQUBRACKETS(281) 6:11.007 "[]" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+[] 0xd6e6c0->{SQUBRACKETS(281) 6:11.007 "[]" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E6C0]-> 6:11.7: SQUBRACKETS: "[]")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd5f0->{6:11.9: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6e6c0->{6:11.9: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e6c0
+0xd6e6c0->{';'(59) 6:11.009 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e6c0
+0xd6e6c0->{';'(59) 6:11.009 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e6c0
+0xd6e6c0->{';'(59) 6:11.009 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E6C0]-> 6:11.9: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 67 ("if")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd640->{6:12.0: IF: "if"}
---accepting rule at line 105 ("(")
+astree 0xd6e6c0->{6:12.0: IF: "if"}
+Next token is token IF (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 264, yyvaluep = 0xd6e6c0
+0xd6e6c0->{IF(264) 6:12.000 "if" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Entering state 4
+Next token is token IF (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 264, yyvaluep = 0xd6e6c0
+0xd6e6c0->{IF(264) 6:12.000 "if" []})
+Error: discarding token IF (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 264, yyvaluep = 0xd6e6c0
+0xd6e6c0->{IF(264) 6:12.000 "if" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+if 0xd6e6c0->{IF(264) 6:12.000 "if" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E6C0]-> 6:12.0: IF: "if")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 105 ("(")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd6b0->{6:12.2: '(': "("}
---accepting rule at line 81 ("a")
+astree 0xd6e6c0->{6:12.2: '(': "("}
+Next token is token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6e6c0
+0xd6e6c0->{'('(40) 6:12.002 "(" []})
+Error: discarding token '(' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 40, yyvaluep = 0xd6e6c0
+0xd6e6c0->{'('(40) 6:12.002 "(" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+( 0xd6e6c0->{'('(40) 6:12.002 "(" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E6C0]-> 6:12.2: '(': "(")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 81 ("a")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd730->{6:12.3: IDENT: "a"}
---accepting rule at line 56 (" ")
+astree 0xd6e6c0->{6:12.3: IDENT: "a"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e6c0
+0xd6e6c0->{IDENT(278) 6:12.003 "a" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e6c0
+0xd6e6c0->{IDENT(278) 6:12.003 "a" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+a 0xd6e6c0->{IDENT(278) 6:12.003 "a" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E6C0]-> 6:12.3: IDENT: "a")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 84 ("==")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd780->{6:12.5: EQUALS: "=="}
---accepting rule at line 56 (" ")
+astree 0xd6e6c0->{6:12.5: EQUALS: "=="}
+Next token is token EQUALS (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 285, yyvaluep = 0xd6e6c0
+0xd6e6c0->{EQUALS(285) 6:12.005 "==" []})
+Error: discarding token EQUALS (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 285, yyvaluep = 0xd6e6c0
+0xd6e6c0->{EQUALS(285) 6:12.005 "==" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+== 0xd6e6c0->{EQUALS(285) 6:12.005 "==" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E6C0]-> 6:12.5: EQUALS: "==")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("b")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd7f0->{6:12.8: IDENT: "b"}
---accepting rule at line 106 (")")
+astree 0xd6e6c0->{6:12.8: IDENT: "b"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e6c0
+0xd6e6c0->{IDENT(278) 6:12.008 "b" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e6c0
+0xd6e6c0->{IDENT(278) 6:12.008 "b" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+b 0xd6e6c0->{IDENT(278) 6:12.008 "b" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E6C0]-> 6:12.8: IDENT: "b")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 106 (")")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd870->{6:12.9: ')': ")"}
---accepting rule at line 91 ("{")
+astree 0xd6e6c0->{6:12.9: ')': ")"}
+Next token is token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6e6c0
+0xd6e6c0->{')'(41) 6:12.009 ")" []})
+Error: discarding token ')' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 41, yyvaluep = 0xd6e6c0
+0xd6e6c0->{')'(41) 6:12.009 ")" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+) 0xd6e6c0->{')'(41) 6:12.009 ")" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E6C0]-> 6:12.9: ')': ")")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 91 ("{")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd8c0->{6:12.10: $undefined: "{"}
---accepting rule at line 57 ("
+astree 0xd6e6c0->{6:12.10: $undefined: "{"}
+Next token is token $undefined (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 257, yyvaluep = 0xd6e6c0
+$undefined(257)
+)
+Error: discarding token $undefined (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 257, yyvaluep = 0xd6e6c0
+$undefined(257)
+)
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 56 ("   ")
 --accepting rule at line 63 ("char")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd930->{6:13.3: CHAR: "char"}
---accepting rule at line 56 (" ")
+astree 0xd6e610->{6:13.3: CHAR: "char"}
+Next token is token CHAR (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 260, yyvaluep = 0xd6e610
+0xd6e610->{CHAR(260) 6:13.003 "char" []})
+Error: discarding token CHAR (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 260, yyvaluep = 0xd6e610
+0xd6e610->{CHAR(260) 6:13.003 "char" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+char 0xd6e610->{CHAR(260) 6:13.003 "char" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:13.3: CHAR: "char")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e6c0
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("foo")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dd9b0->{6:13.8: IDENT: "foo"}
---accepting rule at line 56 (" ")
+astree 0xd6e610->{6:13.8: IDENT: "foo"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:13.008 "foo" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:13.008 "foo" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+foo 0xd6e610->{IDENT(278) 6:13.008 "foo" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:13.8: IDENT: "foo")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 98 ("=")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dda20->{6:13.12: '=': "="}
---accepting rule at line 56 (" ")
+astree 0xd6e610->{6:13.12: '=': "="}
+Next token is token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6e610
+0xd6e610->{'='(61) 6:13.012 "=" []})
+Error: discarding token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6e610
+0xd6e610->{'='(61) 6:13.012 "=" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+= 0xd6e610->{'='(61) 6:13.012 "=" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:13.12: '=': "=")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 78 ("'u'")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20ddaa0->{6:13.14: NOTCHAR: "'u'"}
-6 13.014 276 TOK_REV_notCHAR 	 ('u') 
---accepting rule at line 107 (";")
+astree 0xd6e610->{6:13.14: NOTCHAR: "'u'"}
+Next token is token NOTCHAR (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 276, yyvaluep = 0xd6e610
+0xd6e610->{NOTCHAR(276) 6:13.014 "'u'" []})
+Error: discarding token NOTCHAR (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 276, yyvaluep = 0xd6e610
+0xd6e610->{NOTCHAR(276) 6:13.014 "'u'" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+'u' 0xd6e610->{NOTCHAR(276) 6:13.014 "'u'" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:13.14: NOTCHAR: "'u'")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20ddb10->{6:13.17: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6e610->{6:13.17: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:13.017 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:13.017 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:13.017 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:13.17: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 56 ("   ")
 --accepting rule at line 65 ("string")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20ddb90->{6:14.3: STRING: "string"}
---accepting rule at line 56 (" ")
+astree 0xd6e610->{6:14.3: STRING: "string"}
+Next token is token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6e610
+0xd6e610->{STRING(262) 6:14.003 "string" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Next token is token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6e610
+0xd6e610->{STRING(262) 6:14.003 "string" []})
+Error: discarding token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6e610
+0xd6e610->{STRING(262) 6:14.003 "string" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+string 0xd6e610->{STRING(262) 6:14.003 "string" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:14.3: STRING: "string")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("retoric")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20ddbe0->{6:14.10: IDENT: "retoric"}
---accepting rule at line 56 (" ")
+astree 0xd6e610->{6:14.10: IDENT: "retoric"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:14.010 "retoric" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:14.010 "retoric" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+retoric 0xd6e610->{IDENT(278) 6:14.010 "retoric" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:14.10: IDENT: "retoric")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 98 ("=")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20ddc50->{6:14.18: '=': "="}
---accepting rule at line 56 (" ")
+astree 0xd6e610->{6:14.18: '=': "="}
+Next token is token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6e610
+0xd6e610->{'='(61) 6:14.018 "=" []})
+Error: discarding token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6e610
+0xd6e610->{'='(61) 6:14.018 "=" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+= 0xd6e610->{'='(61) 6:14.018 "=" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:14.18: '=': "=")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 79 (""OHhhh"")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20ddcd0->{6:14.20: STRING_CONST: ""OHhhh""}
---accepting rule at line 107 (";")
+astree 0xd6e610->{6:14.20: STRING_CONST: ""OHhhh""}
+Next token is token STRING_CONST (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 275, yyvaluep = 0xd6e610
+0xd6e610->{STRING_CONST(275) 6:14.020 ""OHhhh"" []})
+Error: discarding token STRING_CONST (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 275, yyvaluep = 0xd6e610
+0xd6e610->{STRING_CONST(275) 6:14.020 ""OHhhh"" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+"OHhhh" 0xd6e610->{STRING_CONST(275) 6:14.020 ""OHhhh"" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:14.20: STRING_CONST: ""OHhhh"")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20ddd40->{6:14.27: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6e610->{6:14.27: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:14.027 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:14.027 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:14.027 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:14.27: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 56 ("   ")
 --accepting rule at line 64 ("int")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dddc0->{6:15.3: INT: "int"}
---accepting rule at line 56 (" ")
+astree 0xd6e610->{6:15.3: INT: "int"}
+Next token is token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6e610
+0xd6e610->{INT(261) 6:15.003 "int" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Next token is token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6e610
+0xd6e610->{INT(261) 6:15.003 "int" []})
+Error: discarding token INT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 261, yyvaluep = 0xd6e610
+0xd6e610->{INT(261) 6:15.003 "int" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+int 0xd6e610->{INT(261) 6:15.003 "int" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:15.3: INT: "int")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("gunit")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dde10->{6:15.7: IDENT: "gunit"}
---accepting rule at line 56 (" ")
+astree 0xd6e610->{6:15.7: IDENT: "gunit"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:15.007 "gunit" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:15.007 "gunit" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+gunit 0xd6e610->{IDENT(278) 6:15.007 "gunit" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:15.7: IDENT: "gunit")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 98 ("=")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dde80->{6:15.13: '=': "="}
---accepting rule at line 56 (" ")
+astree 0xd6e610->{6:15.13: '=': "="}
+Next token is token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6e610
+0xd6e610->{'='(61) 6:15.013 "=" []})
+Error: discarding token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6e610
+0xd6e610->{'='(61) 6:15.013 "=" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+= 0xd6e610->{'='(61) 6:15.013 "=" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:15.13: '=': "=")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 80 ("2345")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20ddf00->{6:15.15: NUMBER: "2345"}
---accepting rule at line 107 (";")
+astree 0xd6e610->{6:15.15: NUMBER: "2345"}
+Next token is token NUMBER (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 280, yyvaluep = 0xd6e610
+0xd6e610->{NUMBER(280) 6:15.015 "2345" []})
+Error: discarding token NUMBER (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 280, yyvaluep = 0xd6e610
+0xd6e610->{NUMBER(280) 6:15.015 "2345" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+2345 0xd6e610->{NUMBER(280) 6:15.015 "2345" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:15.15: NUMBER: "2345")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20ddf70->{6:15.19: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6e610->{6:15.19: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:15.019 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:15.019 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:15.019 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:15.19: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 56 ("   ")
 --accepting rule at line 70 ("return")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20ddff0->{6:16.3: RETURN: "return"}
---accepting rule at line 56 (" ")
+astree 0xd6e610->{6:16.3: RETURN: "return"}
+Next token is token RETURN (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 267, yyvaluep = 0xd6e610
+0xd6e610->{RETURN(267) 6:16.003 "return" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Next token is token RETURN (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 267, yyvaluep = 0xd6e610
+0xd6e610->{RETURN(267) 6:16.003 "return" []})
+Error: discarding token RETURN (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 267, yyvaluep = 0xd6e610
+0xd6e610->{RETURN(267) 6:16.003 "return" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+return 0xd6e610->{RETURN(267) 6:16.003 "return" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:16.3: RETURN: "return")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("foo")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20de060->{6:16.10: IDENT: "foo"}
---accepting rule at line 107 (";")
+astree 0xd6e610->{6:16.10: IDENT: "foo"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:16.010 "foo" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:16.010 "foo" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+foo 0xd6e610->{IDENT(278) 6:16.010 "foo" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:16.10: IDENT: "foo")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20de0e0->{6:16.13: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6e610->{6:16.13: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:16.013 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:16.013 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:16.013 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:16.13: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 56 ("   ")
 --accepting rule at line 63 ("char")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20de130->{6:17.3: CHAR: "char"}
---accepting rule at line 56 (" ")
+astree 0xd6e610->{6:17.3: CHAR: "char"}
+Next token is token CHAR (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 260, yyvaluep = 0xd6e610
+0xd6e610->{CHAR(260) 6:17.003 "char" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Next token is token CHAR (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 260, yyvaluep = 0xd6e610
+0xd6e610->{CHAR(260) 6:17.003 "char" []})
+Error: discarding token CHAR (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 260, yyvaluep = 0xd6e610
+0xd6e610->{CHAR(260) 6:17.003 "char" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+char 0xd6e610->{CHAR(260) 6:17.003 "char" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:17.3: CHAR: "char")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("badc")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20de180->{6:17.8: IDENT: "badc"}
---accepting rule at line 56 (" ")
+astree 0xd6e610->{6:17.8: IDENT: "badc"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:17.008 "badc" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:17.008 "badc" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+badc 0xd6e610->{IDENT(278) 6:17.008 "badc" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:17.8: IDENT: "badc")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 98 ("=")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dbda0->{6:17.13: '=': "="}
---accepting rule at line 56 (" ")
+astree 0xd6e610->{6:17.13: '=': "="}
+Next token is token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6e610
+0xd6e610->{'='(61) 6:17.013 "=" []})
+Error: discarding token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6e610
+0xd6e610->{'='(61) 6:17.013 "=" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+= 0xd6e610->{'='(61) 6:17.013 "=" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:17.13: '=': "=")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 78 ("'a;")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dbe20->{6:17.15: NOTCHAR: "'a;"}
-6 17.015 276 TOK_REV_notCHAR 	 ('a;) 
---accepting rule at line 57 ("
+astree 0xd6e610->{6:17.15: NOTCHAR: "'a;"}
+Next token is token NOTCHAR (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 276, yyvaluep = 0xd6e610
+0xd6e610->{NOTCHAR(276) 6:17.015 "'a;" []})
+Error: discarding token NOTCHAR (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 276, yyvaluep = 0xd6e610
+0xd6e610->{NOTCHAR(276) 6:17.015 "'a;" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+'a; 0xd6e610->{NOTCHAR(276) 6:17.015 "'a;" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:17.15: NOTCHAR: "'a;")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 56 ("   ")
 --accepting rule at line 65 ("string")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20dbe90->{6:18.3: STRING: "string"}
---accepting rule at line 56 (" ")
+astree 0xd6e610->{6:18.3: STRING: "string"}
+Next token is token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6e610
+0xd6e610->{STRING(262) 6:18.003 "string" []})
+Error: discarding token STRING (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 262, yyvaluep = 0xd6e610
+0xd6e610->{STRING(262) 6:18.003 "string" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+string 0xd6e610->{STRING(262) 6:18.003 "string" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:18.3: STRING: "string")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 81 ("bads")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20de500->{6:18.10: IDENT: "bads"}
---accepting rule at line 56 (" ")
+astree 0xd6e610->{6:18.10: IDENT: "bads"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:18.010 "bads" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:18.010 "bads" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+bads 0xd6e610->{IDENT(278) 6:18.010 "bads" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:18.10: IDENT: "bads")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 98 ("=")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20de5a0->{6:18.15: '=': "="}
---accepting rule at line 56 (" ")
+astree 0xd6e610->{6:18.15: '=': "="}
+Next token is token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6e610
+0xd6e610->{'='(61) 6:18.015 "=" []})
+Error: discarding token '=' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 61, yyvaluep = 0xd6e610
+0xd6e610->{'='(61) 6:18.015 "=" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+= 0xd6e610->{'='(61) 6:18.015 "=" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:18.15: '=': "=")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 112 (""")
 oc: oc-programs/03-test3.oc: 18: invalid source character (")
 --accepting rule at line 81 ("boo")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20de620->{6:18.18: IDENT: "boo"}
---accepting rule at line 107 (";")
+astree 0xd6e610->{6:18.18: IDENT: "boo"}
+Next token is token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:18.018 "boo" []})
+Error: discarding token IDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 278, yyvaluep = 0xd6e610
+0xd6e610->{IDENT(278) 6:18.018 "boo" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+boo 0xd6e610->{IDENT(278) 6:18.018 "boo" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:18.18: IDENT: "boo")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20de690->{6:18.21: ';': ";"}
---accepting rule at line 56 (" ")
+astree 0xd6e610->{6:18.21: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:18.021 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:18.021 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:18.021 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:18.21: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 56 (" ")
 --accepting rule at line 57 ("
 ")
 --accepting rule at line 56 ("   ")
 --accepting rule at line 82 ("2fffwww")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20de710->{6:19.3: NOTIDENT: "2fffwww"}
-6 19.003 279 NOTIDENT 	 (2fffwww) 
---accepting rule at line 107 (";")
+astree 0xd6e610->{6:19.3: NOTIDENT: "2fffwww"}
+Next token is token NOTIDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 279, yyvaluep = 0xd6e610
+0xd6e610->{NOTIDENT(279) 6:19.003 "2fffwww" []})
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Next token is token NOTIDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 279, yyvaluep = 0xd6e610
+0xd6e610->{NOTIDENT(279) 6:19.003 "2fffwww" []})
+Error: discarding token NOTIDENT (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 279, yyvaluep = 0xd6e610
+0xd6e610->{NOTIDENT(279) 6:19.003 "2fffwww" []})
+DEBUGF(a): lyutils.cpp[76] error_destructor():
+
+2fffwww 0xd6e610->{NOTIDENT(279) 6:19.003 "2fffwww" []}
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:19.3: NOTIDENT: "2fffwww")
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 107 (";")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20de780->{6:19.10: ';': ";"}
---accepting rule at line 57 ("
+astree 0xd6e610->{6:19.10: ';': ";"}
+Next token is token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:19.010 ";" []})
+Shifting token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:19.010 ";" []})
+Entering state 12
+Reducing stack by rule 3 (line 48):
+   $1 = nterm stmtseq ()
+   $2 = token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+   $3 = token ';' (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 59, yyvaluep = 0xd6e610
+0xd6e610->{';'(59) 6:19.010 ";" []})
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E610]-> 6:19.10: ';': ";")
+-> $$ = nterm stmtseq ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 57 ("
 ")
 --accepting rule at line 90 ("}")
 DEBUGF(f): astree.cpp[23] new_astree():
-astree 0x20de800->{6:20.0: $undefined: "}"}
---accepting rule at line 57 ("
+astree 0xd6e610->{6:20.0: $undefined: "}"}
+Next token is token $undefined (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 257, yyvaluep = 0xd6e610
+$undefined(257)
+)
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Next token is token $undefined (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 257, yyvaluep = 0xd6e610
+$undefined(257)
+)
+Error: discarding token $undefined (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 257, yyvaluep = 0xd6e610
+$undefined(257)
+)
+Error: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Stack now 0 2
+Shifting token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Entering state 4
+Reading a token: --accepting rule at line 57 ("
 ")
 --(end of buffer or a NUL)
 --EOF (start condition 0)
+Now at end of input.
+Cleanup: discarding lookahead token $end (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 0, yyvaluep = 0xd6e610
+$end(0)
+)
+Stack now 0 2 4
+Cleanup: popping token error (DEBUGF(f): astree.cpp[79] yyprint():
+toknum = 256, yyvaluep = 0xd6e610
+error(256)
+)
+Cleanup: popping nterm stmtseq ()
+oc: parse failed (1)
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E5C0]-> 6:8.8: IDENT: "c")
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E520]-> 6:8.4: IDENT: "b")
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E570]-> 6:8.6: '+': "+")
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6DA50]-> 6:8.0: IDENT: "a")
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D6E4D0]-> 6:8.2: '=': "=")
+DEBUGF(f): astree.cpp[97] free_ast():
+free [D694F0]-> 0:0.0: ROOT: "<<ROOT>>")
+DEBUGF(s): main.cpp[123] main():
+
+stringset[   1]:   12875337389281854647 0xd6e2b8->"status"
+stringset[   2]:   12597418120160561823 0xd6daa8->"int"
+stringset[   5]:    1370730858159036685 0xd6e488->"+"
+stringset[   7]:    5479112591281387919 0xd6e018->"badc"
+                   10959529184379665549 0xd6de38->"c"
+                    9631199822919835226 0xd6e8a8->"foo"
+stringset[   8]:    2423692154667104243 0xd6e998->""OHhhh""
+                   13497578857207247412 0xd6d8c8->"string"
+stringset[  11]:    4993892634952068459 0xd6e348->"a"
+stringset[  12]:    5599151657291348184 0xd6db98->"getc"
+stringset[  13]:    6253375586064260614 0xd6ded8->"i"
+stringset[  14]:   15816506932648033945 0xd6d878->"("
+stringset[  15]:   12868445110721718657 0xd6db48->")"
+stringset[  21]:    9317282556992397945 0xd6e7b8->"if"
+stringset[  23]:    5058535866275092623 0xd6dbe8->"getw"
+stringset[  24]:   16777028388349496109 0xd6e768->"myarray"
+stringset[  25]:   12623033807595961729 0xd6d5e8->"__assert_fail"
+stringset[  26]:   12291392672316406109 0xd6daf8->"line"
+                   11597697714117577063 0xd6e398->"="
+stringset[  27]:    3275569456222023476 0xd6e108->"boo"
+stringset[  28]:   16045658030499259004 0xd6e948->"retoric"
+stringset[  29]:   11911796782241914524 0xd6d638->"void"
+stringset[  35]:   15665058248423044574 0xd6de88->"puti"
+stringset[  41]:   16561637548936908746 0xd6dcf8->"bool"
+stringset[  42]:   13686721134187162920 0xd6ee38->"}"
+stringset[  44]:    6414370376350317282 0xd6df78->"s"
+stringset[  45]:    3249760038497350828 0xd6e0b8->"bads"
+stringset[  50]:      21606623943142546 0xd6e858->"{"
+stringset[  51]:     342363981814211588 0xd6dde8->"char"
+stringset[  52]:    5344662657899890615 0xd6dc58->";"
+stringset[  54]:   10838281452030117757 0xd6dd48->"b"
+stringset[  59]:    6192799629375248351 0xd6e718->"'\n'"
+stringset[  63]:    4730615778294744744 0xd6ede8->"2fffwww"
+                    2611290532865012865 0xd6dca8->"putb"
+stringset[  64]:   16579916199511856337 0xd6dc08->"getln"
+stringset[  66]:   12517137738049778414 0xd6e218->"getargv"
+                   17899137375351314596 0xd6e438->"8"
+stringset[  67]:    4706206694200543916 0xd6d968->","
+stringset[  68]:    1124216861911730172 0xd6e1c8->"[]"
+stringset[  72]:    8545990094689704659 0xd6df28->"puts"
+stringset[  73]:    9386170080689500517 0xd6d918->"expr"
+stringset[  75]:    7087710809438285910 0xd6e8f8->"'u'"
+                    8248777770799913213 0xd6e3e8->"3"
+stringset[  79]:   16711936661946036647 0xd6e268->"exit"
+stringset[  80]:    3729804957429652673 0xd69548->"<<ROOT>>"
+stringset[  85]:    4017852018407011111 0xd6da08->"file"
+stringset[  87]:   15106541837140835242 0xd6e068->"'a;"
+                   14635384904416252381 0xd6ea88->"return"
+stringset[  88]:   10419262864770506158 0xd6dfc8->"endl"
+stringset[  93]:   15324126294630134299 0xd6e9e8->"gunit"
+stringset[  94]:    1518095382045706000 0xd6ea38->"2345"
+stringset[  95]:   10524007781696235770 0xd6dd98->"putc"
+                   14736352883882276958 0xd6e808->"=="
+load_factor = 0.546
+bucket_count = 97
+max_bucket_size = 3
