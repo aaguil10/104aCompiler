@@ -14,7 +14,7 @@ if(a == b){
    string retoric = "OHhhh";
    int gunit = 2345;
    return foo;
-   char badc = 'a;
-   string bads = "boo; 
-   2fffwww;
+   char badc = 'a';
+   string bads = "boo"; 
+   //2fffwww;
 }
