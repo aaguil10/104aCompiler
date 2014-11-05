@@ -53,7 +53,8 @@ static void dump_node (FILE* outfile, astree* node) {
             node->lexinfo->c_str());*/
    char* tname = (char*)get_yytname (node->symbol);
    if (strstr (tname, "TOK_") == tname) tname += 4;
-   fprintf (outfile, "%s %s 0.0.0" ,tname , node->lexinfo->c_str() );
+   fprintf (outfile, "%s %s %ld.%ld.%ld " ,tname , node->lexinfo->c_str(), 
+             node->filenr, node->linenr, node->offset);
    bool need_space = false;
    for (size_t child = 0; child < node->children.size(); ++child) {
       if (need_space) //fprintf (outfile, "\n|   ");

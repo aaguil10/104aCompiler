@@ -1,7 +1,6 @@
 # $Id: Makefile,v 1.8 2014-10-07 17:37:02-07 - - $
 
 GPP   = g++ -g -O0 -Wall -Wextra -std=gnu++11
-#GPP   = g++ -g -O0 -Wall -std=gnu++11
 GRIND = valgrind --leak-check=full --show-reachable=yes
 LSOURCES = scanner.l
 YSOURCES = parser.y

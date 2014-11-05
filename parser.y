@@ -51,7 +51,7 @@ program : stmtseq               { $$ = $1; }
 stmtseq : stmtseq expr ';'      { free_ast ($3); $$ = adopt1 ($1, $2); }
         | stmtseq error ';'     { free_ast ($3); $$ = $1; }
         | stmtseq ';'           { free_ast ($2); $$ = $1; }
-        |                       { $$ = new_parseroot("myfile"); }
+        |                       { $$ = new_parseroot("\"\""); }
         ;
 
 expr    : expr '=' expr         { $$ = adopt2 ($2, $1, $3); }
