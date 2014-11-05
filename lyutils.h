@@ -35,7 +35,7 @@ void scanner_newline (void);
 void scanner_setecho (bool echoflag);
 void scanner_useraction (void);
 
-astree* new_parseroot (void);
+astree* new_parseroot (const char* name);
 int yylval_token (int symbol);
 void error_destructor (astree*);
 

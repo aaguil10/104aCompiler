@@ -76,6 +76,19 @@ FILE* make_tok_file(char* filename, int first){
    return str_name;
 }
 
+FILE* make_ast_file(char* filename){
+   int len = strlen(filename);
+   char* file_str = (char*)malloc(len + 2);
+   strcpy(file_str, filename);
+   file_str[len-2] = 'a';
+   file_str[len-1] = 's';
+   file_str[len] = 't';
+   file_str[len+1] = '\0';
+   FILE* str_name = fopen(file_str, "w+");
+   free(file_str);
+   return str_name;
+}
+
 void print_str(char* filename){
    yyin_cpp_pclose();
    FILE* str_name = make_str_file(filename);
@@ -117,12 +130,17 @@ int main (int argc, char **argv) {
    }else {
       DEBUGSTMT ('a', dump_astree (stderr, yyparse_astree); );
    }
-   free_ast (yyparse_astree);
-   yyin_cpp_pclose();
+   //free_ast (yyparse_astree);
+   //yyin_cpp_pclose();
    DEBUGSTMT ('s', dump_stringset (stderr); );
    yylex_destroy(); 
    FILE* str_name = make_str_file(filename);
    dump_stringset (str_name);
+   FILE* ast_name = make_ast_file(filename);
+   dump_astree (ast_name, yyparse_astree);
+   free_ast (yyparse_astree);
+   //yyin_cpp_pclose();
+
 
    return EXIT_SUCCESS;
 }

@@ -1,27 +1,40 @@
 Terminals unused in grammar
 
-   VOID
-   BOOL
-   CHAR
-   INT
-   STRING
-   STRUCT
-   IF
-   ELSE
-   WHILE
-   RETURN
-   FALSE
-   TRUE
-   TOK_NULL
-   ORD
-   CHR
-   NEW
-   ROOT
-   SQUBRACKETS
-   GREAEQU
-   LESSEQU
-   NEQUAL
-   EQUALS
+   TOK_ROOT
+   NOTIDENT
+   TOK_KW_VOID
+   TOK_KW_BOOL
+   TOK_KW_CHAR
+   TOK_KW_INT
+   TOK_KW_STRING
+   TOK_KW_ELSE
+   TOK_KW_WHILE
+   TOK_KW_RETURN
+   TOK_KW_FALSE
+   TOK_KW_TRUE
+   TOK_KW_ORD
+   TOK_KW_CHR
+   TOK_KW_NEW
+   TOK_KW_IF
+   TOK_KW_STRUCT
+   TOK_KW_NULL
+   TOK_LIT_CHAR
+   TOK_LIT_STRING
+   TOK_NEQUAL
+   TOK_EQUALS
+   TOK_GREAEQU
+   TOK_LESSEQU
+   TOK_NEWARRAY
+   '%'
+   '!'
+   ','
+   '.'
+   '}'
+   ']'
+   '>'
+   '{'
+   '['
+   '<'
    "u+"
    "u-"
 
@@ -46,62 +59,75 @@ Grammar
    12     | '+' expr
    13     | '-' expr
    14     | '(' expr ')'
-   15     | IDENT
-   16     | NUMBER
+   15     | TOK_KW_IDENT
+   16     | TOK_LIT_INT
 
 
 Terminals, with rules where they appear
 
 $end (0) 0
+'!' (33)
+'%' (37)
 '(' (40) 14
 ')' (41) 14
 '*' (42) 9
 '+' (43) 7 12
+',' (44)
 '-' (45) 8 13
+'.' (46)
 '/' (47) 10
 ';' (59) 2 3 4
+'<' (60)
 '=' (61) 6
+'>' (62)
+'[' (91)
+']' (93)
 '^' (94) 11
+'{' (123)
+'}' (125)
 error (256) 3
-VOID (258)
-BOOL (259)
-CHAR (260)
-INT (261)
-STRING (262)
-STRUCT (263)
-IF (264)
-ELSE (265)
-WHILE (266)
-RETURN (267)
-FALSE (268)
-TRUE (269)
-TOK_NULL (270)
-ORD (271)
-CHR (272)
-NEW (273)
-ROOT (274)
-IDENT (275) 15
-NUMBER (276) 16
-SQUBRACKETS (277)
-GREAEQU (278)
-LESSEQU (279)
-NEQUAL (280)
-EQUALS (281)
-"u+" (282)
-"u-" (283)
-NEG (284)
-POS (285)
+TOK_ROOT (258)
+TOK_KW_IDENT (259) 15
+NOTIDENT (260)
+TOK_KW_VOID (261)
+TOK_KW_BOOL (262)
+TOK_KW_CHAR (263)
+TOK_KW_INT (264)
+TOK_KW_STRING (265)
+TOK_KW_ELSE (266)
+TOK_KW_WHILE (267)
+TOK_KW_RETURN (268)
+TOK_KW_FALSE (269)
+TOK_KW_TRUE (270)
+TOK_KW_ORD (271)
+TOK_KW_CHR (272)
+TOK_KW_NEW (273)
+TOK_KW_IF (274)
+TOK_KW_STRUCT (275)
+TOK_KW_NULL (276)
+TOK_LIT_INT (277) 16
+TOK_LIT_CHAR (278)
+TOK_LIT_STRING (279)
+TOK_NEQUAL (280)
+TOK_EQUALS (281)
+TOK_GREAEQU (282)
+TOK_LESSEQU (283)
+TOK_NEWARRAY (284)
+"u+" (285)
+"u-" (286)
+NEG (287)
+POS (288)
 
 
 Nonterminals, with rules where they appear
 
-$accept (40)
+$accept (53)
     on left: 0
-program (41)
+program (54)
     on left: 1, on right: 0
-stmtseq (42)
+stmtseq (55)
     on left: 2 3 4 5, on right: 1 2 3 4
-expr (43)
+expr (56)
     on left: 6 7 8 9 10 11 12 13 14 15 16, on right: 2 6 7 8 9 10 11
     12 13 14
 
@@ -130,13 +156,13 @@ state 2
     3        | stmtseq . error ';'
     4        | stmtseq . ';'
 
-    error   shift, and go to state 4
-    IDENT   shift, and go to state 5
-    NUMBER  shift, and go to state 6
-    '+'     shift, and go to state 7
-    '-'     shift, and go to state 8
-    ';'     shift, and go to state 9
-    '('     shift, and go to state 10
+    error         shift, and go to state 4
+    TOK_KW_IDENT  shift, and go to state 5
+    TOK_LIT_INT   shift, and go to state 6
+    '+'           shift, and go to state 7
+    '-'           shift, and go to state 8
+    ';'           shift, and go to state 9
+    '('           shift, and go to state 10
 
     $end  reduce using rule 1 (program)
 
@@ -159,14 +185,14 @@ state 4
 
 state 5
 
-   15 expr: IDENT .
+   15 expr: TOK_KW_IDENT .
 
     $default  reduce using rule 15 (expr)
 
 
 state 6
 
-   16 expr: NUMBER .
+   16 expr: TOK_LIT_INT .
 
     $default  reduce using rule 16 (expr)
 
@@ -175,11 +201,11 @@ state 7
 
    12 expr: '+' . expr
 
-    IDENT   shift, and go to state 5
-    NUMBER  shift, and go to state 6
-    '+'     shift, and go to state 7
-    '-'     shift, and go to state 8
-    '('     shift, and go to state 10
+    TOK_KW_IDENT  shift, and go to state 5
+    TOK_LIT_INT   shift, and go to state 6
+    '+'           shift, and go to state 7
+    '-'           shift, and go to state 8
+    '('           shift, and go to state 10
 
     expr  go to state 13
 
@@ -188,11 +214,11 @@ state 8
 
    13 expr: '-' . expr
 
-    IDENT   shift, and go to state 5
-    NUMBER  shift, and go to state 6
-    '+'     shift, and go to state 7
-    '-'     shift, and go to state 8
-    '('     shift, and go to state 10
+    TOK_KW_IDENT  shift, and go to state 5
+    TOK_LIT_INT   shift, and go to state 6
+    '+'           shift, and go to state 7
+    '-'           shift, and go to state 8
+    '('           shift, and go to state 10
 
     expr  go to state 14
 
@@ -208,11 +234,11 @@ state 10
 
    14 expr: '(' . expr ')'
 
-    IDENT   shift, and go to state 5
-    NUMBER  shift, and go to state 6
-    '+'     shift, and go to state 7
-    '-'     shift, and go to state 8
-    '('     shift, and go to state 10
+    TOK_KW_IDENT  shift, and go to state 5
+    TOK_LIT_INT   shift, and go to state 6
+    '+'           shift, and go to state 7
+    '-'           shift, and go to state 8
+    '('           shift, and go to state 10
 
     expr  go to state 15
 
@@ -292,11 +318,11 @@ state 16
 
     6 expr: expr '=' . expr
 
-    IDENT   shift, and go to state 5
-    NUMBER  shift, and go to state 6
-    '+'     shift, and go to state 7
-    '-'     shift, and go to state 8
-    '('     shift, and go to state 10
+    TOK_KW_IDENT  shift, and go to state 5
+    TOK_LIT_INT   shift, and go to state 6
+    '+'           shift, and go to state 7
+    '-'           shift, and go to state 8
+    '('           shift, and go to state 10
 
     expr  go to state 24
 
@@ -305,11 +331,11 @@ state 17
 
     7 expr: expr '+' . expr
 
-    IDENT   shift, and go to state 5
-    NUMBER  shift, and go to state 6
-    '+'     shift, and go to state 7
-    '-'     shift, and go to state 8
-    '('     shift, and go to state 10
+    TOK_KW_IDENT  shift, and go to state 5
+    TOK_LIT_INT   shift, and go to state 6
+    '+'           shift, and go to state 7
+    '-'           shift, and go to state 8
+    '('           shift, and go to state 10
 
     expr  go to state 25
 
@@ -318,11 +344,11 @@ state 18
 
     8 expr: expr '-' . expr
 
-    IDENT   shift, and go to state 5
-    NUMBER  shift, and go to state 6
-    '+'     shift, and go to state 7
-    '-'     shift, and go to state 8
-    '('     shift, and go to state 10
+    TOK_KW_IDENT  shift, and go to state 5
+    TOK_LIT_INT   shift, and go to state 6
+    '+'           shift, and go to state 7
+    '-'           shift, and go to state 8
+    '('           shift, and go to state 10
 
     expr  go to state 26
 
@@ -331,11 +357,11 @@ state 19
 
     9 expr: expr '*' . expr
 
-    IDENT   shift, and go to state 5
-    NUMBER  shift, and go to state 6
-    '+'     shift, and go to state 7
-    '-'     shift, and go to state 8
-    '('     shift, and go to state 10
+    TOK_KW_IDENT  shift, and go to state 5
+    TOK_LIT_INT   shift, and go to state 6
+    '+'           shift, and go to state 7
+    '-'           shift, and go to state 8
+    '('           shift, and go to state 10
 
     expr  go to state 27
 
@@ -344,11 +370,11 @@ state 20
 
    10 expr: expr '/' . expr
 
-    IDENT   shift, and go to state 5
-    NUMBER  shift, and go to state 6
-    '+'     shift, and go to state 7
-    '-'     shift, and go to state 8
-    '('     shift, and go to state 10
+    TOK_KW_IDENT  shift, and go to state 5
+    TOK_LIT_INT   shift, and go to state 6
+    '+'           shift, and go to state 7
+    '-'           shift, and go to state 8
+    '('           shift, and go to state 10
 
     expr  go to state 28
 
@@ -357,11 +383,11 @@ state 21
 
    11 expr: expr '^' . expr
 
-    IDENT   shift, and go to state 5
-    NUMBER  shift, and go to state 6
-    '+'     shift, and go to state 7
-    '-'     shift, and go to state 8
-    '('     shift, and go to state 10
+    TOK_KW_IDENT  shift, and go to state 5
+    TOK_LIT_INT   shift, and go to state 6
+    '+'           shift, and go to state 7
+    '-'           shift, and go to state 8
+    '('           shift, and go to state 10
 
     expr  go to state 29
 

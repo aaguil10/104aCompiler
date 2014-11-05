@@ -77,8 +77,8 @@ void error_destructor (astree* tree) {
    free_ast (tree);
 }
 
-astree* new_parseroot (void) {
-   yyparse_astree = new_astree (ROOT, 0, 0, 0, "<<ROOT>>");
+astree* new_parseroot (const char* name) {
+   yyparse_astree = new_astree (TOK_ROOT, 0, 0, 0, name);
    return yyparse_astree;
 }
 

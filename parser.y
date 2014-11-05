@@ -25,7 +25,7 @@ static void* yycalloc (size_t size);
 
 %destructor { error_destructor ($$); } <>
 
-%token  ROOT TOK_KW_IDENT NOTIDENT
+%token  TOK_ROOT TOK_KW_IDENT NOTIDENT
 %token  TOK_KW_VOID TOK_KW_BOOL TOK_KW_CHAR TOK_KW_INT TOK_KW_STRING
 %token  TOK_KW_ELSE TOK_KW_WHILE TOK_KW_RETURN TOK_KW_FALSE TOK_KW_TRUE
 %token  TOK_KW_ORD TOK_KW_CHR TOK_KW_NEW TOK_KW_IF TOK_KW_STRUCT
@@ -51,7 +51,7 @@ program : stmtseq               { $$ = $1; }
 stmtseq : stmtseq expr ';'      { free_ast ($3); $$ = adopt1 ($1, $2); }
         | stmtseq error ';'     { free_ast ($3); $$ = $1; }
         | stmtseq ';'           { free_ast ($2); $$ = $1; }
-        |                       { $$ = new_parseroot(); }
+        |                       { $$ = new_parseroot("myfile"); }
         ;
 
 expr    : expr '=' expr         { $$ = adopt2 ($2, $1, $3); }

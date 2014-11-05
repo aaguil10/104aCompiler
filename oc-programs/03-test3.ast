@@ -1,0 +1,8 @@
+myfile ROOT myfile 0.0.0
+= '=' = 0.0.0
+|   
+a KW_IDENT a 0.0.0
++ '+' + 0.0.0
+|   
+b KW_IDENT b 0.0.0
+c KW_IDENT c 0.0.0
