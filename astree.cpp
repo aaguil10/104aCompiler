@@ -53,10 +53,10 @@ static void dump_node (FILE* outfile, astree* node) {
             node->lexinfo->c_str());*/
    char* tname = (char*)get_yytname (node->symbol);
    if (strstr (tname, "TOK_") == tname) tname += 4;
-   fprintf (outfile, "%s %s 0.0.0", tname, node->lexinfo->c_str());
+   fprintf (outfile, "%s %s 0.0.0" ,tname , node->lexinfo->c_str() );
    bool need_space = false;
    for (size_t child = 0; child < node->children.size(); ++child) {
-      if (need_space) fprintf (outfile, "\n|   ");
+      if (need_space) //fprintf (outfile, "\n|   ");
       need_space = true;
       //fprintf (outfile, "%p", node->children.at(child));
    }
@@ -66,9 +66,9 @@ static void dump_node (FILE* outfile, astree* node) {
 static void dump_astree_rec (FILE* outfile, astree* root, int depth) {
    if (root == NULL) return;
    //fprintf (outfile, "%*s%s ", depth * 3, "", root->lexinfo->c_str());
-   fprintf (outfile, "%s ", root->lexinfo->c_str());
+   //fprintf (outfile, "%s ", root->lexinfo->c_str());
    dump_node (outfile, root);
-   fprintf (outfile, "\n");
+   fprintf (outfile, "\n|   ");
    for (size_t child = 0; child < root->children.size(); ++child) {
       dump_astree_rec (outfile, root->children[child], depth + 1);
    }

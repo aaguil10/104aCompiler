@@ -16,5 +16,5 @@ if(a == b){
    return foo;
    char badc = 'a';
    string bads = "boo"; 
-   2fffwww;
+   //2fffwww;
 }

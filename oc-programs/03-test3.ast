@@ -1,8 +1,7 @@
-myfile ROOT myfile 0.0.0
-= '=' = 0.0.0
+ROOT myfile 0.0.0
+|   '=' = 0.0.0
+|   KW_IDENT n 0.0.0
+|   '-' - 0.0.0
+|   KW_IDENT n 0.0.0
+|   LIT_INT 1 0.0.0
 |   
-a KW_IDENT a 0.0.0
-+ '+' + 0.0.0
-|   
-b KW_IDENT b 0.0.0
-c KW_IDENT c 0.0.0
