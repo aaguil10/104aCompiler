@@ -142,7 +142,7 @@ int main (int argc, char **argv) {
    //yyin_cpp_pclose();
 
 
-   return EXIT_SUCCESS;
+   return get_exitstatus();
 }
 
 

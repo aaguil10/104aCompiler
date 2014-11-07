@@ -40,6 +40,7 @@ TOK_KW_ORD      ord
 TOK_KW_CHR      chr
 TOK_KW_NEW      new
 TOK_LIT_CHAR    ('([^\\'\n]|\\[\\'"0nt])')
+NOTCHAR 	'([^\\'\n]|\\[\\'"0nt])
 TOK_LIT_STRING  (\"([^\\"\n]|\\[\\'"0nt])*\")
 MANTISSA        ({DIGIT}+\.?{DIGIT}*|\.{DIGIT}+)
 EXPONENT        ([Ee][+-]?{DIGIT}+)
@@ -104,6 +105,9 @@ NOTIDENT        {DIGIT}+{TOK_KW_IDENT}
 
 {NOTNUMBER}     { scanner_badtoken (yytext);
                   return yylval_token (TOK_LIT_INT); }
+{NOTCHAR}     { scanner_badtoken (yytext);
+                  errprintf("ERROR: %s \n" ,yytext);
+                  return yylval_token (NOTCHAR); }
 {NOTIDENT}     { scanner_badtoken (yytext);
                   return yylval_token (NOTIDENT); }
 

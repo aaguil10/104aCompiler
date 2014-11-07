@@ -52,10 +52,12 @@ void yyerror (const char* message) {
 }
 
 void scanner_badchar (unsigned char bad) {
+   //errprintf("ERROR: %s",(char*)bad);
    char char_rep[16];
    sprintf (char_rep, isgraph ((int) bad) ? "%c" : "\\%03o", bad);
    errprintf ("%:%s: %d: invalid source character (%s)\n",
               included_filenames.back().c_str(), scan_linenr, char_rep);
+   //errprintf("ERROR: %s",(char*)bad);
 }
 
 void scanner_badtoken (char* lexeme) {

@@ -25,7 +25,7 @@ static void* yycalloc (size_t size);
 
 %destructor { error_destructor ($$); } <>
 
-%token  TOK_ROOT TOK_KW_IDENT NOTIDENT
+%token  TOK_ROOT TOK_KW_IDENT NOTIDENT NOTCHAR
 %token  TOK_KW_VOID TOK_KW_BOOL TOK_KW_CHAR TOK_KW_INT TOK_KW_STRING
 %token  TOK_KW_ELSE TOK_KW_WHILE TOK_KW_RETURN TOK_KW_FALSE TOK_KW_TRUE
 %token  TOK_KW_ORD TOK_KW_CHR TOK_KW_NEW TOK_KW_IF TOK_KW_STRUCT
@@ -40,32 +40,23 @@ static void* yycalloc (size_t size);
 %right  '{' '[' '(' '<'
 %right  POS "u+" NEG "u-"
 
-%start  program
+%start  start
 
-
+
 %%
+start	: program 		{ yyparse_astree = $1; }
+	;
 
-program : stmtseq               { $$ = $1; }
+program : program identdecl    { $$ = adopt1 ($1, $2); }
+	|                       { $$ = new_parseroot("\"\""); }
         ;
 
-stmtseq : stmtseq expr ';'      { free_ast ($3); $$ = adopt1 ($1, $2); }
-        | stmtseq error ';'     { free_ast ($3); $$ = $1; }
-        | stmtseq ';'           { free_ast ($2); $$ = $1; }
-        |                       { $$ = new_parseroot("\"\""); }
-        ;
+basetype: TOK_KW_VOID | TOK_KW_BOOL | TOK_KW_CHAR | TOK_KW_INT 
+	| TOK_KW_STRING
+	;
 
-expr    : expr '=' expr         { $$ = adopt2 ($2, $1, $3); }
-        | expr '+' expr         { $$ = adopt2 ($2, $1, $3); }
-        | expr '-' expr         { $$ = adopt2 ($2, $1, $3); }
-        | expr '*' expr         { $$ = adopt2 ($2, $1, $3); }
-        | expr '/' expr         { $$ = adopt2 ($2, $1, $3); }
-        | expr '^' expr         { $$ = adopt2 ($2, $1, $3); }
-        | '+' expr %prec POS    { $$ = adopt1sym ($1, $2, POS); }
-        | '-' expr %prec NEG    { $$ = adopt1sym ($1, $2, NEG); }
-        | '(' expr ')'          { free_ast2 ($1, $3); $$ = $2; }
-        | TOK_KW_IDENT          { $$ = $1; }
-        | TOK_LIT_INT           { $$ = $1; }
-        ;
+identdecl: basetype TOK_KW_IDENT { $$ = adopt1 ($1, $2); }
+	;
 
 %%
 
