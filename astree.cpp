@@ -51,17 +51,17 @@ static void dump_node (FILE* outfile, astree* node) {
    if (strstr (tname, "TOK_") == tname) tname += 4;
    fprintf (outfile, "%s %s %ld.%ld.%ld " ,tname , node->lexinfo->c_str(), 
              node->filenr, node->linenr, node->offset);
-   bool need_space = false;
-   for (size_t child = 0; child < node->children.size(); ++child) {
-      if (need_space) //fprintf (outfile, "\n|   ");
-      need_space = true;
-   }
 }
 
 static void dump_astree_rec (FILE* outfile, astree* root, int depth) {
    if (root == NULL) return;
+   for(int i = 0; i < depth; i++){
+      fprintf (outfile, "|   ");
+   }
+   fflush(NULL);
+   //printf("T: %s D: %d \n", root->lexinfo->c_str(), depth);
    dump_node (outfile, root);
-   fprintf (outfile, "\n|   ");
+   fprintf (outfile, "\n");
    for (size_t child = 0; child < root->children.size(); ++child) {
       dump_astree_rec (outfile, root->children[child], depth + 1);
    }

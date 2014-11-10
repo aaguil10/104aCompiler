@@ -1,0 +1,7 @@
+# 1 "oc-programs/letest.oc"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "oc-programs/letest.oc"
+3 1.000 265 TOK_KW_INT 	(int) 
+3 1.003 285 TOK_NEWARRAY 	([]) 
+3 1.006 259 TOK_KW_IDENT 	(foo) 
