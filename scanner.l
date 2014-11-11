@@ -28,7 +28,7 @@ TOK_KW_BOOL     bool
 TOK_KW_CHAR     char
 TOK_KW_INT      int
 TOK_KW_STRING   string
-TOK_KW_STRUCT   sturct
+TOK_KW_STRUCT   struct
 TOK_KW_IF       if
 TOK_KW_ELSE     else
 TOK_KW_WHILE    while

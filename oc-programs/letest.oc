@@ -1,1 +1,4 @@
-int[] foo
+struct foo {
+   int bar;
+   bool seat;
+}

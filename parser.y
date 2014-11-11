@@ -15,6 +15,14 @@
 
 static void* yycalloc (size_t size);
 
+void structdef1(astree* $$, astree* one, astree* two, astree* three, 
+                astree* four, astree* five){
+   free_ast2 (three, five);
+   //free_ast(six);
+   $$ = adopt2 (one, two, four);
+   stealGrand (one);
+}
+
 %}
 
 %debug
@@ -47,7 +55,7 @@ static void* yycalloc (size_t size);
 start	: program 				{ yyparse_astree = $1; }
 	;
 
-program : program identdecl    			{ $$ = adopt1 ($1, $2); }
+program : program structdef    			{ $$ = adopt1 ($1, $2); }
 	|                     			{ $$ = new_parseroot("\"\""); }
         ;
 
@@ -59,6 +67,17 @@ identdecl: basetype TOK_KW_IDENT 		{ $$ = adopt1 ($1, $2); }
 	| basetype TOK_NEWARRAY TOK_KW_IDENT 	{ $$ = adopt2 ($1, $2, $3); }
 	;
 
+fielddecl: basetype TOK_KW_IDENT 		{ $$ = adopt1 ($1, $2); }
+	| basetype TOK_NEWARRAY TOK_KW_IDENT 	{ $$ = adopt2 ($1, $2, $3); }
+	;
+
+mfielddecl: mfielddecl fielddecl ';'		{ $$ = adopt1 ($1, $2); }
+	| fielddecl ';'				{}
+	;
+
+structdef: TOK_KW_STRUCT TOK_KW_IDENT '{''}'		{  free_ast2 ($3, $4); $$ = adopt1 ($1, $2); }
+	|  TOK_KW_STRUCT TOK_KW_IDENT'{'mfielddecl'}'	{ structdef1($$,$1,$2,$3,$4,$5); }
+	;
 %%
 
 const char* get_yytname (int symbol) {
@@ -74,6 +93,7 @@ static void* yycalloc (size_t size) {
    assert (result != NULL);
    return result;
 }
+
 
 RCSC("$Id: parser.y,v 1.5 2013-10-10 18:48:18-07 - - $")
 

@@ -53,7 +53,7 @@ FILE* make_str_file(char* filename){
    file_str[len-1] = 't';
    file_str[len] = 'r';
    file_str[len+1] = '\0';
-   FILE* str_name = fopen(file_str, "a+");
+   FILE* str_name = fopen(file_str, "w+");
    free(file_str);
    return str_name;
 }
