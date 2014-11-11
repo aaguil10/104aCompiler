@@ -1,4 +1,5 @@
 struct foo {
    int bar;
-   string seat;
+   bool seat;
+   string table;
 }

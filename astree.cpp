@@ -40,21 +40,32 @@ astree* adopt2 (astree* root, astree* left, astree* right) {
 }
 
 astree* stealGrand (astree* root) {
+   vector<astree*> kill;
    for(int i = 1; i < (int)root->children.size(); i++){
       astree* tmp = root->children[i];
+      //add grandchildren to root
       for(int j = 1; j < (int)tmp->children.size(); j++){
          astree* metaTmp = tmp->children[j];
-         tmp->children.erase(tmp->children.begin() + j);
+         kill.push_back(metaTmp);
          root->children.push_back (metaTmp);
       }
+      //remove previous links
+      for(int j = 0; j < (int)tmp->children.size(); j++){
+         for(int k = 0; k < (int)kill.size(); k++){
+            if(kill[k] == tmp->children[j]){
+               tmp->children.erase(tmp->children.begin() + j);
+            }
+         }
+      }
    }
-   for(int i = 0; i < (int)root->children.size(); i++){
+   //prints tree
+   /*for(int i = 0; i < (int)root->children.size(); i++){
       astree* tmp = root->children[i];
       printf("%s:\n", tmp->lexinfo->c_str() );
       for(int j = 0; j < (int)tmp->children.size(); j++){
          printf("   %s:\n", tmp->children[j]->lexinfo->c_str() );
       }
-   }
+   }*/
    return root;
 }
 

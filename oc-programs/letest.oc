@@ -1,4 +1,6 @@
 struct foo {
    int bar;
    bool seat;
+   string table;
+   void budda;
 }

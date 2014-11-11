@@ -5,3 +5,7 @@ ROOT "" 0.0.0
 |   |   |   KW_IDENT bar 3.2.7 
 |   |   KW_BOOL bool 3.3.3 
 |   |   |   KW_IDENT seat 3.3.8 
+|   |   KW_STRING string 3.4.3 
+|   |   |   KW_IDENT table 3.4.10 
+|   |   KW_VOID void 3.5.3 
+|   |   |   KW_IDENT budda 3.5.8 
