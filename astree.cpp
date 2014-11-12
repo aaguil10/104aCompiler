@@ -65,7 +65,7 @@ astree* stealGrand (astree* root) {
       for(int j = 0; j < (int)tmp->children.size(); j++){
          printf("   %s:\n", tmp->children[j]->lexinfo->c_str() );
       }
-   }*/
+  }*/
    return root;
 }
 
@@ -85,12 +85,16 @@ static void dump_node (FILE* outfile, astree* node) {
 
 static void dump_astree_rec (FILE* outfile, astree* root, int depth) {
    if (root == NULL) return;
+   if( strcmp(root->lexinfo->c_str(),"}") == 0){
+      return;
+   }
    for(int i = 0; i < depth; i++){
       fprintf (outfile, "|   ");
    }
    fflush(NULL);
    //printf("T: %s D: %d \n", root->lexinfo->c_str(), depth);
    dump_node (outfile, root);
+   
    fprintf (outfile, "\n");
    for (size_t child = 0; child < root->children.size(); ++child) {
       dump_astree_rec (outfile, root->children[child], depth + 1);
