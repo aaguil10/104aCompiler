@@ -24,7 +24,13 @@ astree* new_astree (int symbol, int filenr, int linenr, int offset,
    return tree;
 }
 
-
+void changeSymbol(astree* tree, int  myStr){
+   //char *str;
+   //str = (char *) malloc(sizeof(myStr));
+   //strcpy(str, myStr);
+   tree->symbol = myStr;
+}
+
 astree* adopt1 (astree* root, astree* child) {
    root->children.push_back (child);
    DEBUGF ('a', "%p (%s) adopting %p (%s)\n",
@@ -75,6 +81,10 @@ astree* adopt1sym (astree* root, astree* child, int symbol) {
    return root;
 }
 
+astree* adoptsym (astree* root, int symbol) {
+   root->symbol = symbol;
+   return root;
+}
 
 static void dump_node (FILE* outfile, astree* node) {
    char* tname = (char*)get_yytname (node->symbol);
@@ -85,9 +95,9 @@ static void dump_node (FILE* outfile, astree* node) {
 
 static void dump_astree_rec (FILE* outfile, astree* root, int depth) {
    if (root == NULL) return;
-   if( strcmp(root->lexinfo->c_str(),"}") == 0){
+   /*if( strcmp(root->lexinfo->c_str(),"}") == 0){
       return;
-   }
+   }*/
    for(int i = 0; i < depth; i++){
       fprintf (outfile, "|   ");
    }

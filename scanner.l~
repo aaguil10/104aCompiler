@@ -28,7 +28,7 @@ TOK_KW_BOOL     bool
 TOK_KW_CHAR     char
 TOK_KW_INT      int
 TOK_KW_STRING   string
-TOK_KW_STRUCT   sturct
+TOK_KW_STRUCT   struct
 TOK_KW_IF       if
 TOK_KW_ELSE     else
 TOK_KW_WHILE    while
@@ -47,6 +47,7 @@ EXPONENT        ([Ee][+-]?{DIGIT}+)
 TOK_LIT_INT          {DIGIT}+
 NOTNUMBER       ({MANTISSA}[Ee][+-]?)
 TOK_KW_IDENT    ({LETTER}({LETTER}|{DIGIT})*)
+TOK_FIELD	{TOK_KW_IDENT}
 NOTIDENT        {DIGIT}+{TOK_KW_IDENT}
 
 %%
@@ -77,6 +78,7 @@ NOTIDENT        {DIGIT}+{TOK_KW_IDENT}
 {TOK_LIT_STRING}    { return yylval_token (TOK_LIT_STRING); }
 {TOK_LIT_INT}        { return yylval_token (TOK_LIT_INT); }
 {TOK_KW_IDENT}         { return yylval_token (TOK_KW_IDENT); }
+{TOK_FIELD}         { return yylval_token (TOK_FIELD); }
 {TOK_NEWARRAY}   { return yylval_token (TOK_NEWARRAY); }
 {TOK_EQUALS}    { return yylval_token (TOK_EQUALS); }
 {TOK_NEQUAL}    { return yylval_token (TOK_NEQUAL); }
