@@ -75,46 +75,25 @@ astree* stealGrand (astree* root, int start) {
    return root;
 }
 
-astree* delRoot (astree* root) {
-   //vector<astree*> kill;
+astree* delRoots (astree* root) {
    for(int i = 1; i < (int)root->children.size(); i++){
       astree* tmp = root->children[i];
       char* tname = (char*)get_yytname (tmp->symbol);
       if(strcmp(tname, (char*)"TOK_ROOT") == 0 ){
-        delmiddle(root, i, 0);
+        delmiddle(root, i);
       }
-      /*for(int j = start; j < (int)tmp->children.size(); j++){
-         astree* metaTmp = tmp->children[j];
-         kill.push_back(metaTmp);
-         root->children.push_back (metaTmp);
-      }
-      for(int j = 0; j < (int)tmp->children.size(); j++){
-         for(int k = 0; k < (int)kill.size(); k++){
-            if(kill[k] == tmp->children[j]){
-               tmp->children.erase(tmp->children.begin() + j);
-            }
-         }
-      }*/
    }
    fflush(NULL);
    return root;
 }
 
 
-astree* delmiddle(astree* root, int victim, int replace){
+astree* delmiddle(astree* root, int victim){
    astree* tmp = root->children[victim];
    root->children.erase(root->children.begin() + victim);
-   printf("tSize: %d\n", tmp->children.size());
    for(int j = 0; j < (int)tmp->children.size(); j++){
-      char* tname = (char*)get_yytname (tmp->children[j]->symbol);
-      printf("   tname: %s\n", tmp->children[j]->lexinfo->c_str());
       astree* curr = tmp->children[j];
       root->children.push_back (curr);
-      fflush(NULL);
-   }
-   if(tmp->children.size() > 0){
-      //astree* curr = tmp->children[replace];
-      //root->children.push_back (curr);
    }
    return root;
 }

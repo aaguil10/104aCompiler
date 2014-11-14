@@ -1,8 +1,12 @@
-mytaco(jumbo, ball(jelly), boy())
+mytaco(jumbo, ball(jelly), boy(), que)
+
+struct hand {
+  int fingers;
+}
 
 struct dude {
    int age;
    bool sex;
    void run;
-
+   hand;
 }

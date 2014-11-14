@@ -104,17 +104,9 @@ astree* delRoot (astree* root) {
 astree* delmiddle(astree* root, int victim, int replace){
    astree* tmp = root->children[victim];
    root->children.erase(root->children.begin() + victim);
-   printf("tSize: %d\n", tmp->children.size());
    for(int j = 0; j < (int)tmp->children.size(); j++){
-      char* tname = (char*)get_yytname (tmp->children[j]->symbol);
-      printf("   tname: %s\n", tmp->children[j]->lexinfo->c_str());
-      astree* curr = tmp->children[replace];
+      astree* curr = tmp->children[j];
       root->children.push_back (curr);
-      fflush(NULL);
-   }
-   if(tmp->children.size() > 0){
-      //astree* curr = tmp->children[replace];
-      //root->children.push_back (curr);
    }
    return root;
 }
