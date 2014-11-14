@@ -45,12 +45,12 @@ astree* adopt2 (astree* root, astree* left, astree* right) {
    return root;
 }
 
-astree* stealGrand (astree* root) {
+astree* stealGrand (astree* root, int start) {
    vector<astree*> kill;
    for(int i = 1; i < (int)root->children.size(); i++){
       astree* tmp = root->children[i];
       //add grandchildren to root
-      for(int j = 1; j < (int)tmp->children.size(); j++){
+      for(int j = start; j < (int)tmp->children.size(); j++){
          astree* metaTmp = tmp->children[j];
          kill.push_back(metaTmp);
          root->children.push_back (metaTmp);
@@ -75,6 +75,14 @@ astree* stealGrand (astree* root) {
    return root;
 }
 
+astree* delmiddle(astree* root, int victim, int replace){
+   astree* tmp = root->children[victim];
+   astree* curr = tmp->children[replace];
+   root->children.erase(root->children.begin() + victim);
+   root->children.push_back (curr);
+   return root;
+}
+
 astree* adopt1sym (astree* root, astree* child, int symbol) {
    root = adopt1 (root, child);
    root->symbol = symbol;
@@ -89,7 +97,7 @@ astree* adoptsym (astree* root, int symbol) {
 static void dump_node (FILE* outfile, astree* node) {
    char* tname = (char*)get_yytname (node->symbol);
    if (strstr (tname, "TOK_") == tname) tname += 4;
-   fprintf (outfile, "%s %s %ld.%ld.%ld " ,tname , node->lexinfo->c_str(), 
+   fprintf (outfile, "%s \"%s\" %ld.%ld.%ld " ,tname , node->lexinfo->c_str(), 
              node->filenr, node->linenr, node->offset);
 }
 

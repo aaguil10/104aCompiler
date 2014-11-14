@@ -1,12 +1,14 @@
 ROOT "" 0.0.0 
-|   KW_STRUCT struct 3.1.0 
-|   |   TYPEID foo 3.1.7 
-|   |   ROOT "" 0.0.0 
-|   |   |   KW_INT int 3.2.3 
-|   |   |   |   FIELD bar 3.2.7 
-|   |   KW_BOOL bool 3.3.3 
-|   |   |   FIELD seat 3.3.8 
-|   |   KW_STRING string 3.4.3 
-|   |   |   FIELD table 3.4.10 
-|   |   KW_VOID void 3.5.3 
-|   |   |   FIELD budda 3.5.8 
+|   CALL "(" 3.1.6 
+|   |   KW_IDENT "mytaco" 3.1.0 
+|   |   KW_IDENT "jumbo" 3.1.7 
+|   |   KW_IDENT "ball" 3.1.14 
+|   |   KW_IDENT "boy" 3.1.20 
+|   KW_STRUCT "struct" 3.3.0 
+|   |   TYPEID "dude" 3.3.7 
+|   |   KW_BOOL "bool" 3.5.3 
+|   |   |   FIELD "sex" 3.5.8 
+|   |   KW_VOID "void" 3.6.3 
+|   |   |   FIELD "run" 3.6.8 
+|   |   KW_INT "int" 3.4.3 
+|   |   |   FIELD "age" 3.4.7 

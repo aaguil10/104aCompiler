@@ -22,7 +22,8 @@ astree* new_astree (int symbol, int filenr, int linenr, int offset,
 void changeSymbol(astree* tree, int myStr);
 astree* adopt1 (astree* root, astree* child);
 astree* adopt2 (astree* root, astree* left, astree* right);
-astree* stealGrand (astree* root);
+astree* stealGrand (astree* root, int start);
+astree* delmiddle(astree* root, int victim, int replace);
 astree* adopt1sym (astree* root, astree* child, int symbol);
 astree* adoptsym (astree* root, int symbol);
 void dump_astree (FILE* outfile, astree* root);

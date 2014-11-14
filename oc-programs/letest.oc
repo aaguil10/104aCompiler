@@ -1,6 +1,8 @@
-struct foo {
-   int bar;
-   bool seat;
-   string table;
-   void budda;
+mytaco(jumbo, ball, boy)
+
+struct dude {
+   int age;
+   bool sex;
+   void run;
+
 }
