@@ -103,16 +103,16 @@ expr	: call 					{ $$ = $1 }
 	;
 
 args	: args ',' expr				{ $$ = adopt1 ($1, $3); }
-	| expr					{ $$ = $1 }
-	|					{ $$ = new_parseroot("\"\""); }
+	| expr					{ $$ = adopt1 (new_parseroot(""), $1);}
+	|					{ $$ = new_parseroot(""); }
 	;
 
-tok_call: '('					{ adoptsym ($1, TOK_CALL);  }
-	;
-
-call	: TOK_KW_IDENT tok_call args ')'		{ free_ast($4); 
-							  $$ = adopt2 ($2, $1, $3); 
-							  stealGrand($2, 0); }
+call	: TOK_KW_IDENT '(' args ')'		{ free_ast($4); 
+                                                  adoptsym ($2, TOK_CALL);
+						  $$ = adopt2 ($2, $1, $3);
+                                                  delRoot ($2); 
+						  /*stealGrand($2, 1); 
+						  delmiddle(one, 1, 0);*/ }
 	;
 
 variable: TOK_KW_IDENT				{ $$ = $1 }

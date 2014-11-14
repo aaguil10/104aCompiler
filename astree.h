@@ -23,6 +23,7 @@ void changeSymbol(astree* tree, int myStr);
 astree* adopt1 (astree* root, astree* child);
 astree* adopt2 (astree* root, astree* left, astree* right);
 astree* stealGrand (astree* root, int start);
+astree* delRoot (astree* root);
 astree* delmiddle(astree* root, int victim, int replace);
 astree* adopt1sym (astree* root, astree* child, int symbol);
 astree* adoptsym (astree* root, int symbol);

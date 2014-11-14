@@ -108,7 +108,7 @@ astree* delmiddle(astree* root, int victim, int replace){
    for(int j = 0; j < (int)tmp->children.size(); j++){
       char* tname = (char*)get_yytname (tmp->children[j]->symbol);
       printf("   tname: %s\n", tmp->children[j]->lexinfo->c_str());
-      astree* curr = tmp->children[j];
+      astree* curr = tmp->children[replace];
       root->children.push_back (curr);
       fflush(NULL);
    }

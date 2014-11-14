@@ -1,4 +1,4 @@
-mytaco(jumbo, ball, boy)
+mytaco(jumbo, ball(jelly), boy(), que)
 
 struct dude {
    int age;
