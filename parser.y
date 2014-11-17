@@ -51,7 +51,7 @@ astree* call1(astree* one, astree* two, astree* three, astree* four){
 %right  '{' '('
 
 %right TOK_KW_IF TOK_KW_ELSE 
-%right '=' TOK_IFELSE
+%right '=' TOK_IFELSE TOK_VARDECL
 %left  TOK_EQUALS TOK_NEQUAL '<' TOK_GREAEQU '>' TOK_LESSEQU
 %left  '+' '-'
 %left  '*' '/' '%'
@@ -92,9 +92,19 @@ identdecl: basetype TOK_KW_IDENT		{ adoptsym ($1, TOK_DECLID);
 	| basetype TOK_NEWARRAY TOK_DECLID 	{ $$ = adopt2 ($1, $2, $3); }
 	;
 
-statement: ifelse				{ $$ = $1 }
+statement: vardecl				{ $$ = $1 }
+	| while					{ $$ = $1 }
+	| ifelse				{ $$ = $1 }
 	| return				{ $$ = $1 }		 
 	| expr ';'				{ free_ast($2); $$ = $1 }
+	;
+
+vardecl	: identdecl '=' expr ';'		{free_ast($4);
+						adoptsym ($2, TOK_VARDECL);
+						$$ = adopt2 ($2, $1, $3); }
+	;
+
+while	: TOK_KW_WHILE '(' expr ')' statement	{ free_ast2($2, $4); $$ = adopt2 ($1, $3, $5); }
 	;
 
 ifelse	: TOK_KW_IF '(' expr ')' statement 	{ free_ast2($2, $4); 
@@ -110,7 +120,7 @@ return	: TOK_KW_RETURN	';'			{ free_ast($2); $$ = $1 }
 	;
 
 BINOP	: '+' | '-' | '*' | '/' | '%'
-	|  '='
+	| '='
 	| TOK_EQUALS | TOK_NEQUAL | '<' 
 	| TOK_GREAEQU | '>' | TOK_LESSEQU				
 	;

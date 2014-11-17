@@ -30,3 +30,15 @@ ROOT "" 0.0.0
 |   |   |   |   KW_IDENT "time" 3.14.6 
 |   |   KW_RETURN "return" 3.16.1 
 |   |   |   STRINGCON ""Que?"" 3.16.8 
+|   KW_WHILE "while" 3.18.0 
+|   |   '>' ">" 3.18.9 
+|   |   |   KW_IDENT "i" 3.18.7 
+|   |   |   INTCON "5" 3.18.11 
+|   |   VARDECL "=" 3.19.9 
+|   |   |   DECLID "int" 3.19.1 
+|   |   |   |   KW_IDENT "goo" 3.19.5 
+|   |   |   INTCON "5" 3.19.11 
+|   VARDECL "=" 3.20.12 
+|   |   DECLID "string" 3.20.1 
+|   |   |   KW_IDENT "cow" 3.20.8 
+|   |   STRINGCON ""moo"" 3.20.14 

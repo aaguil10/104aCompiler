@@ -13,4 +13,8 @@ struct dude {
 if( pollo == chiken )
  cook[time.five];
 else
- return false;
+ return "Que?";
+
+while( i > 5 )
+ int goo = 5;
+ string hg[1] = "moo";
