@@ -1,4 +1,4 @@
-mytaco(jumbo, ball(jelly), boy(), que)
+mytaco(jumbo, ball(jelly), boy(), que);
 
 struct hand {
   int fingers;
@@ -9,3 +9,20 @@ struct dude {
    bool sex;
    void run;
 }
+
+new hand();
+new string (mystring);
+new int[foo];
+
+food[pollo.cook];
+
+false;
+true;
+NULL;
+
+'c';
+"myChikken";
+677955 + 66 * 4;
+-5;
+
+return cd;

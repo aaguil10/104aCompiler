@@ -44,7 +44,7 @@ NOTCHAR 	'([^\\'\n]|\\[\\'"0nt])
 TOK_LIT_STRING  (\"([^\\"\n]|\\[\\'"0nt])*\")
 MANTISSA        ({DIGIT}+\.?{DIGIT}*|\.{DIGIT}+)
 EXPONENT        ([Ee][+-]?{DIGIT}+)
-TOK_LIT_INT          {DIGIT}+
+TOK_LIT_INT     {DIGIT}+
 NOTNUMBER       ({MANTISSA}[Ee][+-]?)
 TOK_KW_IDENT    ({LETTER}({LETTER}|{DIGIT})*)
 NOTIDENT        {DIGIT}+{TOK_KW_IDENT}

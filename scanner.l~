@@ -47,7 +47,6 @@ EXPONENT        ([Ee][+-]?{DIGIT}+)
 TOK_LIT_INT          {DIGIT}+
 NOTNUMBER       ({MANTISSA}[Ee][+-]?)
 TOK_KW_IDENT    ({LETTER}({LETTER}|{DIGIT})*)
-TOK_FIELD	{TOK_KW_IDENT}
 NOTIDENT        {DIGIT}+{TOK_KW_IDENT}
 
 %%
@@ -78,7 +77,6 @@ NOTIDENT        {DIGIT}+{TOK_KW_IDENT}
 {TOK_LIT_STRING}    { return yylval_token (TOK_LIT_STRING); }
 {TOK_LIT_INT}        { return yylval_token (TOK_LIT_INT); }
 {TOK_KW_IDENT}         { return yylval_token (TOK_KW_IDENT); }
-{TOK_FIELD}         { return yylval_token (TOK_FIELD); }
 {TOK_NEWARRAY}   { return yylval_token (TOK_NEWARRAY); }
 {TOK_EQUALS}    { return yylval_token (TOK_EQUALS); }
 {TOK_NEQUAL}    { return yylval_token (TOK_NEQUAL); }
