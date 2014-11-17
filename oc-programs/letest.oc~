@@ -1,25 +1,12 @@
-mytaco(jumbo, ball(jelly), boy(), que);
+int k = (5 + 4) * 6;
+char me = new char[too.length];
+string name = "k";
 
-struct hand {
-  int fingers;
+
+/*int f() {
+int a = ;
+return foo;
+public static void main (String[] args) {
+   //System.exit (255);
 }
-
-struct dude {
-   int age;
-   bool sex;
-   void run;
-}
-
-void[] f() {};
-
-void kill(int gun, char bubble){
-  if( pollo == chiken ){
-     cook[time.five];
-  }else{
-    return "Que?";
-    while( i > 5 ){
-      int goo = 5;
-      string cow = "moo";
-    }
-  }
-}
+}*/

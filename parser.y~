@@ -30,15 +30,12 @@ astree* call1(astree* one, astree* two, astree* three, astree* four){
 
 astree* function1(astree* one, astree* two, astree* three){
    char* tname = (char*)get_yytname (three->symbol);
-   printf("F: %s\n", tname);
    astree* func = NULL;
    if(strcmp(tname, (char*)"';'") == 0 ){
-      printf("Prototype\n");
       func = new_parseroot("TOK_PROTOTYPE");
    }else{
       func = new_parseroot("TOK_FUNCTION");
    }
-   //astree* func = new_parseroot("TOK_FUNCTION");
    return adopt3 (func, one, two, three);
 }
 
@@ -55,21 +52,21 @@ astree* function1(astree* one, astree* two, astree* three){
 %token  TOK_ROOT TOK_KW_IDENT NOTIDENT NOTCHAR
 %token  TOK_KW_VOID TOK_KW_BOOL TOK_KW_CHAR TOK_KW_INT TOK_KW_STRING
 %token  TOK_KW_WHILE TOK_KW_RETURN TOK_KW_FALSE TOK_KW_TRUE
-%token  TOK_KW_NEW TOK_KW_STRUCT TOK_NEWSTRING TOK_NEWARRAY
+%token  TOK_KW_NEW TOK_KW_STRUCT TOK_NEWSTRING
 %token  TOK_KW_NULL TOK_LIT_INT TOK_LIT_CHAR TOK_LIT_STRING
-%token  TOK_NEWARRAY TOK_FIELD TOK_DECLID TOK_TYPEID TOK_CALL
-%token	TOK_STRINGCON TOK_CHARCON TOK_INTCON
+%token  TOK_FIELD TOK_DECLID TOK_TYPEID TOK_CALL
+%token	TOK_STRINGCON TOK_CHARCON TOK_INTCON TOK_sNEWARRAY
 
 %right  '^' ';' ','
 %left   '}' ']' ')'
 %right  '{' '(' 
 
 %right TOK_KW_IF TOK_KW_ELSE 
-%right '=' TOK_IFELSE TOK_VARDECL TOK_BLOCK TOK_PARAMLIST
+%right '=' TOK_IFELSE TOK_VARDECL TOK_BLOCK TOK_PARAMLIST TOK_NEWARRAY
 %left  TOK_EQUALS TOK_NEQUAL '<' TOK_GREAEQU '>' TOK_LESSEQU 
 %left  '+' '-'
-%left  '*' '/' '%'
-%right TOK_POS TOK_NEG '!' TOK_KW_ORD TOK_KW_CHR
+%left  '*' '/' '%' 
+%right TOK_POS TOK_NEG '!' TOK_KW_ORD TOK_KW_CHR 
 %left  '[' '.' 
 
 %start  start
@@ -170,7 +167,7 @@ BINOP	: '+' | '-' | '*' | '/' | '%'
 
 UNOP	: '+' 					{ adoptsym ($1, TOK_POS); }
 	| '-' 					{ adoptsym ($1, TOK_NEG); }
-	| '!' | '('
+	| '!' 
 	| TOK_KW_ORD | TOK_KW_CHR
 	;
 
@@ -178,7 +175,7 @@ expr	: expr BINOP expr			{ $$ = adopt2 ($2, $1, $3); }
 	| UNOP expr				{ $$ = adopt1 ($1, $2); }
 	| allocator				{ $$ = $1 }
 	| call 					{ $$ = $1 }
-	| '(' expr ')'				{ free_ast2($1, $2); $$ = $1 }
+	| '(' expr ')'				{ free_ast2($1, $3); $$ = $2 }
 	| variable				{ $$ = $1 }
 	| constant				{ $$ = $1 }
 	;
@@ -186,12 +183,14 @@ expr	: expr BINOP expr			{ $$ = adopt2 ($2, $1, $3); }
 allocator: TOK_KW_NEW TOK_KW_IDENT '(' ')'	{ free_ast2($3, $4);
 						adoptsym ($2, TOK_TYPEID); 
 						$$ = adopt1 ($1, $2); }
-	| TOK_KW_NEW TOK_KW_STRING '(' expr ')'{ free_ast2($3, $5);
+	| TOK_KW_NEW TOK_KW_STRING '(' expr ')'	{ free_ast2($3, $5);
+						free_ast($2);
 						adoptsym ($1, TOK_NEWSTRING);
 						$$ = adopt1 ($1, $4); }
-	| TOK_KW_NEW basetype '[' expr ']'	{ free_ast($5);
+	| TOK_KW_NEW basetype '[' expr ']'	{ free_ast2 ($3, $5);
 						adoptsym ($1, TOK_NEWARRAY);
-						$$ = adopt2 ($1, $3, $4); }
+						adoptsym ($2, TOK_TYPEID);
+						$$ = adopt2 ($1, $2, $4); }
 	;
 
 args	: args ',' expr				{ free_ast($2); $$ = adopt1 ($1, $3); }

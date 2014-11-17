@@ -9,57 +9,68 @@ ROOT "" 0.0.0
 |   |   |   |   KW_IDENT "file" 5.24.40 
 |   |   |   DECLID "int" 5.24.46 
 |   |   |   |   KW_IDENT "line" 5.24.50 
+|   |   ';' ";" 5.24.55 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
 |   |   DECLID "void" 5.25.0 
 |   |   |   KW_IDENT "putb" 5.25.5 
 |   |   PARAMLIST "(" 5.25.10 
 |   |   |   DECLID "bool" 5.25.11 
 |   |   |   |   KW_IDENT "b" 5.25.16 
+|   |   ';' ";" 5.25.18 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
 |   |   DECLID "void" 5.26.0 
 |   |   |   KW_IDENT "putc" 5.26.5 
 |   |   PARAMLIST "(" 5.26.10 
 |   |   |   DECLID "char" 5.26.11 
 |   |   |   |   KW_IDENT "c" 5.26.16 
+|   |   ';' ";" 5.26.18 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
 |   |   DECLID "void" 5.27.0 
 |   |   |   KW_IDENT "puti" 5.27.5 
 |   |   PARAMLIST "(" 5.27.10 
 |   |   |   DECLID "int" 5.27.11 
 |   |   |   |   KW_IDENT "i" 5.27.15 
+|   |   ';' ";" 5.27.17 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
 |   |   DECLID "void" 5.28.0 
 |   |   |   KW_IDENT "puts" 5.28.5 
 |   |   PARAMLIST "(" 5.28.10 
 |   |   |   DECLID "string" 5.28.11 
 |   |   |   |   KW_IDENT "s" 5.28.18 
+|   |   ';' ";" 5.28.20 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
 |   |   DECLID "void" 5.29.0 
 |   |   |   KW_IDENT "endl" 5.29.5 
 |   |   PARAMLIST "(" 5.29.10 
+|   |   ';' ";" 5.29.12 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
 |   |   DECLID "int" 5.30.0 
 |   |   |   KW_IDENT "getc" 5.30.4 
 |   |   PARAMLIST "(" 5.30.9 
+|   |   ';' ";" 5.30.11 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
 |   |   DECLID "string" 5.31.0 
 |   |   |   KW_IDENT "getw" 5.31.7 
 |   |   PARAMLIST "(" 5.31.12 
+|   |   ';' ";" 5.31.14 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
 |   |   DECLID "string" 5.32.0 
 |   |   |   KW_IDENT "getln" 5.32.7 
 |   |   PARAMLIST "(" 5.32.13 
+|   |   ';' ";" 5.32.15 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
 |   |   DECLID "string" 5.33.0 
 |   |   |   NEWARRAY "[]" 5.33.6 
 |   |   |   KW_IDENT "getargv" 5.33.9 
 |   |   PARAMLIST "(" 5.33.17 
+|   |   ';' ";" 5.33.19 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
 |   |   DECLID "void" 5.34.0 
 |   |   |   KW_IDENT "exit" 5.34.5 
 |   |   PARAMLIST "(" 5.34.10 
 |   |   |   DECLID "int" 5.34.11 
 |   |   |   |   KW_IDENT "status" 5.34.15 
+|   |   ';' ";" 5.34.22 
 |   VARDECL "=" 6.5.11 
 |   |   DECLID "int" 6.5.0 
 |   |   |   KW_IDENT "number" 6.5.4 

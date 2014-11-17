@@ -43,6 +43,7 @@ clean :
 	rm *.oc.out
 	rm *.str
 	rm *.tok
+	rm *.ast
 
 test : oc
 	#${GRIND} oc * * * >test.out 2>test.err

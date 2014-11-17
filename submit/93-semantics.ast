@@ -21,3 +21,20 @@ ROOT "" 0.0.0
 |   |   |   KW_IDENT "f" 3.7.7 
 |   |   PARAMLIST "(" 3.7.8 
 |   |   BLOCK "{" 3.7.11 
+|   ';' ";" 3.7.13 
+|   VARDECL "=" 3.8.7 
+|   |   DECLID "void" 3.8.0 
+|   |   |   KW_IDENT "n" 3.8.5 
+|   |   KW_NULL "null" 3.8.9 
+|   VARDECL "=" 3.9.7 
+|   |   DECLID "bool" 3.9.0 
+|   |   |   KW_IDENT "x" 3.9.5 
+|   |   '<' "<" 3.9.11 
+|   |   |   KW_IDENT "a" 3.9.9 
+|   |   |   KW_IDENT "b" 3.9.13 
+|   VARDECL "=" 3.10.7 
+|   |   DECLID "bool" 3.10.0 
+|   |   |   KW_IDENT "y" 3.10.5 
+|   |   EQUALS "==" 3.10.10 
+|   |   |   KW_IDENT "a" 3.10.9 
+|   |   |   KW_IDENT "b" 3.10.12 
