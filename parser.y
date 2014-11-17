@@ -48,11 +48,11 @@ astree* call1(astree* one, astree* two, astree* three, astree* four){
 
 %right  '^' ';' ','
 %left   '}' ']' ')'
-%right  '{' '('
+%right  '{' '(' 
 
 %right TOK_KW_IF TOK_KW_ELSE 
-%right '=' TOK_IFELSE TOK_VARDECL
-%left  TOK_EQUALS TOK_NEQUAL '<' TOK_GREAEQU '>' TOK_LESSEQU
+%right '=' TOK_IFELSE TOK_VARDECL TOK_BLOCK
+%left  TOK_EQUALS TOK_NEQUAL '<' TOK_GREAEQU '>' TOK_LESSEQU 
 %left  '+' '-'
 %left  '*' '/' '%'
 %right TOK_POS TOK_NEG '!' TOK_KW_ORD TOK_KW_CHR
@@ -92,7 +92,18 @@ identdecl: basetype TOK_KW_IDENT		{ adoptsym ($1, TOK_DECLID);
 	| basetype TOK_NEWARRAY TOK_DECLID 	{ $$ = adopt2 ($1, $2, $3); }
 	;
 
-statement: vardecl				{ $$ = $1 }
+blokargs: blokargs statement			{ $$ = adopt1 ($1, $2); }
+	|					{ $$ = new_parseroot(""); }
+	;
+
+block	: '{' blokargs '}'			{ free_ast($3);
+						adoptsym ($1, TOK_BLOCK);
+						$$ = adopt1 ($1, $2); 
+						delmiddle($1, 0);}
+	; 
+
+statement: block				{ $$ = $1 }
+	|vardecl				{ $$ = $1 }
 	| while					{ $$ = $1 }
 	| ifelse				{ $$ = $1 }
 	| return				{ $$ = $1 }		 
@@ -151,7 +162,7 @@ allocator: TOK_KW_NEW TOK_KW_IDENT '(' ')'	{ free_ast2($3, $4);
 						$$ = adopt2 ($1, $3, $4); }
 	;
 
-args	: args ',' expr				{ $$ = adopt1 ($1, $3); }
+args	: args ',' expr				{ free_ast($2); $$ = adopt1 ($1, $3); }
 	| expr					{ $$ = adopt1 (new_parseroot(""), $1);}
 	|					{ $$ = new_parseroot(""); }
 	;

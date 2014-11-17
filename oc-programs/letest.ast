@@ -24,21 +24,29 @@ ROOT "" 0.0.0
 |   |   NEQUAL "==" 3.13.10 
 |   |   |   KW_IDENT "pollo" 3.13.4 
 |   |   |   KW_IDENT "chiken" 3.13.13 
-|   |   KW_IDENT "cook" 3.14.1 
-|   |   |   '.' "." 3.14.10 
-|   |   |   |   FIELD "five" 3.14.11 
-|   |   |   |   KW_IDENT "time" 3.14.6 
-|   |   KW_RETURN "return" 3.16.1 
-|   |   |   STRINGCON ""Que?"" 3.16.8 
-|   KW_WHILE "while" 3.18.0 
-|   |   '>' ">" 3.18.9 
-|   |   |   KW_IDENT "i" 3.18.7 
-|   |   |   INTCON "5" 3.18.11 
-|   |   VARDECL "=" 3.19.9 
-|   |   |   DECLID "int" 3.19.1 
-|   |   |   |   KW_IDENT "goo" 3.19.5 
-|   |   |   INTCON "5" 3.19.11 
-|   VARDECL "=" 3.20.12 
-|   |   DECLID "string" 3.20.1 
-|   |   |   KW_IDENT "cow" 3.20.8 
-|   |   STRINGCON ""moo"" 3.20.14 
+|   |   BLOCK "{" 3.13.21 
+|   |   |   KW_IDENT "cook" 3.14.3 
+|   |   |   |   '.' "." 3.14.12 
+|   |   |   |   |   FIELD "five" 3.14.13 
+|   |   |   |   |   KW_IDENT "time" 3.14.8 
+|   |   BLOCK "{" 3.15.5 
+|   |   |   KW_RETURN "return" 3.16.3 
+|   |   |   |   STRINGCON ""Que?"" 3.16.10 
+|   |   |   KW_WHILE "while" 3.19.0 
+|   |   |   |   '>' ">" 3.19.9 
+|   |   |   |   |   KW_IDENT "i" 3.19.7 
+|   |   |   |   |   INTCON "5" 3.19.11 
+|   |   |   |   BLOCK "{" 3.19.14 
+|   |   |   |   |   VARDECL "=" 3.20.9 
+|   |   |   |   |   |   DECLID "int" 3.20.1 
+|   |   |   |   |   |   |   KW_IDENT "goo" 3.20.5 
+|   |   |   |   |   |   INTCON "5" 3.20.11 
+|   |   |   |   |   VARDECL "=" 3.21.12 
+|   |   |   |   |   |   DECLID "string" 3.21.1 
+|   |   |   |   |   |   |   KW_IDENT "cow" 3.21.8 
+|   |   |   |   |   |   STRINGCON ""moo"" 3.21.14 
+|   KW_IF "if" 3.26.0 
+|   |   '=' "=" 3.26.5 
+|   |   |   KW_IDENT "x" 3.26.3 
+|   |   |   KW_IDENT "y" 3.26.7 
+|   |   BLOCK "{" 3.26.9 
