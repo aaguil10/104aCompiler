@@ -10,6 +10,8 @@ struct dude {
    void run;
 }
 
+void[] f() {};
+char me();
 void kill(int gun, char bubble){
   if( pollo == chiken ){
      cook[time.five];

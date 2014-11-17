@@ -2,6 +2,15 @@ flex --outfile=yylex.cpp scanner.l 2>yylex.output
 grep -v '^  ' yylex.output
 flex version 2.5.35 usage statistics:
 bison --defines=yyparse.h --output=yyparse.cpp parser.y
+parser.y:46.9-20: warning: symbol TOK_NEWARRAY redeclared
+parser.y:65.11-72: warning: unset value: $$
+parser.y:161.11-75: warning: unset value: $$
+parser.y:162.11-75: warning: unset value: $$
+parser.y:171.11-78: warning: unused value: $3
+parser.y:179.11-181.71: warning: unused value: $2
+parser.y:182.11-184.75: warning: unused value: $2
+parser.y: conflicts: 36 shift/reduce
+parser.y:163.17-19: warning: rule useless in parser due to conflicts: UNOP: '('
 g++ -g -O0 -Wall -std=gnu++11 -c main.cpp
 g++ -g -O0 -Wall -std=gnu++11 -c stringset.cpp
 g++ -g -O0 -Wall -std=gnu++11 -c auxlib.cpp

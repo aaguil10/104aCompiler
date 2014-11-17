@@ -1,0 +1,141 @@
+ROOT "" 0.0.0 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.24.0 
+|   |   |   KW_IDENT "__assert_fail" 5.24.5 
+|   |   PARAMLIST "(" 5.24.19 
+|   |   |   DECLID "string" 5.24.20 
+|   |   |   |   KW_IDENT "expr" 5.24.27 
+|   |   |   DECLID "string" 5.24.33 
+|   |   |   |   KW_IDENT "file" 5.24.40 
+|   |   |   DECLID "int" 5.24.46 
+|   |   |   |   KW_IDENT "line" 5.24.50 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.25.0 
+|   |   |   KW_IDENT "putb" 5.25.5 
+|   |   PARAMLIST "(" 5.25.10 
+|   |   |   DECLID "bool" 5.25.11 
+|   |   |   |   KW_IDENT "b" 5.25.16 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.26.0 
+|   |   |   KW_IDENT "putc" 5.26.5 
+|   |   PARAMLIST "(" 5.26.10 
+|   |   |   DECLID "char" 5.26.11 
+|   |   |   |   KW_IDENT "c" 5.26.16 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.27.0 
+|   |   |   KW_IDENT "puti" 5.27.5 
+|   |   PARAMLIST "(" 5.27.10 
+|   |   |   DECLID "int" 5.27.11 
+|   |   |   |   KW_IDENT "i" 5.27.15 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.28.0 
+|   |   |   KW_IDENT "puts" 5.28.5 
+|   |   PARAMLIST "(" 5.28.10 
+|   |   |   DECLID "string" 5.28.11 
+|   |   |   |   KW_IDENT "s" 5.28.18 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.29.0 
+|   |   |   KW_IDENT "endl" 5.29.5 
+|   |   PARAMLIST "(" 5.29.10 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "int" 5.30.0 
+|   |   |   KW_IDENT "getc" 5.30.4 
+|   |   PARAMLIST "(" 5.30.9 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "string" 5.31.0 
+|   |   |   KW_IDENT "getw" 5.31.7 
+|   |   PARAMLIST "(" 5.31.12 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "string" 5.32.0 
+|   |   |   KW_IDENT "getln" 5.32.7 
+|   |   PARAMLIST "(" 5.32.13 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "string" 5.33.0 
+|   |   |   NEWARRAY "[]" 5.33.6 
+|   |   |   KW_IDENT "getargv" 5.33.9 
+|   |   PARAMLIST "(" 5.33.17 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.34.0 
+|   |   |   KW_IDENT "exit" 5.34.5 
+|   |   PARAMLIST "(" 5.34.10 
+|   |   |   DECLID "int" 5.34.11 
+|   |   |   |   KW_IDENT "status" 5.34.15 
+|   VARDECL "=" 6.7.13 
+|   |   DECLID "bool" 6.7.0 
+|   |   |   NEWARRAY "[]" 6.7.4 
+|   |   |   KW_IDENT "sieve" 6.7.7 
+|   |   NEWARRAY "new" 6.7.15 
+|   |   |   '[' "[" 6.7.23 
+|   |   |   INTCON "100" 6.7.24 
+|   VARDECL "=" 6.8.10 
+|   |   DECLID "int" 6.8.0 
+|   |   |   KW_IDENT "index" 6.8.4 
+|   |   INTCON "2" 6.8.12 
+|   KW_WHILE "while" 6.10.0 
+|   |   '<' "<" 6.10.13 
+|   |   |   KW_IDENT "index" 6.10.7 
+|   |   |   INTCON "100" 6.10.15 
+|   |   BLOCK "{" 6.10.20 
+|   |   |   '=' "=" 6.11.16 
+|   |   |   |   KW_IDENT "sieve" 6.11.3 
+|   |   |   |   |   KW_IDENT "index" 6.11.9 
+|   |   |   |   KW_TRUE "true" 6.11.18 
+|   |   |   '=' "=" 6.12.9 
+|   |   |   |   KW_IDENT "index" 6.12.3 
+|   |   |   |   '+' "+" 6.12.17 
+|   |   |   |   |   KW_IDENT "index" 6.12.11 
+|   |   |   |   |   INTCON "1" 6.12.19 
+|   VARDECL "=" 6.15.10 
+|   |   DECLID "int" 6.15.0 
+|   |   |   KW_IDENT "prime" 6.15.4 
+|   |   INTCON "2" 6.15.12 
+|   KW_WHILE "while" 6.16.0 
+|   |   '<' "<" 6.16.13 
+|   |   |   KW_IDENT "prime" 6.16.7 
+|   |   |   INTCON "100" 6.16.15 
+|   |   BLOCK "{" 6.16.20 
+|   |   |   KW_IF "if" 6.17.3 
+|   |   |   |   KW_IDENT "sieve" 6.17.7 
+|   |   |   |   |   KW_IDENT "prime" 6.17.13 
+|   |   |   |   BLOCK "{" 6.17.21 
+|   |   |   |   |   '=' "=" 6.18.12 
+|   |   |   |   |   |   KW_IDENT "index" 6.18.6 
+|   |   |   |   |   |   '*' "*" 6.18.20 
+|   |   |   |   |   |   |   KW_IDENT "prime" 6.18.14 
+|   |   |   |   |   |   |   INTCON "2" 6.18.22 
+|   |   |   |   |   KW_WHILE "while" 6.19.6 
+|   |   |   |   |   |   '<' "<" 6.19.19 
+|   |   |   |   |   |   |   KW_IDENT "index" 6.19.13 
+|   |   |   |   |   |   |   INTCON "100" 6.19.21 
+|   |   |   |   |   |   BLOCK "{" 6.19.26 
+|   |   |   |   |   |   |   '=' "=" 6.20.22 
+|   |   |   |   |   |   |   |   KW_IDENT "sieve" 6.20.9 
+|   |   |   |   |   |   |   |   |   KW_IDENT "index" 6.20.15 
+|   |   |   |   |   |   |   |   KW_FALSE "false" 6.20.24 
+|   |   |   |   |   |   |   '=' "=" 6.21.15 
+|   |   |   |   |   |   |   |   KW_IDENT "index" 6.21.9 
+|   |   |   |   |   |   |   |   '+' "+" 6.21.23 
+|   |   |   |   |   |   |   |   |   KW_IDENT "index" 6.21.17 
+|   |   |   |   |   |   |   |   |   KW_IDENT "prime" 6.21.25 
+|   |   |   '=' "=" 6.24.9 
+|   |   |   |   KW_IDENT "prime" 6.24.3 
+|   |   |   |   '+' "+" 6.24.17 
+|   |   |   |   |   KW_IDENT "prime" 6.24.11 
+|   |   |   |   |   INTCON "1" 6.24.19 
+|   '=' "=" 6.27.6 
+|   |   KW_IDENT "index" 6.27.0 
+|   |   INTCON "2" 6.27.8 
+|   KW_WHILE "while" 6.28.0 
+|   |   '<' "<" 6.28.13 
+|   |   |   KW_IDENT "index" 6.28.7 
+|   |   |   INTCON "100" 6.28.15 
+|   |   BLOCK "{" 6.28.20 
+|   |   |   KW_IF "if" 6.29.3 
+|   |   |   |   KW_IDENT "sieve" 6.29.7 
+|   |   |   |   |   KW_IDENT "index" 6.29.13 
+|   |   |   |   BLOCK "{" 6.29.21 
+|   |   |   |   |   CALL "(" 6.30.11 
+|   |   |   |   |   |   KW_IDENT "puti" 6.30.6 
+|   |   |   |   |   |   KW_IDENT "index" 6.30.12 
+|   |   |   |   |   CALL "(" 6.31.11 
+|   |   |   |   |   |   KW_IDENT "endl" 6.31.6 

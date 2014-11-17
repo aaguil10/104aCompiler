@@ -22,35 +22,47 @@ ROOT "" 0.0.0
 |   |   |   KW_IDENT "run" 3.10.8 
 |   ROOT "TOK_FUNCTION" 0.0.0 
 |   |   DECLID "void" 3.13.0 
-|   |   |   KW_IDENT "kill" 3.13.5 
-|   |   PARAMLIST "(" 3.13.9 
-|   |   |   DECLID "int" 3.13.10 
-|   |   |   |   KW_IDENT "gun" 3.13.14 
-|   |   |   DECLID "char" 3.13.19 
-|   |   |   |   KW_IDENT "bubble" 3.13.24 
-|   |   BLOCK "{" 3.13.31 
-|   |   |   IFELSE "if" 3.14.2 
-|   |   |   |   NEQUAL "==" 3.14.12 
-|   |   |   |   |   KW_IDENT "pollo" 3.14.6 
-|   |   |   |   |   KW_IDENT "chiken" 3.14.15 
-|   |   |   |   BLOCK "{" 3.14.23 
-|   |   |   |   |   KW_IDENT "cook" 3.15.5 
-|   |   |   |   |   |   '.' "." 3.15.14 
-|   |   |   |   |   |   |   FIELD "five" 3.15.15 
-|   |   |   |   |   |   |   KW_IDENT "time" 3.15.10 
-|   |   |   |   BLOCK "{" 3.16.7 
-|   |   |   |   |   KW_RETURN "return" 3.17.4 
-|   |   |   |   |   |   STRINGCON ""Que?"" 3.17.11 
-|   |   |   |   |   KW_WHILE "while" 3.18.4 
-|   |   |   |   |   |   '>' ">" 3.18.13 
-|   |   |   |   |   |   |   KW_IDENT "i" 3.18.11 
-|   |   |   |   |   |   |   INTCON "5" 3.18.15 
-|   |   |   |   |   |   BLOCK "{" 3.18.18 
-|   |   |   |   |   |   |   VARDECL "=" 3.19.14 
-|   |   |   |   |   |   |   |   DECLID "int" 3.19.6 
-|   |   |   |   |   |   |   |   |   KW_IDENT "goo" 3.19.10 
-|   |   |   |   |   |   |   |   INTCON "5" 3.19.16 
-|   |   |   |   |   |   |   VARDECL "=" 3.20.17 
-|   |   |   |   |   |   |   |   DECLID "string" 3.20.6 
-|   |   |   |   |   |   |   |   |   KW_IDENT "cow" 3.20.13 
-|   |   |   |   |   |   |   |   STRINGCON ""moo"" 3.20.19 
+|   |   |   NEWARRAY "[]" 3.13.4 
+|   |   |   KW_IDENT "f" 3.13.7 
+|   |   PARAMLIST "(" 3.13.8 
+|   |   BLOCK "{" 3.13.11 
+|   ';' ";" 3.13.13 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "char" 3.14.0 
+|   |   |   KW_IDENT "me" 3.14.5 
+|   |   PARAMLIST "(" 3.14.7 
+|   |   ';' ";" 3.14.9 
+|   ROOT "TOK_FUNCTION" 0.0.0 
+|   |   DECLID "void" 3.15.0 
+|   |   |   KW_IDENT "kill" 3.15.5 
+|   |   PARAMLIST "(" 3.15.9 
+|   |   |   DECLID "int" 3.15.10 
+|   |   |   |   KW_IDENT "gun" 3.15.14 
+|   |   |   DECLID "char" 3.15.19 
+|   |   |   |   KW_IDENT "bubble" 3.15.24 
+|   |   BLOCK "{" 3.15.31 
+|   |   |   IFELSE "if" 3.16.2 
+|   |   |   |   EQUALS "==" 3.16.12 
+|   |   |   |   |   KW_IDENT "pollo" 3.16.6 
+|   |   |   |   |   KW_IDENT "chiken" 3.16.15 
+|   |   |   |   BLOCK "{" 3.16.23 
+|   |   |   |   |   KW_IDENT "cook" 3.17.5 
+|   |   |   |   |   |   '.' "." 3.17.14 
+|   |   |   |   |   |   |   FIELD "five" 3.17.15 
+|   |   |   |   |   |   |   KW_IDENT "time" 3.17.10 
+|   |   |   |   BLOCK "{" 3.18.7 
+|   |   |   |   |   KW_RETURN "return" 3.19.4 
+|   |   |   |   |   |   STRINGCON ""Que?"" 3.19.11 
+|   |   |   |   |   KW_WHILE "while" 3.20.4 
+|   |   |   |   |   |   '>' ">" 3.20.13 
+|   |   |   |   |   |   |   KW_IDENT "i" 3.20.11 
+|   |   |   |   |   |   |   INTCON "5" 3.20.15 
+|   |   |   |   |   |   BLOCK "{" 3.20.18 
+|   |   |   |   |   |   |   VARDECL "=" 3.21.14 
+|   |   |   |   |   |   |   |   DECLID "int" 3.21.6 
+|   |   |   |   |   |   |   |   |   KW_IDENT "goo" 3.21.10 
+|   |   |   |   |   |   |   |   INTCON "5" 3.21.16 
+|   |   |   |   |   |   |   VARDECL "=" 3.22.17 
+|   |   |   |   |   |   |   |   DECLID "string" 3.22.6 
+|   |   |   |   |   |   |   |   |   KW_IDENT "cow" 3.22.13 
+|   |   |   |   |   |   |   |   STRINGCON ""moo"" 3.22.19 

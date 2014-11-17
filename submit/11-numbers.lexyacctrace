@@ -1,1278 +1,1429 @@
 Starting parse
 Entering state 0
-Reducing stack by rule 5 (line 54):
--> $$ = nterm stmtseq ()
+Reducing stack by rule 5 (line 71):
+-> $$ = nterm program ()
 Stack now 0
 Entering state 2
 Reading a token: --(end of buffer or a NUL)
---accepting rule at line 53 ("# 1 "11-numbers.oc"")
---accepting rule at line 55 ("
+--accepting rule at line 54 ("# 1 "11-numbers.oc"")
+--accepting rule at line 56 ("
 ")
---accepting rule at line 53 ("# 1 "<built-in>"")
---accepting rule at line 55 ("
+--accepting rule at line 54 ("# 1 "<built-in>"")
+--accepting rule at line 56 ("
 ")
---accepting rule at line 53 ("# 1 "<command-line>"")
---accepting rule at line 55 ("
+--accepting rule at line 54 ("# 1 "<command-line>"")
+--accepting rule at line 56 ("
 ")
---accepting rule at line 53 ("# 1 "11-numbers.oc"")
---accepting rule at line 55 ("
+--accepting rule at line 54 ("# 1 "11-numbers.oc"")
+--accepting rule at line 56 ("
 ")
---accepting rule at line 55 ("
+--accepting rule at line 56 ("
 ")
---accepting rule at line 55 ("
+--accepting rule at line 56 ("
 ")
---accepting rule at line 53 ("# 1 "oclib.oh" 1")
---accepting rule at line 55 ("
+--accepting rule at line 54 ("# 1 "oclib.oh" 1")
+--accepting rule at line 56 ("
 ")
---accepting rule at line 53 ("# 30 "oclib.oh"")
---accepting rule at line 55 ("
+--accepting rule at line 54 ("# 24 "oclib.oh"")
+--accepting rule at line 56 ("
 ")
---accepting rule at line 59 ("void")
-Next token is token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:30.000 "void" []})
-oc: oclib.oh: 30: syntax error, unexpected TOK_KW_VOID
-Shifting token error (error(256)
-)
-Entering state 4
-Next token is token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:30.000 "void" []})
-Error: discarding token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:30.000 "void" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("__assert_fail")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:30.005 "__assert_fail" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:30.005 "__assert_fail" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
-Next token is token '(' (0x20c7760->{'('(40) 5:30.019 "(" []})
-Error: discarding token '(' (0x20c7760->{'('(40) 5:30.019 "(" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 63 ("string")
-Next token is token TOK_KW_STRING (0x20c7760->{TOK_KW_STRING(265) 5:30.020 "string" []})
-Error: discarding token TOK_KW_STRING (0x20c7760->{TOK_KW_STRING(265) 5:30.020 "string" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("expr")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:30.027 "expr" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:30.027 "expr" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 88 (",")
-Next token is token ',' (0x20c7760->{','(44) 5:30.031 "," []})
-Error: discarding token ',' (0x20c7760->{','(44) 5:30.031 "," []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 63 ("string")
-Next token is token TOK_KW_STRING (0x20c7760->{TOK_KW_STRING(265) 5:30.033 "string" []})
-Error: discarding token TOK_KW_STRING (0x20c7760->{TOK_KW_STRING(265) 5:30.033 "string" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("file")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:30.040 "file" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:30.040 "file" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 88 (",")
-Next token is token ',' (0x20c7760->{','(44) 5:30.044 "," []})
-Error: discarding token ',' (0x20c7760->{','(44) 5:30.044 "," []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 62 ("int")
-Next token is token TOK_KW_INT (0x20c7760->{TOK_KW_INT(264) 5:30.046 "int" []})
-Error: discarding token TOK_KW_INT (0x20c7760->{TOK_KW_INT(264) 5:30.046 "int" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("line")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:30.050 "line" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:30.050 "line" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 102 (")")
-Next token is token ')' (0x20c7760->{')'(41) 5:30.054 ")" []})
-Error: discarding token ')' (0x20c7760->{')'(41) 5:30.054 ")" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 103 (";")
-Next token is token ';' (0x20c7760->{';'(59) 5:30.055 ";" []})
-Shifting token ';' (0x20c7760->{';'(59) 5:30.055 ";" []})
-Entering state 12
-Reducing stack by rule 3 (line 52):
-   $1 = nterm stmtseq ()
-   $2 = token error (error(256)
-)
-   $3 = token ';' (0x20c7760->{';'(59) 5:30.055 ";" []})
--> $$ = nterm stmtseq ()
-Stack now 0
-Entering state 2
-Reading a token: --accepting rule at line 55 ("
-")
---accepting rule at line 55 ("
-")
---accepting rule at line 55 ("
-")
---accepting rule at line 59 ("void")
-Next token is token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:33.000 "void" []})
-Shifting token error (error(256)
-)
-Entering state 4
-Next token is token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:33.000 "void" []})
-Error: discarding token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:33.000 "void" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("putb")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:33.005 "putb" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:33.005 "putb" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
-Next token is token '(' (0x20c7760->{'('(40) 5:33.010 "(" []})
-Error: discarding token '(' (0x20c7760->{'('(40) 5:33.010 "(" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 60 ("bool")
-Next token is token TOK_KW_BOOL (0x20c7760->{TOK_KW_BOOL(262) 5:33.011 "bool" []})
-Error: discarding token TOK_KW_BOOL (0x20c7760->{TOK_KW_BOOL(262) 5:33.011 "bool" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("b")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:33.016 "b" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:33.016 "b" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 102 (")")
-Next token is token ')' (0x20c7760->{')'(41) 5:33.017 ")" []})
-Error: discarding token ')' (0x20c7760->{')'(41) 5:33.017 ")" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 103 (";")
-Next token is token ';' (0x20c7760->{';'(59) 5:33.018 ";" []})
-Shifting token ';' (0x20c7760->{';'(59) 5:33.018 ";" []})
-Entering state 12
-Reducing stack by rule 3 (line 52):
-   $1 = nterm stmtseq ()
-   $2 = token error (error(256)
-)
-   $3 = token ';' (0x20c7760->{';'(59) 5:33.018 ";" []})
--> $$ = nterm stmtseq ()
-Stack now 0
-Entering state 2
-Reading a token: --accepting rule at line 55 ("
-")
---accepting rule at line 59 ("void")
-Next token is token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:34.000 "void" []})
-Shifting token error (error(256)
-)
-Entering state 4
-Next token is token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:34.000 "void" []})
-Error: discarding token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:34.000 "void" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("putc")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:34.005 "putc" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:34.005 "putc" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
-Next token is token '(' (0x20c7760->{'('(40) 5:34.010 "(" []})
-Error: discarding token '(' (0x20c7760->{'('(40) 5:34.010 "(" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 61 ("char")
-Next token is token TOK_KW_CHAR (0x20c7760->{TOK_KW_CHAR(263) 5:34.011 "char" []})
-Error: discarding token TOK_KW_CHAR (0x20c7760->{TOK_KW_CHAR(263) 5:34.011 "char" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("c")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:34.016 "c" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:34.016 "c" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 102 (")")
-Next token is token ')' (0x20c7760->{')'(41) 5:34.017 ")" []})
-Error: discarding token ')' (0x20c7760->{')'(41) 5:34.017 ")" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 103 (";")
-Next token is token ';' (0x20c7760->{';'(59) 5:34.018 ";" []})
-Shifting token ';' (0x20c7760->{';'(59) 5:34.018 ";" []})
-Entering state 12
-Reducing stack by rule 3 (line 52):
-   $1 = nterm stmtseq ()
-   $2 = token error (error(256)
-)
-   $3 = token ';' (0x20c7760->{';'(59) 5:34.018 ";" []})
--> $$ = nterm stmtseq ()
-Stack now 0
-Entering state 2
-Reading a token: --accepting rule at line 55 ("
-")
---accepting rule at line 59 ("void")
-Next token is token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:35.000 "void" []})
-Shifting token error (error(256)
-)
-Entering state 4
-Next token is token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:35.000 "void" []})
-Error: discarding token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:35.000 "void" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("puti")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:35.005 "puti" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:35.005 "puti" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
-Next token is token '(' (0x20c7760->{'('(40) 5:35.010 "(" []})
-Error: discarding token '(' (0x20c7760->{'('(40) 5:35.010 "(" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 62 ("int")
-Next token is token TOK_KW_INT (0x20c7760->{TOK_KW_INT(264) 5:35.011 "int" []})
-Error: discarding token TOK_KW_INT (0x20c7760->{TOK_KW_INT(264) 5:35.011 "int" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("i")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:35.015 "i" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:35.015 "i" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 102 (")")
-Next token is token ')' (0x20c7760->{')'(41) 5:35.016 ")" []})
-Error: discarding token ')' (0x20c7760->{')'(41) 5:35.016 ")" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 103 (";")
-Next token is token ';' (0x20c7760->{';'(59) 5:35.017 ";" []})
-Shifting token ';' (0x20c7760->{';'(59) 5:35.017 ";" []})
-Entering state 12
-Reducing stack by rule 3 (line 52):
-   $1 = nterm stmtseq ()
-   $2 = token error (error(256)
-)
-   $3 = token ';' (0x20c7760->{';'(59) 5:35.017 ";" []})
--> $$ = nterm stmtseq ()
-Stack now 0
-Entering state 2
-Reading a token: --accepting rule at line 55 ("
-")
---accepting rule at line 59 ("void")
-Next token is token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:36.000 "void" []})
-Shifting token error (error(256)
-)
-Entering state 4
-Next token is token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:36.000 "void" []})
-Error: discarding token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:36.000 "void" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("puts")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:36.005 "puts" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:36.005 "puts" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
-Next token is token '(' (0x20c7760->{'('(40) 5:36.010 "(" []})
-Error: discarding token '(' (0x20c7760->{'('(40) 5:36.010 "(" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 63 ("string")
-Next token is token TOK_KW_STRING (0x20c7760->{TOK_KW_STRING(265) 5:36.011 "string" []})
-Error: discarding token TOK_KW_STRING (0x20c7760->{TOK_KW_STRING(265) 5:36.011 "string" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("s")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:36.018 "s" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:36.018 "s" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 102 (")")
-Next token is token ')' (0x20c7760->{')'(41) 5:36.019 ")" []})
-Error: discarding token ')' (0x20c7760->{')'(41) 5:36.019 ")" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 103 (";")
-Next token is token ';' (0x20c7760->{';'(59) 5:36.020 ";" []})
-Shifting token ';' (0x20c7760->{';'(59) 5:36.020 ";" []})
-Entering state 12
-Reducing stack by rule 3 (line 52):
-   $1 = nterm stmtseq ()
-   $2 = token error (error(256)
-)
-   $3 = token ';' (0x20c7760->{';'(59) 5:36.020 ";" []})
--> $$ = nterm stmtseq ()
-Stack now 0
-Entering state 2
-Reading a token: --accepting rule at line 55 ("
-")
---accepting rule at line 59 ("void")
-Next token is token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:37.000 "void" []})
-Shifting token error (error(256)
-)
-Entering state 4
-Next token is token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:37.000 "void" []})
-Error: discarding token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:37.000 "void" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("endl")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:37.005 "endl" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:37.005 "endl" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
-Next token is token '(' (0x20c7760->{'('(40) 5:37.010 "(" []})
-Error: discarding token '(' (0x20c7760->{'('(40) 5:37.010 "(" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 102 (")")
-Next token is token ')' (0x20c7760->{')'(41) 5:37.011 ")" []})
-Error: discarding token ')' (0x20c7760->{')'(41) 5:37.011 ")" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 103 (";")
-Next token is token ';' (0x20c7760->{';'(59) 5:37.012 ";" []})
-Shifting token ';' (0x20c7760->{';'(59) 5:37.012 ";" []})
-Entering state 12
-Reducing stack by rule 3 (line 52):
-   $1 = nterm stmtseq ()
-   $2 = token error (error(256)
-)
-   $3 = token ';' (0x20c7760->{';'(59) 5:37.012 ";" []})
--> $$ = nterm stmtseq ()
-Stack now 0
-Entering state 2
-Reading a token: --accepting rule at line 55 ("
-")
---accepting rule at line 62 ("int")
-Next token is token TOK_KW_INT (0x20c7760->{TOK_KW_INT(264) 5:38.000 "int" []})
-Shifting token error (error(256)
-)
-Entering state 4
-Next token is token TOK_KW_INT (0x20c7760->{TOK_KW_INT(264) 5:38.000 "int" []})
-Error: discarding token TOK_KW_INT (0x20c7760->{TOK_KW_INT(264) 5:38.000 "int" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("getc")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:38.004 "getc" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:38.004 "getc" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
-Next token is token '(' (0x20c7760->{'('(40) 5:38.009 "(" []})
-Error: discarding token '(' (0x20c7760->{'('(40) 5:38.009 "(" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 102 (")")
-Next token is token ')' (0x20c7760->{')'(41) 5:38.010 ")" []})
-Error: discarding token ')' (0x20c7760->{')'(41) 5:38.010 ")" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 103 (";")
-Next token is token ';' (0x20c7760->{';'(59) 5:38.011 ";" []})
-Shifting token ';' (0x20c7760->{';'(59) 5:38.011 ";" []})
-Entering state 12
-Reducing stack by rule 3 (line 52):
-   $1 = nterm stmtseq ()
-   $2 = token error (error(256)
-)
-   $3 = token ';' (0x20c7760->{';'(59) 5:38.011 ";" []})
--> $$ = nterm stmtseq ()
-Stack now 0
-Entering state 2
-Reading a token: --accepting rule at line 55 ("
-")
---accepting rule at line 63 ("string")
-Next token is token TOK_KW_STRING (0x20c7760->{TOK_KW_STRING(265) 5:39.000 "string" []})
-Shifting token error (error(256)
-)
-Entering state 4
-Next token is token TOK_KW_STRING (0x20c7760->{TOK_KW_STRING(265) 5:39.000 "string" []})
-Error: discarding token TOK_KW_STRING (0x20c7760->{TOK_KW_STRING(265) 5:39.000 "string" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("getw")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:39.007 "getw" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:39.007 "getw" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
-Next token is token '(' (0x20c7760->{'('(40) 5:39.012 "(" []})
-Error: discarding token '(' (0x20c7760->{'('(40) 5:39.012 "(" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 102 (")")
-Next token is token ')' (0x20c7760->{')'(41) 5:39.013 ")" []})
-Error: discarding token ')' (0x20c7760->{')'(41) 5:39.013 ")" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 103 (";")
-Next token is token ';' (0x20c7760->{';'(59) 5:39.014 ";" []})
-Shifting token ';' (0x20c7760->{';'(59) 5:39.014 ";" []})
-Entering state 12
-Reducing stack by rule 3 (line 52):
-   $1 = nterm stmtseq ()
-   $2 = token error (error(256)
-)
-   $3 = token ';' (0x20c7760->{';'(59) 5:39.014 ";" []})
--> $$ = nterm stmtseq ()
-Stack now 0
-Entering state 2
-Reading a token: --accepting rule at line 55 ("
-")
---accepting rule at line 63 ("string")
-Next token is token TOK_KW_STRING (0x20c7760->{TOK_KW_STRING(265) 5:40.000 "string" []})
-Shifting token error (error(256)
-)
-Entering state 4
-Next token is token TOK_KW_STRING (0x20c7760->{TOK_KW_STRING(265) 5:40.000 "string" []})
-Error: discarding token TOK_KW_STRING (0x20c7760->{TOK_KW_STRING(265) 5:40.000 "string" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("getln")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:40.007 "getln" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:40.007 "getln" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
-Next token is token '(' (0x20c7760->{'('(40) 5:40.013 "(" []})
-Error: discarding token '(' (0x20c7760->{'('(40) 5:40.013 "(" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 102 (")")
-Next token is token ')' (0x20c7760->{')'(41) 5:40.014 ")" []})
-Error: discarding token ')' (0x20c7760->{')'(41) 5:40.014 ")" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 103 (";")
-Next token is token ';' (0x20c7760->{';'(59) 5:40.015 ";" []})
-Shifting token ';' (0x20c7760->{';'(59) 5:40.015 ";" []})
-Entering state 12
-Reducing stack by rule 3 (line 52):
-   $1 = nterm stmtseq ()
-   $2 = token error (error(256)
-)
-   $3 = token ';' (0x20c7760->{';'(59) 5:40.015 ";" []})
--> $$ = nterm stmtseq ()
-Stack now 0
-Entering state 2
-Reading a token: --accepting rule at line 55 ("
-")
---accepting rule at line 63 ("string")
-Next token is token TOK_KW_STRING (0x20c7760->{TOK_KW_STRING(265) 5:41.000 "string" []})
-Shifting token error (error(256)
-)
-Entering state 4
-Next token is token TOK_KW_STRING (0x20c7760->{TOK_KW_STRING(265) 5:41.000 "string" []})
-Error: discarding token TOK_KW_STRING (0x20c7760->{TOK_KW_STRING(265) 5:41.000 "string" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 79 ("[]")
-Next token is token TOK_NEWARRAY (0x20c7760->{TOK_NEWARRAY(284) 5:41.006 "[]" []})
-Error: discarding token TOK_NEWARRAY (0x20c7760->{TOK_NEWARRAY(284) 5:41.006 "[]" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("getargv")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:41.009 "getargv" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:41.009 "getargv" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
-Next token is token '(' (0x20c7760->{'('(40) 5:41.017 "(" []})
-Error: discarding token '(' (0x20c7760->{'('(40) 5:41.017 "(" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 102 (")")
-Next token is token ')' (0x20c7760->{')'(41) 5:41.018 ")" []})
-Error: discarding token ')' (0x20c7760->{')'(41) 5:41.018 ")" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 103 (";")
-Next token is token ';' (0x20c7760->{';'(59) 5:41.019 ";" []})
-Shifting token ';' (0x20c7760->{';'(59) 5:41.019 ";" []})
-Entering state 12
-Reducing stack by rule 3 (line 52):
-   $1 = nterm stmtseq ()
-   $2 = token error (error(256)
-)
-   $3 = token ';' (0x20c7760->{';'(59) 5:41.019 ";" []})
--> $$ = nterm stmtseq ()
-Stack now 0
-Entering state 2
-Reading a token: --accepting rule at line 55 ("
-")
---accepting rule at line 59 ("void")
-Next token is token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:42.000 "void" []})
-Shifting token error (error(256)
-)
-Entering state 4
-Next token is token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:42.000 "void" []})
-Error: discarding token TOK_KW_VOID (0x20c7760->{TOK_KW_VOID(261) 5:42.000 "void" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("exit")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:42.005 "exit" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:42.005 "exit" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
-Next token is token '(' (0x20c7760->{'('(40) 5:42.010 "(" []})
-Error: discarding token '(' (0x20c7760->{'('(40) 5:42.010 "(" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 62 ("int")
-Next token is token TOK_KW_INT (0x20c7760->{TOK_KW_INT(264) 5:42.011 "int" []})
-Error: discarding token TOK_KW_INT (0x20c7760->{TOK_KW_INT(264) 5:42.011 "int" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("status")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:42.015 "status" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 5:42.015 "status" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 102 (")")
-Next token is token ')' (0x20c7760->{')'(41) 5:42.021 ")" []})
-Error: discarding token ')' (0x20c7760->{')'(41) 5:42.021 ")" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 103 (";")
-Next token is token ';' (0x20c7760->{';'(59) 5:42.022 ";" []})
-Shifting token ';' (0x20c7760->{';'(59) 5:42.022 ";" []})
-Entering state 12
-Reducing stack by rule 3 (line 52):
-   $1 = nterm stmtseq ()
-   $2 = token error (error(256)
-)
-   $3 = token ';' (0x20c7760->{';'(59) 5:42.022 ";" []})
--> $$ = nterm stmtseq ()
-Stack now 0
-Entering state 2
-Reading a token: --accepting rule at line 55 ("
-")
---accepting rule at line 53 ("# 4 "11-numbers.oc" 2")
---accepting rule at line 55 ("
-")
---accepting rule at line 55 ("
-")
---accepting rule at line 62 ("int")
-Next token is token TOK_KW_INT (0x20c7760->{TOK_KW_INT(264) 6:5.000 "int" []})
-Shifting token error (error(256)
-)
-Entering state 4
-Next token is token TOK_KW_INT (0x20c7760->{TOK_KW_INT(264) 6:5.000 "int" []})
-Error: discarding token TOK_KW_INT (0x20c7760->{TOK_KW_INT(264) 6:5.000 "int" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("number")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 6:5.004 "number" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 6:5.004 "number" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 94 ("=")
-Next token is token '=' (0x20c7760->{'='(61) 6:5.011 "=" []})
-Error: discarding token '=' (0x20c7760->{'='(61) 6:5.011 "=" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 77 ("1")
-Next token is token TOK_LIT_INT (0x20c7760->{TOK_LIT_INT(277) 6:5.013 "1" []})
-Error: discarding token TOK_LIT_INT (0x20c7760->{TOK_LIT_INT(277) 6:5.013 "1" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 103 (";")
-Next token is token ';' (0x20c7760->{';'(59) 6:5.014 ";" []})
-Shifting token ';' (0x20c7760->{';'(59) 6:5.014 ";" []})
-Entering state 12
-Reducing stack by rule 3 (line 52):
-   $1 = nterm stmtseq ()
-   $2 = token error (error(256)
-)
-   $3 = token ';' (0x20c7760->{';'(59) 6:5.014 ";" []})
--> $$ = nterm stmtseq ()
-Stack now 0
-Entering state 2
-Reading a token: --accepting rule at line 55 ("
-")
---accepting rule at line 67 ("while")
-Next token is token TOK_KW_WHILE (0x20c7760->{TOK_KW_WHILE(267) 6:6.000 "while" []})
-Shifting token error (error(256)
-)
-Entering state 4
-Next token is token TOK_KW_WHILE (0x20c7760->{TOK_KW_WHILE(267) 6:6.000 "while" []})
-Error: discarding token TOK_KW_WHILE (0x20c7760->{TOK_KW_WHILE(267) 6:6.000 "while" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
-Next token is token '(' (0x20c7760->{'('(40) 6:6.006 "(" []})
-Error: discarding token '(' (0x20c7760->{'('(40) 6:6.006 "(" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 78 ("number")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 6:6.007 "number" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 6:6.007 "number" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 93 (">")
-Next token is token '>' (0x20c7760->{'>'(62) 6:6.014 ">" []})
-Error: discarding token '>' (0x20c7760->{'>'(62) 6:6.014 ">" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 77 ("0")
-Next token is token TOK_LIT_INT (0x20c7760->{TOK_LIT_INT(277) 6:6.016 "0" []})
-Error: discarding token TOK_LIT_INT (0x20c7760->{TOK_LIT_INT(277) 6:6.016 "0" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 102 (")")
-Next token is token ')' (0x20c7760->{')'(41) 6:6.017 ")" []})
-Error: discarding token ')' (0x20c7760->{')'(41) 6:6.017 ")" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 87 ("{")
-Next token is token '{' (0x20c7760->{'{'(123) 6:6.019 "{" []})
-Error: discarding token '{' (0x20c7760->{'{'(123) 6:6.019 "{" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 55 ("
-")
---accepting rule at line 54 ("   ")
---accepting rule at line 78 ("puti")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 6:7.003 "puti" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 6:7.003 "puti" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
-Next token is token '(' (0x20c7760->{'('(40) 6:7.008 "(" []})
-Error: discarding token '(' (0x20c7760->{'('(40) 6:7.008 "(" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 78 ("number")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 6:7.009 "number" []})
-Error: discarding token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 6:7.009 "number" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 102 (")")
-Next token is token ')' (0x20c7760->{')'(41) 6:7.015 ")" []})
-Error: discarding token ')' (0x20c7760->{')'(41) 6:7.015 ")" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 103 (";")
-Next token is token ';' (0x20c7760->{';'(59) 6:7.016 ";" []})
-Shifting token ';' (0x20c7760->{';'(59) 6:7.016 ";" []})
-Entering state 12
-Reducing stack by rule 3 (line 52):
-   $1 = nterm stmtseq ()
-   $2 = token error (error(256)
-)
-   $3 = token ';' (0x20c7760->{';'(59) 6:7.016 ";" []})
--> $$ = nterm stmtseq ()
-Stack now 0
-Entering state 2
-Reading a token: --accepting rule at line 55 ("
-")
---accepting rule at line 54 ("   ")
---accepting rule at line 78 ("putc")
-Next token is token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 6:8.003 "putc" []})
-Shifting token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 6:8.003 "putc" []})
+--accepting rule at line 60 ("void")
+Next token is token TOK_KW_VOID (KW_VOID "void" 5.24.0 )
+Shifting token TOK_KW_VOID (KW_VOID "void" 5.24.0 )
 Entering state 5
-Reducing stack by rule 15 (line 66):
-   $1 = token TOK_KW_IDENT (0x20c7760->{TOK_KW_IDENT(259) 6:8.003 "putc" []})
--> $$ = nterm expr ()
+Reducing stack by rule 11 (line 87):
+   $1 = token TOK_KW_VOID (KW_VOID "void" 5.24.0 )
+-> $$ = nterm basetype ()
 Stack now 0 2
-Entering state 11
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
-Next token is token '(' (0x20c8490->{'('(40) 6:8.008 "(" []})
-Error: popping nterm expr ()
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("__assert_fail")
+Next token is token TOK_KW_IDENT (KW_IDENT "__assert_fail" 5.24.5 )
+Shifting token TOK_KW_IDENT (KW_IDENT "__assert_fail" 5.24.5 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "__assert_fail" 5.24.5 )
+-> $$ = nterm identdecl ()
 Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Next token is token '(' (0x20c8490->{'('(40) 6:8.008 "(" []})
-Error: discarding token '(' (0x20c8490->{'('(40) 6:8.008 "(" []})
-Error: popping token error (error(256)
-)
+Entering state 32
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 102 ("(")
+Next token is token '(' ('(' "(" 5.24.19 )
+Shifting token '(' ('(' "(" 5.24.19 )
+Entering state 58
+Reading a token: --accepting rule at line 64 ("string")
+Next token is token TOK_KW_STRING (KW_STRING "string" 5.24.20 )
+Shifting token TOK_KW_STRING (KW_STRING "string" 5.24.20 )
+Entering state 9
+Reducing stack by rule 15 (line 88):
+   $1 = token TOK_KW_STRING (KW_STRING "string" 5.24.20 )
+-> $$ = nterm basetype ()
+Stack now 0 2 32 58
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("expr")
+Next token is token TOK_KW_IDENT (KW_IDENT "expr" 5.24.27 )
+Shifting token TOK_KW_IDENT (KW_IDENT "expr" 5.24.27 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "expr" 5.24.27 )
+-> $$ = nterm identdecl ()
+Stack now 0 2 32 58
+Entering state 93
+Reducing stack by rule 18 (line 92):
+   $1 = nterm identdecl ()
+-> $$ = nterm funcargs ()
+Stack now 0 2 32 58
+Entering state 92
+Reading a token: --accepting rule at line 89 (",")
+Next token is token ',' (',' "," 5.24.31 )
+Shifting token ',' (',' "," 5.24.31 )
+Entering state 108
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 64 ("string")
+Next token is token TOK_KW_STRING (KW_STRING "string" 5.24.33 )
+Shifting token TOK_KW_STRING (KW_STRING "string" 5.24.33 )
+Entering state 9
+Reducing stack by rule 15 (line 88):
+   $1 = token TOK_KW_STRING (KW_STRING "string" 5.24.33 )
+-> $$ = nterm basetype ()
+Stack now 0 2 32 58 92 108
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("file")
+Next token is token TOK_KW_IDENT (KW_IDENT "file" 5.24.40 )
+Shifting token TOK_KW_IDENT (KW_IDENT "file" 5.24.40 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "file" 5.24.40 )
+-> $$ = nterm identdecl ()
+Stack now 0 2 32 58 92 108
+Entering state 120
+Reducing stack by rule 17 (line 91):
+   $1 = nterm funcargs ()
+   $2 = token ',' (',' "," 5.24.31 )
+   $3 = nterm identdecl ()
+-> $$ = nterm funcargs ()
+Stack now 0 2 32 58
+Entering state 92
+Reading a token: --accepting rule at line 89 (",")
+Next token is token ',' (',' "," 5.24.44 )
+Shifting token ',' (',' "," 5.24.44 )
+Entering state 108
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 63 ("int")
+Next token is token TOK_KW_INT (KW_INT "int" 5.24.46 )
+Shifting token TOK_KW_INT (KW_INT "int" 5.24.46 )
+Entering state 8
+Reducing stack by rule 13 (line 87):
+   $1 = token TOK_KW_INT (KW_INT "int" 5.24.46 )
+-> $$ = nterm basetype ()
+Stack now 0 2 32 58 92 108
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("line")
+Next token is token TOK_KW_IDENT (KW_IDENT "line" 5.24.50 )
+Shifting token TOK_KW_IDENT (KW_IDENT "line" 5.24.50 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "line" 5.24.50 )
+-> $$ = nterm identdecl ()
+Stack now 0 2 32 58 92 108
+Entering state 120
+Reducing stack by rule 17 (line 91):
+   $1 = nterm funcargs ()
+   $2 = token ',' (',' "," 5.24.44 )
+   $3 = nterm identdecl ()
+-> $$ = nterm funcargs ()
+Stack now 0 2 32 58
+Entering state 92
+Reading a token: --accepting rule at line 103 (")")
+Next token is token ')' (')' ")" 5.24.54 )
+Shifting token ')' (')' ")" 5.24.54 )
+Entering state 109
+Reducing stack by rule 20 (line 96):
+   $1 = token '(' ('(' "(" 5.24.19 )
+   $2 = nterm funcargs ()
+   $3 = token ')' (')' ")" 5.24.54 )
+-> $$ = nterm param ()
+Stack now 0 2 32
+Entering state 60
+Reading a token: --accepting rule at line 104 (";")
+Next token is token ';' (';' ";" 5.24.55 )
+Shifting token ';' (';' ";" 5.24.55 )
+Entering state 95
+Reducing stack by rule 22 (line 106):
+   $1 = nterm identdecl ()
+   $2 = nterm param ()
+   $3 = token ';' (';' ";" 5.24.55 )
+-> $$ = nterm function ()
 Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 75 ("'\n'")
-Next token is token TOK_LIT_CHAR (0x20c8490->{TOK_LIT_CHAR(278) 6:8.009 "'\n'" []})
-Error: discarding token TOK_LIT_CHAR (0x20c8490->{TOK_LIT_CHAR(278) 6:8.009 "'\n'" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 102 (")")
-Next token is token ')' (0x20c8490->{')'(41) 6:8.013 ")" []})
-Error: discarding token ')' (0x20c8490->{')'(41) 6:8.013 ")" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 103 (";")
-Next token is token ';' (0x20c8490->{';'(59) 6:8.014 ";" []})
-Shifting token ';' (0x20c8490->{';'(59) 6:8.014 ";" []})
-Entering state 12
-Reducing stack by rule 3 (line 52):
-   $1 = nterm stmtseq ()
-   $2 = token error (error(256)
-)
-   $3 = token ';' (0x20c8490->{';'(59) 6:8.014 ";" []})
--> $$ = nterm stmtseq ()
+Entering state 31
+Reducing stack by rule 3 (line 69):
+   $1 = nterm program ()
+   $2 = nterm function ()
+-> $$ = nterm program ()
 Stack now 0
 Entering state 2
-Reading a token: --accepting rule at line 55 ("
+Reading a token: --accepting rule at line 56 ("
 ")
---accepting rule at line 54 ("   ")
---accepting rule at line 78 ("number")
-Next token is token TOK_KW_IDENT (0x20c8490->{TOK_KW_IDENT(259) 6:9.003 "number" []})
-Shifting token TOK_KW_IDENT (0x20c8490->{TOK_KW_IDENT(259) 6:9.003 "number" []})
+--accepting rule at line 60 ("void")
+Next token is token TOK_KW_VOID (KW_VOID "void" 5.25.0 )
+Shifting token TOK_KW_VOID (KW_VOID "void" 5.25.0 )
 Entering state 5
-Reducing stack by rule 15 (line 66):
-   $1 = token TOK_KW_IDENT (0x20c8490->{TOK_KW_IDENT(259) 6:9.003 "number" []})
--> $$ = nterm expr ()
+Reducing stack by rule 11 (line 87):
+   $1 = token TOK_KW_VOID (KW_VOID "void" 5.25.0 )
+-> $$ = nterm basetype ()
 Stack now 0 2
-Entering state 11
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 94 ("=")
-Next token is token '=' (0x20c7760->{'='(61) 6:9.010 "=" []})
-Shifting token '=' (0x20c7760->{'='(61) 6:9.010 "=" []})
-Entering state 16
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("number")
-Next token is token TOK_KW_IDENT (0x20c8530->{TOK_KW_IDENT(259) 6:9.012 "number" []})
-Shifting token TOK_KW_IDENT (0x20c8530->{TOK_KW_IDENT(259) 6:9.012 "number" []})
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("putb")
+Next token is token TOK_KW_IDENT (KW_IDENT "putb" 5.25.5 )
+Shifting token TOK_KW_IDENT (KW_IDENT "putb" 5.25.5 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "putb" 5.25.5 )
+-> $$ = nterm identdecl ()
+Stack now 0 2
+Entering state 32
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 102 ("(")
+Next token is token '(' ('(' "(" 5.25.10 )
+Shifting token '(' ('(' "(" 5.25.10 )
+Entering state 58
+Reading a token: --accepting rule at line 61 ("bool")
+Next token is token TOK_KW_BOOL (KW_BOOL "bool" 5.25.11 )
+Shifting token TOK_KW_BOOL (KW_BOOL "bool" 5.25.11 )
+Entering state 6
+Reducing stack by rule 12 (line 87):
+   $1 = token TOK_KW_BOOL (KW_BOOL "bool" 5.25.11 )
+-> $$ = nterm basetype ()
+Stack now 0 2 32 58
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("b")
+Next token is token TOK_KW_IDENT (KW_IDENT "b" 5.25.16 )
+Shifting token TOK_KW_IDENT (KW_IDENT "b" 5.25.16 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "b" 5.25.16 )
+-> $$ = nterm identdecl ()
+Stack now 0 2 32 58
+Entering state 93
+Reducing stack by rule 18 (line 92):
+   $1 = nterm identdecl ()
+-> $$ = nterm funcargs ()
+Stack now 0 2 32 58
+Entering state 92
+Reading a token: --accepting rule at line 103 (")")
+Next token is token ')' (')' ")" 5.25.17 )
+Shifting token ')' (')' ")" 5.25.17 )
+Entering state 109
+Reducing stack by rule 20 (line 96):
+   $1 = token '(' ('(' "(" 5.25.10 )
+   $2 = nterm funcargs ()
+   $3 = token ')' (')' ")" 5.25.17 )
+-> $$ = nterm param ()
+Stack now 0 2 32
+Entering state 60
+Reading a token: --accepting rule at line 104 (";")
+Next token is token ';' (';' ";" 5.25.18 )
+Shifting token ';' (';' ";" 5.25.18 )
+Entering state 95
+Reducing stack by rule 22 (line 106):
+   $1 = nterm identdecl ()
+   $2 = nterm param ()
+   $3 = token ';' (';' ";" 5.25.18 )
+-> $$ = nterm function ()
+Stack now 0 2
+Entering state 31
+Reducing stack by rule 3 (line 69):
+   $1 = nterm program ()
+   $2 = nterm function ()
+-> $$ = nterm program ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 56 ("
+")
+--accepting rule at line 60 ("void")
+Next token is token TOK_KW_VOID (KW_VOID "void" 5.26.0 )
+Shifting token TOK_KW_VOID (KW_VOID "void" 5.26.0 )
 Entering state 5
-Reducing stack by rule 15 (line 66):
-   $1 = token TOK_KW_IDENT (0x20c8530->{TOK_KW_IDENT(259) 6:9.012 "number" []})
--> $$ = nterm expr ()
-Stack now 0 2 11 16
-Entering state 24
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 95 ("+")
-Next token is token '+' (0x20c8580->{'+'(43) 6:9.019 "+" []})
-Shifting token '+' (0x20c8580->{'+'(43) 6:9.019 "+" []})
+Reducing stack by rule 11 (line 87):
+   $1 = token TOK_KW_VOID (KW_VOID "void" 5.26.0 )
+-> $$ = nterm basetype ()
+Stack now 0 2
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("putc")
+Next token is token TOK_KW_IDENT (KW_IDENT "putc" 5.26.5 )
+Shifting token TOK_KW_IDENT (KW_IDENT "putc" 5.26.5 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "putc" 5.26.5 )
+-> $$ = nterm identdecl ()
+Stack now 0 2
+Entering state 32
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 102 ("(")
+Next token is token '(' ('(' "(" 5.26.10 )
+Shifting token '(' ('(' "(" 5.26.10 )
+Entering state 58
+Reading a token: --accepting rule at line 62 ("char")
+Next token is token TOK_KW_CHAR (KW_CHAR "char" 5.26.11 )
+Shifting token TOK_KW_CHAR (KW_CHAR "char" 5.26.11 )
+Entering state 7
+Reducing stack by rule 14 (line 88):
+   $1 = token TOK_KW_CHAR (KW_CHAR "char" 5.26.11 )
+-> $$ = nterm basetype ()
+Stack now 0 2 32 58
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("c")
+Next token is token TOK_KW_IDENT (KW_IDENT "c" 5.26.16 )
+Shifting token TOK_KW_IDENT (KW_IDENT "c" 5.26.16 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "c" 5.26.16 )
+-> $$ = nterm identdecl ()
+Stack now 0 2 32 58
+Entering state 93
+Reducing stack by rule 18 (line 92):
+   $1 = nterm identdecl ()
+-> $$ = nterm funcargs ()
+Stack now 0 2 32 58
+Entering state 92
+Reading a token: --accepting rule at line 103 (")")
+Next token is token ')' (')' ")" 5.26.17 )
+Shifting token ')' (')' ")" 5.26.17 )
+Entering state 109
+Reducing stack by rule 20 (line 96):
+   $1 = token '(' ('(' "(" 5.26.10 )
+   $2 = nterm funcargs ()
+   $3 = token ')' (')' ")" 5.26.17 )
+-> $$ = nterm param ()
+Stack now 0 2 32
+Entering state 60
+Reading a token: --accepting rule at line 104 (";")
+Next token is token ';' (';' ";" 5.26.18 )
+Shifting token ';' (';' ";" 5.26.18 )
+Entering state 95
+Reducing stack by rule 22 (line 106):
+   $1 = nterm identdecl ()
+   $2 = nterm param ()
+   $3 = token ';' (';' ";" 5.26.18 )
+-> $$ = nterm function ()
+Stack now 0 2
+Entering state 31
+Reducing stack by rule 3 (line 69):
+   $1 = nterm program ()
+   $2 = nterm function ()
+-> $$ = nterm program ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 56 ("
+")
+--accepting rule at line 60 ("void")
+Next token is token TOK_KW_VOID (KW_VOID "void" 5.27.0 )
+Shifting token TOK_KW_VOID (KW_VOID "void" 5.27.0 )
+Entering state 5
+Reducing stack by rule 11 (line 87):
+   $1 = token TOK_KW_VOID (KW_VOID "void" 5.27.0 )
+-> $$ = nterm basetype ()
+Stack now 0 2
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("puti")
+Next token is token TOK_KW_IDENT (KW_IDENT "puti" 5.27.5 )
+Shifting token TOK_KW_IDENT (KW_IDENT "puti" 5.27.5 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "puti" 5.27.5 )
+-> $$ = nterm identdecl ()
+Stack now 0 2
+Entering state 32
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 102 ("(")
+Next token is token '(' ('(' "(" 5.27.10 )
+Shifting token '(' ('(' "(" 5.27.10 )
+Entering state 58
+Reading a token: --accepting rule at line 63 ("int")
+Next token is token TOK_KW_INT (KW_INT "int" 5.27.11 )
+Shifting token TOK_KW_INT (KW_INT "int" 5.27.11 )
+Entering state 8
+Reducing stack by rule 13 (line 87):
+   $1 = token TOK_KW_INT (KW_INT "int" 5.27.11 )
+-> $$ = nterm basetype ()
+Stack now 0 2 32 58
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("i")
+Next token is token TOK_KW_IDENT (KW_IDENT "i" 5.27.15 )
+Shifting token TOK_KW_IDENT (KW_IDENT "i" 5.27.15 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "i" 5.27.15 )
+-> $$ = nterm identdecl ()
+Stack now 0 2 32 58
+Entering state 93
+Reducing stack by rule 18 (line 92):
+   $1 = nterm identdecl ()
+-> $$ = nterm funcargs ()
+Stack now 0 2 32 58
+Entering state 92
+Reading a token: --accepting rule at line 103 (")")
+Next token is token ')' (')' ")" 5.27.16 )
+Shifting token ')' (')' ")" 5.27.16 )
+Entering state 109
+Reducing stack by rule 20 (line 96):
+   $1 = token '(' ('(' "(" 5.27.10 )
+   $2 = nterm funcargs ()
+   $3 = token ')' (')' ")" 5.27.16 )
+-> $$ = nterm param ()
+Stack now 0 2 32
+Entering state 60
+Reading a token: --accepting rule at line 104 (";")
+Next token is token ';' (';' ";" 5.27.17 )
+Shifting token ';' (';' ";" 5.27.17 )
+Entering state 95
+Reducing stack by rule 22 (line 106):
+   $1 = nterm identdecl ()
+   $2 = nterm param ()
+   $3 = token ';' (';' ";" 5.27.17 )
+-> $$ = nterm function ()
+Stack now 0 2
+Entering state 31
+Reducing stack by rule 3 (line 69):
+   $1 = nterm program ()
+   $2 = nterm function ()
+-> $$ = nterm program ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 56 ("
+")
+--accepting rule at line 60 ("void")
+Next token is token TOK_KW_VOID (KW_VOID "void" 5.28.0 )
+Shifting token TOK_KW_VOID (KW_VOID "void" 5.28.0 )
+Entering state 5
+Reducing stack by rule 11 (line 87):
+   $1 = token TOK_KW_VOID (KW_VOID "void" 5.28.0 )
+-> $$ = nterm basetype ()
+Stack now 0 2
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("puts")
+Next token is token TOK_KW_IDENT (KW_IDENT "puts" 5.28.5 )
+Shifting token TOK_KW_IDENT (KW_IDENT "puts" 5.28.5 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "puts" 5.28.5 )
+-> $$ = nterm identdecl ()
+Stack now 0 2
+Entering state 32
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 102 ("(")
+Next token is token '(' ('(' "(" 5.28.10 )
+Shifting token '(' ('(' "(" 5.28.10 )
+Entering state 58
+Reading a token: --accepting rule at line 64 ("string")
+Next token is token TOK_KW_STRING (KW_STRING "string" 5.28.11 )
+Shifting token TOK_KW_STRING (KW_STRING "string" 5.28.11 )
+Entering state 9
+Reducing stack by rule 15 (line 88):
+   $1 = token TOK_KW_STRING (KW_STRING "string" 5.28.11 )
+-> $$ = nterm basetype ()
+Stack now 0 2 32 58
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("s")
+Next token is token TOK_KW_IDENT (KW_IDENT "s" 5.28.18 )
+Shifting token TOK_KW_IDENT (KW_IDENT "s" 5.28.18 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "s" 5.28.18 )
+-> $$ = nterm identdecl ()
+Stack now 0 2 32 58
+Entering state 93
+Reducing stack by rule 18 (line 92):
+   $1 = nterm identdecl ()
+-> $$ = nterm funcargs ()
+Stack now 0 2 32 58
+Entering state 92
+Reading a token: --accepting rule at line 103 (")")
+Next token is token ')' (')' ")" 5.28.19 )
+Shifting token ')' (')' ")" 5.28.19 )
+Entering state 109
+Reducing stack by rule 20 (line 96):
+   $1 = token '(' ('(' "(" 5.28.10 )
+   $2 = nterm funcargs ()
+   $3 = token ')' (')' ")" 5.28.19 )
+-> $$ = nterm param ()
+Stack now 0 2 32
+Entering state 60
+Reading a token: --accepting rule at line 104 (";")
+Next token is token ';' (';' ";" 5.28.20 )
+Shifting token ';' (';' ";" 5.28.20 )
+Entering state 95
+Reducing stack by rule 22 (line 106):
+   $1 = nterm identdecl ()
+   $2 = nterm param ()
+   $3 = token ';' (';' ";" 5.28.20 )
+-> $$ = nterm function ()
+Stack now 0 2
+Entering state 31
+Reducing stack by rule 3 (line 69):
+   $1 = nterm program ()
+   $2 = nterm function ()
+-> $$ = nterm program ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 56 ("
+")
+--accepting rule at line 60 ("void")
+Next token is token TOK_KW_VOID (KW_VOID "void" 5.29.0 )
+Shifting token TOK_KW_VOID (KW_VOID "void" 5.29.0 )
+Entering state 5
+Reducing stack by rule 11 (line 87):
+   $1 = token TOK_KW_VOID (KW_VOID "void" 5.29.0 )
+-> $$ = nterm basetype ()
+Stack now 0 2
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("endl")
+Next token is token TOK_KW_IDENT (KW_IDENT "endl" 5.29.5 )
+Shifting token TOK_KW_IDENT (KW_IDENT "endl" 5.29.5 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "endl" 5.29.5 )
+-> $$ = nterm identdecl ()
+Stack now 0 2
+Entering state 32
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 102 ("(")
+Next token is token '(' ('(' "(" 5.29.10 )
+Shifting token '(' ('(' "(" 5.29.10 )
+Entering state 58
+Reading a token: --accepting rule at line 103 (")")
+Next token is token ')' (')' ")" 5.29.11 )
+Reducing stack by rule 19 (line 93):
+-> $$ = nterm funcargs ()
+Stack now 0 2 32 58
+Entering state 92
+Next token is token ')' (')' ")" 5.29.11 )
+Shifting token ')' (')' ")" 5.29.11 )
+Entering state 109
+Reducing stack by rule 20 (line 96):
+   $1 = token '(' ('(' "(" 5.29.10 )
+   $2 = nterm funcargs ()
+   $3 = token ')' (')' ")" 5.29.11 )
+-> $$ = nterm param ()
+Stack now 0 2 32
+Entering state 60
+Reading a token: --accepting rule at line 104 (";")
+Next token is token ';' (';' ";" 5.29.12 )
+Shifting token ';' (';' ";" 5.29.12 )
+Entering state 95
+Reducing stack by rule 22 (line 106):
+   $1 = nterm identdecl ()
+   $2 = nterm param ()
+   $3 = token ';' (';' ";" 5.29.12 )
+-> $$ = nterm function ()
+Stack now 0 2
+Entering state 31
+Reducing stack by rule 3 (line 69):
+   $1 = nterm program ()
+   $2 = nterm function ()
+-> $$ = nterm program ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 56 ("
+")
+--accepting rule at line 63 ("int")
+Next token is token TOK_KW_INT (KW_INT "int" 5.30.0 )
+Shifting token TOK_KW_INT (KW_INT "int" 5.30.0 )
+Entering state 8
+Reducing stack by rule 13 (line 87):
+   $1 = token TOK_KW_INT (KW_INT "int" 5.30.0 )
+-> $$ = nterm basetype ()
+Stack now 0 2
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("getc")
+Next token is token TOK_KW_IDENT (KW_IDENT "getc" 5.30.4 )
+Shifting token TOK_KW_IDENT (KW_IDENT "getc" 5.30.4 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "getc" 5.30.4 )
+-> $$ = nterm identdecl ()
+Stack now 0 2
+Entering state 32
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 102 ("(")
+Next token is token '(' ('(' "(" 5.30.9 )
+Shifting token '(' ('(' "(" 5.30.9 )
+Entering state 58
+Reading a token: --accepting rule at line 103 (")")
+Next token is token ')' (')' ")" 5.30.10 )
+Reducing stack by rule 19 (line 93):
+-> $$ = nterm funcargs ()
+Stack now 0 2 32 58
+Entering state 92
+Next token is token ')' (')' ")" 5.30.10 )
+Shifting token ')' (')' ")" 5.30.10 )
+Entering state 109
+Reducing stack by rule 20 (line 96):
+   $1 = token '(' ('(' "(" 5.30.9 )
+   $2 = nterm funcargs ()
+   $3 = token ')' (')' ")" 5.30.10 )
+-> $$ = nterm param ()
+Stack now 0 2 32
+Entering state 60
+Reading a token: --accepting rule at line 104 (";")
+Next token is token ';' (';' ";" 5.30.11 )
+Shifting token ';' (';' ";" 5.30.11 )
+Entering state 95
+Reducing stack by rule 22 (line 106):
+   $1 = nterm identdecl ()
+   $2 = nterm param ()
+   $3 = token ';' (';' ";" 5.30.11 )
+-> $$ = nterm function ()
+Stack now 0 2
+Entering state 31
+Reducing stack by rule 3 (line 69):
+   $1 = nterm program ()
+   $2 = nterm function ()
+-> $$ = nterm program ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 56 ("
+")
+--accepting rule at line 64 ("string")
+Next token is token TOK_KW_STRING (KW_STRING "string" 5.31.0 )
+Shifting token TOK_KW_STRING (KW_STRING "string" 5.31.0 )
+Entering state 9
+Reducing stack by rule 15 (line 88):
+   $1 = token TOK_KW_STRING (KW_STRING "string" 5.31.0 )
+-> $$ = nterm basetype ()
+Stack now 0 2
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("getw")
+Next token is token TOK_KW_IDENT (KW_IDENT "getw" 5.31.7 )
+Shifting token TOK_KW_IDENT (KW_IDENT "getw" 5.31.7 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "getw" 5.31.7 )
+-> $$ = nterm identdecl ()
+Stack now 0 2
+Entering state 32
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 102 ("(")
+Next token is token '(' ('(' "(" 5.31.12 )
+Shifting token '(' ('(' "(" 5.31.12 )
+Entering state 58
+Reading a token: --accepting rule at line 103 (")")
+Next token is token ')' (')' ")" 5.31.13 )
+Reducing stack by rule 19 (line 93):
+-> $$ = nterm funcargs ()
+Stack now 0 2 32 58
+Entering state 92
+Next token is token ')' (')' ")" 5.31.13 )
+Shifting token ')' (')' ")" 5.31.13 )
+Entering state 109
+Reducing stack by rule 20 (line 96):
+   $1 = token '(' ('(' "(" 5.31.12 )
+   $2 = nterm funcargs ()
+   $3 = token ')' (')' ")" 5.31.13 )
+-> $$ = nterm param ()
+Stack now 0 2 32
+Entering state 60
+Reading a token: --accepting rule at line 104 (";")
+Next token is token ';' (';' ";" 5.31.14 )
+Shifting token ';' (';' ";" 5.31.14 )
+Entering state 95
+Reducing stack by rule 22 (line 106):
+   $1 = nterm identdecl ()
+   $2 = nterm param ()
+   $3 = token ';' (';' ";" 5.31.14 )
+-> $$ = nterm function ()
+Stack now 0 2
+Entering state 31
+Reducing stack by rule 3 (line 69):
+   $1 = nterm program ()
+   $2 = nterm function ()
+-> $$ = nterm program ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 56 ("
+")
+--accepting rule at line 64 ("string")
+Next token is token TOK_KW_STRING (KW_STRING "string" 5.32.0 )
+Shifting token TOK_KW_STRING (KW_STRING "string" 5.32.0 )
+Entering state 9
+Reducing stack by rule 15 (line 88):
+   $1 = token TOK_KW_STRING (KW_STRING "string" 5.32.0 )
+-> $$ = nterm basetype ()
+Stack now 0 2
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("getln")
+Next token is token TOK_KW_IDENT (KW_IDENT "getln" 5.32.7 )
+Shifting token TOK_KW_IDENT (KW_IDENT "getln" 5.32.7 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "getln" 5.32.7 )
+-> $$ = nterm identdecl ()
+Stack now 0 2
+Entering state 32
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 102 ("(")
+Next token is token '(' ('(' "(" 5.32.13 )
+Shifting token '(' ('(' "(" 5.32.13 )
+Entering state 58
+Reading a token: --accepting rule at line 103 (")")
+Next token is token ')' (')' ")" 5.32.14 )
+Reducing stack by rule 19 (line 93):
+-> $$ = nterm funcargs ()
+Stack now 0 2 32 58
+Entering state 92
+Next token is token ')' (')' ")" 5.32.14 )
+Shifting token ')' (')' ")" 5.32.14 )
+Entering state 109
+Reducing stack by rule 20 (line 96):
+   $1 = token '(' ('(' "(" 5.32.13 )
+   $2 = nterm funcargs ()
+   $3 = token ')' (')' ")" 5.32.14 )
+-> $$ = nterm param ()
+Stack now 0 2 32
+Entering state 60
+Reading a token: --accepting rule at line 104 (";")
+Next token is token ';' (';' ";" 5.32.15 )
+Shifting token ';' (';' ";" 5.32.15 )
+Entering state 95
+Reducing stack by rule 22 (line 106):
+   $1 = nterm identdecl ()
+   $2 = nterm param ()
+   $3 = token ';' (';' ";" 5.32.15 )
+-> $$ = nterm function ()
+Stack now 0 2
+Entering state 31
+Reducing stack by rule 3 (line 69):
+   $1 = nterm program ()
+   $2 = nterm function ()
+-> $$ = nterm program ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 56 ("
+")
+--accepting rule at line 64 ("string")
+Next token is token TOK_KW_STRING (KW_STRING "string" 5.33.0 )
+Shifting token TOK_KW_STRING (KW_STRING "string" 5.33.0 )
+Entering state 9
+Reducing stack by rule 15 (line 88):
+   $1 = token TOK_KW_STRING (KW_STRING "string" 5.33.0 )
+-> $$ = nterm basetype ()
+Stack now 0 2
+Entering state 30
+Reading a token: --accepting rule at line 80 ("[]")
+Next token is token TOK_NEWARRAY (NEWARRAY "[]" 5.33.6 )
+Shifting token TOK_NEWARRAY (NEWARRAY "[]" 5.33.6 )
+Entering state 57
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("getargv")
+Next token is token TOK_KW_IDENT (KW_IDENT "getargv" 5.33.9 )
+Shifting token TOK_KW_IDENT (KW_IDENT "getargv" 5.33.9 )
+Entering state 91
+Reducing stack by rule 24 (line 113):
+   $1 = nterm basetype ()
+   $2 = token TOK_NEWARRAY (NEWARRAY "[]" 5.33.6 )
+   $3 = token TOK_KW_IDENT (KW_IDENT "getargv" 5.33.9 )
+-> $$ = nterm identdecl ()
+Stack now 0 2
+Entering state 32
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 102 ("(")
+Next token is token '(' ('(' "(" 5.33.17 )
+Shifting token '(' ('(' "(" 5.33.17 )
+Entering state 58
+Reading a token: --accepting rule at line 103 (")")
+Next token is token ')' (')' ")" 5.33.18 )
+Reducing stack by rule 19 (line 93):
+-> $$ = nterm funcargs ()
+Stack now 0 2 32 58
+Entering state 92
+Next token is token ')' (')' ")" 5.33.18 )
+Shifting token ')' (')' ")" 5.33.18 )
+Entering state 109
+Reducing stack by rule 20 (line 96):
+   $1 = token '(' ('(' "(" 5.33.17 )
+   $2 = nterm funcargs ()
+   $3 = token ')' (')' ")" 5.33.18 )
+-> $$ = nterm param ()
+Stack now 0 2 32
+Entering state 60
+Reading a token: --accepting rule at line 104 (";")
+Next token is token ';' (';' ";" 5.33.19 )
+Shifting token ';' (';' ";" 5.33.19 )
+Entering state 95
+Reducing stack by rule 22 (line 106):
+   $1 = nterm identdecl ()
+   $2 = nterm param ()
+   $3 = token ';' (';' ";" 5.33.19 )
+-> $$ = nterm function ()
+Stack now 0 2
+Entering state 31
+Reducing stack by rule 3 (line 69):
+   $1 = nterm program ()
+   $2 = nterm function ()
+-> $$ = nterm program ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 56 ("
+")
+--accepting rule at line 60 ("void")
+Next token is token TOK_KW_VOID (KW_VOID "void" 5.34.0 )
+Shifting token TOK_KW_VOID (KW_VOID "void" 5.34.0 )
+Entering state 5
+Reducing stack by rule 11 (line 87):
+   $1 = token TOK_KW_VOID (KW_VOID "void" 5.34.0 )
+-> $$ = nterm basetype ()
+Stack now 0 2
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("exit")
+Next token is token TOK_KW_IDENT (KW_IDENT "exit" 5.34.5 )
+Shifting token TOK_KW_IDENT (KW_IDENT "exit" 5.34.5 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "exit" 5.34.5 )
+-> $$ = nterm identdecl ()
+Stack now 0 2
+Entering state 32
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 102 ("(")
+Next token is token '(' ('(' "(" 5.34.10 )
+Shifting token '(' ('(' "(" 5.34.10 )
+Entering state 58
+Reading a token: --accepting rule at line 63 ("int")
+Next token is token TOK_KW_INT (KW_INT "int" 5.34.11 )
+Shifting token TOK_KW_INT (KW_INT "int" 5.34.11 )
+Entering state 8
+Reducing stack by rule 13 (line 87):
+   $1 = token TOK_KW_INT (KW_INT "int" 5.34.11 )
+-> $$ = nterm basetype ()
+Stack now 0 2 32 58
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("status")
+Next token is token TOK_KW_IDENT (KW_IDENT "status" 5.34.15 )
+Shifting token TOK_KW_IDENT (KW_IDENT "status" 5.34.15 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "status" 5.34.15 )
+-> $$ = nterm identdecl ()
+Stack now 0 2 32 58
+Entering state 93
+Reducing stack by rule 18 (line 92):
+   $1 = nterm identdecl ()
+-> $$ = nterm funcargs ()
+Stack now 0 2 32 58
+Entering state 92
+Reading a token: --accepting rule at line 103 (")")
+Next token is token ')' (')' ")" 5.34.21 )
+Shifting token ')' (')' ")" 5.34.21 )
+Entering state 109
+Reducing stack by rule 20 (line 96):
+   $1 = token '(' ('(' "(" 5.34.10 )
+   $2 = nterm funcargs ()
+   $3 = token ')' (')' ")" 5.34.21 )
+-> $$ = nterm param ()
+Stack now 0 2 32
+Entering state 60
+Reading a token: --accepting rule at line 104 (";")
+Next token is token ';' (';' ";" 5.34.22 )
+Shifting token ';' (';' ";" 5.34.22 )
+Entering state 95
+Reducing stack by rule 22 (line 106):
+   $1 = nterm identdecl ()
+   $2 = nterm param ()
+   $3 = token ';' (';' ";" 5.34.22 )
+-> $$ = nterm function ()
+Stack now 0 2
+Entering state 31
+Reducing stack by rule 3 (line 69):
+   $1 = nterm program ()
+   $2 = nterm function ()
+-> $$ = nterm program ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 56 ("
+")
+--accepting rule at line 54 ("# 4 "11-numbers.oc" 2")
+--accepting rule at line 56 ("
+")
+--accepting rule at line 56 ("
+")
+--accepting rule at line 63 ("int")
+Next token is token TOK_KW_INT (KW_INT "int" 6.5.0 )
+Shifting token TOK_KW_INT (KW_INT "int" 6.5.0 )
+Entering state 8
+Reducing stack by rule 13 (line 87):
+   $1 = token TOK_KW_INT (KW_INT "int" 6.5.0 )
+-> $$ = nterm basetype ()
+Stack now 0 2
+Entering state 30
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("number")
+Next token is token TOK_KW_IDENT (KW_IDENT "number" 6.5.4 )
+Shifting token TOK_KW_IDENT (KW_IDENT "number" 6.5.4 )
+Entering state 56
+Reducing stack by rule 23 (line 111):
+   $1 = nterm basetype ()
+   $2 = token TOK_KW_IDENT (KW_IDENT "number" 6.5.4 )
+-> $$ = nterm identdecl ()
+Stack now 0 2
+Entering state 32
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 95 ("=")
+Next token is token '=' ('=' "=" 6.5.11 )
+Shifting token '=' ('=' "=" 6.5.11 )
+Entering state 59
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 78 ("1")
+Next token is token TOK_LIT_INT (LIT_INT "1" 6.5.13 )
+Shifting token TOK_LIT_INT (LIT_INT "1" 6.5.13 )
 Entering state 17
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 78 ("number")
-Next token is token TOK_KW_IDENT (0x20c85f0->{TOK_KW_IDENT(259) 6:9.021 "number" []})
-Shifting token TOK_KW_IDENT (0x20c85f0->{TOK_KW_IDENT(259) 6:9.021 "number" []})
-Entering state 5
-Reducing stack by rule 15 (line 66):
-   $1 = token TOK_KW_IDENT (0x20c85f0->{TOK_KW_IDENT(259) 6:9.021 "number" []})
+Reducing stack by rule 75 (line 201):
+   $1 = token TOK_LIT_INT (LIT_INT "1" 6.5.13 )
+-> $$ = nterm constant ()
+Stack now 0 2 32 59
+Entering state 44
+Reducing stack by rule 64 (line 173):
+   $1 = nterm constant ()
 -> $$ = nterm expr ()
-Stack now 0 2 11 16 24 17
-Entering state 25
-Reading a token: --accepting rule at line 103 (";")
-Next token is token ';' (0x20c8670->{';'(59) 6:9.027 ";" []})
-Reducing stack by rule 7 (line 58):
+Stack now 0 2 32 59
+Entering state 94
+Reading a token: --accepting rule at line 104 (";")
+Next token is token ';' (';' ";" 6.5.14 )
+Shifting token ';' (';' ";" 6.5.14 )
+Entering state 110
+Reducing stack by rule 34 (line 135):
+   $1 = nterm identdecl ()
+   $2 = token '=' ('=' "=" 6.5.11 )
+   $3 = nterm expr ()
+   $4 = token ';' (';' ";" 6.5.14 )
+-> $$ = nterm vardecl ()
+Stack now 0 2
+Entering state 35
+Reducing stack by rule 29 (line 128):
+   $1 = nterm vardecl ()
+-> $$ = nterm statement ()
+Stack now 0 2
+Entering state 34
+Reducing stack by rule 4 (line 70):
+   $1 = nterm program ()
+   $2 = nterm statement ()
+-> $$ = nterm program ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 56 ("
+")
+--accepting rule at line 68 ("while")
+Next token is token TOK_KW_WHILE (KW_WHILE "while" 6.6.0 )
+Shifting token TOK_KW_WHILE (KW_WHILE "while" 6.6.0 )
+Entering state 10
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 102 ("(")
+Next token is token '(' ('(' "(" 6.6.6 )
+Shifting token '(' ('(' "(" 6.6.6 )
+Entering state 46
+Reading a token: --accepting rule at line 79 ("number")
+Next token is token TOK_KW_IDENT (KW_IDENT "number" 6.6.7 )
+Shifting token TOK_KW_IDENT (KW_IDENT "number" 6.6.7 )
+Entering state 4
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 94 (">")
+Next token is token '>' ('>' ">" 6.6.14 )
+Reducing stack by rule 72 (line 195):
+   $1 = token TOK_KW_IDENT (KW_IDENT "number" 6.6.7 )
+-> $$ = nterm variable ()
+Stack now 0 2 10 46
+Entering state 43
+Reducing stack by rule 63 (line 172):
+   $1 = nterm variable ()
+-> $$ = nterm expr ()
+Stack now 0 2 10 46
+Entering state 80
+Next token is token '>' ('>' ">" 6.6.14 )
+Shifting token '>' ('>' ">" 6.6.14 )
+Entering state 65
+Reducing stack by rule 50 (line 158):
+   $1 = token '>' ('>' ">" 6.6.14 )
+-> $$ = nterm BINOP ()
+Stack now 0 2 10 46 80
+Entering state 77
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 78 ("0")
+Next token is token TOK_LIT_INT (LIT_INT "0" 6.6.16 )
+Shifting token TOK_LIT_INT (LIT_INT "0" 6.6.16 )
+Entering state 17
+Reducing stack by rule 75 (line 201):
+   $1 = token TOK_LIT_INT (LIT_INT "0" 6.6.16 )
+-> $$ = nterm constant ()
+Stack now 0 2 10 46 80 77
+Entering state 44
+Reducing stack by rule 64 (line 173):
+   $1 = nterm constant ()
+-> $$ = nterm expr ()
+Stack now 0 2 10 46 80 77
+Entering state 99
+Reading a token: --accepting rule at line 103 (")")
+Next token is token ')' (')' ")" 6.6.17 )
+Reducing stack by rule 58 (line 167):
    $1 = nterm expr ()
-   $2 = token '+' (0x20c8580->{'+'(43) 6:9.019 "+" []})
+   $2 = nterm BINOP ()
    $3 = nterm expr ()
 -> $$ = nterm expr ()
-Stack now 0 2 11 16
-Entering state 24
-Next token is token ';' (0x20c8670->{';'(59) 6:9.027 ";" []})
-Reducing stack by rule 6 (line 57):
+Stack now 0 2 10 46
+Entering state 80
+Next token is token ')' (')' ")" 6.6.17 )
+Shifting token ')' (')' ")" 6.6.17 )
+Entering state 102
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 88 ("{")
+Next token is token '{' ('{' "{" 6.6.19 )
+Shifting token '{' ('{' "{" 6.6.19 )
+Entering state 21
+Reducing stack by rule 26 (line 118):
+-> $$ = nterm blokargs ()
+Stack now 0 2 10 46 80 102 21
+Entering state 53
+Reading a token: --accepting rule at line 56 ("
+")
+--accepting rule at line 55 ("   ")
+--accepting rule at line 79 ("puti")
+Next token is token TOK_KW_IDENT (KW_IDENT "puti" 6.7.3 )
+Shifting token TOK_KW_IDENT (KW_IDENT "puti" 6.7.3 )
+Entering state 4
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 102 ("(")
+Next token is token '(' ('(' "(" 6.7.8 )
+Shifting token '(' ('(' "(" 6.7.8 )
+Entering state 45
+Reading a token: --accepting rule at line 79 ("number")
+Next token is token TOK_KW_IDENT (KW_IDENT "number" 6.7.9 )
+Shifting token TOK_KW_IDENT (KW_IDENT "number" 6.7.9 )
+Entering state 4
+Reading a token: --accepting rule at line 103 (")")
+Next token is token ')' (')' ")" 6.7.15 )
+Reducing stack by rule 72 (line 195):
+   $1 = token TOK_KW_IDENT (KW_IDENT "number" 6.7.9 )
+-> $$ = nterm variable ()
+Stack now 0 2 10 46 80 102 21 53 4 45
+Entering state 43
+Reducing stack by rule 63 (line 172):
+   $1 = nterm variable ()
+-> $$ = nterm expr ()
+Stack now 0 2 10 46 80 102 21 53 4 45
+Entering state 78
+Next token is token ')' (')' ")" 6.7.15 )
+Reducing stack by rule 69 (line 188):
    $1 = nterm expr ()
-   $2 = token '=' (0x20c7760->{'='(61) 6:9.010 "=" []})
+-> $$ = nterm args ()
+Stack now 0 2 10 46 80 102 21 53 4 45
+Entering state 79
+Next token is token ')' (')' ")" 6.7.15 )
+Shifting token ')' (')' ")" 6.7.15 )
+Entering state 101
+Reducing stack by rule 71 (line 192):
+   $1 = token TOK_KW_IDENT (KW_IDENT "puti" 6.7.3 )
+   $2 = token '(' ('(' "(" 6.7.8 )
+   $3 = nterm args ()
+   $4 = token ')' (')' ")" 6.7.15 )
+-> $$ = nterm call ()
+Stack now 0 2 10 46 80 102 21 53
+Entering state 42
+Reducing stack by rule 61 (line 170):
+   $1 = nterm call ()
+-> $$ = nterm expr ()
+Stack now 0 2 10 46 80 102 21 53
+Entering state 40
+Reading a token: --accepting rule at line 104 (";")
+Next token is token ';' (';' ";" 6.7.16 )
+Shifting token ';' (';' ";" 6.7.16 )
+Entering state 62
+Reducing stack by rule 33 (line 132):
+   $1 = nterm expr ()
+   $2 = token ';' (';' ";" 6.7.16 )
+-> $$ = nterm statement ()
+Stack now 0 2 10 46 80 102 21 53
+Entering state 88
+Reducing stack by rule 25 (line 117):
+   $1 = nterm blokargs ()
+   $2 = nterm statement ()
+-> $$ = nterm blokargs ()
+Stack now 0 2 10 46 80 102 21
+Entering state 53
+Reading a token: --accepting rule at line 56 ("
+")
+--accepting rule at line 55 ("   ")
+--accepting rule at line 79 ("putc")
+Next token is token TOK_KW_IDENT (KW_IDENT "putc" 6.8.3 )
+Shifting token TOK_KW_IDENT (KW_IDENT "putc" 6.8.3 )
+Entering state 4
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 102 ("(")
+Next token is token '(' ('(' "(" 6.8.8 )
+Shifting token '(' ('(' "(" 6.8.8 )
+Entering state 45
+Reading a token: --accepting rule at line 76 ("'\n'")
+Next token is token TOK_LIT_CHAR (LIT_CHAR "'\n'" 6.8.9 )
+Shifting token TOK_LIT_CHAR (LIT_CHAR "'\n'" 6.8.9 )
+Entering state 18
+Reducing stack by rule 76 (line 202):
+   $1 = token TOK_LIT_CHAR (LIT_CHAR "'\n'" 6.8.9 )
+-> $$ = nterm constant ()
+Stack now 0 2 10 46 80 102 21 53 4 45
+Entering state 44
+Reducing stack by rule 64 (line 173):
+   $1 = nterm constant ()
+-> $$ = nterm expr ()
+Stack now 0 2 10 46 80 102 21 53 4 45
+Entering state 78
+Reading a token: --accepting rule at line 103 (")")
+Next token is token ')' (')' ")" 6.8.13 )
+Reducing stack by rule 69 (line 188):
+   $1 = nterm expr ()
+-> $$ = nterm args ()
+Stack now 0 2 10 46 80 102 21 53 4 45
+Entering state 79
+Next token is token ')' (')' ")" 6.8.13 )
+Shifting token ')' (')' ")" 6.8.13 )
+Entering state 101
+Reducing stack by rule 71 (line 192):
+   $1 = token TOK_KW_IDENT (KW_IDENT "putc" 6.8.3 )
+   $2 = token '(' ('(' "(" 6.8.8 )
+   $3 = nterm args ()
+   $4 = token ')' (')' ")" 6.8.13 )
+-> $$ = nterm call ()
+Stack now 0 2 10 46 80 102 21 53
+Entering state 42
+Reducing stack by rule 61 (line 170):
+   $1 = nterm call ()
+-> $$ = nterm expr ()
+Stack now 0 2 10 46 80 102 21 53
+Entering state 40
+Reading a token: --accepting rule at line 104 (";")
+Next token is token ';' (';' ";" 6.8.14 )
+Shifting token ';' (';' ";" 6.8.14 )
+Entering state 62
+Reducing stack by rule 33 (line 132):
+   $1 = nterm expr ()
+   $2 = token ';' (';' ";" 6.8.14 )
+-> $$ = nterm statement ()
+Stack now 0 2 10 46 80 102 21 53
+Entering state 88
+Reducing stack by rule 25 (line 117):
+   $1 = nterm blokargs ()
+   $2 = nterm statement ()
+-> $$ = nterm blokargs ()
+Stack now 0 2 10 46 80 102 21
+Entering state 53
+Reading a token: --accepting rule at line 56 ("
+")
+--accepting rule at line 55 ("   ")
+--accepting rule at line 79 ("number")
+Next token is token TOK_KW_IDENT (KW_IDENT "number" 6.9.3 )
+Shifting token TOK_KW_IDENT (KW_IDENT "number" 6.9.3 )
+Entering state 4
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 95 ("=")
+Next token is token '=' ('=' "=" 6.9.10 )
+Reducing stack by rule 72 (line 195):
+   $1 = token TOK_KW_IDENT (KW_IDENT "number" 6.9.3 )
+-> $$ = nterm variable ()
+Stack now 0 2 10 46 80 102 21 53
+Entering state 43
+Reducing stack by rule 63 (line 172):
+   $1 = nterm variable ()
+-> $$ = nterm expr ()
+Stack now 0 2 10 46 80 102 21 53
+Entering state 40
+Next token is token '=' ('=' "=" 6.9.10 )
+Shifting token '=' ('=' "=" 6.9.10 )
+Entering state 63
+Reducing stack by rule 45 (line 156):
+   $1 = token '=' ('=' "=" 6.9.10 )
+-> $$ = nterm BINOP ()
+Stack now 0 2 10 46 80 102 21 53 40
+Entering state 77
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("number")
+Next token is token TOK_KW_IDENT (KW_IDENT "number" 6.9.12 )
+Shifting token TOK_KW_IDENT (KW_IDENT "number" 6.9.12 )
+Entering state 4
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 96 ("+")
+Next token is token '+' ('+' "+" 6.9.19 )
+Reducing stack by rule 72 (line 195):
+   $1 = token TOK_KW_IDENT (KW_IDENT "number" 6.9.12 )
+-> $$ = nterm variable ()
+Stack now 0 2 10 46 80 102 21 53 40 77
+Entering state 43
+Reducing stack by rule 63 (line 172):
+   $1 = nterm variable ()
+-> $$ = nterm expr ()
+Stack now 0 2 10 46 80 102 21 53 40 77
+Entering state 99
+Next token is token '+' ('+' "+" 6.9.19 )
+Shifting token '+' ('+' "+" 6.9.19 )
+Entering state 70
+Reducing stack by rule 40 (line 155):
+   $1 = token '+' ('+' "+" 6.9.19 )
+-> $$ = nterm BINOP ()
+Stack now 0 2 10 46 80 102 21 53 40 77 99
+Entering state 77
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 79 ("number")
+Next token is token TOK_KW_IDENT (KW_IDENT "number" 6.9.21 )
+Shifting token TOK_KW_IDENT (KW_IDENT "number" 6.9.21 )
+Entering state 4
+Reading a token: --accepting rule at line 104 (";")
+Next token is token ';' (';' ";" 6.9.27 )
+Reducing stack by rule 72 (line 195):
+   $1 = token TOK_KW_IDENT (KW_IDENT "number" 6.9.21 )
+-> $$ = nterm variable ()
+Stack now 0 2 10 46 80 102 21 53 40 77 99 77
+Entering state 43
+Reducing stack by rule 63 (line 172):
+   $1 = nterm variable ()
+-> $$ = nterm expr ()
+Stack now 0 2 10 46 80 102 21 53 40 77 99 77
+Entering state 99
+Next token is token ';' (';' ";" 6.9.27 )
+Reducing stack by rule 58 (line 167):
+   $1 = nterm expr ()
+   $2 = nterm BINOP ()
    $3 = nterm expr ()
 -> $$ = nterm expr ()
+Stack now 0 2 10 46 80 102 21 53 40 77
+Entering state 99
+Next token is token ';' (';' ";" 6.9.27 )
+Reducing stack by rule 58 (line 167):
+   $1 = nterm expr ()
+   $2 = nterm BINOP ()
+   $3 = nterm expr ()
+-> $$ = nterm expr ()
+Stack now 0 2 10 46 80 102 21 53
+Entering state 40
+Next token is token ';' (';' ";" 6.9.27 )
+Shifting token ';' (';' ";" 6.9.27 )
+Entering state 62
+Reducing stack by rule 33 (line 132):
+   $1 = nterm expr ()
+   $2 = token ';' (';' ";" 6.9.27 )
+-> $$ = nterm statement ()
+Stack now 0 2 10 46 80 102 21 53
+Entering state 88
+Reducing stack by rule 25 (line 117):
+   $1 = nterm blokargs ()
+   $2 = nterm statement ()
+-> $$ = nterm blokargs ()
+Stack now 0 2 10 46 80 102 21
+Entering state 53
+Reading a token: --accepting rule at line 56 ("
+")
+--accepting rule at line 87 ("}")
+Next token is token '}' ('}' "}" 6.10.0 )
+Shifting token '}' ('}' "}" 6.10.0 )
+Entering state 86
+Reducing stack by rule 27 (line 121):
+   $1 = token '{' ('{' "{" 6.6.19 )
+   $2 = nterm blokargs ()
+   $3 = token '}' ('}' "}" 6.10.0 )
+-> $$ = nterm block ()
+Stack now 0 2 10 46 80 102
+Entering state 33
+Reducing stack by rule 28 (line 127):
+   $1 = nterm block ()
+-> $$ = nterm statement ()
+Stack now 0 2 10 46 80 102
+Entering state 113
+Reducing stack by rule 35 (line 140):
+   $1 = token TOK_KW_WHILE (KW_WHILE "while" 6.6.0 )
+   $2 = token '(' ('(' "(" 6.6.6 )
+   $3 = nterm expr ()
+   $4 = token ')' (')' ")" 6.6.17 )
+   $5 = nterm statement ()
+-> $$ = nterm while ()
 Stack now 0 2
-Entering state 11
-Next token is token ';' (0x20c8670->{';'(59) 6:9.027 ";" []})
-Shifting token ';' (0x20c8670->{';'(59) 6:9.027 ";" []})
-Entering state 22
-Reducing stack by rule 2 (line 51):
-   $1 = nterm stmtseq ()
-   $2 = nterm expr ()
-   $3 = token ';' (0x20c8670->{';'(59) 6:9.027 ";" []})
--> $$ = nterm stmtseq ()
+Entering state 36
+Reducing stack by rule 30 (line 129):
+   $1 = nterm while ()
+-> $$ = nterm statement ()
+Stack now 0 2
+Entering state 34
+Reducing stack by rule 4 (line 70):
+   $1 = nterm program ()
+   $2 = nterm statement ()
+-> $$ = nterm program ()
 Stack now 0
 Entering state 2
-Reading a token: --accepting rule at line 55 ("
+Reading a token: --accepting rule at line 56 ("
 ")
---accepting rule at line 86 ("}")
-Next token is token '}' (0x20c8670->{'}'(125) 6:10.000 "}" []})
-oc: 11-numbers.oc: 10: syntax error, unexpected '}'
-Shifting token error (error(256)
-)
+--accepting rule at line 79 ("puti")
+Next token is token TOK_KW_IDENT (KW_IDENT "puti" 6.11.0 )
+Shifting token TOK_KW_IDENT (KW_IDENT "puti" 6.11.0 )
 Entering state 4
-Next token is token '}' (0x20c8670->{'}'(125) 6:10.000 "}" []})
-Error: discarding token '}' (0x20c8670->{'}'(125) 6:10.000 "}" []})
-Error: popping token error (error(256)
-)
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 102 ("(")
+Next token is token '(' ('(' "(" 6.11.5 )
+Shifting token '(' ('(' "(" 6.11.5 )
+Entering state 45
+Reading a token: --accepting rule at line 79 ("number")
+Next token is token TOK_KW_IDENT (KW_IDENT "number" 6.11.6 )
+Shifting token TOK_KW_IDENT (KW_IDENT "number" 6.11.6 )
+Entering state 4
+Reading a token: --accepting rule at line 103 (")")
+Next token is token ')' (')' ")" 6.11.12 )
+Reducing stack by rule 72 (line 195):
+   $1 = token TOK_KW_IDENT (KW_IDENT "number" 6.11.6 )
+-> $$ = nterm variable ()
+Stack now 0 2 4 45
+Entering state 43
+Reducing stack by rule 63 (line 172):
+   $1 = nterm variable ()
+-> $$ = nterm expr ()
+Stack now 0 2 4 45
+Entering state 78
+Next token is token ')' (')' ")" 6.11.12 )
+Reducing stack by rule 69 (line 188):
+   $1 = nterm expr ()
+-> $$ = nterm args ()
+Stack now 0 2 4 45
+Entering state 79
+Next token is token ')' (')' ")" 6.11.12 )
+Shifting token ')' (')' ")" 6.11.12 )
+Entering state 101
+Reducing stack by rule 71 (line 192):
+   $1 = token TOK_KW_IDENT (KW_IDENT "puti" 6.11.0 )
+   $2 = token '(' ('(' "(" 6.11.5 )
+   $3 = nterm args ()
+   $4 = token ')' (')' ")" 6.11.12 )
+-> $$ = nterm call ()
 Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 55 ("
-")
---accepting rule at line 78 ("puti")
-Next token is token TOK_KW_IDENT (0x20c8670->{TOK_KW_IDENT(259) 6:11.000 "puti" []})
-Error: discarding token TOK_KW_IDENT (0x20c8670->{TOK_KW_IDENT(259) 6:11.000 "puti" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
-Next token is token '(' (0x20c8670->{'('(40) 6:11.005 "(" []})
-Error: discarding token '(' (0x20c8670->{'('(40) 6:11.005 "(" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 78 ("number")
-Next token is token TOK_KW_IDENT (0x20c8670->{TOK_KW_IDENT(259) 6:11.006 "number" []})
-Error: discarding token TOK_KW_IDENT (0x20c8670->{TOK_KW_IDENT(259) 6:11.006 "number" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 102 (")")
-Next token is token ')' (0x20c8670->{')'(41) 6:11.012 ")" []})
-Error: discarding token ')' (0x20c8670->{')'(41) 6:11.012 ")" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 103 (";")
-Next token is token ';' (0x20c8670->{';'(59) 6:11.013 ";" []})
-Shifting token ';' (0x20c8670->{';'(59) 6:11.013 ";" []})
-Entering state 12
-Reducing stack by rule 3 (line 52):
-   $1 = nterm stmtseq ()
-   $2 = token error (error(256)
-)
-   $3 = token ';' (0x20c8670->{';'(59) 6:11.013 ";" []})
--> $$ = nterm stmtseq ()
-Stack now 0
-Entering state 2
-Reading a token: --accepting rule at line 55 ("
-")
---accepting rule at line 78 ("putc")
-Next token is token TOK_KW_IDENT (0x20c8670->{TOK_KW_IDENT(259) 6:12.000 "putc" []})
-Shifting token TOK_KW_IDENT (0x20c8670->{TOK_KW_IDENT(259) 6:12.000 "putc" []})
-Entering state 5
-Reducing stack by rule 15 (line 66):
-   $1 = token TOK_KW_IDENT (0x20c8670->{TOK_KW_IDENT(259) 6:12.000 "putc" []})
+Entering state 42
+Reducing stack by rule 61 (line 170):
+   $1 = nterm call ()
 -> $$ = nterm expr ()
 Stack now 0 2
-Entering state 11
-Reading a token: --accepting rule at line 54 (" ")
---accepting rule at line 101 ("(")
-Next token is token '(' (0x20c8770->{'('(40) 6:12.005 "(" []})
-Error: popping nterm expr ()
+Entering state 40
+Reading a token: --accepting rule at line 104 (";")
+Next token is token ';' (';' ";" 6.11.13 )
+Shifting token ';' (';' ";" 6.11.13 )
+Entering state 62
+Reducing stack by rule 33 (line 132):
+   $1 = nterm expr ()
+   $2 = token ';' (';' ";" 6.11.13 )
+-> $$ = nterm statement ()
 Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Next token is token '(' (0x20c8770->{'('(40) 6:12.005 "(" []})
-Error: discarding token '(' (0x20c8770->{'('(40) 6:12.005 "(" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 75 ("'\n'")
-Next token is token TOK_LIT_CHAR (0x20c8770->{TOK_LIT_CHAR(278) 6:12.006 "'\n'" []})
-Error: discarding token TOK_LIT_CHAR (0x20c8770->{TOK_LIT_CHAR(278) 6:12.006 "'\n'" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 102 (")")
-Next token is token ')' (0x20c8770->{')'(41) 6:12.010 ")" []})
-Error: discarding token ')' (0x20c8770->{')'(41) 6:12.010 ")" []})
-Error: popping token error (error(256)
-)
-Stack now 0 2
-Shifting token error (error(256)
-)
-Entering state 4
-Reading a token: --accepting rule at line 103 (";")
-Next token is token ';' (0x20c8770->{';'(59) 6:12.011 ";" []})
-Shifting token ';' (0x20c8770->{';'(59) 6:12.011 ";" []})
-Entering state 12
-Reducing stack by rule 3 (line 52):
-   $1 = nterm stmtseq ()
-   $2 = token error (error(256)
-)
-   $3 = token ';' (0x20c8770->{';'(59) 6:12.011 ";" []})
--> $$ = nterm stmtseq ()
+Entering state 34
+Reducing stack by rule 4 (line 70):
+   $1 = nterm program ()
+   $2 = nterm statement ()
+-> $$ = nterm program ()
 Stack now 0
 Entering state 2
-Reading a token: --accepting rule at line 55 ("
+Reading a token: --accepting rule at line 56 ("
+")
+--accepting rule at line 79 ("putc")
+Next token is token TOK_KW_IDENT (KW_IDENT "putc" 6.12.0 )
+Shifting token TOK_KW_IDENT (KW_IDENT "putc" 6.12.0 )
+Entering state 4
+Reading a token: --accepting rule at line 55 (" ")
+--accepting rule at line 102 ("(")
+Next token is token '(' ('(' "(" 6.12.5 )
+Shifting token '(' ('(' "(" 6.12.5 )
+Entering state 45
+Reading a token: --accepting rule at line 76 ("'\n'")
+Next token is token TOK_LIT_CHAR (LIT_CHAR "'\n'" 6.12.6 )
+Shifting token TOK_LIT_CHAR (LIT_CHAR "'\n'" 6.12.6 )
+Entering state 18
+Reducing stack by rule 76 (line 202):
+   $1 = token TOK_LIT_CHAR (LIT_CHAR "'\n'" 6.12.6 )
+-> $$ = nterm constant ()
+Stack now 0 2 4 45
+Entering state 44
+Reducing stack by rule 64 (line 173):
+   $1 = nterm constant ()
+-> $$ = nterm expr ()
+Stack now 0 2 4 45
+Entering state 78
+Reading a token: --accepting rule at line 103 (")")
+Next token is token ')' (')' ")" 6.12.10 )
+Reducing stack by rule 69 (line 188):
+   $1 = nterm expr ()
+-> $$ = nterm args ()
+Stack now 0 2 4 45
+Entering state 79
+Next token is token ')' (')' ")" 6.12.10 )
+Shifting token ')' (')' ")" 6.12.10 )
+Entering state 101
+Reducing stack by rule 71 (line 192):
+   $1 = token TOK_KW_IDENT (KW_IDENT "putc" 6.12.0 )
+   $2 = token '(' ('(' "(" 6.12.5 )
+   $3 = nterm args ()
+   $4 = token ')' (')' ")" 6.12.10 )
+-> $$ = nterm call ()
+Stack now 0 2
+Entering state 42
+Reducing stack by rule 61 (line 170):
+   $1 = nterm call ()
+-> $$ = nterm expr ()
+Stack now 0 2
+Entering state 40
+Reading a token: --accepting rule at line 104 (";")
+Next token is token ';' (';' ";" 6.12.11 )
+Shifting token ';' (';' ";" 6.12.11 )
+Entering state 62
+Reducing stack by rule 33 (line 132):
+   $1 = nterm expr ()
+   $2 = token ';' (';' ";" 6.12.11 )
+-> $$ = nterm statement ()
+Stack now 0 2
+Entering state 34
+Reducing stack by rule 4 (line 70):
+   $1 = nterm program ()
+   $2 = nterm statement ()
+-> $$ = nterm program ()
+Stack now 0
+Entering state 2
+Reading a token: --accepting rule at line 56 ("
 ")
 --(end of buffer or a NUL)
 --EOF (start condition 0)
 Now at end of input.
-Reducing stack by rule 1 (line 48):
-   $1 = nterm stmtseq ()
--> $$ = nterm program ()
+Reducing stack by rule 1 (line 65):
+   $1 = nterm program ()
+-> $$ = nterm start ()
 Stack now 0
 Entering state 1
 Now at end of input.
@@ -1282,4 +1433,4 @@ Entering state 3
 Stack now 0 1 3
 Cleanup: popping token $end ($end(0)
 )
-Cleanup: popping nterm program ()
+Cleanup: popping nterm start ()

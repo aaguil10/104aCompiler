@@ -1,0 +1,134 @@
+ROOT "" 0.0.0 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.24.0 
+|   |   |   KW_IDENT "__assert_fail" 5.24.5 
+|   |   PARAMLIST "(" 5.24.19 
+|   |   |   DECLID "string" 5.24.20 
+|   |   |   |   KW_IDENT "expr" 5.24.27 
+|   |   |   DECLID "string" 5.24.33 
+|   |   |   |   KW_IDENT "file" 5.24.40 
+|   |   |   DECLID "int" 5.24.46 
+|   |   |   |   KW_IDENT "line" 5.24.50 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.25.0 
+|   |   |   KW_IDENT "putb" 5.25.5 
+|   |   PARAMLIST "(" 5.25.10 
+|   |   |   DECLID "bool" 5.25.11 
+|   |   |   |   KW_IDENT "b" 5.25.16 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.26.0 
+|   |   |   KW_IDENT "putc" 5.26.5 
+|   |   PARAMLIST "(" 5.26.10 
+|   |   |   DECLID "char" 5.26.11 
+|   |   |   |   KW_IDENT "c" 5.26.16 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.27.0 
+|   |   |   KW_IDENT "puti" 5.27.5 
+|   |   PARAMLIST "(" 5.27.10 
+|   |   |   DECLID "int" 5.27.11 
+|   |   |   |   KW_IDENT "i" 5.27.15 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.28.0 
+|   |   |   KW_IDENT "puts" 5.28.5 
+|   |   PARAMLIST "(" 5.28.10 
+|   |   |   DECLID "string" 5.28.11 
+|   |   |   |   KW_IDENT "s" 5.28.18 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.29.0 
+|   |   |   KW_IDENT "endl" 5.29.5 
+|   |   PARAMLIST "(" 5.29.10 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "int" 5.30.0 
+|   |   |   KW_IDENT "getc" 5.30.4 
+|   |   PARAMLIST "(" 5.30.9 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "string" 5.31.0 
+|   |   |   KW_IDENT "getw" 5.31.7 
+|   |   PARAMLIST "(" 5.31.12 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "string" 5.32.0 
+|   |   |   KW_IDENT "getln" 5.32.7 
+|   |   PARAMLIST "(" 5.32.13 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "string" 5.33.0 
+|   |   |   NEWARRAY "[]" 5.33.6 
+|   |   |   KW_IDENT "getargv" 5.33.9 
+|   |   PARAMLIST "(" 5.33.17 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.34.0 
+|   |   |   KW_IDENT "exit" 5.34.5 
+|   |   PARAMLIST "(" 5.34.10 
+|   |   |   DECLID "int" 5.34.11 
+|   |   |   |   KW_IDENT "status" 5.34.15 
+|   VARDECL "=" 6.9.16 
+|   |   DECLID "int" 6.9.0 
+|   |   |   NEWARRAY "[]" 6.9.3 
+|   |   |   KW_IDENT "fibonacci" 6.9.6 
+|   |   NEWARRAY "new" 6.9.18 
+|   |   |   '[' "[" 6.9.25 
+|   |   |   INTCON "30" 6.9.26 
+|   '=' "=" 6.11.13 
+|   |   KW_IDENT "fibonacci" 6.11.0 
+|   |   |   INTCON "0" 6.11.10 
+|   |   INTCON "0" 6.11.15 
+|   '=' "=" 6.12.13 
+|   |   KW_IDENT "fibonacci" 6.12.0 
+|   |   |   INTCON "1" 6.12.10 
+|   |   INTCON "1" 6.12.15 
+|   VARDECL "=" 6.14.10 
+|   |   DECLID "int" 6.14.0 
+|   |   |   KW_IDENT "index" 6.14.4 
+|   |   INTCON "2" 6.14.12 
+|   KW_WHILE "while" 6.15.0 
+|   |   '<' "<" 6.15.13 
+|   |   |   KW_IDENT "index" 6.15.7 
+|   |   |   INTCON "30" 6.15.15 
+|   |   BLOCK "{" 6.15.19 
+|   |   |   '=' "=" 6.16.20 
+|   |   |   |   KW_IDENT "fibonacci" 6.16.3 
+|   |   |   |   |   KW_IDENT "index" 6.16.13 
+|   |   |   |   '+' "+" 6.16.43 
+|   |   |   |   |   KW_IDENT "fibonacci" 6.16.22 
+|   |   |   |   |   |   '-' "-" 6.16.38 
+|   |   |   |   |   |   |   KW_IDENT "index" 6.16.32 
+|   |   |   |   |   |   |   INTCON "1" 6.16.40 
+|   |   |   |   |   KW_IDENT "fibonacci" 6.16.45 
+|   |   |   |   |   |   '-' "-" 6.16.61 
+|   |   |   |   |   |   |   KW_IDENT "index" 6.16.55 
+|   |   |   |   |   |   |   INTCON "2" 6.16.63 
+|   |   |   '=' "=" 6.17.9 
+|   |   |   |   KW_IDENT "index" 6.17.3 
+|   |   |   |   '+' "+" 6.17.17 
+|   |   |   |   |   KW_IDENT "index" 6.17.11 
+|   |   |   |   |   INTCON "1" 6.17.19 
+|   '=' "=" 6.20.6 
+|   |   KW_IDENT "index" 6.20.0 
+|   |   INTCON "0" 6.20.8 
+|   CALL "(" 6.21.5 
+|   |   KW_IDENT "puts" 6.21.0 
+|   |   STRINGCON ""Numeri di figlio Bonacci\n"" 6.21.6 
+|   KW_WHILE "while" 6.22.0 
+|   |   '<' "<" 6.22.13 
+|   |   |   KW_IDENT "index" 6.22.7 
+|   |   |   INTCON "30" 6.22.15 
+|   |   BLOCK "{" 6.22.19 
+|   |   |   CALL "(" 6.23.8 
+|   |   |   |   KW_IDENT "puts" 6.23.3 
+|   |   |   |   STRINGCON ""fibonacci["" 6.23.9 
+|   |   |   CALL "(" 6.24.8 
+|   |   |   |   KW_IDENT "puti" 6.24.3 
+|   |   |   |   KW_IDENT "index" 6.24.9 
+|   |   |   CALL "(" 6.25.8 
+|   |   |   |   KW_IDENT "puts" 6.25.3 
+|   |   |   |   STRINGCON "" = "" 6.25.9 
+|   |   |   CALL "(" 6.26.8 
+|   |   |   |   KW_IDENT "puti" 6.26.3 
+|   |   |   |   KW_IDENT "fibonacci" 6.26.9 
+|   |   |   |   |   KW_IDENT "index" 6.26.19 
+|   |   |   CALL "(" 6.27.8 
+|   |   |   |   KW_IDENT "endl" 6.27.3 
+|   |   |   '=' "=" 6.28.9 
+|   |   |   |   KW_IDENT "index" 6.28.3 
+|   |   |   |   '+' "+" 6.28.17 
+|   |   |   |   |   KW_IDENT "index" 6.28.11 
+|   |   |   |   |   INTCON "1" 6.28.19 

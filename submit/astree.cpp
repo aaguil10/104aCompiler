@@ -24,7 +24,13 @@ astree* new_astree (int symbol, int filenr, int linenr, int offset,
    return tree;
 }
 
-
+void changeSymbol(astree* tree, int  myStr){
+   //char *str;
+   //str = (char *) malloc(sizeof(myStr));
+   //strcpy(str, myStr);
+   tree->symbol = myStr;
+}
+
 astree* adopt1 (astree* root, astree* child) {
    root->children.push_back (child);
    DEBUGF ('a', "%p (%s) adopting %p (%s)\n",
@@ -39,31 +45,96 @@ astree* adopt2 (astree* root, astree* left, astree* right) {
    return root;
 }
 
+astree* adopt3 (astree* root, astree* one, astree* two, astree* three) {
+   adopt1 (root, one);
+   adopt1 (root, two);
+   adopt1 (root, three);
+   return root;
+}
+
+astree* stealGrand (astree* root, int start) {
+   vector<astree*> kill;
+   for(int i = 1; i < (int)root->children.size(); i++){
+      astree* tmp = root->children[i];
+      //add grandchildren to root
+      for(int j = start; j < (int)tmp->children.size(); j++){
+         astree* metaTmp = tmp->children[j];
+         kill.push_back(metaTmp);
+         root->children.push_back (metaTmp);
+      }
+      //remove previous links
+      for(int j = 0; j < (int)tmp->children.size(); j++){
+         for(int k = 0; k < (int)kill.size(); k++){
+            if(kill[k] == tmp->children[j]){
+               tmp->children.erase(tmp->children.begin() + j);
+            }
+         }
+      }
+   }
+   //prints tree
+   /*for(int i = 0; i < (int)root->children.size(); i++){
+      astree* tmp = root->children[i];
+      printf("%s:\n", tmp->lexinfo->c_str() );
+      for(int j = 0; j < (int)tmp->children.size(); j++){
+         printf("   %s:\n", tmp->children[j]->lexinfo->c_str() );
+      }
+  }*/
+   return root;
+}
+
+astree* delRoots (astree* root) {
+   for(int i = 1; i < (int)root->children.size(); i++){
+      astree* tmp = root->children[i];
+      char* tname = (char*)get_yytname (tmp->symbol);
+      if(strcmp(tname, (char*)"TOK_ROOT") == 0 ){
+        delmiddle(root, i);
+      }
+   }
+   fflush(NULL);
+   return root;
+}
+
+
+astree* delmiddle(astree* root, int victim){
+   astree* tmp = root->children[victim];
+   root->children.erase(root->children.begin() + victim);
+   for(int j = 0; j < (int)tmp->children.size(); j++){
+      astree* curr = tmp->children[j];
+      root->children.push_back (curr);
+   }
+   return root;
+}
+
 astree* adopt1sym (astree* root, astree* child, int symbol) {
    root = adopt1 (root, child);
    root->symbol = symbol;
    return root;
 }
 
-
+astree* adoptsym (astree* root, int symbol) {
+   root->symbol = symbol;
+   return root;
+}
+
 static void dump_node (FILE* outfile, astree* node) {
-   fprintf (outfile, "%p->{%s(%d) %ld:%ld.%03ld \"%s\" [",
-            node, get_yytname (node->symbol), node->symbol,
-            node->filenr, node->linenr, node->offset,
-            node->lexinfo->c_str());
-   bool need_space = false;
-   for (size_t child = 0; child < node->children.size(); ++child) {
-      if (need_space) fprintf (outfile, " ");
-      need_space = true;
-      fprintf (outfile, "%p", node->children.at(child));
-   }
-   fprintf (outfile, "]}");
+   char* tname = (char*)get_yytname (node->symbol);
+   if (strstr (tname, "TOK_") == tname) tname += 4;
+   fprintf (outfile, "%s \"%s\" %ld.%ld.%ld " ,tname , node->lexinfo->c_str(), 
+             node->filenr, node->linenr, node->offset);
 }
 
 static void dump_astree_rec (FILE* outfile, astree* root, int depth) {
    if (root == NULL) return;
-   fprintf (outfile, "%*s%s ", depth * 3, "", root->lexinfo->c_str());
+   /*if( strcmp(root->lexinfo->c_str(),"}") == 0){
+      return;
+   }*/
+   for(int i = 0; i < depth; i++){
+      fprintf (outfile, "|   ");
+   }
+   fflush(NULL);
+   //printf("T: %s D: %d \n", root->lexinfo->c_str(), depth);
    dump_node (outfile, root);
+   
    fprintf (outfile, "\n");
    for (size_t child = 0; child < root->children.size(); ++child) {
       dump_astree_rec (outfile, root->children[child], depth + 1);

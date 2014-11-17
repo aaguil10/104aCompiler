@@ -1,0 +1,112 @@
+ROOT "" 0.0.0 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.24.0 
+|   |   |   KW_IDENT "__assert_fail" 5.24.5 
+|   |   PARAMLIST "(" 5.24.19 
+|   |   |   DECLID "string" 5.24.20 
+|   |   |   |   KW_IDENT "expr" 5.24.27 
+|   |   |   DECLID "string" 5.24.33 
+|   |   |   |   KW_IDENT "file" 5.24.40 
+|   |   |   DECLID "int" 5.24.46 
+|   |   |   |   KW_IDENT "line" 5.24.50 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.25.0 
+|   |   |   KW_IDENT "putb" 5.25.5 
+|   |   PARAMLIST "(" 5.25.10 
+|   |   |   DECLID "bool" 5.25.11 
+|   |   |   |   KW_IDENT "b" 5.25.16 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.26.0 
+|   |   |   KW_IDENT "putc" 5.26.5 
+|   |   PARAMLIST "(" 5.26.10 
+|   |   |   DECLID "char" 5.26.11 
+|   |   |   |   KW_IDENT "c" 5.26.16 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.27.0 
+|   |   |   KW_IDENT "puti" 5.27.5 
+|   |   PARAMLIST "(" 5.27.10 
+|   |   |   DECLID "int" 5.27.11 
+|   |   |   |   KW_IDENT "i" 5.27.15 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.28.0 
+|   |   |   KW_IDENT "puts" 5.28.5 
+|   |   PARAMLIST "(" 5.28.10 
+|   |   |   DECLID "string" 5.28.11 
+|   |   |   |   KW_IDENT "s" 5.28.18 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.29.0 
+|   |   |   KW_IDENT "endl" 5.29.5 
+|   |   PARAMLIST "(" 5.29.10 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "int" 5.30.0 
+|   |   |   KW_IDENT "getc" 5.30.4 
+|   |   PARAMLIST "(" 5.30.9 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "string" 5.31.0 
+|   |   |   KW_IDENT "getw" 5.31.7 
+|   |   PARAMLIST "(" 5.31.12 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "string" 5.32.0 
+|   |   |   KW_IDENT "getln" 5.32.7 
+|   |   PARAMLIST "(" 5.32.13 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "string" 5.33.0 
+|   |   |   NEWARRAY "[]" 5.33.6 
+|   |   |   KW_IDENT "getargv" 5.33.9 
+|   |   PARAMLIST "(" 5.33.17 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.34.0 
+|   |   |   KW_IDENT "exit" 5.34.5 
+|   |   PARAMLIST "(" 5.34.10 
+|   |   |   DECLID "int" 5.34.11 
+|   |   |   |   KW_IDENT "status" 5.34.15 
+|   ROOT "TOK_FUNCTION" 0.0.0 
+|   |   DECLID "int" 6.8.0 
+|   |   |   KW_IDENT "fibonacci" 6.8.4 
+|   |   PARAMLIST "(" 6.8.14 
+|   |   |   DECLID "int" 6.8.15 
+|   |   |   |   KW_IDENT "n" 6.8.19 
+|   |   BLOCK "{" 6.8.22 
+|   |   |   KW_IF "if" 6.9.3 
+|   |   |   |   '<' "<" 6.9.9 
+|   |   |   |   |   KW_IDENT "n" 6.9.7 
+|   |   |   |   |   INTCON "2" 6.9.11 
+|   |   |   |   KW_RETURN "return" 6.9.14 
+|   |   |   |   |   KW_IDENT "n" 6.9.21 
+|   |   |   KW_RETURN "return" 6.10.3 
+|   |   |   |   '+' "+" 6.10.28 
+|   |   |   |   |   CALL "(" 6.10.20 
+|   |   |   |   |   |   KW_IDENT "fibonacci" 6.10.10 
+|   |   |   |   |   |   '-' "-" 6.10.23 
+|   |   |   |   |   |   |   KW_IDENT "n" 6.10.21 
+|   |   |   |   |   |   |   INTCON "1" 6.10.25 
+|   |   |   |   |   CALL "(" 6.10.40 
+|   |   |   |   |   |   KW_IDENT "fibonacci" 6.10.30 
+|   |   |   |   |   |   '-' "-" 6.10.43 
+|   |   |   |   |   |   |   KW_IDENT "n" 6.10.41 
+|   |   |   |   |   |   |   INTCON "2" 6.10.45 
+|   VARDECL "=" 6.15.6 
+|   |   DECLID "int" 6.15.0 
+|   |   |   KW_IDENT "n" 6.15.4 
+|   |   INTCON "0" 6.15.8 
+|   KW_WHILE "while" 6.16.0 
+|   |   '<' "<" 6.16.9 
+|   |   |   KW_IDENT "n" 6.16.7 
+|   |   |   INTCON "10" 6.16.11 
+|   |   BLOCK "{" 6.16.15 
+|   |   |   CALL "(" 6.17.8 
+|   |   |   |   KW_IDENT "puts" 6.17.3 
+|   |   |   |   STRINGCON ""fibonacci("" 6.17.9 
+|   |   |   CALL "(" 6.18.8 
+|   |   |   |   KW_IDENT "puti" 6.18.3 
+|   |   |   |   KW_IDENT "n" 6.18.9 
+|   |   |   CALL "(" 6.19.8 
+|   |   |   |   KW_IDENT "puts" 6.19.3 
+|   |   |   |   STRINGCON "" = "" 6.19.9 
+|   |   |   CALL "(" 6.20.8 
+|   |   |   |   KW_IDENT "puti" 6.20.3 
+|   |   |   |   CALL "(" 6.20.19 
+|   |   |   |   |   KW_IDENT "fibonacci" 6.20.9 
+|   |   |   |   |   KW_IDENT "n" 6.20.20 
+|   |   |   CALL "(" 6.21.8 
+|   |   |   |   KW_IDENT "endl" 6.21.3 

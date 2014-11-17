@@ -1,0 +1,6 @@
+ROOT "" 0.0.0 
+|   VARDECL "=" 3.7.8 
+|   |   DECLID "int" 3.7.0 
+|   |   |   NEWARRAY "[]" 3.7.3 
+|   |   |   KW_IDENT "a" 3.7.6 
+|   |   KW_NULL "null" 3.7.10 

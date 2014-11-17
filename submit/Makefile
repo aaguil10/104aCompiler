@@ -56,7 +56,7 @@ lis : test
 
 submit : main.cpp stringset.cpp stringset.h auxlib.cpp auxlib.h \
          Makefile oclib.c oclib.oh README
-	submit cmps104a-wm.f14 asg2 main.cpp stringset.cpp scanner.l\
+	submit cmps104a-wm.f14 asg3 main.cpp stringset.cpp scanner.l\
         stringset.h auxlib.cpp auxlib.h parser.y lyutils.h lyutils.cpp\
         astree.h astree.cpp Makefile oclib.c oclib.oh README
 

@@ -1,0 +1,2 @@
+oc: 40-arraystack.oc: 8: syntax error, unexpected TOK_KW_IDENT, expecting TOK_FIELD
+oc: parse failed (1)

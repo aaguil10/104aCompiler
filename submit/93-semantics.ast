@@ -1,0 +1,23 @@
+ROOT "" 0.0.0 
+|   VARDECL "=" 3.4.8 
+|   |   DECLID "int" 3.4.0 
+|   |   |   NEWARRAY "[]" 3.4.3 
+|   |   |   KW_IDENT "a" 3.4.6 
+|   |   KW_NULL "null" 3.4.10 
+|   VARDECL "=" 3.5.8 
+|   |   DECLID "int" 3.5.0 
+|   |   |   NEWARRAY "[]" 3.5.3 
+|   |   |   KW_IDENT "b" 3.5.6 
+|   |   KW_NULL "null" 3.5.10 
+|   VARDECL "=" 3.6.6 
+|   |   DECLID "int" 3.6.0 
+|   |   |   KW_IDENT "c" 3.6.4 
+|   |   '+' "+" 3.6.10 
+|   |   |   KW_IDENT "a" 3.6.8 
+|   |   |   KW_IDENT "b" 3.6.12 
+|   ROOT "TOK_FUNCTION" 0.0.0 
+|   |   DECLID "void" 3.7.0 
+|   |   |   NEWARRAY "[]" 3.7.4 
+|   |   |   KW_IDENT "f" 3.7.7 
+|   |   PARAMLIST "(" 3.7.8 
+|   |   BLOCK "{" 3.7.11 

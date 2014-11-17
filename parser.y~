@@ -28,6 +28,20 @@ astree* call1(astree* one, astree* two, astree* three, astree* four){
    return adopt2 (two, one, three);  
 }
 
+astree* function1(astree* one, astree* two, astree* three){
+   char* tname = (char*)get_yytname (three->symbol);
+   printf("F: %s\n", tname);
+   astree* func = NULL;
+   if(strcmp(tname, (char*)"';'") == 0 ){
+      printf("Prototype\n");
+      func = new_parseroot("TOK_PROTOTYPE");
+   }else{
+      func = new_parseroot("TOK_FUNCTION");
+   }
+   //astree* func = new_parseroot("TOK_FUNCTION");
+   return adopt3 (func, one, two, three);
+}
+
 %}
 
 %debug
@@ -100,16 +114,7 @@ param	: '(' funcargs ')'			{free_ast($3);
 }
 	;
 
-function: identdecl param block			{ astree* func = new_parseroot("TOK_FUNCTION");
-						//free_ast($3);
-						//adoptsym ($2, TOK_PARAMLIST);
-						$$ = adopt3 (func, $1, $2, $3);
-						delRoots ($2);}
-	| identdecl param ';'			{ astree* func = new_parseroot("TOK_PROTOTYPE");
-						free_ast ($3);
-						$$ = adopt2 (func, $1, $2); 
-						//delRoots ($2);
-}
+function: identdecl param block			{ $$ = function1($1, $2, $3); }
 	;
 
 identdecl: basetype TOK_KW_IDENT		{ adoptsym ($1, TOK_DECLID);
@@ -126,6 +131,7 @@ block	: '{' blokargs '}'			{ free_ast($3);
 						adoptsym ($1, TOK_BLOCK);
 						$$ = adopt1 ($1, $2); 
 						delmiddle($1, 0);}
+	| ';'					{ $$ = $1 }
 	; 
 
 statement: block				{ $$ = $1 }

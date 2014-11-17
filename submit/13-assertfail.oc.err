@@ -1,0 +1,2 @@
+oc: 13-assertfail.oc: 12: syntax error, unexpected ';', expecting $end
+oc: parse failed (1)

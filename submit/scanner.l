@@ -28,7 +28,7 @@ TOK_KW_BOOL     bool
 TOK_KW_CHAR     char
 TOK_KW_INT      int
 TOK_KW_STRING   string
-TOK_KW_STRUCT   sturct
+TOK_KW_STRUCT   struct
 TOK_KW_IF       if
 TOK_KW_ELSE     else
 TOK_KW_WHILE    while
@@ -40,10 +40,11 @@ TOK_KW_ORD      ord
 TOK_KW_CHR      chr
 TOK_KW_NEW      new
 TOK_LIT_CHAR    ('([^\\'\n]|\\[\\'"0nt])')
+NOTCHAR 	'([^\\'\n]|\\[\\'"0nt])
 TOK_LIT_STRING  (\"([^\\"\n]|\\[\\'"0nt])*\")
 MANTISSA        ({DIGIT}+\.?{DIGIT}*|\.{DIGIT}+)
 EXPONENT        ([Ee][+-]?{DIGIT}+)
-TOK_LIT_INT          {DIGIT}+
+TOK_LIT_INT     {DIGIT}+
 NOTNUMBER       ({MANTISSA}[Ee][+-]?)
 TOK_KW_IDENT    ({LETTER}({LETTER}|{DIGIT})*)
 NOTIDENT        {DIGIT}+{TOK_KW_IDENT}
@@ -104,6 +105,9 @@ NOTIDENT        {DIGIT}+{TOK_KW_IDENT}
 
 {NOTNUMBER}     { scanner_badtoken (yytext);
                   return yylval_token (TOK_LIT_INT); }
+{NOTCHAR}     { scanner_badtoken (yytext);
+                  errprintf("ERROR: %s \n" ,yytext);
+                  return yylval_token (NOTCHAR); }
 {NOTIDENT}     { scanner_badtoken (yytext);
                   return yylval_token (NOTIDENT); }
 
