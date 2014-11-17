@@ -45,6 +45,13 @@ astree* adopt2 (astree* root, astree* left, astree* right) {
    return root;
 }
 
+astree* adopt3 (astree* root, astree* one, astree* two, astree* three) {
+   adopt1 (root, one);
+   adopt1 (root, two);
+   adopt1 (root, three);
+   return root;
+}
+
 astree* stealGrand (astree* root, int start) {
    vector<astree*> kill;
    for(int i = 1; i < (int)root->children.size(); i++){

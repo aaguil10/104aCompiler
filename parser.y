@@ -50,8 +50,8 @@ astree* call1(astree* one, astree* two, astree* three, astree* four){
 %left   '}' ']' ')'
 %right  '{' '('
 
-%right TOK_KW_IF TOK_KW_ELSE
-%right '='
+%right TOK_KW_IF TOK_KW_ELSE 
+%right '=' TOK_IFELSE
 %left  TOK_EQUALS TOK_NEQUAL '<' TOK_GREAEQU '>' TOK_LESSEQU
 %left  '+' '-'
 %left  '*' '/' '%'
@@ -92,8 +92,17 @@ identdecl: basetype TOK_KW_IDENT		{ adoptsym ($1, TOK_DECLID);
 	| basetype TOK_NEWARRAY TOK_DECLID 	{ $$ = adopt2 ($1, $2, $3); }
 	;
 
-statement: return				{ $$ = $1 }		 
+statement: ifelse				{ $$ = $1 }
+	| return				{ $$ = $1 }		 
 	| expr ';'				{ free_ast($2); $$ = $1 }
+	;
+
+ifelse	: TOK_KW_IF '(' expr ')' statement 	{ free_ast2($2, $4); 
+						$$ = adopt2 ($1, $3, $5); }
+	| TOK_KW_IF '(' expr ')' statement TOK_KW_ELSE 	statement { free_ast2($2, $4);
+						 free_ast($6);
+						 adoptsym ($1, TOK_IFELSE);
+						$$ = adopt3 ($1, $3, $5, $7); }
 	;
 
 return	: TOK_KW_RETURN	';'			{ free_ast($2); $$ = $1 }

@@ -10,19 +10,7 @@ struct dude {
    void run;
 }
 
-new hand();
-new string (mystring);
-new int[foo];
-
-food[pollo.cook];
-
-false;
-true;
-NULL;
-
-'c';
-"myChikken";
-677955 + 66 * 4;
--5;
-
-return cd;
+if( pollo == chiken )
+ cook[time.five];
+else
+ return "Que?";
