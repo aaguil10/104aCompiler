@@ -10,17 +10,14 @@ struct dude {
    void run;
 }
 
-if( pollo == chiken ){
-   cook[time.five];
-}else{
-   return "Que?";
-
-
-while( i > 5 ){
- int goo = 5;
- string cow = "moo";
+void kill(int gun, char bubble){
+  if( pollo == chiken ){
+     cook[time.five];
+  }else{
+    return "Que?";
+    while( i > 5 ){
+      int goo = 5;
+      string cow = "moo";
+    }
+  }
 }
-
-}
-
-if(x = y){}

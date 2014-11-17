@@ -51,7 +51,7 @@ astree* call1(astree* one, astree* two, astree* three, astree* four){
 %right  '{' '(' 
 
 %right TOK_KW_IF TOK_KW_ELSE 
-%right '=' TOK_IFELSE TOK_VARDECL TOK_BLOCK
+%right '=' TOK_IFELSE TOK_VARDECL TOK_BLOCK TOK_PARAMLIST
 %left  TOK_EQUALS TOK_NEQUAL '<' TOK_GREAEQU '>' TOK_LESSEQU 
 %left  '+' '-'
 %left  '*' '/' '%'
@@ -66,6 +66,7 @@ start	: program 				{ yyparse_astree = $1; }
 	;
 
 program : program structdef    			{ $$ = adopt1 ($1, $2); }
+	| program function			{ $$ = adopt1 ($1, $2); }
 	| program statement    			{ $$ = adopt1 ($1, $2); }
 	|                     			{ $$ = new_parseroot(""); }
         ;
@@ -87,9 +88,30 @@ basetype: TOK_KW_VOID | TOK_KW_BOOL | TOK_KW_INT
 	| TOK_KW_CHAR | TOK_KW_STRING | TOK_TYPEID
 	;
 
+funcargs: funcargs ',' identdecl		{ free_ast($2); $$ = adopt1 ($1, $3); }
+	| identdecl				{ $$ = adopt1 (new_parseroot(""), $1);}
+	|					{ $$ = new_parseroot(""); }
+	;
+
+param	: '(' funcargs ')'			{free_ast($3);
+						adoptsym ($1, TOK_PARAMLIST);
+						$$ = adopt1($1, $2);
+						delmiddle($1, 0);
+}
+	;
+
+function: identdecl param block			{ astree* func = new_parseroot("TOK_FUNCTION");
+						$$ = adopt3 (func, $1, $2, $3);}
+						//delRoots ($2);
+	| identdecl param ';'			{ astree* func = new_parseroot("TOK_PROTOTYPE");
+						free_ast ($3);
+						$$ = adopt2 (func, $1, $2); }
+	;
+
 identdecl: basetype TOK_KW_IDENT		{ adoptsym ($1, TOK_DECLID);
 						  $$ = adopt1 ($1, $2); }
-	| basetype TOK_NEWARRAY TOK_DECLID 	{ $$ = adopt2 ($1, $2, $3); }
+	| basetype TOK_NEWARRAY TOK_KW_IDENT 	{ adoptsym ($1, TOK_DECLID);
+						  $$ = adopt2 ($1, $2, $3); }
 	;
 
 blokargs: blokargs statement			{ $$ = adopt1 ($1, $2); }

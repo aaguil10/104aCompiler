@@ -20,33 +20,37 @@ ROOT "" 0.0.0
 |   |   |   KW_IDENT "sex" 3.9.8 
 |   |   FIELD "void" 3.10.3 
 |   |   |   KW_IDENT "run" 3.10.8 
-|   IFELSE "if" 3.13.0 
-|   |   NEQUAL "==" 3.13.10 
-|   |   |   KW_IDENT "pollo" 3.13.4 
-|   |   |   KW_IDENT "chiken" 3.13.13 
-|   |   BLOCK "{" 3.13.21 
-|   |   |   KW_IDENT "cook" 3.14.3 
-|   |   |   |   '.' "." 3.14.12 
-|   |   |   |   |   FIELD "five" 3.14.13 
-|   |   |   |   |   KW_IDENT "time" 3.14.8 
-|   |   BLOCK "{" 3.15.5 
-|   |   |   KW_RETURN "return" 3.16.3 
-|   |   |   |   STRINGCON ""Que?"" 3.16.10 
-|   |   |   KW_WHILE "while" 3.19.0 
-|   |   |   |   '>' ">" 3.19.9 
-|   |   |   |   |   KW_IDENT "i" 3.19.7 
-|   |   |   |   |   INTCON "5" 3.19.11 
-|   |   |   |   BLOCK "{" 3.19.14 
-|   |   |   |   |   VARDECL "=" 3.20.9 
-|   |   |   |   |   |   DECLID "int" 3.20.1 
-|   |   |   |   |   |   |   KW_IDENT "goo" 3.20.5 
-|   |   |   |   |   |   INTCON "5" 3.20.11 
-|   |   |   |   |   VARDECL "=" 3.21.12 
-|   |   |   |   |   |   DECLID "string" 3.21.1 
-|   |   |   |   |   |   |   KW_IDENT "cow" 3.21.8 
-|   |   |   |   |   |   STRINGCON ""moo"" 3.21.14 
-|   KW_IF "if" 3.26.0 
-|   |   '=' "=" 3.26.5 
-|   |   |   KW_IDENT "x" 3.26.3 
-|   |   |   KW_IDENT "y" 3.26.7 
-|   |   BLOCK "{" 3.26.9 
+|   ROOT "TOK_FUNCTION" 0.0.0 
+|   |   DECLID "void" 3.13.0 
+|   |   |   KW_IDENT "kill" 3.13.5 
+|   |   PARAMLIST "(" 3.13.9 
+|   |   |   DECLID "int" 3.13.10 
+|   |   |   |   KW_IDENT "gun" 3.13.14 
+|   |   |   DECLID "char" 3.13.19 
+|   |   |   |   KW_IDENT "bubble" 3.13.24 
+|   |   BLOCK "{" 3.13.31 
+|   |   |   IFELSE "if" 3.14.2 
+|   |   |   |   NEQUAL "==" 3.14.12 
+|   |   |   |   |   KW_IDENT "pollo" 3.14.6 
+|   |   |   |   |   KW_IDENT "chiken" 3.14.15 
+|   |   |   |   BLOCK "{" 3.14.23 
+|   |   |   |   |   KW_IDENT "cook" 3.15.5 
+|   |   |   |   |   |   '.' "." 3.15.14 
+|   |   |   |   |   |   |   FIELD "five" 3.15.15 
+|   |   |   |   |   |   |   KW_IDENT "time" 3.15.10 
+|   |   |   |   BLOCK "{" 3.16.7 
+|   |   |   |   |   KW_RETURN "return" 3.17.4 
+|   |   |   |   |   |   STRINGCON ""Que?"" 3.17.11 
+|   |   |   |   |   KW_WHILE "while" 3.18.4 
+|   |   |   |   |   |   '>' ">" 3.18.13 
+|   |   |   |   |   |   |   KW_IDENT "i" 3.18.11 
+|   |   |   |   |   |   |   INTCON "5" 3.18.15 
+|   |   |   |   |   |   BLOCK "{" 3.18.18 
+|   |   |   |   |   |   |   VARDECL "=" 3.19.14 
+|   |   |   |   |   |   |   |   DECLID "int" 3.19.6 
+|   |   |   |   |   |   |   |   |   KW_IDENT "goo" 3.19.10 
+|   |   |   |   |   |   |   |   INTCON "5" 3.19.16 
+|   |   |   |   |   |   |   VARDECL "=" 3.20.17 
+|   |   |   |   |   |   |   |   DECLID "string" 3.20.6 
+|   |   |   |   |   |   |   |   |   KW_IDENT "cow" 3.20.13 
+|   |   |   |   |   |   |   |   STRINGCON ""moo"" 3.20.19 
