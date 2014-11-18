@@ -60,7 +60,7 @@ ROOT "" 0.0.0
 |   |   ';' ";" 5.32.15 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
 |   |   DECLID "string" 5.33.0 
-|   |   |   NEWARRAY "[]" 5.33.6 
+|   |   |   sNEWARRAY "[]" 5.33.6 
 |   |   |   KW_IDENT "getargv" 5.33.9 
 |   |   PARAMLIST "(" 5.33.17 
 |   |   ';' ";" 5.33.19 

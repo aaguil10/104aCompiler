@@ -1110,7 +1110,7 @@ YY_RULE_SETUP
 case 24:
 YY_RULE_SETUP
 #line 80 "scanner.l"
-{ return yylval_token (TOK_NEWARRAY); }
+{ return yylval_token (TOK_sNEWARRAY); }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP

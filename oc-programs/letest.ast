@@ -15,8 +15,19 @@ ROOT "" 0.0.0
 |   |   |   '.' "." 3.2.22 
 |   |   |   |   FIELD "length" 3.2.23 
 |   |   |   |   KW_IDENT "too" 3.2.19 
-|   VARDECL "=" 3.3.12 
-|   |   DECLID "string" 3.3.0 
-|   |   |   KW_IDENT "name" 3.3.7 
-|   |   NEWSTRING "new" 3.3.14 
-|   |   |   STRINGCON ""k"" 3.3.25 
+|   VARDECL "=" 3.4.11 
+|   |   DECLID "int" 3.4.0 
+|   |   |   sNEWARRAY "[]" 3.4.3 
+|   |   |   KW_IDENT "prob" 3.4.6 
+|   |   '+' "+" 3.4.14 
+|   |   |   INTCON "9" 3.4.13 
+|   |   |   INTCON "8" 3.4.15 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "char" 3.6.0 
+|   |   |   KW_IDENT "fish" 3.6.5 
+|   |   PARAMLIST "(" 3.6.9 
+|   |   |   DECLID "int" 3.6.10 
+|   |   |   |   KW_IDENT "five" 3.6.14 
+|   |   |   DECLID "int" 3.6.20 
+|   |   |   |   KW_IDENT "four" 3.6.24 
+|   |   ';' ";" 3.6.29 

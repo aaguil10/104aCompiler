@@ -1,7 +1,9 @@
 int k = (5 + 4) * 6;
 char me = new char[too.length];
-string name = "k";
+//string name = new string("k");
+int[] prob = 9++8;
 
+char fish(int five, int four);
 
 /*int f() {
 int a = ;

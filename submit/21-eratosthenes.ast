@@ -60,7 +60,7 @@ ROOT "" 0.0.0
 |   |   ';' ";" 5.32.15 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
 |   |   DECLID "string" 5.33.0 
-|   |   |   NEWARRAY "[]" 5.33.6 
+|   |   |   sNEWARRAY "[]" 5.33.6 
 |   |   |   KW_IDENT "getargv" 5.33.9 
 |   |   PARAMLIST "(" 5.33.17 
 |   |   ';' ";" 5.33.19 
@@ -73,10 +73,10 @@ ROOT "" 0.0.0
 |   |   ';' ";" 5.34.22 
 |   VARDECL "=" 6.7.13 
 |   |   DECLID "bool" 6.7.0 
-|   |   |   NEWARRAY "[]" 6.7.4 
+|   |   |   sNEWARRAY "[]" 6.7.4 
 |   |   |   KW_IDENT "sieve" 6.7.7 
 |   |   NEWARRAY "new" 6.7.15 
-|   |   |   '[' "[" 6.7.23 
+|   |   |   TYPEID "bool" 6.7.19 
 |   |   |   INTCON "100" 6.7.24 
 |   VARDECL "=" 6.8.10 
 |   |   DECLID "int" 6.8.0 

@@ -60,7 +60,7 @@ ROOT "" 0.0.0
 |   |   ';' ";" 5.32.15 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
 |   |   DECLID "string" 5.33.0 
-|   |   |   NEWARRAY "[]" 5.33.6 
+|   |   |   sNEWARRAY "[]" 5.33.6 
 |   |   |   KW_IDENT "getargv" 5.33.9 
 |   |   PARAMLIST "(" 5.33.17 
 |   |   ';' ";" 5.33.19 
@@ -74,7 +74,9 @@ ROOT "" 0.0.0
 |   BLOCK "{" 6.4.0 
 |   |   KW_IF "if" 6.4.1 
 |   |   |   '!' "!" 6.4.5 
-|   |   |   |   STRINGCON ""\"null\" == null"" 6.4.39 
+|   |   |   |   EQUALS "==" 6.4.14 
+|   |   |   |   |   STRINGCON ""null"" 6.4.7 
+|   |   |   |   |   KW_NULL "null" 6.4.17 
 |   |   |   CALL "(" 6.4.38 
 |   |   |   |   KW_IDENT "__assert_fail" 6.4.24 
 |   |   |   |   STRINGCON ""\"null\" == null"" 6.4.39 

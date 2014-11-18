@@ -64,7 +64,7 @@ ${CLGEN} : ${LSOURCES}
 
 ## Build the parser.
 ${CYGEN} ${HYGEN} : ${YSOURCES}
-	bison --defines=${HYGEN} --output=${CYGEN} ${YSOURCES}
+	bison --report=states --defines=${HYGEN} --output=${CYGEN} ${YSOURCES}
 
 
 

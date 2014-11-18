@@ -60,7 +60,7 @@ ROOT "" 0.0.0
 |   |   ';' ";" 5.32.15 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
 |   |   DECLID "string" 5.33.0 
-|   |   |   NEWARRAY "[]" 5.33.6 
+|   |   |   sNEWARRAY "[]" 5.33.6 
 |   |   |   KW_IDENT "getargv" 5.33.9 
 |   |   PARAMLIST "(" 5.33.17 
 |   |   ';' ";" 5.33.19 
@@ -104,11 +104,11 @@ ROOT "" 0.0.0
 |   |   |   |   |   VARDECL "=" 6.14.14 
 |   |   |   |   |   |   DECLID "int" 6.14.6 
 |   |   |   |   |   |   |   KW_IDENT "cmp" 6.14.10 
-|   |   |   |   |   |   KW_ORD "ord" 6.14.16 
-|   |   |   |   |   |   |   '-' "-" 6.14.24 
+|   |   |   |   |   |   '-' "-" 6.14.24 
+|   |   |   |   |   |   |   KW_ORD "ord" 6.14.16 
 |   |   |   |   |   |   |   |   KW_IDENT "s1c" 6.14.20 
-|   |   |   |   |   |   |   |   KW_ORD "ord" 6.14.26 
-|   |   |   |   |   |   |   |   |   KW_IDENT "s2c" 6.14.30 
+|   |   |   |   |   |   |   KW_ORD "ord" 6.14.26 
+|   |   |   |   |   |   |   |   KW_IDENT "s2c" 6.14.30 
 |   |   |   |   |   KW_IF "if" 6.15.6 
 |   |   |   |   |   |   NEQUAL "!=" 6.15.14 
 |   |   |   |   |   |   |   KW_IDENT "cmp" 6.15.10 
@@ -136,7 +136,7 @@ ROOT "" 0.0.0
 |   |   |   DECLID "int" 6.22.21 
 |   |   |   |   KW_IDENT "size" 6.22.25 
 |   |   |   DECLID "string" 6.22.31 
-|   |   |   |   NEWARRAY "[]" 6.22.37 
+|   |   |   |   sNEWARRAY "[]" 6.22.37 
 |   |   |   |   KW_IDENT "array" 6.22.40 
 |   |   BLOCK "{" 6.22.47 
 |   |   |   VARDECL "=" 6.23.14 
@@ -217,7 +217,7 @@ ROOT "" 0.0.0
 |   |   |   DECLID "int" 6.43.32 
 |   |   |   |   KW_IDENT "size" 6.43.36 
 |   |   |   DECLID "string" 6.43.42 
-|   |   |   |   NEWARRAY "[]" 6.43.48 
+|   |   |   |   sNEWARRAY "[]" 6.43.48 
 |   |   |   |   KW_IDENT "array" 6.43.51 
 |   |   BLOCK "{" 6.43.58 
 |   |   |   CALL "(" 6.44.8 
@@ -250,7 +250,7 @@ ROOT "" 0.0.0
 |   |   |   |   |   |   |   INTCON "1" 6.51.22 
 |   VARDECL "=" 6.55.14 
 |   |   DECLID "string" 6.55.0 
-|   |   |   NEWARRAY "[]" 6.55.6 
+|   |   |   sNEWARRAY "[]" 6.55.6 
 |   |   |   KW_IDENT "argv" 6.55.9 
 |   |   CALL "(" 6.55.24 
 |   |   |   KW_IDENT "getargv" 6.55.16 

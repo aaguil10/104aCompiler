@@ -16,7 +16,7 @@
 static void* yycalloc (size_t size);
 
 astree* structdef1(astree* one, astree* two, astree* three,
-		   astree* four, astree* five){
+                   astree* four, astree* five){
    free_ast2 (three, five);
    adoptsym (two, TOK_TYPEID);
    return adopt2 (one, two, four);
@@ -48,16 +48,16 @@ astree* function1(astree* one, astree* two, astree* three){
 %verbose
 
 %destructor { error_destructor ($$); } <>
-
+ 
 %token  TOK_ROOT TOK_KW_IDENT NOTIDENT NOTCHAR
 %token  TOK_KW_VOID TOK_KW_BOOL TOK_KW_CHAR TOK_KW_INT TOK_KW_STRING
 %token  TOK_KW_WHILE TOK_KW_RETURN TOK_KW_FALSE TOK_KW_TRUE
 %token  TOK_KW_NEW TOK_KW_STRUCT TOK_NEWSTRING
 %token  TOK_KW_NULL TOK_LIT_INT TOK_LIT_CHAR TOK_LIT_STRING
 %token  TOK_FIELD TOK_DECLID TOK_TYPEID TOK_CALL
-%token	TOK_STRINGCON TOK_CHARCON TOK_INTCON TOK_NEWARRAY
+%token  TOK_STRINGCON TOK_CHARCON TOK_INTCON TOK_NEWARRAY
 
-%right  '^' ';' ','
+%right   ';' ','
 %left   '}' ']' ')'
 %right  '{' '(' TOK_sNEWARRAY
 
@@ -73,33 +73,33 @@ astree* function1(astree* one, astree* two, astree* three){
 
 
 %%
-start	: program 				{ yyparse_astree = $1; }
-	;
-
-program : program structdef    			{ $$ = adopt1 ($1, $2); }
-	| program function			{ $$ = adopt1 ($1, $2); }
-	| program statement    			{ $$ = adopt1 ($1, $2); }
-	|                     			{ $$ = new_parseroot(""); }
+start   : program                               { yyparse_astree = $1; }
         ;
 
-structdef: TOK_KW_STRUCT TOK_KW_IDENT '{' mfielddecl '}'  { $$ = structdef1($1,$2,$3,$4,$5); 
-                                                            delRoots ($1); }
-	;
+program : program structdef                     { $$ = adopt1 ($1, $2); }
+        | program function                      { $$ = adopt1 ($1, $2); }
+        | program statement                     { $$ = adopt1 ($1, $2); }
+        |                                       { $$ = new_parseroot(""); }
+        ;
 
-mfielddecl: mfielddecl fielddecl ';'		{ free_ast($3); $$ = adopt1 ($1, $2); }
-	| 					{ $$ = new_parseroot(""); }
-	;
+structdef: TOK_KW_STRUCT TOK_KW_IDENT '{' mfielddecl '}'{ $$ = structdef1($1,$2,$3,$4,$5); 
+                                                 delRoots ($1); }
+         ;
 
-fielddecl: basetype TOK_KW_IDENT		{ adoptsym ($1, TOK_FIELD);
-						 $$ = adopt1 ($1, $2); }
-	| basetype TOK_NEWARRAY TOK_FIELD 	{ $$ = adopt2 ($1, $2, $3); }
-	;
+mfielddecl: mfielddecl fielddecl ';'            { free_ast($3); $$ = adopt1 ($1, $2); }
+        |                                       { $$ = new_parseroot(""); }
+        ;
+
+fielddecl: basetype TOK_KW_IDENT                { adoptsym ($1, TOK_FIELD);
+                                                $$ = adopt1 ($1, $2); }
+        | basetype TOK_NEWARRAY TOK_FIELD       { $$ = adopt2 ($1, $2, $3); }
+        ;
 
 basetype: TOK_KW_VOID | TOK_KW_BOOL | TOK_KW_INT 
 	| TOK_KW_CHAR | TOK_KW_STRING | TOK_TYPEID
 	;
 
-funcargs: funcargs ',' identdecl		{ free_ast($2); $$ = adopt1 ($1, $3); }
+funcargs: funcargs ',' identdecl 		{ free_ast($2); $$ = adopt1 ($1, $3); }
 	| identdecl				{ $$ = adopt1 (new_parseroot(""), $1);}
 	|					{ $$ = new_parseroot(""); }
 	;
@@ -116,7 +116,7 @@ function: identdecl param block			{ $$ = function1($1, $2, $3); }
 
 identdecl: basetype TOK_KW_IDENT		{ adoptsym ($1, TOK_DECLID);
 						  $$ = adopt1 ($1, $2); }
-	| basetype TOK_NEWARRAY TOK_KW_IDENT 	{ adoptsym ($1, TOK_DECLID);
+	| basetype TOK_sNEWARRAY TOK_KW_IDENT 	{ adoptsym ($1, TOK_DECLID);
 						  $$ = adopt2 ($1, $2, $3); }
 	;
 
@@ -151,7 +151,7 @@ ifelse	: TOK_KW_IF '(' expr ')' statement 	{ free_ast2($2, $4);
 						$$ = adopt2 ($1, $3, $5); }
 	| TOK_KW_IF '(' expr ')' statement TOK_KW_ELSE 	statement { free_ast2($2, $4);
 						 free_ast($6);
-						 adoptsym ($1, TOK_IFELSE);
+						 adoptsym ($1, TOK_IFELSE); 
 						$$ = adopt3 ($1, $3, $5, $7); }
 	;
 
@@ -159,20 +159,25 @@ return	: TOK_KW_RETURN	';'			{ free_ast($2); $$ = $1 }
 	| TOK_KW_RETURN expr ';'		{ free_ast($3); $$ = adopt1 ($1, $2); }
 	;
 
-BINOP	: '+' | '-' | '*' | '/' | '%'
-	| '='
-	| TOK_EQUALS | TOK_NEQUAL | '<' 
-	| TOK_GREAEQU | '>' | TOK_LESSEQU				
-	;
-
-UNOP	: '+' 					{ adoptsym ($1, TOK_POS); }
-	| '-' 					{ adoptsym ($1, TOK_NEG); }
-	| '!' 
-	| TOK_KW_ORD | TOK_KW_CHR
-	;
-
-expr	: expr BINOP expr			{ $$ = adopt2 ($2, $1, $3); }
-	| UNOP expr				{ $$ = adopt1 ($1, $2); }
+expr	: expr '+' expr				{ $$ = adopt2 ($2, $1, $3); }
+	| expr '-' expr				{ $$ = adopt2 ($2, $1, $3); }
+	| expr '*' expr				{ $$ = adopt2 ($2, $1, $3); }
+	| expr '/' expr				{ $$ = adopt2 ($2, $1, $3); }
+	| expr '%' expr				{ $$ = adopt2 ($2, $1, $3); }
+	| expr '=' expr				{ $$ = adopt2 ($2, $1, $3); }
+	| expr TOK_EQUALS expr			{ $$ = adopt2 ($2, $1, $3); }
+	| expr TOK_NEQUAL expr			{ $$ = adopt2 ($2, $1, $3); }
+	| expr '<' expr				{ $$ = adopt2 ($2, $1, $3); }
+	| expr TOK_GREAEQU expr			{ $$ = adopt2 ($2, $1, $3); }
+	| expr '>' expr				{ $$ = adopt2 ($2, $1, $3); }
+	| expr TOK_LESSEQU expr			{ $$ = adopt2 ($2, $1, $3); }
+	| '+'  expr				{ adoptsym ($1, TOK_POS); 
+						$$ = adopt1 ($1, $2); }
+	| '-' expr				{ adoptsym ($1, TOK_NEG);
+						$$ = adopt1 ($1, $2); }
+	| '!' expr				{ $$ = adopt1 ($1, $2); }
+	| TOK_KW_ORD expr			{ $$ = adopt1 ($1, $2); }
+	| TOK_KW_CHR expr			{ $$ = adopt1 ($1, $2); }
 	| allocator				{ $$ = $1 }
 	| call 					{ $$ = $1 }
 	| '(' expr ')'				{ free_ast2($1, $3); $$ = $2 }
@@ -210,9 +215,9 @@ variable: TOK_KW_IDENT				{ $$ = $1 }
 constant: TOK_LIT_INT				{ adoptsym ($1, TOK_INTCON); $$ = $1; }
 	| TOK_LIT_CHAR				{ adoptsym ($1, TOK_CHARCON); $$ = $1; }
 	| TOK_LIT_STRING			{ adoptsym ($1, TOK_STRINGCON); $$ = $1; }
-	| TOK_KW_FALSE				 { $$ = $1; }
-	| TOK_KW_TRUE				 { $$ = $1; }
-	| TOK_KW_NULL				 { $$ = $1; }
+	| TOK_KW_FALSE				{ $$ = $1; }
+	| TOK_KW_TRUE				{ $$ = $1; }
+	| TOK_KW_NULL				{ $$ = $1; }
 	;
 
 %%

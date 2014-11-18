@@ -60,7 +60,7 @@ ROOT "" 0.0.0
 |   |   ';' ";" 5.32.15 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
 |   |   DECLID "string" 5.33.0 
-|   |   |   NEWARRAY "[]" 5.33.6 
+|   |   |   sNEWARRAY "[]" 5.33.6 
 |   |   |   KW_IDENT "getargv" 5.33.9 
 |   |   PARAMLIST "(" 5.33.17 
 |   |   ';' ";" 5.33.19 
@@ -73,10 +73,10 @@ ROOT "" 0.0.0
 |   |   ';' ";" 5.34.22 
 |   VARDECL "=" 6.6.12 
 |   |   DECLID "int" 6.6.0 
-|   |   |   NEWARRAY "[]" 6.6.3 
+|   |   |   sNEWARRAY "[]" 6.6.3 
 |   |   |   KW_IDENT "board" 6.6.6 
 |   |   NEWARRAY "new" 6.6.14 
-|   |   |   '[' "[" 6.6.21 
+|   |   |   TYPEID "int" 6.6.18 
 |   |   |   INTCON "8" 6.6.22 
 |   ROOT "TOK_FUNCTION" 0.0.0 
 |   |   DECLID "bool" 6.8.0 
@@ -150,7 +150,11 @@ ROOT "" 0.0.0
 |   |   |   |   |   CALL "(" 6.23.11 
 |   |   |   |   |   |   KW_IDENT "putc" 6.23.6 
 |   |   |   |   |   |   KW_CHR "chr" 6.23.12 
-|   |   |   |   |   |   |   INTCON "1" 6.24.18 
+|   |   |   |   |   |   |   '+' "+" 6.23.28 
+|   |   |   |   |   |   |   |   KW_IDENT "board" 6.23.17 
+|   |   |   |   |   |   |   |   |   KW_IDENT "col" 6.23.23 
+|   |   |   |   |   |   |   |   KW_ORD "ord" 6.23.30 
+|   |   |   |   |   |   |   |   |   CHARCON "'1'" 6.23.34 
 |   |   |   |   |   '=' "=" 6.24.10 
 |   |   |   |   |   |   KW_IDENT "col" 6.24.6 
 |   |   |   |   |   |   '+' "+" 6.24.16 

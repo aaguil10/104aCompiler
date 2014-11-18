@@ -18,7 +18,7 @@
 
 LETTER          [A-Za-z_]
 DIGIT           [0-9]
-TOK_NEWARRAY    \[\]
+TOK_sNEWARRAY    \[\]
 TOK_EQUALS      ==
 TOK_NEQUAL      !=
 TOK_LESSEQU     <=
@@ -77,7 +77,7 @@ NOTIDENT        {DIGIT}+{TOK_KW_IDENT}
 {TOK_LIT_STRING}    { return yylval_token (TOK_LIT_STRING); }
 {TOK_LIT_INT}        { return yylval_token (TOK_LIT_INT); }
 {TOK_KW_IDENT}         { return yylval_token (TOK_KW_IDENT); }
-{TOK_NEWARRAY}   { return yylval_token (TOK_NEWARRAY); }
+{TOK_sNEWARRAY}   { return yylval_token (TOK_sNEWARRAY); }
 {TOK_EQUALS}    { return yylval_token (TOK_EQUALS); }
 {TOK_NEQUAL}    { return yylval_token (TOK_NEQUAL); }
 {TOK_LESSEQU}   { return yylval_token (TOK_LESSEQU); }

@@ -3,10 +3,10 @@
 # 1 "<command-line>"
 # 1 "91-typecheck.oc"
 3 7.000 265 TOK_KW_INT 	(int) 
-3 7.003 274 TOK_NEWARRAY 	([]) 
+3 7.003 286 TOK_sNEWARRAY 	([]) 
 3 7.006 259 TOK_KW_IDENT 	(a) 
 3 7.008 61 '=' 	(=) 
-3 7.010 275 TOK_KW_NULL 	(null) 
+3 7.010 274 TOK_KW_NULL 	(null) 
 3 7.014 59 ';' 	(;) 
 3 8.000 259 TOK_KW_IDENT 	(reference) 
-3 8.009 274 TOK_NEWARRAY 	([]) 
+3 8.009 286 TOK_sNEWARRAY 	([]) 

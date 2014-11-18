@@ -1,2 +1,2 @@
-oc: 40-arraystack.oc: 8: syntax error, unexpected TOK_KW_IDENT, expecting TOK_FIELD
+oc: 40-arraystack.oc: 8: syntax error, unexpected TOK_sNEWARRAY, expecting TOK_KW_IDENT or TOK_NEWARRAY
 oc: parse failed (1)

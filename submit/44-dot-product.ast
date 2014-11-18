@@ -60,7 +60,7 @@ ROOT "" 0.0.0
 |   |   ';' ";" 5.32.15 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
 |   |   DECLID "string" 5.33.0 
-|   |   |   NEWARRAY "[]" 5.33.6 
+|   |   |   sNEWARRAY "[]" 5.33.6 
 |   |   |   KW_IDENT "getargv" 5.33.9 
 |   |   PARAMLIST "(" 5.33.17 
 |   |   ';' ";" 5.33.19 
@@ -78,10 +78,10 @@ ROOT "" 0.0.0
 |   |   |   DECLID "int" 6.5.17 
 |   |   |   |   KW_IDENT "size" 6.5.21 
 |   |   |   DECLID "int" 6.5.27 
-|   |   |   |   NEWARRAY "[]" 6.5.30 
+|   |   |   |   sNEWARRAY "[]" 6.5.30 
 |   |   |   |   KW_IDENT "vec1" 6.5.33 
 |   |   |   DECLID "int" 6.5.39 
-|   |   |   |   NEWARRAY "[]" 6.5.42 
+|   |   |   |   sNEWARRAY "[]" 6.5.42 
 |   |   |   |   KW_IDENT "vec2" 6.5.45 
 |   |   BLOCK "{" 6.5.51 
 |   |   |   VARDECL "=" 6.6.13 
@@ -115,17 +115,17 @@ ROOT "" 0.0.0
 |   |   |   |   KW_IDENT "dot" 6.12.10 
 |   VARDECL "=" 6.16.11 
 |   |   DECLID "int" 6.16.0 
-|   |   |   NEWARRAY "[]" 6.16.3 
+|   |   |   sNEWARRAY "[]" 6.16.3 
 |   |   |   KW_IDENT "vec1" 6.16.6 
 |   |   NEWARRAY "new" 6.16.13 
-|   |   |   '[' "[" 6.16.20 
+|   |   |   TYPEID "int" 6.16.17 
 |   |   |   INTCON "10" 6.16.21 
 |   VARDECL "=" 6.17.11 
 |   |   DECLID "int" 6.17.0 
-|   |   |   NEWARRAY "[]" 6.17.3 
+|   |   |   sNEWARRAY "[]" 6.17.3 
 |   |   |   KW_IDENT "vec2" 6.17.6 
 |   |   NEWARRAY "new" 6.17.13 
-|   |   |   '[' "[" 6.17.20 
+|   |   |   TYPEID "int" 6.17.17 
 |   |   |   INTCON "10" 6.17.21 
 |   VARDECL "=" 6.18.6 
 |   |   DECLID "int" 6.18.0 

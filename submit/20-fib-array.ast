@@ -60,7 +60,7 @@ ROOT "" 0.0.0
 |   |   ';' ";" 5.32.15 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
 |   |   DECLID "string" 5.33.0 
-|   |   |   NEWARRAY "[]" 5.33.6 
+|   |   |   sNEWARRAY "[]" 5.33.6 
 |   |   |   KW_IDENT "getargv" 5.33.9 
 |   |   PARAMLIST "(" 5.33.17 
 |   |   ';' ";" 5.33.19 
@@ -73,10 +73,10 @@ ROOT "" 0.0.0
 |   |   ';' ";" 5.34.22 
 |   VARDECL "=" 6.9.16 
 |   |   DECLID "int" 6.9.0 
-|   |   |   NEWARRAY "[]" 6.9.3 
+|   |   |   sNEWARRAY "[]" 6.9.3 
 |   |   |   KW_IDENT "fibonacci" 6.9.6 
 |   |   NEWARRAY "new" 6.9.18 
-|   |   |   '[' "[" 6.9.25 
+|   |   |   TYPEID "int" 6.9.22 
 |   |   |   INTCON "30" 6.9.26 
 |   '=' "=" 6.11.13 
 |   |   KW_IDENT "fibonacci" 6.11.0 

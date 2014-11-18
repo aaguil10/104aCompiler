@@ -60,7 +60,7 @@ ROOT "" 0.0.0
 |   |   ';' ";" 5.32.15 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
 |   |   DECLID "string" 5.33.0 
-|   |   |   NEWARRAY "[]" 5.33.6 
+|   |   |   sNEWARRAY "[]" 5.33.6 
 |   |   |   KW_IDENT "getargv" 5.33.9 
 |   |   PARAMLIST "(" 5.33.17 
 |   |   ';' ";" 5.33.19 
@@ -81,19 +81,21 @@ ROOT "" 0.0.0
 |   |   STRINGCON "" was compiled "" 6.7.6 
 |   CALL "(" 6.8.5 
 |   |   KW_IDENT "puts" 6.8.0 
-|   |   STRINGCON ""Nov 16 2014"" 6.8.6 
+|   |   STRINGCON ""Nov 17 2014"" 6.8.6 
 |   CALL "(" 6.9.5 
 |   |   KW_IDENT "puts" 6.9.0 
 |   |   STRINGCON "" @ "" 6.9.6 
 |   CALL "(" 6.10.5 
 |   |   KW_IDENT "puts" 6.10.0 
-|   |   STRINGCON ""22:14:15"" 6.10.6 
+|   |   STRINGCON ""17:12:34"" 6.10.6 
 |   CALL "(" 6.11.5 
 |   |   KW_IDENT "endl" 6.11.0 
 |   BLOCK "{" 6.12.0 
 |   |   KW_IF "if" 6.12.1 
 |   |   |   '!' "!" 6.12.5 
-|   |   |   |   STRINGCON ""\"assert\" == \"fail\""" 6.12.43 
+|   |   |   |   EQUALS "==" 6.12.16 
+|   |   |   |   |   STRINGCON ""assert"" 6.12.7 
+|   |   |   |   |   STRINGCON ""fail"" 6.12.19 
 |   |   |   CALL "(" 6.12.42 
 |   |   |   |   KW_IDENT "__assert_fail" 6.12.28 
 |   |   |   |   STRINGCON ""\"assert\" == \"fail\""" 6.12.43 
