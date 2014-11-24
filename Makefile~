@@ -13,10 +13,9 @@ YREPORT = yyparse.output
 all : oc
 
 oc : ${CLGEN} ${CYGEN} main.o stringset.o auxlib.o \
-     astree.o lyutils.o yylex.o yyparse.o symboltable.cpp symboltable.h
+     astree.o lyutils.o yylex.o yyparse.o
 	${GPP} main.o stringset.o auxlib.o astree.o \
-               lyutils.o yylex.o yyparse.o symboltable.cpp \
-               symboltable.h -o oc
+               lyutils.o yylex.o yyparse.o -o oc
 
 %.o : %.cpp
 	${GPP} -c $<
@@ -36,7 +35,7 @@ spotless : clean
 
 clean :
 	-rm stringset.o main.o auxlib.o astree.o lyutils.o \
-            yylex.o yyparse.o symboltable.o
+            yylex.o yyparse.o
 	#rm *~
 	#rm *.oc
 	#rm *.oc.err
@@ -53,11 +52,10 @@ lis : test
 	        Makefile test.out test.err
 
 submit : main.cpp stringset.cpp stringset.h auxlib.cpp auxlib.h \
-         symboltable.cpp symboltable.h Makefile oclib.c oclib.oh README
+         Makefile oclib.c oclib.oh README
 	submit cmps104a-wm.f14 asg2 main.cpp stringset.cpp scanner.l\
         stringset.h auxlib.cpp auxlib.h parser.y lyutils.h lyutils.cpp\
-        astree.h astree.cpp symboltable.cpp symboltable.h Makefile \
-        oclib.c oclib.oh README
+        astree.h astree.cpp Makefile oclib.c oclib.oh README
 
 ## Build the scanner.
 ${CLGEN} : ${LSOURCES}

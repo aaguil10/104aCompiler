@@ -1,33 +1,284 @@
 ROOT "" 0.0.0 
-|   VARDECL "=" 3.1.6 
-|   |   DECLID "int" 3.1.0 
-|   |   |   KW_IDENT "k" 3.1.4 
-|   |   '*' "*" 3.1.16 
-|   |   |   '+' "+" 3.1.11 
-|   |   |   |   INTCON "5" 3.1.9 
-|   |   |   |   INTCON "4" 3.1.13 
-|   |   |   INTCON "6" 3.1.18 
-|   VARDECL "=" 3.2.8 
-|   |   DECLID "char" 3.2.0 
-|   |   |   KW_IDENT "me" 3.2.5 
-|   |   NEWARRAY "new" 3.2.10 
-|   |   |   TYPEID "char" 3.2.14 
-|   |   |   '.' "." 3.2.22 
-|   |   |   |   FIELD "length" 3.2.23 
-|   |   |   |   KW_IDENT "too" 3.2.19 
-|   VARDECL "=" 3.4.11 
-|   |   DECLID "int" 3.4.0 
-|   |   |   sNEWARRAY "[]" 3.4.3 
-|   |   |   KW_IDENT "prob" 3.4.6 
-|   |   '+' "+" 3.4.14 
-|   |   |   INTCON "9" 3.4.13 
-|   |   |   INTCON "8" 3.4.15 
 |   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "char" 3.6.0 
-|   |   |   KW_IDENT "fish" 3.6.5 
-|   |   PARAMLIST "(" 3.6.9 
-|   |   |   DECLID "int" 3.6.10 
-|   |   |   |   KW_IDENT "five" 3.6.14 
-|   |   |   DECLID "int" 3.6.20 
-|   |   |   |   KW_IDENT "four" 3.6.24 
-|   |   ';' ";" 3.6.29 
+|   |   DECLID "void" 5.30.0 
+|   |   |   KW_IDENT "__assert_fail" 5.30.5 
+|   |   PARAMLIST "(" 5.30.19 
+|   |   |   DECLID "string" 5.30.20 
+|   |   |   |   KW_IDENT "expr" 5.30.27 
+|   |   |   DECLID "string" 5.30.33 
+|   |   |   |   KW_IDENT "file" 5.30.40 
+|   |   |   DECLID "int" 5.30.46 
+|   |   |   |   KW_IDENT "line" 5.30.50 
+|   |   ';' ";" 5.30.55 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.33.0 
+|   |   |   KW_IDENT "putb" 5.33.5 
+|   |   PARAMLIST "(" 5.33.10 
+|   |   |   DECLID "bool" 5.33.11 
+|   |   |   |   KW_IDENT "b" 5.33.16 
+|   |   ';' ";" 5.33.18 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.34.0 
+|   |   |   KW_IDENT "putc" 5.34.5 
+|   |   PARAMLIST "(" 5.34.10 
+|   |   |   DECLID "char" 5.34.11 
+|   |   |   |   KW_IDENT "c" 5.34.16 
+|   |   ';' ";" 5.34.18 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.35.0 
+|   |   |   KW_IDENT "puti" 5.35.5 
+|   |   PARAMLIST "(" 5.35.10 
+|   |   |   DECLID "int" 5.35.11 
+|   |   |   |   KW_IDENT "i" 5.35.15 
+|   |   ';' ";" 5.35.17 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.36.0 
+|   |   |   KW_IDENT "puts" 5.36.5 
+|   |   PARAMLIST "(" 5.36.10 
+|   |   |   DECLID "string" 5.36.11 
+|   |   |   |   KW_IDENT "s" 5.36.18 
+|   |   ';' ";" 5.36.20 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.37.0 
+|   |   |   KW_IDENT "endl" 5.37.5 
+|   |   PARAMLIST "(" 5.37.10 
+|   |   ';' ";" 5.37.12 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "int" 5.38.0 
+|   |   |   KW_IDENT "getc" 5.38.4 
+|   |   PARAMLIST "(" 5.38.9 
+|   |   ';' ";" 5.38.11 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "string" 5.39.0 
+|   |   |   KW_IDENT "getw" 5.39.7 
+|   |   PARAMLIST "(" 5.39.12 
+|   |   ';' ";" 5.39.14 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "string" 5.40.0 
+|   |   |   KW_IDENT "getln" 5.40.7 
+|   |   PARAMLIST "(" 5.40.13 
+|   |   ';' ";" 5.40.15 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "string" 5.41.0 
+|   |   |   sNEWARRAY "[]" 5.41.6 
+|   |   |   KW_IDENT "getargv" 5.41.9 
+|   |   PARAMLIST "(" 5.41.17 
+|   |   ';' ";" 5.41.19 
+|   ROOT "TOK_PROTOTYPE" 0.0.0 
+|   |   DECLID "void" 5.42.0 
+|   |   |   KW_IDENT "exit" 5.42.5 
+|   |   PARAMLIST "(" 5.42.10 
+|   |   |   DECLID "int" 5.42.11 
+|   |   |   |   KW_IDENT "status" 5.42.15 
+|   |   ';' ";" 5.42.22 
+|   ROOT "TOK_FUNCTION" 0.0.0 
+|   |   DECLID "int" 6.8.0 
+|   |   |   KW_IDENT "strcmp" 6.8.4 
+|   |   PARAMLIST "(" 6.8.11 
+|   |   |   DECLID "string" 6.8.12 
+|   |   |   |   KW_IDENT "s1" 6.8.19 
+|   |   |   DECLID "string" 6.8.23 
+|   |   |   |   KW_IDENT "s2" 6.8.30 
+|   |   BLOCK "{" 6.8.34 
+|   |   |   VARDECL "=" 6.9.13 
+|   |   |   |   DECLID "int" 6.9.3 
+|   |   |   |   |   KW_IDENT "index" 6.9.7 
+|   |   |   |   INTCON "0" 6.9.15 
+|   |   |   VARDECL "=" 6.10.15 
+|   |   |   |   DECLID "bool" 6.10.3 
+|   |   |   |   |   KW_IDENT "contin" 6.10.8 
+|   |   |   |   KW_TRUE "true" 6.10.17 
+|   |   |   KW_WHILE "while" 6.11.3 
+|   |   |   |   KW_IDENT "contin" 6.11.10 
+|   |   |   |   BLOCK "{" 6.11.18 
+|   |   |   |   |   VARDECL "=" 6.12.15 
+|   |   |   |   |   |   DECLID "char" 6.12.6 
+|   |   |   |   |   |   |   KW_IDENT "s1c" 6.12.11 
+|   |   |   |   |   |   KW_IDENT "s1" 6.12.17 
+|   |   |   |   |   |   |   KW_IDENT "index" 6.12.20 
+|   |   |   |   |   VARDECL "=" 6.13.15 
+|   |   |   |   |   |   DECLID "char" 6.13.6 
+|   |   |   |   |   |   |   KW_IDENT "s2c" 6.13.11 
+|   |   |   |   |   |   KW_IDENT "s2" 6.13.17 
+|   |   |   |   |   |   |   KW_IDENT "index" 6.13.20 
+|   |   |   |   |   VARDECL "=" 6.14.14 
+|   |   |   |   |   |   DECLID "int" 6.14.6 
+|   |   |   |   |   |   |   KW_IDENT "cmp" 6.14.10 
+|   |   |   |   |   |   '-' "-" 6.14.24 
+|   |   |   |   |   |   |   KW_ORD "ord" 6.14.16 
+|   |   |   |   |   |   |   |   KW_IDENT "s1c" 6.14.20 
+|   |   |   |   |   |   |   KW_ORD "ord" 6.14.26 
+|   |   |   |   |   |   |   |   KW_IDENT "s2c" 6.14.30 
+|   |   |   |   |   KW_IF "if" 6.15.6 
+|   |   |   |   |   |   NEQUAL "!=" 6.15.14 
+|   |   |   |   |   |   |   KW_IDENT "cmp" 6.15.10 
+|   |   |   |   |   |   |   INTCON "0" 6.15.17 
+|   |   |   |   |   |   KW_RETURN "return" 6.15.20 
+|   |   |   |   |   |   |   KW_IDENT "cmp" 6.15.27 
+|   |   |   |   |   KW_IF "if" 6.16.6 
+|   |   |   |   |   |   EQUALS "==" 6.16.14 
+|   |   |   |   |   |   |   KW_IDENT "s1c" 6.16.10 
+|   |   |   |   |   |   |   CHARCON "'\0'" 6.16.17 
+|   |   |   |   |   |   '=' "=" 6.16.30 
+|   |   |   |   |   |   |   KW_IDENT "contin" 6.16.23 
+|   |   |   |   |   |   |   KW_FALSE "false" 6.16.32 
+|   |   |   |   |   '=' "=" 6.17.12 
+|   |   |   |   |   |   KW_IDENT "index" 6.17.6 
+|   |   |   |   |   |   '+' "+" 6.17.20 
+|   |   |   |   |   |   |   KW_IDENT "index" 6.17.14 
+|   |   |   |   |   |   |   INTCON "1" 6.17.22 
+|   |   |   KW_RETURN "return" 6.19.3 
+|   |   |   |   INTCON "0" 6.19.10 
+|   ROOT "TOK_FUNCTION" 0.0.0 
+|   |   DECLID "void" 6.22.0 
+|   |   |   KW_IDENT "insertion_sort" 6.22.5 
+|   |   PARAMLIST "(" 6.22.20 
+|   |   |   DECLID "int" 6.22.21 
+|   |   |   |   KW_IDENT "size" 6.22.25 
+|   |   |   DECLID "string" 6.22.31 
+|   |   |   |   sNEWARRAY "[]" 6.22.37 
+|   |   |   |   KW_IDENT "array" 6.22.40 
+|   |   BLOCK "{" 6.22.47 
+|   |   |   VARDECL "=" 6.23.14 
+|   |   |   |   DECLID "int" 6.23.3 
+|   |   |   |   |   KW_IDENT "sorted" 6.23.7 
+|   |   |   |   INTCON "1" 6.23.16 
+|   |   |   KW_WHILE "while" 6.24.3 
+|   |   |   |   '<' "<" 6.24.17 
+|   |   |   |   |   KW_IDENT "sorted" 6.24.10 
+|   |   |   |   |   KW_IDENT "size" 6.24.19 
+|   |   |   |   BLOCK "{" 6.24.25 
+|   |   |   |   |   VARDECL "=" 6.25.15 
+|   |   |   |   |   |   DECLID "int" 6.25.6 
+|   |   |   |   |   |   |   KW_IDENT "slot" 6.25.10 
+|   |   |   |   |   |   KW_IDENT "sorted" 6.25.17 
+|   |   |   |   |   VARDECL "=" 6.26.21 
+|   |   |   |   |   |   DECLID "string" 6.26.6 
+|   |   |   |   |   |   |   KW_IDENT "element" 6.26.13 
+|   |   |   |   |   |   KW_IDENT "array" 6.26.23 
+|   |   |   |   |   |   |   KW_IDENT "slot" 6.26.29 
+|   |   |   |   |   VARDECL "=" 6.27.18 
+|   |   |   |   |   |   DECLID "bool" 6.27.6 
+|   |   |   |   |   |   |   KW_IDENT "contin" 6.27.11 
+|   |   |   |   |   |   KW_TRUE "true" 6.27.20 
+|   |   |   |   |   KW_WHILE "while" 6.28.6 
+|   |   |   |   |   |   KW_IDENT "contin" 6.28.13 
+|   |   |   |   |   |   BLOCK "{" 6.28.21 
+|   |   |   |   |   |   |   IFELSE "if" 6.29.9 
+|   |   |   |   |   |   |   |   EQUALS "==" 6.29.18 
+|   |   |   |   |   |   |   |   |   KW_IDENT "slot" 6.29.13 
+|   |   |   |   |   |   |   |   |   INTCON "0" 6.29.21 
+|   |   |   |   |   |   |   |   BLOCK "{" 6.29.24 
+|   |   |   |   |   |   |   |   |   '=' "=" 6.30.19 
+|   |   |   |   |   |   |   |   |   |   KW_IDENT "contin" 6.30.12 
+|   |   |   |   |   |   |   |   |   |   KW_FALSE "false" 6.30.21 
+|   |   |   |   |   |   |   |   IFELSE "if" 6.31.15 
+|   |   |   |   |   |   |   |   |   LESSEQU "<=" 6.31.53 
+|   |   |   |   |   |   |   |   |   |   CALL "(" 6.31.26 
+|   |   |   |   |   |   |   |   |   |   |   KW_IDENT "strcmp" 6.31.19 
+|   |   |   |   |   |   |   |   |   |   |   KW_IDENT "array" 6.31.27 
+|   |   |   |   |   |   |   |   |   |   |   |   '-' "-" 6.31.38 
+|   |   |   |   |   |   |   |   |   |   |   |   |   KW_IDENT "slot" 6.31.33 
+|   |   |   |   |   |   |   |   |   |   |   |   |   INTCON "1" 6.31.40 
+|   |   |   |   |   |   |   |   |   |   |   KW_IDENT "element" 6.31.44 
+|   |   |   |   |   |   |   |   |   |   INTCON "0" 6.31.56 
+|   |   |   |   |   |   |   |   |   BLOCK "{" 6.31.59 
+|   |   |   |   |   |   |   |   |   |   '=' "=" 6.32.19 
+|   |   |   |   |   |   |   |   |   |   |   KW_IDENT "contin" 6.32.12 
+|   |   |   |   |   |   |   |   |   |   |   KW_FALSE "false" 6.32.21 
+|   |   |   |   |   |   |   |   |   BLOCK "{" 6.33.15 
+|   |   |   |   |   |   |   |   |   |   '=' "=" 6.34.24 
+|   |   |   |   |   |   |   |   |   |   |   KW_IDENT "array" 6.34.12 
+|   |   |   |   |   |   |   |   |   |   |   |   KW_IDENT "slot" 6.34.18 
+|   |   |   |   |   |   |   |   |   |   |   KW_IDENT "array" 6.34.26 
+|   |   |   |   |   |   |   |   |   |   |   |   '-' "-" 6.34.37 
+|   |   |   |   |   |   |   |   |   |   |   |   |   KW_IDENT "slot" 6.34.32 
+|   |   |   |   |   |   |   |   |   |   |   |   |   INTCON "1" 6.34.39 
+|   |   |   |   |   |   |   |   |   |   '=' "=" 6.35.17 
+|   |   |   |   |   |   |   |   |   |   |   KW_IDENT "slot" 6.35.12 
+|   |   |   |   |   |   |   |   |   |   |   '-' "-" 6.35.24 
+|   |   |   |   |   |   |   |   |   |   |   |   KW_IDENT "slot" 6.35.19 
+|   |   |   |   |   |   |   |   |   |   |   |   INTCON "1" 6.35.26 
+|   |   |   |   |   '=' "=" 6.38.18 
+|   |   |   |   |   |   KW_IDENT "array" 6.38.6 
+|   |   |   |   |   |   |   KW_IDENT "slot" 6.38.12 
+|   |   |   |   |   |   KW_IDENT "element" 6.38.20 
+|   |   |   |   |   '=' "=" 6.39.13 
+|   |   |   |   |   |   KW_IDENT "sorted" 6.39.6 
+|   |   |   |   |   |   '+' "+" 6.39.22 
+|   |   |   |   |   |   |   KW_IDENT "sorted" 6.39.15 
+|   |   |   |   |   |   |   INTCON "1" 6.39.24 
+|   ROOT "TOK_FUNCTION" 0.0.0 
+|   |   DECLID "void" 6.43.0 
+|   |   |   KW_IDENT "print_array" 6.43.5 
+|   |   PARAMLIST "(" 6.43.17 
+|   |   |   DECLID "string" 6.43.18 
+|   |   |   |   KW_IDENT "label" 6.43.25 
+|   |   |   DECLID "int" 6.43.32 
+|   |   |   |   KW_IDENT "size" 6.43.36 
+|   |   |   DECLID "string" 6.43.42 
+|   |   |   |   sNEWARRAY "[]" 6.43.48 
+|   |   |   |   KW_IDENT "array" 6.43.51 
+|   |   BLOCK "{" 6.43.58 
+|   |   |   CALL "(" 6.44.8 
+|   |   |   |   KW_IDENT "endl" 6.44.3 
+|   |   |   CALL "(" 6.45.8 
+|   |   |   |   KW_IDENT "puts" 6.45.3 
+|   |   |   |   KW_IDENT "label" 6.45.9 
+|   |   |   CALL "(" 6.46.8 
+|   |   |   |   KW_IDENT "puts" 6.46.3 
+|   |   |   |   STRINGCON "":\n"" 6.46.9 
+|   |   |   VARDECL "=" 6.47.13 
+|   |   |   |   DECLID "int" 6.47.3 
+|   |   |   |   |   KW_IDENT "index" 6.47.7 
+|   |   |   |   INTCON "0" 6.47.15 
+|   |   |   KW_WHILE "while" 6.48.3 
+|   |   |   |   '<' "<" 6.48.16 
+|   |   |   |   |   KW_IDENT "index" 6.48.10 
+|   |   |   |   |   KW_IDENT "size" 6.48.18 
+|   |   |   |   BLOCK "{" 6.48.24 
+|   |   |   |   |   CALL "(" 6.49.11 
+|   |   |   |   |   |   KW_IDENT "puts" 6.49.6 
+|   |   |   |   |   |   KW_IDENT "array" 6.49.12 
+|   |   |   |   |   |   |   KW_IDENT "index" 6.49.18 
+|   |   |   |   |   CALL "(" 6.50.11 
+|   |   |   |   |   |   KW_IDENT "endl" 6.50.6 
+|   |   |   |   |   '=' "=" 6.51.12 
+|   |   |   |   |   |   KW_IDENT "index" 6.51.6 
+|   |   |   |   |   |   '+' "+" 6.51.20 
+|   |   |   |   |   |   |   KW_IDENT "index" 6.51.14 
+|   |   |   |   |   |   |   INTCON "1" 6.51.22 
+|   VARDECL "=" 6.55.14 
+|   |   DECLID "string" 6.55.0 
+|   |   |   sNEWARRAY "[]" 6.55.6 
+|   |   |   KW_IDENT "argv" 6.55.9 
+|   |   CALL "(" 6.55.24 
+|   |   |   KW_IDENT "getargv" 6.55.16 
+|   VARDECL "=" 6.56.9 
+|   |   DECLID "int" 6.56.0 
+|   |   |   KW_IDENT "argc" 6.56.4 
+|   |   INTCON "0" 6.56.11 
+|   KW_WHILE "while" 6.57.0 
+|   |   NEQUAL "!=" 6.57.18 
+|   |   |   KW_IDENT "argv" 6.57.7 
+|   |   |   |   KW_IDENT "argc" 6.57.12 
+|   |   |   KW_NULL "null" 6.57.21 
+|   |   '=' "=" 6.57.32 
+|   |   |   KW_IDENT "argc" 6.57.27 
+|   |   |   '+' "+" 6.57.39 
+|   |   |   |   KW_IDENT "argc" 6.57.34 
+|   |   |   |   INTCON "1" 6.57.41 
+|   CALL "(" 6.58.12 
+|   |   KW_IDENT "print_array" 6.58.0 
+|   |   STRINGCON ""unsorted"" 6.58.13 
+|   |   KW_IDENT "argc" 6.58.25 
+|   |   KW_IDENT "argv" 6.58.31 
+|   CALL "(" 6.59.15 
+|   |   KW_IDENT "insertion_sort" 6.59.0 
+|   |   KW_IDENT "argc" 6.59.16 
+|   |   KW_IDENT "argv" 6.59.22 
+|   CALL "(" 6.60.12 
+|   |   KW_IDENT "print_array" 6.60.0 
+|   |   STRINGCON ""sorted"" 6.60.13 
+|   |   KW_IDENT "argc" 6.60.23 
+|   |   KW_IDENT "argv" 6.60.29 

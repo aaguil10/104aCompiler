@@ -41,7 +41,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "__assert_fail" 5.24.5 )
 Shifting token TOK_KW_IDENT (KW_IDENT "__assert_fail" 5.24.5 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "__assert_fail" 5.24.5 )
 -> $$ = nterm identdecl ()
@@ -66,7 +66,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "expr" 5.24.27 )
 Shifting token TOK_KW_IDENT (KW_IDENT "expr" 5.24.27 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "expr" 5.24.27 )
 -> $$ = nterm identdecl ()
@@ -96,7 +96,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "file" 5.24.40 )
 Shifting token TOK_KW_IDENT (KW_IDENT "file" 5.24.40 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "file" 5.24.40 )
 -> $$ = nterm identdecl ()
@@ -128,7 +128,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "line" 5.24.50 )
 Shifting token TOK_KW_IDENT (KW_IDENT "line" 5.24.50 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "line" 5.24.50 )
 -> $$ = nterm identdecl ()
@@ -156,12 +156,12 @@ Reading a token: --accepting rule at line 104 (";")
 Next token is token ';' (';' ";" 5.24.55 )
 Shifting token ';' (';' ";" 5.24.55 )
 Entering state 21
-Reducing stack by rule 27 (line 131):
+Reducing stack by rule 27 (line 130):
    $1 = token ';' (';' ";" 5.24.55 )
 -> $$ = nterm block ()
 Stack now 0 2 33 65
 Entering state 98
-Reducing stack by rule 21 (line 114):
+Reducing stack by rule 21 (line 113):
    $1 = nterm identdecl ()
    $2 = nterm param ()
    $3 = nterm block ()
@@ -190,7 +190,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "putb" 5.25.5 )
 Shifting token TOK_KW_IDENT (KW_IDENT "putb" 5.25.5 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "putb" 5.25.5 )
 -> $$ = nterm identdecl ()
@@ -215,7 +215,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "b" 5.25.16 )
 Shifting token TOK_KW_IDENT (KW_IDENT "b" 5.25.16 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "b" 5.25.16 )
 -> $$ = nterm identdecl ()
@@ -241,12 +241,12 @@ Reading a token: --accepting rule at line 104 (";")
 Next token is token ';' (';' ";" 5.25.18 )
 Shifting token ';' (';' ";" 5.25.18 )
 Entering state 21
-Reducing stack by rule 27 (line 131):
+Reducing stack by rule 27 (line 130):
    $1 = token ';' (';' ";" 5.25.18 )
 -> $$ = nterm block ()
 Stack now 0 2 33 65
 Entering state 98
-Reducing stack by rule 21 (line 114):
+Reducing stack by rule 21 (line 113):
    $1 = nterm identdecl ()
    $2 = nterm param ()
    $3 = nterm block ()
@@ -275,7 +275,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "putc" 5.26.5 )
 Shifting token TOK_KW_IDENT (KW_IDENT "putc" 5.26.5 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "putc" 5.26.5 )
 -> $$ = nterm identdecl ()
@@ -300,7 +300,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "c" 5.26.16 )
 Shifting token TOK_KW_IDENT (KW_IDENT "c" 5.26.16 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "c" 5.26.16 )
 -> $$ = nterm identdecl ()
@@ -326,12 +326,12 @@ Reading a token: --accepting rule at line 104 (";")
 Next token is token ';' (';' ";" 5.26.18 )
 Shifting token ';' (';' ";" 5.26.18 )
 Entering state 21
-Reducing stack by rule 27 (line 131):
+Reducing stack by rule 27 (line 130):
    $1 = token ';' (';' ";" 5.26.18 )
 -> $$ = nterm block ()
 Stack now 0 2 33 65
 Entering state 98
-Reducing stack by rule 21 (line 114):
+Reducing stack by rule 21 (line 113):
    $1 = nterm identdecl ()
    $2 = nterm param ()
    $3 = nterm block ()
@@ -360,7 +360,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "puti" 5.27.5 )
 Shifting token TOK_KW_IDENT (KW_IDENT "puti" 5.27.5 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "puti" 5.27.5 )
 -> $$ = nterm identdecl ()
@@ -385,7 +385,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "i" 5.27.15 )
 Shifting token TOK_KW_IDENT (KW_IDENT "i" 5.27.15 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "i" 5.27.15 )
 -> $$ = nterm identdecl ()
@@ -411,12 +411,12 @@ Reading a token: --accepting rule at line 104 (";")
 Next token is token ';' (';' ";" 5.27.17 )
 Shifting token ';' (';' ";" 5.27.17 )
 Entering state 21
-Reducing stack by rule 27 (line 131):
+Reducing stack by rule 27 (line 130):
    $1 = token ';' (';' ";" 5.27.17 )
 -> $$ = nterm block ()
 Stack now 0 2 33 65
 Entering state 98
-Reducing stack by rule 21 (line 114):
+Reducing stack by rule 21 (line 113):
    $1 = nterm identdecl ()
    $2 = nterm param ()
    $3 = nterm block ()
@@ -445,7 +445,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "puts" 5.28.5 )
 Shifting token TOK_KW_IDENT (KW_IDENT "puts" 5.28.5 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "puts" 5.28.5 )
 -> $$ = nterm identdecl ()
@@ -470,7 +470,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "s" 5.28.18 )
 Shifting token TOK_KW_IDENT (KW_IDENT "s" 5.28.18 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "s" 5.28.18 )
 -> $$ = nterm identdecl ()
@@ -496,12 +496,12 @@ Reading a token: --accepting rule at line 104 (";")
 Next token is token ';' (';' ";" 5.28.20 )
 Shifting token ';' (';' ";" 5.28.20 )
 Entering state 21
-Reducing stack by rule 27 (line 131):
+Reducing stack by rule 27 (line 130):
    $1 = token ';' (';' ";" 5.28.20 )
 -> $$ = nterm block ()
 Stack now 0 2 33 65
 Entering state 98
-Reducing stack by rule 21 (line 114):
+Reducing stack by rule 21 (line 113):
    $1 = nterm identdecl ()
    $2 = nterm param ()
    $3 = nterm block ()
@@ -530,7 +530,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "endl" 5.29.5 )
 Shifting token TOK_KW_IDENT (KW_IDENT "endl" 5.29.5 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "endl" 5.29.5 )
 -> $$ = nterm identdecl ()
@@ -561,12 +561,12 @@ Reading a token: --accepting rule at line 104 (";")
 Next token is token ';' (';' ";" 5.29.12 )
 Shifting token ';' (';' ";" 5.29.12 )
 Entering state 21
-Reducing stack by rule 27 (line 131):
+Reducing stack by rule 27 (line 130):
    $1 = token ';' (';' ";" 5.29.12 )
 -> $$ = nterm block ()
 Stack now 0 2 33 65
 Entering state 98
-Reducing stack by rule 21 (line 114):
+Reducing stack by rule 21 (line 113):
    $1 = nterm identdecl ()
    $2 = nterm param ()
    $3 = nterm block ()
@@ -595,7 +595,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "getc" 5.30.4 )
 Shifting token TOK_KW_IDENT (KW_IDENT "getc" 5.30.4 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "getc" 5.30.4 )
 -> $$ = nterm identdecl ()
@@ -626,12 +626,12 @@ Reading a token: --accepting rule at line 104 (";")
 Next token is token ';' (';' ";" 5.30.11 )
 Shifting token ';' (';' ";" 5.30.11 )
 Entering state 21
-Reducing stack by rule 27 (line 131):
+Reducing stack by rule 27 (line 130):
    $1 = token ';' (';' ";" 5.30.11 )
 -> $$ = nterm block ()
 Stack now 0 2 33 65
 Entering state 98
-Reducing stack by rule 21 (line 114):
+Reducing stack by rule 21 (line 113):
    $1 = nterm identdecl ()
    $2 = nterm param ()
    $3 = nterm block ()
@@ -660,7 +660,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "getw" 5.31.7 )
 Shifting token TOK_KW_IDENT (KW_IDENT "getw" 5.31.7 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "getw" 5.31.7 )
 -> $$ = nterm identdecl ()
@@ -691,12 +691,12 @@ Reading a token: --accepting rule at line 104 (";")
 Next token is token ';' (';' ";" 5.31.14 )
 Shifting token ';' (';' ";" 5.31.14 )
 Entering state 21
-Reducing stack by rule 27 (line 131):
+Reducing stack by rule 27 (line 130):
    $1 = token ';' (';' ";" 5.31.14 )
 -> $$ = nterm block ()
 Stack now 0 2 33 65
 Entering state 98
-Reducing stack by rule 21 (line 114):
+Reducing stack by rule 21 (line 113):
    $1 = nterm identdecl ()
    $2 = nterm param ()
    $3 = nterm block ()
@@ -725,7 +725,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "getln" 5.32.7 )
 Shifting token TOK_KW_IDENT (KW_IDENT "getln" 5.32.7 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "getln" 5.32.7 )
 -> $$ = nterm identdecl ()
@@ -756,12 +756,12 @@ Reading a token: --accepting rule at line 104 (";")
 Next token is token ';' (';' ";" 5.32.15 )
 Shifting token ';' (';' ";" 5.32.15 )
 Entering state 21
-Reducing stack by rule 27 (line 131):
+Reducing stack by rule 27 (line 130):
    $1 = token ';' (';' ";" 5.32.15 )
 -> $$ = nterm block ()
 Stack now 0 2 33 65
 Entering state 98
-Reducing stack by rule 21 (line 114):
+Reducing stack by rule 21 (line 113):
    $1 = nterm identdecl ()
    $2 = nterm param ()
    $3 = nterm block ()
@@ -794,7 +794,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "getargv" 5.33.9 )
 Shifting token TOK_KW_IDENT (KW_IDENT "getargv" 5.33.9 )
 Entering state 94
-Reducing stack by rule 23 (line 119):
+Reducing stack by rule 23 (line 118):
    $1 = nterm basetype ()
    $2 = token TOK_sNEWARRAY (sNEWARRAY "[]" 5.33.6 )
    $3 = token TOK_KW_IDENT (KW_IDENT "getargv" 5.33.9 )
@@ -826,12 +826,12 @@ Reading a token: --accepting rule at line 104 (";")
 Next token is token ';' (';' ";" 5.33.19 )
 Shifting token ';' (';' ";" 5.33.19 )
 Entering state 21
-Reducing stack by rule 27 (line 131):
+Reducing stack by rule 27 (line 130):
    $1 = token ';' (';' ";" 5.33.19 )
 -> $$ = nterm block ()
 Stack now 0 2 33 65
 Entering state 98
-Reducing stack by rule 21 (line 114):
+Reducing stack by rule 21 (line 113):
    $1 = nterm identdecl ()
    $2 = nterm param ()
    $3 = nterm block ()
@@ -860,7 +860,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "exit" 5.34.5 )
 Shifting token TOK_KW_IDENT (KW_IDENT "exit" 5.34.5 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "exit" 5.34.5 )
 -> $$ = nterm identdecl ()
@@ -885,7 +885,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "status" 5.34.15 )
 Shifting token TOK_KW_IDENT (KW_IDENT "status" 5.34.15 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "status" 5.34.15 )
 -> $$ = nterm identdecl ()
@@ -911,12 +911,12 @@ Reading a token: --accepting rule at line 104 (";")
 Next token is token ';' (';' ";" 5.34.22 )
 Shifting token ';' (';' ";" 5.34.22 )
 Entering state 21
-Reducing stack by rule 27 (line 131):
+Reducing stack by rule 27 (line 130):
    $1 = token ';' (';' ";" 5.34.22 )
 -> $$ = nterm block ()
 Stack now 0 2 33 65
 Entering state 98
-Reducing stack by rule 21 (line 114):
+Reducing stack by rule 21 (line 113):
    $1 = nterm identdecl ()
    $2 = nterm param ()
    $3 = nterm block ()
@@ -950,7 +950,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_KW_IDENT (KW_IDENT "number" 6.5.4 )
 Shifting token TOK_KW_IDENT (KW_IDENT "number" 6.5.4 )
 Entering state 61
-Reducing stack by rule 22 (line 117):
+Reducing stack by rule 22 (line 116):
    $1 = nterm basetype ()
    $2 = token TOK_KW_IDENT (KW_IDENT "number" 6.5.4 )
 -> $$ = nterm identdecl ()
@@ -966,12 +966,12 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_LIT_INT (LIT_INT "1" 6.5.13 )
 Shifting token TOK_LIT_INT (LIT_INT "1" 6.5.13 )
 Entering state 17
-Reducing stack by rule 72 (line 215):
+Reducing stack by rule 72 (line 216):
    $1 = token TOK_LIT_INT (LIT_INT "1" 6.5.13 )
 -> $$ = nterm constant ()
 Stack now 0 2 33 64
 Entering state 44
-Reducing stack by rule 61 (line 185):
+Reducing stack by rule 61 (line 184):
    $1 = nterm constant ()
 -> $$ = nterm expr ()
 Stack now 0 2 33 64
@@ -980,7 +980,7 @@ Reading a token: --accepting rule at line 104 (";")
 Next token is token ';' (';' ";" 6.5.14 )
 Shifting token ';' (';' ";" 6.5.14 )
 Entering state 123
-Reducing stack by rule 34 (line 142):
+Reducing stack by rule 34 (line 141):
    $1 = nterm identdecl ()
    $2 = token '=' ('=' "=" 6.5.11 )
    $3 = nterm expr ()
@@ -988,7 +988,7 @@ Reducing stack by rule 34 (line 142):
 -> $$ = nterm vardecl ()
 Stack now 0 2
 Entering state 36
-Reducing stack by rule 29 (line 135):
+Reducing stack by rule 29 (line 134):
    $1 = nterm vardecl ()
 -> $$ = nterm statement ()
 Stack now 0 2
@@ -1022,7 +1022,7 @@ Reducing stack by rule 69 (line 209):
 -> $$ = nterm variable ()
 Stack now 0 2 10 46
 Entering state 43
-Reducing stack by rule 60 (line 184):
+Reducing stack by rule 60 (line 183):
    $1 = nterm variable ()
 -> $$ = nterm expr ()
 Stack now 0 2 10 46
@@ -1035,19 +1035,19 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token TOK_LIT_INT (LIT_INT "0" 6.6.16 )
 Shifting token TOK_LIT_INT (LIT_INT "0" 6.6.16 )
 Entering state 17
-Reducing stack by rule 72 (line 215):
+Reducing stack by rule 72 (line 216):
    $1 = token TOK_LIT_INT (LIT_INT "0" 6.6.16 )
 -> $$ = nterm constant ()
 Stack now 0 2 10 46 83 69
 Entering state 44
-Reducing stack by rule 61 (line 185):
+Reducing stack by rule 61 (line 184):
    $1 = nterm constant ()
 -> $$ = nterm expr ()
 Stack now 0 2 10 46 83 69
 Entering state 101
 Reading a token: --accepting rule at line 103 (")")
 Next token is token ')' (')' ")" 6.6.17 )
-Reducing stack by rule 50 (line 172):
+Reducing stack by rule 50 (line 171):
    $1 = nterm expr ()
    $2 = token '>' ('>' ">" 6.6.14 )
    $3 = nterm expr ()
@@ -1062,7 +1062,7 @@ Reading a token: --accepting rule at line 55 (" ")
 Next token is token '{' ('{' "{" 6.6.19 )
 Shifting token '{' ('{' "{" 6.6.19 )
 Entering state 22
-Reducing stack by rule 25 (line 124):
+Reducing stack by rule 25 (line 123):
 -> $$ = nterm blokargs ()
 Stack now 0 2 10 46 83 115 22
 Entering state 53
@@ -1089,13 +1089,13 @@ Reducing stack by rule 69 (line 209):
 -> $$ = nterm variable ()
 Stack now 0 2 10 46 83 115 22 53 4 45
 Entering state 43
-Reducing stack by rule 60 (line 184):
+Reducing stack by rule 60 (line 183):
    $1 = nterm variable ()
 -> $$ = nterm expr ()
 Stack now 0 2 10 46 83 115 22 53 4 45
 Entering state 81
 Next token is token ')' (')' ")" 6.7.15 )
-Reducing stack by rule 66 (line 202):
+Reducing stack by rule 66 (line 201):
    $1 = nterm expr ()
 -> $$ = nterm args ()
 Stack now 0 2 10 46 83 115 22 53 4 45
@@ -1103,7 +1103,7 @@ Entering state 82
 Next token is token ')' (')' ")" 6.7.15 )
 Shifting token ')' (')' ")" 6.7.15 )
 Entering state 114
-Reducing stack by rule 68 (line 206):
+Reducing stack by rule 68 (line 205):
    $1 = token TOK_KW_IDENT (KW_IDENT "puti" 6.7.3 )
    $2 = token '(' ('(' "(" 6.7.8 )
    $3 = nterm args ()
@@ -1111,7 +1111,7 @@ Reducing stack by rule 68 (line 206):
 -> $$ = nterm call ()
 Stack now 0 2 10 46 83 115 22 53
 Entering state 42
-Reducing stack by rule 58 (line 182):
+Reducing stack by rule 58 (line 181):
    $1 = nterm call ()
 -> $$ = nterm expr ()
 Stack now 0 2 10 46 83 115 22 53
@@ -1120,13 +1120,13 @@ Reading a token: --accepting rule at line 104 (";")
 Next token is token ';' (';' ";" 6.7.16 )
 Shifting token ';' (';' ";" 6.7.16 )
 Entering state 66
-Reducing stack by rule 33 (line 139):
+Reducing stack by rule 33 (line 138):
    $1 = nterm expr ()
    $2 = token ';' (';' ";" 6.7.16 )
 -> $$ = nterm statement ()
 Stack now 0 2 10 46 83 115 22 53
 Entering state 91
-Reducing stack by rule 24 (line 123):
+Reducing stack by rule 24 (line 122):
    $1 = nterm blokargs ()
    $2 = nterm statement ()
 -> $$ = nterm blokargs ()
@@ -1148,19 +1148,19 @@ Reading a token: --accepting rule at line 76 ("'\n'")
 Next token is token TOK_LIT_CHAR (LIT_CHAR "'\n'" 6.8.9 )
 Shifting token TOK_LIT_CHAR (LIT_CHAR "'\n'" 6.8.9 )
 Entering state 18
-Reducing stack by rule 73 (line 216):
+Reducing stack by rule 73 (line 217):
    $1 = token TOK_LIT_CHAR (LIT_CHAR "'\n'" 6.8.9 )
 -> $$ = nterm constant ()
 Stack now 0 2 10 46 83 115 22 53 4 45
 Entering state 44
-Reducing stack by rule 61 (line 185):
+Reducing stack by rule 61 (line 184):
    $1 = nterm constant ()
 -> $$ = nterm expr ()
 Stack now 0 2 10 46 83 115 22 53 4 45
 Entering state 81
 Reading a token: --accepting rule at line 103 (")")
 Next token is token ')' (')' ")" 6.8.13 )
-Reducing stack by rule 66 (line 202):
+Reducing stack by rule 66 (line 201):
    $1 = nterm expr ()
 -> $$ = nterm args ()
 Stack now 0 2 10 46 83 115 22 53 4 45
@@ -1168,7 +1168,7 @@ Entering state 82
 Next token is token ')' (')' ")" 6.8.13 )
 Shifting token ')' (')' ")" 6.8.13 )
 Entering state 114
-Reducing stack by rule 68 (line 206):
+Reducing stack by rule 68 (line 205):
    $1 = token TOK_KW_IDENT (KW_IDENT "putc" 6.8.3 )
    $2 = token '(' ('(' "(" 6.8.8 )
    $3 = nterm args ()
@@ -1176,7 +1176,7 @@ Reducing stack by rule 68 (line 206):
 -> $$ = nterm call ()
 Stack now 0 2 10 46 83 115 22 53
 Entering state 42
-Reducing stack by rule 58 (line 182):
+Reducing stack by rule 58 (line 181):
    $1 = nterm call ()
 -> $$ = nterm expr ()
 Stack now 0 2 10 46 83 115 22 53
@@ -1185,13 +1185,13 @@ Reading a token: --accepting rule at line 104 (";")
 Next token is token ';' (';' ";" 6.8.14 )
 Shifting token ';' (';' ";" 6.8.14 )
 Entering state 66
-Reducing stack by rule 33 (line 139):
+Reducing stack by rule 33 (line 138):
    $1 = nterm expr ()
    $2 = token ';' (';' ";" 6.8.14 )
 -> $$ = nterm statement ()
 Stack now 0 2 10 46 83 115 22 53
 Entering state 91
-Reducing stack by rule 24 (line 123):
+Reducing stack by rule 24 (line 122):
    $1 = nterm blokargs ()
    $2 = nterm statement ()
 -> $$ = nterm blokargs ()
@@ -1212,7 +1212,7 @@ Reducing stack by rule 69 (line 209):
 -> $$ = nterm variable ()
 Stack now 0 2 10 46 83 115 22 53
 Entering state 43
-Reducing stack by rule 60 (line 184):
+Reducing stack by rule 60 (line 183):
    $1 = nterm variable ()
 -> $$ = nterm expr ()
 Stack now 0 2 10 46 83 115 22 53
@@ -1233,7 +1233,7 @@ Reducing stack by rule 69 (line 209):
 -> $$ = nterm variable ()
 Stack now 0 2 10 46 83 115 22 53 40 67
 Entering state 43
-Reducing stack by rule 60 (line 184):
+Reducing stack by rule 60 (line 183):
    $1 = nterm variable ()
 -> $$ = nterm expr ()
 Stack now 0 2 10 46 83 115 22 53 40 67
@@ -1253,13 +1253,13 @@ Reducing stack by rule 69 (line 209):
 -> $$ = nterm variable ()
 Stack now 0 2 10 46 83 115 22 53 40 67 99 74
 Entering state 43
-Reducing stack by rule 60 (line 184):
+Reducing stack by rule 60 (line 183):
    $1 = nterm variable ()
 -> $$ = nterm expr ()
 Stack now 0 2 10 46 83 115 22 53 40 67 99 74
 Entering state 106
 Next token is token ';' (';' ";" 6.9.27 )
-Reducing stack by rule 40 (line 162):
+Reducing stack by rule 40 (line 161):
    $1 = nterm expr ()
    $2 = token '+' ('+' "+" 6.9.19 )
    $3 = nterm expr ()
@@ -1267,7 +1267,7 @@ Reducing stack by rule 40 (line 162):
 Stack now 0 2 10 46 83 115 22 53 40 67
 Entering state 99
 Next token is token ';' (';' ";" 6.9.27 )
-Reducing stack by rule 45 (line 167):
+Reducing stack by rule 45 (line 166):
    $1 = nterm expr ()
    $2 = token '=' ('=' "=" 6.9.10 )
    $3 = nterm expr ()
@@ -1277,13 +1277,13 @@ Entering state 40
 Next token is token ';' (';' ";" 6.9.27 )
 Shifting token ';' (';' ";" 6.9.27 )
 Entering state 66
-Reducing stack by rule 33 (line 139):
+Reducing stack by rule 33 (line 138):
    $1 = nterm expr ()
    $2 = token ';' (';' ";" 6.9.27 )
 -> $$ = nterm statement ()
 Stack now 0 2 10 46 83 115 22 53
 Entering state 91
-Reducing stack by rule 24 (line 123):
+Reducing stack by rule 24 (line 122):
    $1 = nterm blokargs ()
    $2 = nterm statement ()
 -> $$ = nterm blokargs ()
@@ -1295,19 +1295,19 @@ Reading a token: --accepting rule at line 56 ("
 Next token is token '}' ('}' "}" 6.10.0 )
 Shifting token '}' ('}' "}" 6.10.0 )
 Entering state 89
-Reducing stack by rule 26 (line 127):
+Reducing stack by rule 26 (line 126):
    $1 = token '{' ('{' "{" 6.6.19 )
    $2 = nterm blokargs ()
    $3 = token '}' ('}' "}" 6.10.0 )
 -> $$ = nterm block ()
 Stack now 0 2 10 46 83 115
 Entering state 34
-Reducing stack by rule 28 (line 134):
+Reducing stack by rule 28 (line 133):
    $1 = nterm block ()
 -> $$ = nterm statement ()
 Stack now 0 2 10 46 83 115
 Entering state 126
-Reducing stack by rule 35 (line 147):
+Reducing stack by rule 35 (line 146):
    $1 = token TOK_KW_WHILE (KW_WHILE "while" 6.6.0 )
    $2 = token '(' ('(' "(" 6.6.6 )
    $3 = nterm expr ()
@@ -1316,7 +1316,7 @@ Reducing stack by rule 35 (line 147):
 -> $$ = nterm while ()
 Stack now 0 2
 Entering state 37
-Reducing stack by rule 30 (line 136):
+Reducing stack by rule 30 (line 135):
    $1 = nterm while ()
 -> $$ = nterm statement ()
 Stack now 0 2
@@ -1349,13 +1349,13 @@ Reducing stack by rule 69 (line 209):
 -> $$ = nterm variable ()
 Stack now 0 2 4 45
 Entering state 43
-Reducing stack by rule 60 (line 184):
+Reducing stack by rule 60 (line 183):
    $1 = nterm variable ()
 -> $$ = nterm expr ()
 Stack now 0 2 4 45
 Entering state 81
 Next token is token ')' (')' ")" 6.11.12 )
-Reducing stack by rule 66 (line 202):
+Reducing stack by rule 66 (line 201):
    $1 = nterm expr ()
 -> $$ = nterm args ()
 Stack now 0 2 4 45
@@ -1363,7 +1363,7 @@ Entering state 82
 Next token is token ')' (')' ")" 6.11.12 )
 Shifting token ')' (')' ")" 6.11.12 )
 Entering state 114
-Reducing stack by rule 68 (line 206):
+Reducing stack by rule 68 (line 205):
    $1 = token TOK_KW_IDENT (KW_IDENT "puti" 6.11.0 )
    $2 = token '(' ('(' "(" 6.11.5 )
    $3 = nterm args ()
@@ -1371,7 +1371,7 @@ Reducing stack by rule 68 (line 206):
 -> $$ = nterm call ()
 Stack now 0 2
 Entering state 42
-Reducing stack by rule 58 (line 182):
+Reducing stack by rule 58 (line 181):
    $1 = nterm call ()
 -> $$ = nterm expr ()
 Stack now 0 2
@@ -1380,7 +1380,7 @@ Reading a token: --accepting rule at line 104 (";")
 Next token is token ';' (';' ";" 6.11.13 )
 Shifting token ';' (';' ";" 6.11.13 )
 Entering state 66
-Reducing stack by rule 33 (line 139):
+Reducing stack by rule 33 (line 138):
    $1 = nterm expr ()
    $2 = token ';' (';' ";" 6.11.13 )
 -> $$ = nterm statement ()
@@ -1407,19 +1407,19 @@ Reading a token: --accepting rule at line 76 ("'\n'")
 Next token is token TOK_LIT_CHAR (LIT_CHAR "'\n'" 6.12.6 )
 Shifting token TOK_LIT_CHAR (LIT_CHAR "'\n'" 6.12.6 )
 Entering state 18
-Reducing stack by rule 73 (line 216):
+Reducing stack by rule 73 (line 217):
    $1 = token TOK_LIT_CHAR (LIT_CHAR "'\n'" 6.12.6 )
 -> $$ = nterm constant ()
 Stack now 0 2 4 45
 Entering state 44
-Reducing stack by rule 61 (line 185):
+Reducing stack by rule 61 (line 184):
    $1 = nterm constant ()
 -> $$ = nterm expr ()
 Stack now 0 2 4 45
 Entering state 81
 Reading a token: --accepting rule at line 103 (")")
 Next token is token ')' (')' ")" 6.12.10 )
-Reducing stack by rule 66 (line 202):
+Reducing stack by rule 66 (line 201):
    $1 = nterm expr ()
 -> $$ = nterm args ()
 Stack now 0 2 4 45
@@ -1427,7 +1427,7 @@ Entering state 82
 Next token is token ')' (')' ")" 6.12.10 )
 Shifting token ')' (')' ")" 6.12.10 )
 Entering state 114
-Reducing stack by rule 68 (line 206):
+Reducing stack by rule 68 (line 205):
    $1 = token TOK_KW_IDENT (KW_IDENT "putc" 6.12.0 )
    $2 = token '(' ('(' "(" 6.12.5 )
    $3 = nterm args ()
@@ -1435,7 +1435,7 @@ Reducing stack by rule 68 (line 206):
 -> $$ = nterm call ()
 Stack now 0 2
 Entering state 42
-Reducing stack by rule 58 (line 182):
+Reducing stack by rule 58 (line 181):
    $1 = nterm call ()
 -> $$ = nterm expr ()
 Stack now 0 2
@@ -1444,7 +1444,7 @@ Reading a token: --accepting rule at line 104 (";")
 Next token is token ';' (';' ";" 6.12.11 )
 Shifting token ';' (';' ";" 6.12.11 )
 Entering state 66
-Reducing stack by rule 33 (line 139):
+Reducing stack by rule 33 (line 138):
    $1 = nterm expr ()
    $2 = token ';' (';' ";" 6.12.11 )
 -> $$ = nterm statement ()

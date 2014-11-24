@@ -114,7 +114,7 @@ int main (int argc, char **argv) {
    int c;
    char* filename = argv[argc - 1];
    tok_file = make_tok_file(filename, 1);
-   sym_file = make_sym_file(filename);
+   sym_file = make_sym_file(filename, 1);
    yy_flex_debug = 0;
    yydebug = 0;
    while ((c = getopt (argc, argv, "ly@:D:")) != -1){

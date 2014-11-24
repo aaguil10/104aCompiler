@@ -87,7 +87,7 @@
 static void* yycalloc (size_t size);
 
 astree* structdef1(astree* one, astree* two, astree* three,
-		   astree* four, astree* five){
+                   astree* four, astree* five){
    free_ast2 (three, five);
    adoptsym (two, TOK_TYPEID);
    return adopt2 (one, two, four);
@@ -519,12 +519,12 @@ static const yytype_uint8 yyrline[] =
 {
        0,    76,    76,    79,    80,    81,    82,    85,    89,    90,
       93,    95,    98,    98,    98,    99,    99,    99,   102,   103,
-     104,   107,   114,   117,   119,   123,   124,   127,   131,   134,
-     135,   136,   137,   138,   139,   142,   147,   150,   152,   158,
-     159,   162,   163,   164,   165,   166,   167,   168,   169,   170,
-     171,   172,   173,   174,   176,   178,   179,   180,   181,   182,
-     183,   184,   185,   188,   191,   195,   201,   202,   203,   206,
-     209,   210,   211,   215,   216,   217,   218,   219,   220
+     104,   107,   113,   116,   118,   122,   123,   126,   130,   133,
+     134,   135,   136,   137,   138,   141,   146,   149,   151,   157,
+     158,   161,   162,   163,   164,   165,   166,   167,   168,   169,
+     170,   171,   172,   173,   175,   177,   178,   179,   180,   181,
+     182,   183,   184,   187,   190,   194,   200,   201,   202,   205,
+     209,   210,   212,   216,   217,   218,   219,   220,   221
 };
 #endif
 
@@ -2394,7 +2394,7 @@ yyreduce:
 /* Line 1455 of yacc.c  */
 #line 85 "parser.y"
     { (yyval) = structdef1((yyvsp[(1) - (5)]),(yyvsp[(2) - (5)]),(yyvsp[(3) - (5)]),(yyvsp[(4) - (5)]),(yyvsp[(5) - (5)])); 
-                                                            delRoots ((yyvsp[(1) - (5)])); ;}
+                                                 delRoots ((yyvsp[(1) - (5)])); ;}
     break;
 
   case 8:
@@ -2416,7 +2416,7 @@ yyreduce:
 /* Line 1455 of yacc.c  */
 #line 93 "parser.y"
     { adoptsym ((yyvsp[(1) - (2)]), TOK_FIELD);
-						 (yyval) = adopt1 ((yyvsp[(1) - (2)]), (yyvsp[(2) - (2)])); ;}
+                                                (yyval) = adopt1 ((yyvsp[(1) - (2)]), (yyvsp[(2) - (2)])); ;}
     break;
 
   case 11:
@@ -2452,367 +2452,367 @@ yyreduce:
 /* Line 1455 of yacc.c  */
 #line 107 "parser.y"
     {free_ast((yyvsp[(3) - (3)]));
-						adoptsym ((yyvsp[(1) - (3)]), TOK_PARAMLIST);
-						(yyval) = adopt1((yyvsp[(1) - (3)]), (yyvsp[(2) - (3)]));
-						delmiddle((yyvsp[(1) - (3)]), 0);
-;}
+                                                 adoptsym ((yyvsp[(1) - (3)]), TOK_PARAMLIST);
+                                                 (yyval) = adopt1((yyvsp[(1) - (3)]), (yyvsp[(2) - (3)]));
+                                                 delmiddle((yyvsp[(1) - (3)]), 0);;}
     break;
 
   case 22:
 
 /* Line 1455 of yacc.c  */
-#line 114 "parser.y"
+#line 113 "parser.y"
     { (yyval) = function1((yyvsp[(1) - (3)]), (yyvsp[(2) - (3)]), (yyvsp[(3) - (3)])); ;}
     break;
 
   case 23:
 
 /* Line 1455 of yacc.c  */
-#line 117 "parser.y"
+#line 116 "parser.y"
     { adoptsym ((yyvsp[(1) - (2)]), TOK_DECLID);
-						  (yyval) = adopt1 ((yyvsp[(1) - (2)]), (yyvsp[(2) - (2)])); ;}
+                                                  (yyval) = adopt1 ((yyvsp[(1) - (2)]), (yyvsp[(2) - (2)])); ;}
     break;
 
   case 24:
 
 /* Line 1455 of yacc.c  */
-#line 119 "parser.y"
+#line 118 "parser.y"
     { adoptsym ((yyvsp[(1) - (3)]), TOK_DECLID);
-						  (yyval) = adopt2 ((yyvsp[(1) - (3)]), (yyvsp[(2) - (3)]), (yyvsp[(3) - (3)])); ;}
+                                                  (yyval) = adopt2 ((yyvsp[(1) - (3)]), (yyvsp[(2) - (3)]), (yyvsp[(3) - (3)])); ;}
     break;
 
   case 25:
 
 /* Line 1455 of yacc.c  */
-#line 123 "parser.y"
+#line 122 "parser.y"
     { (yyval) = adopt1 ((yyvsp[(1) - (2)]), (yyvsp[(2) - (2)])); ;}
     break;
 
   case 26:
 
 /* Line 1455 of yacc.c  */
-#line 124 "parser.y"
+#line 123 "parser.y"
     { (yyval) = new_parseroot(""); ;}
     break;
 
   case 27:
 
 /* Line 1455 of yacc.c  */
-#line 127 "parser.y"
+#line 126 "parser.y"
     { free_ast((yyvsp[(3) - (3)]));
-						adoptsym ((yyvsp[(1) - (3)]), TOK_BLOCK);
-						(yyval) = adopt1 ((yyvsp[(1) - (3)]), (yyvsp[(2) - (3)])); 
-						delmiddle((yyvsp[(1) - (3)]), 0);;}
+                                                  adoptsym ((yyvsp[(1) - (3)]), TOK_BLOCK);
+                                                  (yyval) = adopt1 ((yyvsp[(1) - (3)]), (yyvsp[(2) - (3)])); 
+                                                  delmiddle((yyvsp[(1) - (3)]), 0);;}
     break;
 
   case 28:
 
 /* Line 1455 of yacc.c  */
-#line 131 "parser.y"
+#line 130 "parser.y"
     { (yyval) = (yyvsp[(1) - (1)]) ;}
     break;
 
   case 29:
 
 /* Line 1455 of yacc.c  */
-#line 134 "parser.y"
+#line 133 "parser.y"
     { (yyval) = (yyvsp[(1) - (1)]) ;}
     break;
 
   case 30:
 
 /* Line 1455 of yacc.c  */
-#line 135 "parser.y"
+#line 134 "parser.y"
     { (yyval) = (yyvsp[(1) - (1)]) ;}
     break;
 
   case 31:
 
 /* Line 1455 of yacc.c  */
-#line 136 "parser.y"
+#line 135 "parser.y"
     { (yyval) = (yyvsp[(1) - (1)]) ;}
     break;
 
   case 32:
 
 /* Line 1455 of yacc.c  */
-#line 137 "parser.y"
+#line 136 "parser.y"
     { (yyval) = (yyvsp[(1) - (1)]) ;}
     break;
 
   case 33:
 
 /* Line 1455 of yacc.c  */
-#line 138 "parser.y"
+#line 137 "parser.y"
     { (yyval) = (yyvsp[(1) - (1)]) ;}
     break;
 
   case 34:
 
 /* Line 1455 of yacc.c  */
-#line 139 "parser.y"
+#line 138 "parser.y"
     { free_ast((yyvsp[(2) - (2)])); (yyval) = (yyvsp[(1) - (2)]) ;}
     break;
 
   case 35:
 
 /* Line 1455 of yacc.c  */
-#line 142 "parser.y"
-    {free_ast((yyvsp[(4) - (4)]));
-						adoptsym ((yyvsp[(2) - (4)]), TOK_VARDECL);
-						(yyval) = adopt2 ((yyvsp[(2) - (4)]), (yyvsp[(1) - (4)]), (yyvsp[(3) - (4)])); ;}
+#line 141 "parser.y"
+    { free_ast((yyvsp[(4) - (4)]));
+                                                 adoptsym ((yyvsp[(2) - (4)]), TOK_VARDECL);
+                                                 (yyval) = adopt2 ((yyvsp[(2) - (4)]), (yyvsp[(1) - (4)]), (yyvsp[(3) - (4)])); ;}
     break;
 
   case 36:
 
 /* Line 1455 of yacc.c  */
-#line 147 "parser.y"
+#line 146 "parser.y"
     { free_ast2((yyvsp[(2) - (5)]), (yyvsp[(4) - (5)])); (yyval) = adopt2 ((yyvsp[(1) - (5)]), (yyvsp[(3) - (5)]), (yyvsp[(5) - (5)])); ;}
     break;
 
   case 37:
 
 /* Line 1455 of yacc.c  */
-#line 150 "parser.y"
+#line 149 "parser.y"
     { free_ast2((yyvsp[(2) - (5)]), (yyvsp[(4) - (5)])); 
-						(yyval) = adopt2 ((yyvsp[(1) - (5)]), (yyvsp[(3) - (5)]), (yyvsp[(5) - (5)])); ;}
+                                                 (yyval) = adopt2 ((yyvsp[(1) - (5)]), (yyvsp[(3) - (5)]), (yyvsp[(5) - (5)])); ;}
     break;
 
   case 38:
 
 /* Line 1455 of yacc.c  */
-#line 152 "parser.y"
+#line 151 "parser.y"
     { free_ast2((yyvsp[(2) - (7)]), (yyvsp[(4) - (7)]));
-						 free_ast((yyvsp[(6) - (7)]));
-						 adoptsym ((yyvsp[(1) - (7)]), TOK_IFELSE); 
-						(yyval) = adopt3 ((yyvsp[(1) - (7)]), (yyvsp[(3) - (7)]), (yyvsp[(5) - (7)]), (yyvsp[(7) - (7)])); ;}
+                                                 free_ast((yyvsp[(6) - (7)]));
+                                                 adoptsym ((yyvsp[(1) - (7)]), TOK_IFELSE); 
+                                                 (yyval) = adopt3 ((yyvsp[(1) - (7)]), (yyvsp[(3) - (7)]), (yyvsp[(5) - (7)]), (yyvsp[(7) - (7)])); ;}
     break;
 
   case 39:
 
 /* Line 1455 of yacc.c  */
-#line 158 "parser.y"
+#line 157 "parser.y"
     { free_ast((yyvsp[(2) - (2)])); (yyval) = (yyvsp[(1) - (2)]) ;}
     break;
 
   case 40:
 
 /* Line 1455 of yacc.c  */
-#line 159 "parser.y"
+#line 158 "parser.y"
     { free_ast((yyvsp[(3) - (3)])); (yyval) = adopt1 ((yyvsp[(1) - (3)]), (yyvsp[(2) - (3)])); ;}
     break;
 
   case 41:
 
 /* Line 1455 of yacc.c  */
-#line 162 "parser.y"
+#line 161 "parser.y"
     { (yyval) = adopt2 ((yyvsp[(2) - (3)]), (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); ;}
     break;
 
   case 42:
 
 /* Line 1455 of yacc.c  */
-#line 163 "parser.y"
+#line 162 "parser.y"
     { (yyval) = adopt2 ((yyvsp[(2) - (3)]), (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); ;}
     break;
 
   case 43:
 
 /* Line 1455 of yacc.c  */
-#line 164 "parser.y"
+#line 163 "parser.y"
     { (yyval) = adopt2 ((yyvsp[(2) - (3)]), (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); ;}
     break;
 
   case 44:
 
 /* Line 1455 of yacc.c  */
-#line 165 "parser.y"
+#line 164 "parser.y"
     { (yyval) = adopt2 ((yyvsp[(2) - (3)]), (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); ;}
     break;
 
   case 45:
 
 /* Line 1455 of yacc.c  */
-#line 166 "parser.y"
+#line 165 "parser.y"
     { (yyval) = adopt2 ((yyvsp[(2) - (3)]), (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); ;}
     break;
 
   case 46:
 
 /* Line 1455 of yacc.c  */
-#line 167 "parser.y"
+#line 166 "parser.y"
     { (yyval) = adopt2 ((yyvsp[(2) - (3)]), (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); ;}
     break;
 
   case 47:
 
 /* Line 1455 of yacc.c  */
-#line 168 "parser.y"
+#line 167 "parser.y"
     { (yyval) = adopt2 ((yyvsp[(2) - (3)]), (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); ;}
     break;
 
   case 48:
 
 /* Line 1455 of yacc.c  */
-#line 169 "parser.y"
+#line 168 "parser.y"
     { (yyval) = adopt2 ((yyvsp[(2) - (3)]), (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); ;}
     break;
 
   case 49:
 
 /* Line 1455 of yacc.c  */
-#line 170 "parser.y"
+#line 169 "parser.y"
     { (yyval) = adopt2 ((yyvsp[(2) - (3)]), (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); ;}
     break;
 
   case 50:
 
 /* Line 1455 of yacc.c  */
-#line 171 "parser.y"
+#line 170 "parser.y"
     { (yyval) = adopt2 ((yyvsp[(2) - (3)]), (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); ;}
     break;
 
   case 51:
 
 /* Line 1455 of yacc.c  */
-#line 172 "parser.y"
+#line 171 "parser.y"
     { (yyval) = adopt2 ((yyvsp[(2) - (3)]), (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); ;}
     break;
 
   case 52:
 
 /* Line 1455 of yacc.c  */
-#line 173 "parser.y"
+#line 172 "parser.y"
     { (yyval) = adopt2 ((yyvsp[(2) - (3)]), (yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); ;}
     break;
 
   case 53:
 
 /* Line 1455 of yacc.c  */
-#line 174 "parser.y"
+#line 173 "parser.y"
     { adoptsym ((yyvsp[(1) - (2)]), TOK_POS); 
-						(yyval) = adopt1 ((yyvsp[(1) - (2)]), (yyvsp[(2) - (2)])); ;}
+                                                  (yyval) = adopt1 ((yyvsp[(1) - (2)]), (yyvsp[(2) - (2)])); ;}
     break;
 
   case 54:
 
 /* Line 1455 of yacc.c  */
-#line 176 "parser.y"
+#line 175 "parser.y"
     { adoptsym ((yyvsp[(1) - (2)]), TOK_NEG);
-						(yyval) = adopt1 ((yyvsp[(1) - (2)]), (yyvsp[(2) - (2)])); ;}
+                                                  (yyval) = adopt1 ((yyvsp[(1) - (2)]), (yyvsp[(2) - (2)])); ;}
     break;
 
   case 55:
 
 /* Line 1455 of yacc.c  */
-#line 178 "parser.y"
+#line 177 "parser.y"
     { (yyval) = adopt1 ((yyvsp[(1) - (2)]), (yyvsp[(2) - (2)])); ;}
     break;
 
   case 56:
 
 /* Line 1455 of yacc.c  */
-#line 179 "parser.y"
+#line 178 "parser.y"
     { (yyval) = adopt1 ((yyvsp[(1) - (2)]), (yyvsp[(2) - (2)])); ;}
     break;
 
   case 57:
 
 /* Line 1455 of yacc.c  */
-#line 180 "parser.y"
+#line 179 "parser.y"
     { (yyval) = adopt1 ((yyvsp[(1) - (2)]), (yyvsp[(2) - (2)])); ;}
     break;
 
   case 58:
 
 /* Line 1455 of yacc.c  */
-#line 181 "parser.y"
+#line 180 "parser.y"
     { (yyval) = (yyvsp[(1) - (1)]) ;}
     break;
 
   case 59:
 
 /* Line 1455 of yacc.c  */
-#line 182 "parser.y"
+#line 181 "parser.y"
     { (yyval) = (yyvsp[(1) - (1)]) ;}
     break;
 
   case 60:
 
 /* Line 1455 of yacc.c  */
-#line 183 "parser.y"
+#line 182 "parser.y"
     { free_ast2((yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); (yyval) = (yyvsp[(2) - (3)]) ;}
     break;
 
   case 61:
 
 /* Line 1455 of yacc.c  */
-#line 184 "parser.y"
+#line 183 "parser.y"
     { (yyval) = (yyvsp[(1) - (1)]) ;}
     break;
 
   case 62:
 
 /* Line 1455 of yacc.c  */
-#line 185 "parser.y"
+#line 184 "parser.y"
     { (yyval) = (yyvsp[(1) - (1)]) ;}
     break;
 
   case 63:
 
 /* Line 1455 of yacc.c  */
-#line 188 "parser.y"
+#line 187 "parser.y"
     { free_ast2((yyvsp[(3) - (4)]), (yyvsp[(4) - (4)]));
-						adoptsym ((yyvsp[(2) - (4)]), TOK_TYPEID); 
-						(yyval) = adopt1 ((yyvsp[(1) - (4)]), (yyvsp[(2) - (4)])); ;}
+                                                  adoptsym ((yyvsp[(2) - (4)]), TOK_TYPEID); 
+                                                  (yyval) = adopt1 ((yyvsp[(1) - (4)]), (yyvsp[(2) - (4)])); ;}
     break;
 
   case 64:
 
 /* Line 1455 of yacc.c  */
-#line 191 "parser.y"
+#line 190 "parser.y"
     { free_ast2((yyvsp[(3) - (5)]), (yyvsp[(5) - (5)]));
-						free_ast((yyvsp[(2) - (5)]));
-						adoptsym ((yyvsp[(1) - (5)]), TOK_NEWSTRING);
-						(yyval) = adopt1 ((yyvsp[(1) - (5)]), (yyvsp[(4) - (5)])); ;}
+                                                  free_ast((yyvsp[(2) - (5)]));
+                                                  adoptsym ((yyvsp[(1) - (5)]), TOK_NEWSTRING);
+                                                  (yyval) = adopt1 ((yyvsp[(1) - (5)]), (yyvsp[(4) - (5)])); ;}
     break;
 
   case 65:
 
 /* Line 1455 of yacc.c  */
-#line 195 "parser.y"
+#line 194 "parser.y"
     { free_ast2 ((yyvsp[(3) - (5)]), (yyvsp[(5) - (5)]));
-						adoptsym ((yyvsp[(1) - (5)]), TOK_NEWARRAY);
-						adoptsym ((yyvsp[(2) - (5)]), TOK_TYPEID);
-						(yyval) = adopt2 ((yyvsp[(1) - (5)]), (yyvsp[(2) - (5)]), (yyvsp[(4) - (5)])); ;}
+                                                   adoptsym ((yyvsp[(1) - (5)]), TOK_NEWARRAY);
+                                                   adoptsym ((yyvsp[(2) - (5)]), TOK_TYPEID);
+                                                   (yyval) = adopt2 ((yyvsp[(1) - (5)]), (yyvsp[(2) - (5)]), (yyvsp[(4) - (5)])); ;}
     break;
 
   case 66:
 
 /* Line 1455 of yacc.c  */
-#line 201 "parser.y"
+#line 200 "parser.y"
     { free_ast((yyvsp[(2) - (3)])); (yyval) = adopt1 ((yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); ;}
     break;
 
   case 67:
 
 /* Line 1455 of yacc.c  */
-#line 202 "parser.y"
+#line 201 "parser.y"
     { (yyval) = adopt1 (new_parseroot(""), (yyvsp[(1) - (1)]));;}
     break;
 
   case 68:
 
 /* Line 1455 of yacc.c  */
-#line 203 "parser.y"
+#line 202 "parser.y"
     { (yyval) = new_parseroot(""); ;}
     break;
 
   case 69:
 
 /* Line 1455 of yacc.c  */
-#line 206 "parser.y"
-    { (yyval) = call1((yyvsp[(1) - (4)]),(yyvsp[(2) - (4)]),(yyvsp[(3) - (4)]),(yyvsp[(4) - (4)])); delRoots ((yyvsp[(2) - (4)])); ;}
+#line 205 "parser.y"
+    { (yyval) = call1((yyvsp[(1) - (4)]),(yyvsp[(2) - (4)]),(yyvsp[(3) - (4)]),(yyvsp[(4) - (4)])); 
+                                                   delRoots ((yyvsp[(2) - (4)])); ;}
     break;
 
   case 70:
@@ -2826,63 +2826,64 @@ yyreduce:
 
 /* Line 1455 of yacc.c  */
 #line 210 "parser.y"
-    { free_ast2((yyvsp[(2) - (4)]), (yyvsp[(4) - (4)])); (yyval) = adopt1 ((yyvsp[(1) - (4)]), (yyvsp[(3) - (4)])); ;}
+    { free_ast2((yyvsp[(2) - (4)]), (yyvsp[(4) - (4)])); 
+                                                  (yyval) = adopt1 ((yyvsp[(1) - (4)]), (yyvsp[(3) - (4)])); ;}
     break;
 
   case 72:
 
 /* Line 1455 of yacc.c  */
-#line 211 "parser.y"
+#line 212 "parser.y"
     { adoptsym ((yyvsp[(3) - (3)]), TOK_FIELD);
-						(yyval) = adopt2 ((yyvsp[(2) - (3)]), (yyvsp[(3) - (3)]), (yyvsp[(1) - (3)])); ;}
+                                                  (yyval) = adopt2 ((yyvsp[(2) - (3)]), (yyvsp[(3) - (3)]), (yyvsp[(1) - (3)])); ;}
     break;
 
   case 73:
 
 /* Line 1455 of yacc.c  */
-#line 215 "parser.y"
+#line 216 "parser.y"
     { adoptsym ((yyvsp[(1) - (1)]), TOK_INTCON); (yyval) = (yyvsp[(1) - (1)]); ;}
     break;
 
   case 74:
 
 /* Line 1455 of yacc.c  */
-#line 216 "parser.y"
+#line 217 "parser.y"
     { adoptsym ((yyvsp[(1) - (1)]), TOK_CHARCON); (yyval) = (yyvsp[(1) - (1)]); ;}
     break;
 
   case 75:
 
 /* Line 1455 of yacc.c  */
-#line 217 "parser.y"
+#line 218 "parser.y"
     { adoptsym ((yyvsp[(1) - (1)]), TOK_STRINGCON); (yyval) = (yyvsp[(1) - (1)]); ;}
     break;
 
   case 76:
 
 /* Line 1455 of yacc.c  */
-#line 218 "parser.y"
+#line 219 "parser.y"
     { (yyval) = (yyvsp[(1) - (1)]); ;}
     break;
 
   case 77:
 
 /* Line 1455 of yacc.c  */
-#line 219 "parser.y"
+#line 220 "parser.y"
     { (yyval) = (yyvsp[(1) - (1)]); ;}
     break;
 
   case 78:
 
 /* Line 1455 of yacc.c  */
-#line 220 "parser.y"
+#line 221 "parser.y"
     { (yyval) = (yyvsp[(1) - (1)]); ;}
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 2886 "yyparse.cpp"
+#line 2887 "yyparse.cpp"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -3094,7 +3095,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 223 "parser.y"
+#line 224 "parser.y"
 
 
 const char* get_yytname (int symbol) {

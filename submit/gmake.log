@@ -1,1 +1,14 @@
-gmake: Nothing to be done for `all'.
+flex --outfile=yylex.cpp scanner.l 2>yylex.output
+grep -v '^  ' yylex.output
+flex version 2.5.35 usage statistics:
+bison --defines=yyparse.h --output=yyparse.cpp parser.y
+parser.y:76.11-72: warning: unset value: $$
+g++ -g -O0 -Wall -std=gnu++11 -c main.cpp
+g++ -g -O0 -Wall -std=gnu++11 -c stringset.cpp
+g++ -g -O0 -Wall -std=gnu++11 -c auxlib.cpp
+g++ -g -O0 -Wall -std=gnu++11 -c astree.cpp
+g++ -g -O0 -Wall -std=gnu++11 -c lyutils.cpp
+g++ -g -O0 -Wall -std=gnu++11 -c yylex.cpp
+g++ -g -O0 -Wall -std=gnu++11 -c yyparse.cpp
+g++ -g -O0 -Wall -std=gnu++11 main.o stringset.o auxlib.o astree.o \
+               lyutils.o yylex.o yyparse.o -o oc
