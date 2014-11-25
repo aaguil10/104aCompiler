@@ -4,12 +4,42 @@
 
 extern FILE* sym_file;
 
+
 symbol* new_symbol (int _a, int _b){
    symbol* mySym = new symbol();
-   mySym->a = _a;
-   mySym->b = _b;
-   printf("Made new symbol: a(%d) b(%d)\n", mySym->a, mySym->b); 
+   mySym->attr = 0;
+   mySym->fields = 0;
+   mySym->filenr = 0;
+   mySym->linenr = 0;
+   mySym->offset = 0;
+   mySym->block_nr = 0;
+   mySym->parameters = NULL;
+   //fprintf(sym_file, "Made new symbol: attr(%p) b(%p)\n", mySym->attr, mySym->fields); 
    return mySym;
 }
 
+static void dump_symbol (FILE* outfile, astree* node) {
+   char* tname = (char*)get_yytname (node->symbol);
+   if (strstr (tname, "TOK_") == tname) tname += 4;
+   fprintf (outfile, "%s \"%s\" %ld.%ld.%ld " ,tname , node->lexinfo->c_str(), 
+             node->filenr, node->linenr, node->offset);
+}
 
+static void print_tree_rec (FILE* outfile, astree* root, int depth) {
+   if (root == NULL) return;
+   for(int i = 0; i < depth; i++){
+      fprintf (outfile, "|   ");
+   }
+   fflush(NULL);
+   dump_symbol (outfile, root);
+   
+   fprintf (outfile, "\n");
+   for (size_t child = 0; child < root->children.size(); ++child) {
+      print_tree_rec (outfile, root->children[child], depth + 1);
+   }
+}
+
+void print_tree (FILE* outfile, astree* root) {
+   print_tree_rec (outfile, root, 0);
+   fflush (NULL);
+}

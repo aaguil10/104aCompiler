@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+                                                                                                        
 #include "astree.h"
 #include "stringset.h"
 #include "lyutils.h"
@@ -18,6 +18,9 @@ astree* new_astree (int symbol, int filenr, int linenr, int offset,
    tree->linenr = linenr;
    tree->offset = offset;
    tree->lexinfo = intern_stringset (lexinfo);
+   tree->attr = 0;
+   tree->block_nr = 0;
+   tree->fields = NULL;
    DEBUGF ('f', "astree %p->{%d:%d.%d: %s: \"%s\"}\n",
            tree, tree->filenr, tree->linenr, tree->offset,
            get_yytname (tree->symbol), tree->lexinfo->c_str());
@@ -45,7 +48,14 @@ astree* adopt2 (astree* root, astree* left, astree* right) {
    return root;
 }
 
-astree* stealGrand (astree* root, int start) {
+astree* adopt3 (astree* root, astree* one, astree* two, astree* three) {
+   adopt1 (root, one);
+   adopt1 (root, two);
+   adopt1 (root, three);
+   return root;
+}
+
+/*astree* stealGrand (astree* root, int start) {
    vector<astree*> kill;
    for(int i = 1; i < (int)root->children.size(); i++){
       astree* tmp = root->children[i];
@@ -65,15 +75,15 @@ astree* stealGrand (astree* root, int start) {
       }
    }
    //prints tree
-   /*for(int i = 0; i < (int)root->children.size(); i++){
+   for(int i = 0; i < (int)root->children.size(); i++){
       astree* tmp = root->children[i];
       printf("%s:\n", tmp->lexinfo->c_str() );
       for(int j = 0; j < (int)tmp->children.size(); j++){
          printf("   %s:\n", tmp->children[j]->lexinfo->c_str() );
       }
-  }*/
+  }
    return root;
-}
+}*/
 
 astree* delRoots (astree* root) {
    for(int i = 1; i < (int)root->children.size(); i++){
@@ -127,7 +137,8 @@ static void dump_astree_rec (FILE* outfile, astree* root, int depth) {
    fflush(NULL);
    //printf("T: %s D: %d \n", root->lexinfo->c_str(), depth);
    dump_node (outfile, root);
-   
+   dump_sym (sym_file, root);
+
    fprintf (outfile, "\n");
    for (size_t child = 0; child < root->children.size(); ++child) {
       dump_astree_rec (outfile, root->children[child], depth + 1);

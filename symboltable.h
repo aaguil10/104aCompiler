@@ -4,19 +4,38 @@
 
 #include <stdio.h>
 
-#include "astree.h"
+//#include "astree.h"
 
 #include <string>
 #include <vector>
+#include<bitset>
+#include <unordered_map>
 using namespace std;
+
+enum { ATTR_void, ATTR_bool, ATTR_char, ATTR_int, ATTR_null,
+ATTR_string, ATTR_struct, ATTR_array, ATTR_function,
+ATTR_variable, ATTR_field, ATTR_typeid, ATTR_param, ATTR_lval,
+ATTR_const, ATTR_vreg, ATTR_vaddr, ATTR_bitset_size,
+};
+using attr_bitset = bitset<ATTR_bitset_size>;
+
+struct symbol;
+using symbol_table = unordered_map<string*,symbol*>;
 
 extern FILE* sym_file;
 
 struct symbol {
-   int a;
-   int b;
+   attr_bitset attr;
+   symbol_table* fields;
+   size_t filenr;
+   size_t linenr;
+   size_t offset;
+   size_t block_nr;
+   vector <symbol*>* parameters;
 };
 
 symbol* new_symbol (int _a, int _b);
+
+
 
 #endif
