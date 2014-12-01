@@ -1,7 +1,43 @@
-ROOT myfile 0.0.0
-|   '=' = 0.0.0
-|   KW_IDENT n 0.0.0
-|   '-' - 0.0.0
-|   KW_IDENT n 0.0.0
-|   LIT_INT 1 0.0.0
-|   
+ROOT "" (0.0.0) {0} 
+   ROOT "TOK_FUNCTION" (0.0.0) {0} 
+      KW_INT "int" (3.1.0) {0} 
+         DECLID "fac" (3.1.4) {0} 
+      PARAMLIST "(" (3.1.8) {0} 
+         KW_INT "int" (3.1.9) {0} 
+            DECLID "n" (3.1.13) {0} 
+      BLOCK "{" (3.1.16) {0} 
+         VARDECL "=" (3.2.9) {0} 
+            KW_INT "int" (3.2.3) {0} 
+               DECLID "f" (3.2.7) {0} 
+            INTCON "1" (3.2.11) {0} 
+         KW_WHILE "while" (3.3.3) {0} 
+            '>' ">" (3.3.12) {0} 
+               KW_IDENT "n" (3.3.10) {0} 
+               INTCON "1" (3.3.14) {0} 
+            BLOCK "{" (3.3.17) {0} 
+               '=' "=" (3.4.7) {0} 
+                  KW_IDENT "f" (3.4.5) {0} 
+                  '*' "*" (3.4.11) {0} 
+                     KW_IDENT "f" (3.4.9) {0} 
+                     KW_IDENT "n" (3.4.13) {0} 
+               '=' "=" (3.5.7) {0} 
+                  KW_IDENT "n" (3.5.5) {0} 
+                  '-' "-" (3.5.11) {0} 
+                     KW_IDENT "n" (3.5.9) {0} 
+                     INTCON "1" (3.5.13) {0} 
+         KW_RETURN "return" (3.7.3) {0} 
+            KW_IDENT "f" (3.7.10) {0} 
+   VARDECL "=" (3.9.6) {0} 
+      KW_INT "int" (3.9.0) {0} 
+         DECLID "n" (3.9.4) {0} 
+      INTCON "1" (3.9.8) {0} 
+   KW_WHILE "while" (3.10.0) {0} 
+      LESSEQU "<=" (3.10.9) {0} 
+         KW_IDENT "n" (3.10.7) {0} 
+         INTCON "5" (3.10.12) {0} 
+      BLOCK "{" (3.10.15) {0} 
+         CALL "(" (3.11.8) {0} 
+            KW_IDENT "puti" (3.11.3) {0} 
+            CALL "(" (3.11.13) {0} 
+               KW_IDENT "fac" (3.11.9) {0} 
+               KW_IDENT "n" (3.11.14) {0} 

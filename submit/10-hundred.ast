@@ -1,92 +1,92 @@
-ROOT "" 0.0.0 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "void" 5.24.0 
-|   |   |   KW_IDENT "__assert_fail" 5.24.5 
-|   |   PARAMLIST "(" 5.24.19 
-|   |   |   DECLID "string" 5.24.20 
-|   |   |   |   KW_IDENT "expr" 5.24.27 
-|   |   |   DECLID "string" 5.24.33 
-|   |   |   |   KW_IDENT "file" 5.24.40 
-|   |   |   DECLID "int" 5.24.46 
-|   |   |   |   KW_IDENT "line" 5.24.50 
-|   |   ';' ";" 5.24.55 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "void" 5.25.0 
-|   |   |   KW_IDENT "putb" 5.25.5 
-|   |   PARAMLIST "(" 5.25.10 
-|   |   |   DECLID "bool" 5.25.11 
-|   |   |   |   KW_IDENT "b" 5.25.16 
-|   |   ';' ";" 5.25.18 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "void" 5.26.0 
-|   |   |   KW_IDENT "putc" 5.26.5 
-|   |   PARAMLIST "(" 5.26.10 
-|   |   |   DECLID "char" 5.26.11 
-|   |   |   |   KW_IDENT "c" 5.26.16 
-|   |   ';' ";" 5.26.18 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "void" 5.27.0 
-|   |   |   KW_IDENT "puti" 5.27.5 
-|   |   PARAMLIST "(" 5.27.10 
-|   |   |   DECLID "int" 5.27.11 
-|   |   |   |   KW_IDENT "i" 5.27.15 
-|   |   ';' ";" 5.27.17 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "void" 5.28.0 
-|   |   |   KW_IDENT "puts" 5.28.5 
-|   |   PARAMLIST "(" 5.28.10 
-|   |   |   DECLID "string" 5.28.11 
-|   |   |   |   KW_IDENT "s" 5.28.18 
-|   |   ';' ";" 5.28.20 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "void" 5.29.0 
-|   |   |   KW_IDENT "endl" 5.29.5 
-|   |   PARAMLIST "(" 5.29.10 
-|   |   ';' ";" 5.29.12 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "int" 5.30.0 
-|   |   |   KW_IDENT "getc" 5.30.4 
-|   |   PARAMLIST "(" 5.30.9 
-|   |   ';' ";" 5.30.11 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "string" 5.31.0 
-|   |   |   KW_IDENT "getw" 5.31.7 
-|   |   PARAMLIST "(" 5.31.12 
-|   |   ';' ";" 5.31.14 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "string" 5.32.0 
-|   |   |   KW_IDENT "getln" 5.32.7 
-|   |   PARAMLIST "(" 5.32.13 
-|   |   ';' ";" 5.32.15 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "string" 5.33.0 
-|   |   |   sNEWARRAY "[]" 5.33.6 
-|   |   |   KW_IDENT "getargv" 5.33.9 
-|   |   PARAMLIST "(" 5.33.17 
-|   |   ';' ";" 5.33.19 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "void" 5.34.0 
-|   |   |   KW_IDENT "exit" 5.34.5 
-|   |   PARAMLIST "(" 5.34.10 
-|   |   |   DECLID "int" 5.34.11 
-|   |   |   |   KW_IDENT "status" 5.34.15 
-|   |   ';' ";" 5.34.22 
-|   VARDECL "=" 6.5.10 
-|   |   DECLID "int" 6.5.0 
-|   |   |   KW_IDENT "count" 6.5.4 
-|   |   INTCON "0" 6.5.12 
-|   KW_WHILE "while" 6.6.0 
-|   |   LESSEQU "<=" 6.6.13 
-|   |   |   KW_IDENT "count" 6.6.7 
-|   |   |   INTCON "100" 6.6.16 
-|   |   BLOCK "{" 6.6.21 
-|   |   |   '=' "=" 6.7.9 
-|   |   |   |   KW_IDENT "count" 6.7.3 
-|   |   |   |   '+' "+" 6.7.17 
-|   |   |   |   |   KW_IDENT "count" 6.7.11 
-|   |   |   |   |   INTCON "1" 6.7.19 
-|   |   |   CALL "(" 6.8.8 
-|   |   |   |   KW_IDENT "puti" 6.8.3 
-|   |   |   |   KW_IDENT "count" 6.8.9 
-|   |   |   CALL "(" 6.9.8 
-|   |   |   |   KW_IDENT "endl" 6.9.3 
+ROOT "" (0.0.0) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.23.0) {0} 
+         DECLID "__assert_fail" (5.23.5) {0} 
+      PARAMLIST "(" (5.23.19) {0} 
+         KW_STRING "string" (5.23.20) {0} 
+            DECLID "expr" (5.23.27) {0} 
+         KW_STRING "string" (5.23.33) {0} 
+            DECLID "file" (5.23.40) {0} 
+         KW_INT "int" (5.23.46) {0} 
+            DECLID "line" (5.23.50) {0} 
+      ';' ";" (5.23.55) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.24.0) {0} 
+         DECLID "putb" (5.24.5) {0} 
+      PARAMLIST "(" (5.24.10) {0} 
+         KW_BOOL "bool" (5.24.11) {0} 
+            DECLID "b" (5.24.16) {0} 
+      ';' ";" (5.24.18) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.25.0) {0} 
+         DECLID "putc" (5.25.5) {0} 
+      PARAMLIST "(" (5.25.10) {0} 
+         KW_CHAR "char" (5.25.11) {0} 
+            DECLID "c" (5.25.16) {0} 
+      ';' ";" (5.25.18) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.26.0) {0} 
+         DECLID "puti" (5.26.5) {0} 
+      PARAMLIST "(" (5.26.10) {0} 
+         KW_INT "int" (5.26.11) {0} 
+            DECLID "i" (5.26.15) {0} 
+      ';' ";" (5.26.17) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.27.0) {0} 
+         DECLID "puts" (5.27.5) {0} 
+      PARAMLIST "(" (5.27.10) {0} 
+         KW_STRING "string" (5.27.11) {0} 
+            DECLID "s" (5.27.18) {0} 
+      ';' ";" (5.27.20) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.28.0) {0} 
+         DECLID "endl" (5.28.5) {0} 
+      PARAMLIST "(" (5.28.10) {0} 
+      ';' ";" (5.28.12) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_INT "int" (5.29.0) {0} 
+         DECLID "getc" (5.29.4) {0} 
+      PARAMLIST "(" (5.29.9) {0} 
+      ';' ";" (5.29.11) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_STRING "string" (5.30.0) {0} 
+         DECLID "getw" (5.30.7) {0} 
+      PARAMLIST "(" (5.30.12) {0} 
+      ';' ";" (5.30.14) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_STRING "string" (5.31.0) {0} 
+         DECLID "getln" (5.31.7) {0} 
+      PARAMLIST "(" (5.31.13) {0} 
+      ';' ";" (5.31.15) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_STRING "string" (5.32.0) {0} 
+         sNEWARRAY "[]" (5.32.6) {0} 
+         DECLID "getargv" (5.32.9) {0} 
+      PARAMLIST "(" (5.32.17) {0} 
+      ';' ";" (5.32.19) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.33.0) {0} 
+         DECLID "exit" (5.33.5) {0} 
+      PARAMLIST "(" (5.33.10) {0} 
+         KW_INT "int" (5.33.11) {0} 
+            DECLID "status" (5.33.15) {0} 
+      ';' ";" (5.33.22) {0} 
+   VARDECL "=" (6.5.10) {0} 
+      KW_INT "int" (6.5.0) {0} 
+         DECLID "count" (6.5.4) {0} 
+      INTCON "0" (6.5.12) {0} 
+   KW_WHILE "while" (6.6.0) {0} 
+      LESSEQU "<=" (6.6.13) {0} 
+         KW_IDENT "count" (6.6.7) {0} 
+         INTCON "100" (6.6.16) {0} 
+      BLOCK "{" (6.6.21) {0} 
+         '=' "=" (6.7.9) {0} 
+            KW_IDENT "count" (6.7.3) {0} 
+            '+' "+" (6.7.17) {0} 
+               KW_IDENT "count" (6.7.11) {0} 
+               INTCON "1" (6.7.19) {0} 
+         CALL "(" (6.8.8) {0} 
+            KW_IDENT "puti" (6.8.3) {0} 
+            KW_IDENT "count" (6.8.9) {0} 
+         CALL "(" (6.9.8) {0} 
+            KW_IDENT "endl" (6.9.3) {0} 

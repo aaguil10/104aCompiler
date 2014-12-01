@@ -18,7 +18,7 @@ static void* yycalloc (size_t size);
 astree* s1(astree* one, astree* two, astree* three,
                    astree* four, astree* five){
    free_ast2 (three, five);
-   adoptsym (two, TOK_TYPEID);
+   //adoptsym (two, TOK_TYPEID);
    return adopt2 (one, two, four);
 }
 
@@ -94,12 +94,13 @@ mfielddecl: mfielddecl fielddecl ';'         {free_ast($3);
 
 fielddecl: basetype TOK_KW_IDENT             {adoptsym($2, TOK_FIELD);
                                               $$ = adopt1($1, $2);}
-        | basetype TOK_NEWARRAY TOK_KW_IDENT    { adoptsym($3, TOK_FIELD);
+        | basetype TOK_sNEWARRAY TOK_KW_IDENT    { adoptsym($3, TOK_FIELD);
                                                   $$ = adopt2($1, $2, $3);}
         ;
 
 basetype: TOK_KW_VOID | TOK_KW_BOOL | TOK_KW_INT 
-        | TOK_KW_CHAR | TOK_KW_STRING | TOK_TYPEID
+        | TOK_KW_CHAR | TOK_KW_STRING 
+	| TOK_KW_IDENT                          { $$ = adoptsym ($1, TOK_TYPEID);}
         ;
 
 funcargs: funcargs ',' identdecl             {free_ast($2); 

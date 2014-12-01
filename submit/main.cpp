@@ -118,7 +118,7 @@ int main (int argc, char **argv) {
    int c;
    char* filename = argv[argc - 1];
    tok_file = make_tok_file(filename, 1);
-   sym_file = make_sym_file(filename);
+   //sym_file = make_sym_file(filename);
    //int next_block = 1;
    yy_flex_debug = 0;
    yydebug = 0;
@@ -162,7 +162,7 @@ int main (int argc, char **argv) {
    FILE* str_name = make_str_file(filename);
    dump_stringset (str_name);
 
-   traverseAST(yyparse_astree,0);
+   //traverseAST(yyparse_astree,0);
 
    FILE* ast_name = make_ast_file(filename);
    dump_astree (ast_name, yyparse_astree);

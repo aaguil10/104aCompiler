@@ -1,209 +1,209 @@
-ROOT "" 0.0.0 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "void" 5.24.0 
-|   |   |   KW_IDENT "__assert_fail" 5.24.5 
-|   |   PARAMLIST "(" 5.24.19 
-|   |   |   DECLID "string" 5.24.20 
-|   |   |   |   KW_IDENT "expr" 5.24.27 
-|   |   |   DECLID "string" 5.24.33 
-|   |   |   |   KW_IDENT "file" 5.24.40 
-|   |   |   DECLID "int" 5.24.46 
-|   |   |   |   KW_IDENT "line" 5.24.50 
-|   |   ';' ";" 5.24.55 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "void" 5.25.0 
-|   |   |   KW_IDENT "putb" 5.25.5 
-|   |   PARAMLIST "(" 5.25.10 
-|   |   |   DECLID "bool" 5.25.11 
-|   |   |   |   KW_IDENT "b" 5.25.16 
-|   |   ';' ";" 5.25.18 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "void" 5.26.0 
-|   |   |   KW_IDENT "putc" 5.26.5 
-|   |   PARAMLIST "(" 5.26.10 
-|   |   |   DECLID "char" 5.26.11 
-|   |   |   |   KW_IDENT "c" 5.26.16 
-|   |   ';' ";" 5.26.18 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "void" 5.27.0 
-|   |   |   KW_IDENT "puti" 5.27.5 
-|   |   PARAMLIST "(" 5.27.10 
-|   |   |   DECLID "int" 5.27.11 
-|   |   |   |   KW_IDENT "i" 5.27.15 
-|   |   ';' ";" 5.27.17 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "void" 5.28.0 
-|   |   |   KW_IDENT "puts" 5.28.5 
-|   |   PARAMLIST "(" 5.28.10 
-|   |   |   DECLID "string" 5.28.11 
-|   |   |   |   KW_IDENT "s" 5.28.18 
-|   |   ';' ";" 5.28.20 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "void" 5.29.0 
-|   |   |   KW_IDENT "endl" 5.29.5 
-|   |   PARAMLIST "(" 5.29.10 
-|   |   ';' ";" 5.29.12 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "int" 5.30.0 
-|   |   |   KW_IDENT "getc" 5.30.4 
-|   |   PARAMLIST "(" 5.30.9 
-|   |   ';' ";" 5.30.11 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "string" 5.31.0 
-|   |   |   KW_IDENT "getw" 5.31.7 
-|   |   PARAMLIST "(" 5.31.12 
-|   |   ';' ";" 5.31.14 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "string" 5.32.0 
-|   |   |   KW_IDENT "getln" 5.32.7 
-|   |   PARAMLIST "(" 5.32.13 
-|   |   ';' ";" 5.32.15 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "string" 5.33.0 
-|   |   |   sNEWARRAY "[]" 5.33.6 
-|   |   |   KW_IDENT "getargv" 5.33.9 
-|   |   PARAMLIST "(" 5.33.17 
-|   |   ';' ";" 5.33.19 
-|   ROOT "TOK_PROTOTYPE" 0.0.0 
-|   |   DECLID "void" 5.34.0 
-|   |   |   KW_IDENT "exit" 5.34.5 
-|   |   PARAMLIST "(" 5.34.10 
-|   |   |   DECLID "int" 5.34.11 
-|   |   |   |   KW_IDENT "status" 5.34.15 
-|   |   ';' ";" 5.34.22 
-|   VARDECL "=" 6.6.12 
-|   |   DECLID "int" 6.6.0 
-|   |   |   sNEWARRAY "[]" 6.6.3 
-|   |   |   KW_IDENT "board" 6.6.6 
-|   |   NEWARRAY "new" 6.6.14 
-|   |   |   TYPEID "int" 6.6.18 
-|   |   |   INTCON "8" 6.6.22 
-|   ROOT "TOK_FUNCTION" 0.0.0 
-|   |   DECLID "bool" 6.8.0 
-|   |   |   KW_IDENT "is_safe" 6.8.5 
-|   |   PARAMLIST "(" 6.8.13 
-|   |   |   DECLID "int" 6.8.14 
-|   |   |   |   KW_IDENT "newcol" 6.8.18 
-|   |   BLOCK "{" 6.8.26 
-|   |   |   VARDECL "=" 6.9.11 
-|   |   |   |   DECLID "int" 6.9.3 
-|   |   |   |   |   KW_IDENT "col" 6.9.7 
-|   |   |   |   INTCON "0" 6.9.13 
-|   |   |   KW_WHILE "while" 6.10.3 
-|   |   |   |   '<' "<" 6.10.14 
-|   |   |   |   |   KW_IDENT "col" 6.10.10 
-|   |   |   |   |   KW_IDENT "newcol" 6.10.16 
-|   |   |   |   BLOCK "{" 6.10.24 
-|   |   |   |   |   KW_IF "if" 6.11.6 
-|   |   |   |   |   |   EQUALS "==" 6.11.21 
-|   |   |   |   |   |   |   KW_IDENT "board" 6.11.10 
-|   |   |   |   |   |   |   |   KW_IDENT "col" 6.11.16 
-|   |   |   |   |   |   |   KW_IDENT "board" 6.11.24 
-|   |   |   |   |   |   |   |   KW_IDENT "newcol" 6.11.30 
-|   |   |   |   |   |   KW_RETURN "return" 6.11.39 
-|   |   |   |   |   |   |   KW_FALSE "false" 6.11.46 
-|   |   |   |   |   VARDECL "=" 6.12.19 
-|   |   |   |   |   |   DECLID "int" 6.12.6 
-|   |   |   |   |   |   |   KW_IDENT "diagonal" 6.12.10 
-|   |   |   |   |   |   '-' "-" 6.12.32 
-|   |   |   |   |   |   |   KW_IDENT "board" 6.12.21 
-|   |   |   |   |   |   |   |   KW_IDENT "col" 6.12.27 
-|   |   |   |   |   |   |   KW_IDENT "board" 6.12.34 
-|   |   |   |   |   |   |   |   KW_IDENT "newcol" 6.12.40 
-|   |   |   |   |   KW_IF "if" 6.13.6 
-|   |   |   |   |   |   EQUALS "==" 6.13.19 
-|   |   |   |   |   |   |   KW_IDENT "diagonal" 6.13.10 
-|   |   |   |   |   |   |   '-' "-" 6.13.26 
-|   |   |   |   |   |   |   |   KW_IDENT "col" 6.13.22 
-|   |   |   |   |   |   |   |   KW_IDENT "newcol" 6.13.28 
-|   |   |   |   |   |   KW_RETURN "return" 6.13.36 
-|   |   |   |   |   |   |   KW_FALSE "false" 6.13.43 
-|   |   |   |   |   KW_IF "if" 6.14.6 
-|   |   |   |   |   |   EQUALS "==" 6.14.19 
-|   |   |   |   |   |   |   KW_IDENT "diagonal" 6.14.10 
-|   |   |   |   |   |   |   '-' "-" 6.14.29 
-|   |   |   |   |   |   |   |   KW_IDENT "newcol" 6.14.22 
-|   |   |   |   |   |   |   |   KW_IDENT "col" 6.14.31 
-|   |   |   |   |   |   KW_RETURN "return" 6.14.36 
-|   |   |   |   |   |   |   KW_FALSE "false" 6.14.43 
-|   |   |   |   |   '=' "=" 6.15.10 
-|   |   |   |   |   |   KW_IDENT "col" 6.15.6 
-|   |   |   |   |   |   '+' "+" 6.15.16 
-|   |   |   |   |   |   |   KW_IDENT "col" 6.15.12 
-|   |   |   |   |   |   |   INTCON "1" 6.15.18 
-|   |   |   KW_RETURN "return" 6.17.3 
-|   |   |   |   KW_TRUE "true" 6.17.10 
-|   ROOT "TOK_FUNCTION" 0.0.0 
-|   |   DECLID "void" 6.20.0 
-|   |   |   KW_IDENT "printqueens" 6.20.5 
-|   |   PARAMLIST "(" 6.20.17 
-|   |   BLOCK "{" 6.20.20 
-|   |   |   VARDECL "=" 6.21.11 
-|   |   |   |   DECLID "int" 6.21.3 
-|   |   |   |   |   KW_IDENT "col" 6.21.7 
-|   |   |   |   INTCON "0" 6.21.13 
-|   |   |   KW_WHILE "while" 6.22.3 
-|   |   |   |   '<' "<" 6.22.14 
-|   |   |   |   |   KW_IDENT "col" 6.22.10 
-|   |   |   |   |   INTCON "8" 6.22.16 
-|   |   |   |   BLOCK "{" 6.22.19 
-|   |   |   |   |   CALL "(" 6.23.11 
-|   |   |   |   |   |   KW_IDENT "putc" 6.23.6 
-|   |   |   |   |   |   KW_CHR "chr" 6.23.12 
-|   |   |   |   |   |   |   '+' "+" 6.23.28 
-|   |   |   |   |   |   |   |   KW_IDENT "board" 6.23.17 
-|   |   |   |   |   |   |   |   |   KW_IDENT "col" 6.23.23 
-|   |   |   |   |   |   |   |   KW_ORD "ord" 6.23.30 
-|   |   |   |   |   |   |   |   |   CHARCON "'1'" 6.23.34 
-|   |   |   |   |   '=' "=" 6.24.10 
-|   |   |   |   |   |   KW_IDENT "col" 6.24.6 
-|   |   |   |   |   |   '+' "+" 6.24.16 
-|   |   |   |   |   |   |   KW_IDENT "col" 6.24.12 
-|   |   |   |   |   |   |   INTCON "1" 6.24.18 
-|   |   |   CALL "(" 6.26.8 
-|   |   |   |   KW_IDENT "putc" 6.26.3 
-|   |   |   |   CHARCON "'\n'" 6.26.9 
-|   ROOT "TOK_FUNCTION" 0.0.0 
-|   |   DECLID "void" 6.29.0 
-|   |   |   KW_IDENT "queens" 6.29.5 
-|   |   PARAMLIST "(" 6.29.12 
-|   |   |   DECLID "int" 6.29.13 
-|   |   |   |   KW_IDENT "newcol" 6.29.17 
-|   |   BLOCK "{" 6.29.25 
-|   |   |   IFELSE "if" 6.30.3 
-|   |   |   |   EQUALS "==" 6.30.14 
-|   |   |   |   |   KW_IDENT "newcol" 6.30.7 
-|   |   |   |   |   INTCON "8" 6.30.17 
-|   |   |   |   CALL "(" 6.30.32 
-|   |   |   |   |   KW_IDENT "printqueens" 6.30.20 
-|   |   |   |   BLOCK "{" 6.31.8 
-|   |   |   |   |   VARDECL "=" 6.32.14 
-|   |   |   |   |   |   DECLID "int" 6.32.6 
-|   |   |   |   |   |   |   KW_IDENT "row" 6.32.10 
-|   |   |   |   |   |   INTCON "0" 6.32.16 
-|   |   |   |   |   KW_WHILE "while" 6.33.6 
-|   |   |   |   |   |   '<' "<" 6.33.17 
-|   |   |   |   |   |   |   KW_IDENT "row" 6.33.13 
-|   |   |   |   |   |   |   INTCON "8" 6.33.19 
-|   |   |   |   |   |   BLOCK "{" 6.33.22 
-|   |   |   |   |   |   |   '=' "=" 6.34.23 
-|   |   |   |   |   |   |   |   KW_IDENT "board" 6.34.9 
-|   |   |   |   |   |   |   |   |   KW_IDENT "newcol" 6.34.15 
-|   |   |   |   |   |   |   |   KW_IDENT "row" 6.34.25 
-|   |   |   |   |   |   |   KW_IF "if" 6.35.9 
-|   |   |   |   |   |   |   |   CALL "(" 6.35.21 
-|   |   |   |   |   |   |   |   |   KW_IDENT "is_safe" 6.35.13 
-|   |   |   |   |   |   |   |   |   KW_IDENT "newcol" 6.35.22 
-|   |   |   |   |   |   |   |   CALL "(" 6.35.38 
-|   |   |   |   |   |   |   |   |   KW_IDENT "queens" 6.35.31 
-|   |   |   |   |   |   |   |   |   '+' "+" 6.35.46 
-|   |   |   |   |   |   |   |   |   |   KW_IDENT "newcol" 6.35.39 
-|   |   |   |   |   |   |   |   |   |   INTCON "1" 6.35.48 
-|   |   |   |   |   |   |   '=' "=" 6.36.13 
-|   |   |   |   |   |   |   |   KW_IDENT "row" 6.36.9 
-|   |   |   |   |   |   |   |   '+' "+" 6.36.19 
-|   |   |   |   |   |   |   |   |   KW_IDENT "row" 6.36.15 
-|   |   |   |   |   |   |   |   |   INTCON "1" 6.36.21 
-|   CALL "(" 6.42.7 
-|   |   KW_IDENT "queens" 6.42.0 
-|   |   INTCON "0" 6.42.8 
+ROOT "" (0.0.0) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.23.0) {0} 
+         DECLID "__assert_fail" (5.23.5) {0} 
+      PARAMLIST "(" (5.23.19) {0} 
+         KW_STRING "string" (5.23.20) {0} 
+            DECLID "expr" (5.23.27) {0} 
+         KW_STRING "string" (5.23.33) {0} 
+            DECLID "file" (5.23.40) {0} 
+         KW_INT "int" (5.23.46) {0} 
+            DECLID "line" (5.23.50) {0} 
+      ';' ";" (5.23.55) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.24.0) {0} 
+         DECLID "putb" (5.24.5) {0} 
+      PARAMLIST "(" (5.24.10) {0} 
+         KW_BOOL "bool" (5.24.11) {0} 
+            DECLID "b" (5.24.16) {0} 
+      ';' ";" (5.24.18) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.25.0) {0} 
+         DECLID "putc" (5.25.5) {0} 
+      PARAMLIST "(" (5.25.10) {0} 
+         KW_CHAR "char" (5.25.11) {0} 
+            DECLID "c" (5.25.16) {0} 
+      ';' ";" (5.25.18) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.26.0) {0} 
+         DECLID "puti" (5.26.5) {0} 
+      PARAMLIST "(" (5.26.10) {0} 
+         KW_INT "int" (5.26.11) {0} 
+            DECLID "i" (5.26.15) {0} 
+      ';' ";" (5.26.17) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.27.0) {0} 
+         DECLID "puts" (5.27.5) {0} 
+      PARAMLIST "(" (5.27.10) {0} 
+         KW_STRING "string" (5.27.11) {0} 
+            DECLID "s" (5.27.18) {0} 
+      ';' ";" (5.27.20) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.28.0) {0} 
+         DECLID "endl" (5.28.5) {0} 
+      PARAMLIST "(" (5.28.10) {0} 
+      ';' ";" (5.28.12) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_INT "int" (5.29.0) {0} 
+         DECLID "getc" (5.29.4) {0} 
+      PARAMLIST "(" (5.29.9) {0} 
+      ';' ";" (5.29.11) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_STRING "string" (5.30.0) {0} 
+         DECLID "getw" (5.30.7) {0} 
+      PARAMLIST "(" (5.30.12) {0} 
+      ';' ";" (5.30.14) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_STRING "string" (5.31.0) {0} 
+         DECLID "getln" (5.31.7) {0} 
+      PARAMLIST "(" (5.31.13) {0} 
+      ';' ";" (5.31.15) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_STRING "string" (5.32.0) {0} 
+         sNEWARRAY "[]" (5.32.6) {0} 
+         DECLID "getargv" (5.32.9) {0} 
+      PARAMLIST "(" (5.32.17) {0} 
+      ';' ";" (5.32.19) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.33.0) {0} 
+         DECLID "exit" (5.33.5) {0} 
+      PARAMLIST "(" (5.33.10) {0} 
+         KW_INT "int" (5.33.11) {0} 
+            DECLID "status" (5.33.15) {0} 
+      ';' ";" (5.33.22) {0} 
+   VARDECL "=" (6.6.12) {0} 
+      KW_INT "int" (6.6.0) {0} 
+         sNEWARRAY "[]" (6.6.3) {0} 
+         DECLID "board" (6.6.6) {0} 
+      NEWARRAY "new" (6.6.14) {0} 
+         TYPEID "int" (6.6.18) {0} 
+         INTCON "8" (6.6.22) {0} 
+   ROOT "TOK_FUNCTION" (0.0.0) {0} 
+      KW_BOOL "bool" (6.8.0) {0} 
+         DECLID "is_safe" (6.8.5) {0} 
+      PARAMLIST "(" (6.8.13) {0} 
+         KW_INT "int" (6.8.14) {0} 
+            DECLID "newcol" (6.8.18) {0} 
+      BLOCK "{" (6.8.26) {0} 
+         VARDECL "=" (6.9.11) {0} 
+            KW_INT "int" (6.9.3) {0} 
+               DECLID "col" (6.9.7) {0} 
+            INTCON "0" (6.9.13) {0} 
+         KW_WHILE "while" (6.10.3) {0} 
+            '<' "<" (6.10.14) {0} 
+               KW_IDENT "col" (6.10.10) {0} 
+               KW_IDENT "newcol" (6.10.16) {0} 
+            BLOCK "{" (6.10.24) {0} 
+               KW_IF "if" (6.11.6) {0} 
+                  EQUALS "==" (6.11.21) {0} 
+                     KW_IDENT "board" (6.11.10) {0} 
+                        KW_IDENT "col" (6.11.16) {0} 
+                     KW_IDENT "board" (6.11.24) {0} 
+                        KW_IDENT "newcol" (6.11.30) {0} 
+                  KW_RETURN "return" (6.11.39) {0} 
+                     KW_FALSE "false" (6.11.46) {0} 
+               VARDECL "=" (6.12.19) {0} 
+                  KW_INT "int" (6.12.6) {0} 
+                     DECLID "diagonal" (6.12.10) {0} 
+                  '-' "-" (6.12.32) {0} 
+                     KW_IDENT "board" (6.12.21) {0} 
+                        KW_IDENT "col" (6.12.27) {0} 
+                     KW_IDENT "board" (6.12.34) {0} 
+                        KW_IDENT "newcol" (6.12.40) {0} 
+               KW_IF "if" (6.13.6) {0} 
+                  EQUALS "==" (6.13.19) {0} 
+                     KW_IDENT "diagonal" (6.13.10) {0} 
+                     '-' "-" (6.13.26) {0} 
+                        KW_IDENT "col" (6.13.22) {0} 
+                        KW_IDENT "newcol" (6.13.28) {0} 
+                  KW_RETURN "return" (6.13.36) {0} 
+                     KW_FALSE "false" (6.13.43) {0} 
+               KW_IF "if" (6.14.6) {0} 
+                  EQUALS "==" (6.14.19) {0} 
+                     KW_IDENT "diagonal" (6.14.10) {0} 
+                     '-' "-" (6.14.29) {0} 
+                        KW_IDENT "newcol" (6.14.22) {0} 
+                        KW_IDENT "col" (6.14.31) {0} 
+                  KW_RETURN "return" (6.14.36) {0} 
+                     KW_FALSE "false" (6.14.43) {0} 
+               '=' "=" (6.15.10) {0} 
+                  KW_IDENT "col" (6.15.6) {0} 
+                  '+' "+" (6.15.16) {0} 
+                     KW_IDENT "col" (6.15.12) {0} 
+                     INTCON "1" (6.15.18) {0} 
+         KW_RETURN "return" (6.17.3) {0} 
+            KW_TRUE "true" (6.17.10) {0} 
+   ROOT "TOK_FUNCTION" (0.0.0) {0} 
+      KW_VOID "void" (6.20.0) {0} 
+         DECLID "printqueens" (6.20.5) {0} 
+      PARAMLIST "(" (6.20.17) {0} 
+      BLOCK "{" (6.20.20) {0} 
+         VARDECL "=" (6.21.11) {0} 
+            KW_INT "int" (6.21.3) {0} 
+               DECLID "col" (6.21.7) {0} 
+            INTCON "0" (6.21.13) {0} 
+         KW_WHILE "while" (6.22.3) {0} 
+            '<' "<" (6.22.14) {0} 
+               KW_IDENT "col" (6.22.10) {0} 
+               INTCON "8" (6.22.16) {0} 
+            BLOCK "{" (6.22.19) {0} 
+               CALL "(" (6.23.11) {0} 
+                  KW_IDENT "putc" (6.23.6) {0} 
+                  KW_CHR "chr" (6.23.12) {0} 
+                     '+' "+" (6.23.28) {0} 
+                        KW_IDENT "board" (6.23.17) {0} 
+                           KW_IDENT "col" (6.23.23) {0} 
+                        KW_ORD "ord" (6.23.30) {0} 
+                           CHARCON "'1'" (6.23.34) {0} 
+               '=' "=" (6.24.10) {0} 
+                  KW_IDENT "col" (6.24.6) {0} 
+                  '+' "+" (6.24.16) {0} 
+                     KW_IDENT "col" (6.24.12) {0} 
+                     INTCON "1" (6.24.18) {0} 
+         CALL "(" (6.26.8) {0} 
+            KW_IDENT "putc" (6.26.3) {0} 
+            CHARCON "'\n'" (6.26.9) {0} 
+   ROOT "TOK_FUNCTION" (0.0.0) {0} 
+      KW_VOID "void" (6.29.0) {0} 
+         DECLID "queens" (6.29.5) {0} 
+      PARAMLIST "(" (6.29.12) {0} 
+         KW_INT "int" (6.29.13) {0} 
+            DECLID "newcol" (6.29.17) {0} 
+      BLOCK "{" (6.29.25) {0} 
+         IFELSE "if" (6.30.3) {0} 
+            EQUALS "==" (6.30.14) {0} 
+               KW_IDENT "newcol" (6.30.7) {0} 
+               INTCON "8" (6.30.17) {0} 
+            CALL "(" (6.30.32) {0} 
+               KW_IDENT "printqueens" (6.30.20) {0} 
+            BLOCK "{" (6.31.8) {0} 
+               VARDECL "=" (6.32.14) {0} 
+                  KW_INT "int" (6.32.6) {0} 
+                     DECLID "row" (6.32.10) {0} 
+                  INTCON "0" (6.32.16) {0} 
+               KW_WHILE "while" (6.33.6) {0} 
+                  '<' "<" (6.33.17) {0} 
+                     KW_IDENT "row" (6.33.13) {0} 
+                     INTCON "8" (6.33.19) {0} 
+                  BLOCK "{" (6.33.22) {0} 
+                     '=' "=" (6.34.23) {0} 
+                        KW_IDENT "board" (6.34.9) {0} 
+                           KW_IDENT "newcol" (6.34.15) {0} 
+                        KW_IDENT "row" (6.34.25) {0} 
+                     KW_IF "if" (6.35.9) {0} 
+                        CALL "(" (6.35.21) {0} 
+                           KW_IDENT "is_safe" (6.35.13) {0} 
+                           KW_IDENT "newcol" (6.35.22) {0} 
+                        CALL "(" (6.35.38) {0} 
+                           KW_IDENT "queens" (6.35.31) {0} 
+                           '+' "+" (6.35.46) {0} 
+                              KW_IDENT "newcol" (6.35.39) {0} 
+                              INTCON "1" (6.35.48) {0} 
+                     '=' "=" (6.36.13) {0} 
+                        KW_IDENT "row" (6.36.9) {0} 
+                        '+' "+" (6.36.19) {0} 
+                           KW_IDENT "row" (6.36.15) {0} 
+                           INTCON "1" (6.36.21) {0} 
+   CALL "(" (6.42.7) {0} 
+      KW_IDENT "queens" (6.42.0) {0} 
+      INTCON "0" (6.42.8) {0} 

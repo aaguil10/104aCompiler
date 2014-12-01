@@ -1,22 +1,19 @@
+struct node { int foo; node link; }
 
-bool win = true;
-int five = 5;
-char coolchar = 't';
-
-void none(){
- int beast = null; 
+node func (node head, int length) {
+   int a = 0; 
+   string b = ""; 
+   node c = new node();
+   if (a < 3) { 
+      int d = 8; 
+      a = length; 
+      c = c.link; 
+   }else { 
+      string e = "";
+      if (0 == 0) { 
+         int f = 8; 
+      }else { 
+        int g = 9; 
+      }
 }
-
-int compute(int a, int b){
- int c = a*b+a;
- int b = 0;
- string goo = "";
- return c;
-}
-
-struct demon {
- int life;
- bool evil;
- char type;
-
-}
+node h = func (null, 10);
