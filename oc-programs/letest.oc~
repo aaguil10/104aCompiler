@@ -1,14 +1,22 @@
-int k = (5 + 4) * 6;
-char me = new char[too.length];
-//string name = new string("k");
-int[] prob = 9++8;
 
-char fish(int five, int four);
+bool win = true;
+int five = 5;
+char coolchar = 't';
 
-/*int f() {
-int a = ;
-return foo;
-public static void main (String[] args) {
-   //System.exit (255);
+void none(){
+ int beast = null; 
 }
-}*/
+
+int compute(int a, int b){
+ int c = a*b+a;
+ int b = 0;
+ string goo = "";
+ return c;
+}
+
+struct demon {
+ int life;
+ bool evil;
+ char type;
+
+}

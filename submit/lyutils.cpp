@@ -70,6 +70,8 @@ int yylval_token (int symbol) {
    yylval = new_astree (symbol, included_filenames.size() - 1,
                         scan_linenr, offset, yytext);
    print_tok(tok_file, yylval, (char*)get_yytname(symbol) );
+   //printf("symbol: , yytext: %s\n", (char*)get_yytname (symbol) );
+   //assign_attr(yylval);
    return symbol;
 }
 

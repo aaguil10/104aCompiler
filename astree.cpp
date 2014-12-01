@@ -5,7 +5,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-                                                                                                        
+
+#include<string>                                                                                           
 #include "astree.h"
 #include "stringset.h"
 #include "lyutils.h"
@@ -91,6 +92,12 @@ astree* adoptsym (astree* root, int symbol) {
 void assign_attr(astree* node){
    char* tok = (char*)get_yytname (node->symbol);
    char* keyword = (char*)node->lexinfo->c_str();
+
+   /*switch (node->symbol) {
+     case TOK_INT:  .... break;
+     case ...
+   */
+
    //printf("Found: %s\n", tok);
    if(strcmp(tok,(char*)"TOK_DECLID") == 0 |
       strcmp(tok,(char*)"TOK_FIELD") == 0 ){
@@ -116,7 +123,12 @@ void assign_attr(astree* node){
    }
    if(strcmp(tok,(char*)"TOK_KW_STRUCT") == 0){
       node->attr[ATTR_struct] = 1; 
-      //astree* tmp = find_sym(node, (char*)"TOK_TYPEID");
+      astree* tmp = find_sym(node, (char*)"TOK_TYPEID");
+      printf("****%s****\n", (char*)tmp->lexinfo->c_str());
+      symbol* curr = new_symbol (tmp->filenr, tmp->linenr,
+                              tmp->offset, 5);
+      std::string someString(tmp->lexinfo->c_str());
+      make_struct(&someString, curr);
    }
    if(strcmp(tok,(char*)"TOK_KW_NULL") == 0){
       node->attr[ATTR_null] = 1;

@@ -45,7 +45,6 @@ clean :
 	rm *.str
 	rm *.tok
 	rm *.ast
-	rm *.sym
 
 test : oc
 	#./oc -ly -@ Set_debugflags -D OCLIB_OH oc-programs/03-test3.oc 

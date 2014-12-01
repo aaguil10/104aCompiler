@@ -3,7 +3,8 @@
 #include "symboltable.h"
 
 extern FILE* sym_file;
-//int next_block;
+symbol_table typenames_table;
+extern int next_block;
 
 symbol* new_symbol (size_t filenr, size_t linenr,
                     size_t offset, size_t block_nr){
@@ -13,10 +14,12 @@ symbol* new_symbol (size_t filenr, size_t linenr,
    mySym->filenr = filenr;
    mySym->linenr = linenr;
    mySym->offset = offset;
-   mySym->block_nr = next_block;
+   mySym->block_nr = block_nr;
    mySym->parameters = NULL;
    //fprintf(sym_file, "Made new symbol: attr(%p) b(%p)\n", mySym->attr, mySym->fields); 
    return mySym;
 }
 
-
+void make_struct(string* key, symbol* obj){
+   typenames_table[key] = obj;
+}

@@ -1,20 +1,19 @@
-// $Id: oclib.oh,v 1.29 2014-11-12 16:35:41-08 - - $
+// $Id: oclib.oh,v 1.30 2014-11-21 16:46:15-08 - - $
 
 #ifndef __OCLIB_OH__
 #define __OCLIB_OH__
 
 #ifdef __OCLIB_C__
-typedef unsigned char ubyte;
 void* xcalloc (int nelem, int size);
-void __putb (ubyte __b);
-void __putc (ubyte __c);
+void __putb (char __b);
+void __putc (char __c);
 void __puti (int __i);
-void __puts (ubyte* __s);
+void __puts (char* __s);
 void __endl (void);
 int __getc (void);
-ubyte* __getw (void);
-ubyte* __getln (void);
-ubyte** __getargv (void);
+char* __getw (void);
+char* __getln (void);
+char** __getargv (void);
 void __exit (int status);
 
 #else

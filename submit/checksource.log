@@ -1,11 +1,13 @@
 checksource: improper character \x09 = ^I (tab)
-   file "parser.y": 17 errors: lines 113, 135, 137--137, 157, 161--167, 
-        170--172, 200, 212
+   file "parser.y": 16 errors: lines 118, 140, 142--142, 162, 166--172, 
+        175--177, 217
    file "scanner.l": 1 errors: line 43
 checksource: line length > 72 characters
-   file "astree.cpp": 1 errors: line 122
-   file "parser.y": 68 errors: lines 79--82, 85, 89--90, 93, 95, 
-        102--104, 108, 113, 116--119, 122--123, 127, 138, 142--143, 146, 
-        150--151, 153--154, 157--158, 161--179, 182, 188--189, 192--193, 
-        195--197, 200--202, 205, 211--213, 216--218
-checksource: TOTAL COMPLAINTS: 87
+   file "astree.cpp": 4 errors: lines 9, 148--149, 236
+   file "parser.y": 58 errors: lines 97--98, 113, 118, 121--124, 
+        127--128, 132, 143, 147--148, 151, 155--156, 158--159, 162--163, 
+        166--184, 187, 193--194, 197--198, 200--202, 205--207, 210, 
+        216--218, 221--223
+   file "symboltable.cpp": 1 errors: line 19
+   file "symboltable.h": 1 errors: line 39
+checksource: TOTAL COMPLAINTS: 81

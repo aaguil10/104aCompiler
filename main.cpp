@@ -16,7 +16,7 @@ using namespace std;
 #include "lyutils.h"
 #include "symboltable.h"
 
-//symbol_table typenames_table;
+//extern symbol_table typenames_table;
 
 bool debug = false;
 void  db(string m){ if(debug){ cerr << m << endl;} };
@@ -26,8 +26,9 @@ string yyin_cpp_command;
 extern FILE* yyin;
 FILE* tok_file;
 FILE* sym_file;
+
 vector<symbol_table*> symbol_stack;
-extern int next_block;
+//extern int next_block;
 
 bool want_echo () {
    return not (isatty (fileno (stdin)) and isatty (fileno (stdout)));
@@ -118,10 +119,13 @@ int main (int argc, char **argv) {
    char* filename = argv[argc - 1];
    tok_file = make_tok_file(filename, 1);
    sym_file = make_sym_file(filename);
-   int next_block = 1;
+   //int next_block = 1;
    yy_flex_debug = 0;
    yydebug = 0;
-   //symbol_table typename_table;
+
+   symbol_table ident_table;
+   symbol_table typenames_table;
+
    while ((c = getopt (argc, argv, "ly@:D:")) != -1){
       switch (c){
          case 'l':
@@ -158,7 +162,7 @@ int main (int argc, char **argv) {
    FILE* str_name = make_str_file(filename);
    dump_stringset (str_name);
 
-   traverseAST(yyparse_astree,0);
+   //traverseAST(yyparse_astree,0);
 
    FILE* ast_name = make_ast_file(filename);
    dump_astree (ast_name, yyparse_astree);

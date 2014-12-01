@@ -5,8 +5,6 @@
 #include <stdio.h>
 #include <string.h>
 
-//#include "astree.h"
-
 #include <string>
 #include <vector>
 #include<bitset>
@@ -25,6 +23,7 @@ using symbol_table = unordered_map<string*,symbol*>;
 using symbol_entry = pair<string*,symbol*>;
 
 extern FILE* sym_file;
+extern symbol_table typenames_table;
 
 struct symbol {
    attr_bitset attr;
@@ -37,7 +36,6 @@ struct symbol {
 };
 
 symbol* new_symbol (size_t filenr, size_t linenr, size_t offset, size_t block_nr);
-//void assign_attr(char* tok);
-
+void make_struct(string* key, symbol* obj);
 
 #endif

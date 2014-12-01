@@ -1,22 +1,11 @@
 
-bool win = true;
-int five = 5;
-char coolchar = 't';
-
-void none(){
- int beast = null; 
+struct node {
+   string data;
+   node link;
 }
 
-int compute(int a, int b){
- int c = a*b+a;
- int b = 0;
- string goo = "";
- return c;
-}
-
-struct demon {
- int life;
- bool evil;
- char type;
-
+struct stack {
+   string[] data;
+   int size;
+   int top;
 }

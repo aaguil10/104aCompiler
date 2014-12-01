@@ -92,9 +92,10 @@ mfielddecl: mfielddecl fielddecl ';'         {free_ast($3);
         |                                    {$$=new_parseroot("");}
         ;
 
-fielddecl: basetype TOK_KW_IDENT             {adoptsym($1, TOK_FIELD);
+fielddecl: basetype TOK_KW_IDENT             {adoptsym($2, TOK_FIELD);
                                               $$ = adopt1($1, $2);}
-        | basetype TOK_NEWARRAY TOK_FIELD    {$$ = adopt2($1, $2, $3);}
+        | basetype TOK_NEWARRAY TOK_KW_IDENT    { adoptsym($3, TOK_FIELD);
+                                                  $$ = adopt2($1, $2, $3);}
         ;
 
 basetype: TOK_KW_VOID | TOK_KW_BOOL | TOK_KW_INT 
@@ -117,9 +118,9 @@ param   : '(' funcargs ')'                   {free_ast($3);
 function: identdecl param block	                { $$ = function1($1, $2, $3); }
         ;
 
-identdecl: basetype TOK_KW_IDENT                { adoptsym ($1, TOK_DECLID);
+identdecl: basetype TOK_KW_IDENT                { adoptsym ($2, TOK_DECLID);
                                                   $$ = adopt1 ($1, $2); }
-        | basetype TOK_sNEWARRAY TOK_KW_IDENT   { adoptsym ($1, TOK_DECLID);
+        | basetype TOK_sNEWARRAY TOK_KW_IDENT   { adoptsym ($3, TOK_DECLID);
                                                   $$ = adopt2 ($1, $2, $3); }
         ;
 

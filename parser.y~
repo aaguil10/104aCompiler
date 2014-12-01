@@ -108,8 +108,8 @@ funcargs: funcargs ',' identdecl             {free_ast($2);
         |                                    {$$ = new_parseroot("");}
         ;
 
-param   : '(' funcargs ')'                      {free_ast($3);
-                                                 adoptsym ($1, TOK_PARAMLIST);
+param   : '(' funcargs ')'                   {free_ast($3);
+                                              adoptsym($1,TOK_PARAMLIST);
                                                  $$ = adopt1($1, $2);
                                                  delmiddle($1, 0);}
         ;
@@ -117,9 +117,9 @@ param   : '(' funcargs ')'                      {free_ast($3);
 function: identdecl param block	                { $$ = function1($1, $2, $3); }
         ;
 
-identdecl: basetype TOK_KW_IDENT                { adoptsym ($1, TOK_DECLID);
+identdecl: basetype TOK_KW_IDENT                { adoptsym ($2, TOK_DECLID);
                                                   $$ = adopt1 ($1, $2); }
-        | basetype TOK_sNEWARRAY TOK_KW_IDENT   { adoptsym ($1, TOK_DECLID);
+        | basetype TOK_sNEWARRAY TOK_KW_IDENT   { adoptsym ($3, TOK_DECLID);
                                                   $$ = adopt2 ($1, $2, $3); }
         ;
 
