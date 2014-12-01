@@ -3,8 +3,7 @@
 #define __SYMBOLTABLE_H__
 
 #include <stdio.h>
-
-//#include "astree.h"
+#include <string.h>
 
 #include <string>
 #include <vector>
@@ -21,6 +20,7 @@ using attr_bitset = bitset<ATTR_bitset_size>;
 
 struct symbol;
 using symbol_table = unordered_map<string*,symbol*>;
+using symbol_entry = pair<string*,symbol*>;
 
 extern FILE* sym_file;
 
@@ -34,8 +34,7 @@ struct symbol {
    vector <symbol*>* parameters;
 };
 
-symbol* new_symbol (int _a, int _b);
-
+symbol* new_symbol (size_t filenr, size_t linenr, size_t offset, size_t block_nr);
 
 
 #endif

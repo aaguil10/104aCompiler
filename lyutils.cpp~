@@ -71,7 +71,7 @@ int yylval_token (int symbol) {
                         scan_linenr, offset, yytext);
    print_tok(tok_file, yylval, (char*)get_yytname(symbol) );
    //printf("symbol: , yytext: %s\n", (char*)get_yytname (symbol) );
-   //assign_attr(yylval);
+   assign_attr(yylval);
    return symbol;
 }
 
