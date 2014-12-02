@@ -24,6 +24,7 @@ using symbol_entry = pair<string*,symbol*>;
 
 extern FILE* sym_file;
 extern symbol_table typenames_table;
+extern int next_block;
 
 struct symbol {
    attr_bitset attr;
@@ -37,5 +38,6 @@ struct symbol {
 
 symbol* new_symbol (size_t filenr, size_t linenr, size_t offset, size_t block_nr);
 void make_struct(string* key, symbol* obj);
-
+//void set_declid();
+//void set_kw_int();
 #endif

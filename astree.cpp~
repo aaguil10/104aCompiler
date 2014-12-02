@@ -35,7 +35,7 @@ astree* adopt1 (astree* root, astree* child) {
    DEBUGF ('a', "%p (%s) adopting %p (%s)\n",
            root, root->lexinfo->c_str(),
            child, child->lexinfo->c_str());
-   char* tok = (char*)get_yytname (child->symbol);
+   //char* tok = (char*)get_yytname (child->symbol);
    /*if(strcmp(tok,(char*)"TOK_KW_IDENT") == 0){
       make_symboltable(root, child);
    }*/
@@ -89,9 +89,15 @@ astree* adoptsym (astree* root, int symbol) {
    return root;
 }
 
-void assign_attr(astree* node){
+/*void assign_attr(astree* node){
    char* tok = (char*)get_yytname (node->symbol);
    char* keyword = (char*)node->lexinfo->c_str();
+
+   switch (node->symbol) {
+     case TOK_INT:  .... break;
+     case ...
+   
+
    //printf("Found: %s\n", tok);
    if(strcmp(tok,(char*)"TOK_DECLID") == 0 |
       strcmp(tok,(char*)"TOK_FIELD") == 0 ){
@@ -128,13 +134,55 @@ void assign_attr(astree* node){
       node->attr[ATTR_null] = 1;
       node->attr[ATTR_const] = 1;
    }
+}*/
+void set_declid(astree* node);
+void set_field(astree* node);
+void set_kw_void(astree* node);
+void set_kw_bool(astree* node);
+void set_kw_char(astree* node);
+void set_kw_int(astree* node);
+void set_kw_null(astree* node);
+void set_kw_string(astree* node);
+void set_kw_struct(astree* node);
+
+void assign_attr(astree* node){
+   //printf("Ahhhhh");
+   switch (node->symbol){
+      case TOK_DECLID:
+         set_declid(node);
+         break;
+      case TOK_FIELD:
+         set_field(node);
+         break;
+      case TOK_KW_VOID:
+         set_kw_void(node);
+         break;
+      case TOK_KW_BOOL:
+         set_kw_bool(node);
+         break;
+      case TOK_KW_CHAR:
+         set_kw_char(node);
+         break;
+      case TOK_KW_INT:
+         set_kw_int(node);
+         break;
+      case TOK_KW_NULL:
+         set_kw_null(node);
+         break;
+      case TOK_KW_STRING:
+         set_kw_string(node);
+         break;
+      case TOK_KW_STRUCT:
+         set_kw_struct(node);
+         break;
+   }
 }
 
-void make_symboltable(astree* p, astree* c){
+/*void make_symboltable(astree* p, astree* c){
    //printf("Making bacon...\n");
    symbol* curr = new_symbol (c->filenr, c->linenr,
                               c->offset, 5);
-}
+}*/
 
 static void dump_node (FILE* outfile, astree* node) {
    char* tname = (char*)get_yytname (node->symbol);
@@ -236,5 +284,53 @@ astree* find_sym(astree* root, char* symbol){
    }
 }
 
-RCSC("$Id: astree.cc,v 1.14 2013-10-10 18:48:18-07 - - $")
+//*******************set fuctions in switch stament**********************
+void set_declid(astree* node){
+   //printf("seting declid\n");
+}
+
+void set_field(astree* node){
+   //printf("seting field\n");
+}
+
+void set_kw_void(astree* node){
+   node->attr[ATTR_void] = 1;
+}
+
+void set_kw_bool(astree* node){
+   node->attr[ATTR_bool] = 1;
+   node->attr[ATTR_const] = 1;
+}
+
+void set_kw_char(astree* node){
+   node->attr[ATTR_char] = 1;
+   node->attr[ATTR_const] = 1;
+}
+
+void set_kw_int(astree* node){
+   node->attr[ATTR_int] = 1;
+   node->attr[ATTR_const] = 1;
+}
+
+void set_kw_null(astree* node){
+   node->attr[ATTR_null] = 1;
+   node->attr[ATTR_const] = 1;
+}
+
+void set_kw_string(astree* node){
+   node->attr[ATTR_string] = 1;
+   node->attr[ATTR_const] = 1;
+}
+
+void set_kw_struct(astree* node){
+   node->attr[ATTR_struct] = 1; 
+   /*astree* tmp = find_sym(node, (char*)"TOK_TYPEID");
+   printf("****%s****\n", (char*)tmp->lexinfo->c_str());
+   symbol* curr = new_symbol (tmp->filenr, tmp->linenr,
+                              tmp->offset, 5);
+   std::string someString(tmp->lexinfo->c_str());
+   make_struct(&someString, curr);*/
+}
+
+
 

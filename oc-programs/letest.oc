@@ -1,3 +1,7 @@
+int foo = 5; 
+int[] bar =  6;
+
+
 struct node { 
    int foo; 
    node link; 

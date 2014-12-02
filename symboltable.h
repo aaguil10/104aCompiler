@@ -36,7 +36,8 @@ struct symbol {
    vector <symbol*>* parameters;
 };
 
-symbol* new_symbol (size_t filenr, size_t linenr, size_t offset, size_t block_nr);
+symbol* new_symbol (size_t filenr, size_t linenr, size_t offset);
 void make_struct(string* key, symbol* obj);
-
+//void set_declid();
+//void set_kw_int();
 #endif

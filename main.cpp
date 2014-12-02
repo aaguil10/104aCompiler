@@ -162,7 +162,7 @@ int main (int argc, char **argv) {
    FILE* str_name = make_str_file(filename);
    dump_stringset (str_name);
 
-   //traverseAST(yyparse_astree,0);
+   traverseAST(yyparse_astree,0);
 
    FILE* ast_name = make_ast_file(filename);
    dump_astree (ast_name, yyparse_astree);

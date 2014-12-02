@@ -7,7 +7,7 @@ symbol_table typenames_table;
 int next_block;
 
 symbol* new_symbol (size_t filenr, size_t linenr,
-                    size_t offset, size_t block_nr){
+                    size_t offset){
    symbol* mySym = new symbol();
    mySym->attr = 0;
    mySym->fields = 0;
@@ -23,3 +23,5 @@ symbol* new_symbol (size_t filenr, size_t linenr,
 void make_struct(string* key, symbol* obj){
    typenames_table[key] = obj;
 }
+
+

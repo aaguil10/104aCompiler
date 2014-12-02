@@ -4,7 +4,7 @@
 
 extern FILE* sym_file;
 symbol_table typenames_table;
-extern int next_block;
+int next_block;
 
 symbol* new_symbol (size_t filenr, size_t linenr,
                     size_t offset, size_t block_nr){
@@ -14,7 +14,7 @@ symbol* new_symbol (size_t filenr, size_t linenr,
    mySym->filenr = filenr;
    mySym->linenr = linenr;
    mySym->offset = offset;
-   mySym->block_nr = block_nr;
+   mySym->block_nr = next_block;
    mySym->parameters = NULL;
    //fprintf(sym_file, "Made new symbol: attr(%p) b(%p)\n", mySym->attr, mySym->fields); 
    return mySym;
@@ -23,3 +23,5 @@ symbol* new_symbol (size_t filenr, size_t linenr,
 void make_struct(string* key, symbol* obj){
    typenames_table[key] = obj;
 }
+
+
