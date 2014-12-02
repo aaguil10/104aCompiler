@@ -1,9 +1,9 @@
-int foo; 
-int[] bar =  6;
+int foo = 6; 
+int[] bar = 3;
 
 
 struct node { 
-   int foo; 
+   int[] foo; 
    node link; 
 }
 

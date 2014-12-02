@@ -1,17 +1,18 @@
 ROOT "" (0.0.0) {0} 
-   VARDECL "=" (3.1.8) {0} 
-      KW_INT "int" (3.1.0) {0} int const 
-         DECLID "foo" (3.1.4) {0} 
-      INTCON "5" (3.1.10) {0} 
-   VARDECL "=" (3.2.10) {0} 
-      KW_INT "int" (3.2.0) {0} int const 
-         sNEWARRAY "[]" (3.2.3) {0} 
-         DECLID "bar" (3.2.6) {0} 
-      INTCON "6" (3.2.12) {0} 
+   VARDECL "=" (3.1.11) {0} 
+      KW_STRING "string" (3.1.0) {0} string const 
+         DECLID "foo" (3.1.7) {0} string 
+      STRINGCON ""6"" (3.1.13) {0} 
+   VARDECL "=" (3.2.13) {0} 
+      KW_STRING "string" (3.2.0) {0} string const 
+         sNEWARRAY "[]" (3.2.6) {0} 
+         DECLID "bar" (3.2.9) {0} string array 
+      STRINGCON ""3"" (3.2.15) {0} 
    KW_STRUCT "struct" (3.5.0) {0} struct 
       KW_IDENT "node" (3.5.7) {0} 
       KW_INT "int" (3.6.3) {0} int const 
-         FIELD "foo" (3.6.7) {0} 
+         sNEWARRAY "[]" (3.6.6) {0} 
+         FIELD "foo" (3.6.9) {0} int array 
       TYPEID "node" (3.7.3) {0} 
          FIELD "link" (3.7.8) {0} 
    ROOT "TOK_FUNCTION" (0.0.0) {0} 
@@ -21,15 +22,15 @@ ROOT "" (0.0.0) {0}
          TYPEID "node" (3.10.11) {0} 
             DECLID "head" (3.10.16) {0} 
          KW_INT "int" (3.10.22) {0} int const 
-            DECLID "length" (3.10.26) {0} 
+            DECLID "length" (3.10.26) {0} int 
       BLOCK "{" (3.10.34) {0} 
          VARDECL "=" (3.11.9) {0} 
             KW_INT "int" (3.11.3) {0} int const 
-               DECLID "a" (3.11.7) {0} 
+               DECLID "a" (3.11.7) {0} int 
             INTCON "0" (3.11.11) {0} 
          VARDECL "=" (3.12.12) {0} 
             KW_STRING "string" (3.12.3) {0} string const 
-               DECLID "b" (3.12.10) {0} 
+               DECLID "b" (3.12.10) {0} string 
             STRINGCON """" (3.12.14) {0} 
          VARDECL "=" (3.13.10) {0} 
             TYPEID "node" (3.13.3) {0} 
@@ -43,7 +44,7 @@ ROOT "" (0.0.0) {0}
             BLOCK "{" (3.14.14) {0} 
                VARDECL "=" (3.15.12) {0} 
                   KW_INT "int" (3.15.6) {0} int const 
-                     DECLID "d" (3.15.10) {0} 
+                     DECLID "d" (3.15.10) {0} int 
                   INTCON "8" (3.15.14) {0} 
                '=' "=" (3.16.8) {0} 
                   KW_IDENT "a" (3.16.6) {0} 
@@ -56,7 +57,7 @@ ROOT "" (0.0.0) {0}
             BLOCK "{" (3.18.8) {0} 
                VARDECL "=" (3.19.15) {0} 
                   KW_STRING "string" (3.19.6) {0} string const 
-                     DECLID "e" (3.19.13) {0} 
+                     DECLID "e" (3.19.13) {0} string 
                   STRINGCON """" (3.19.17) {0} 
                IFELSE "if" (3.20.6) {0} 
                   EQUALS "==" (3.20.12) {0} 
@@ -65,12 +66,12 @@ ROOT "" (0.0.0) {0}
                   BLOCK "{" (3.20.18) {0} 
                      VARDECL "=" (3.21.15) {0} 
                         KW_INT "int" (3.21.9) {0} int const 
-                           DECLID "f" (3.21.13) {0} 
+                           DECLID "f" (3.21.13) {0} int 
                         INTCON "8" (3.21.17) {0} 
                   BLOCK "{" (3.22.11) {0} 
                      VARDECL "=" (3.23.14) {0} 
                         KW_INT "int" (3.23.8) {0} int const 
-                           DECLID "g" (3.23.12) {0} 
+                           DECLID "g" (3.23.12) {0} int 
                         INTCON "9" (3.23.16) {0} 
    VARDECL "=" (3.27.7) {0} 
       TYPEID "node" (3.27.0) {0} 
