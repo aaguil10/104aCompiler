@@ -10,6 +10,7 @@ using namespace std;
 #include <string.h>
 #include <unistd.h>
 
+#include <string>
 #include "stringset.h"
 #include "auxlib.h"
 #include "astree.h"
@@ -166,7 +167,14 @@ int main (int argc, char **argv) {
 
    FILE* ast_name = make_ast_file(filename);
    dump_astree (ast_name, yyparse_astree);
+   string s = "ident";
 
+
+  symbol_table global;
+  string* keyA = new string("Key A");
+  symbol* a = new_symbol(0,0,0,NULL,NULL);
+  global[keyA] = a;
+   print_table(s, ident_table);
    free_ast (yyparse_astree);
 
    return get_exitstatus();

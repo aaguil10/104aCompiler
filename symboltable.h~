@@ -9,6 +9,7 @@
 #include <vector>
 #include<bitset>
 #include <unordered_map>
+#include <iostream>
 using namespace std;
 
 enum { ATTR_void, ATTR_bool, ATTR_char, ATTR_int, ATTR_null,
@@ -24,6 +25,7 @@ using symbol_entry = pair<string*,symbol*>;
 
 extern FILE* sym_file;
 extern symbol_table typenames_table;
+extern symbol_table ident_table;
 extern int next_block;
 
 struct symbol {
@@ -36,8 +38,15 @@ struct symbol {
    vector <symbol*>* parameters;
 };
 
-symbol* new_symbol (size_t filenr, size_t linenr, size_t offset, size_t block_nr);
-void make_struct(string* key, symbol* obj);
+symbol* new_symbol (size_t filenr, size_t linenr, size_t offset,
+ attr_bitset a, symbol_table* f);
+void insert_struct(string* key, symbol* obj);
+void insert_ident(string* key, symbol* obj);
+// lookup();
 //void set_declid();
 //void set_kw_int();
+
+
+void print_table(symbol_table mymap);
+
 #endif
