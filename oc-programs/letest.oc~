@@ -1,4 +1,14 @@
-string foo = null;
 
 
+function rise(){
+   int a = 5 + 5;
+   char goo = 'g';
+   string yo = "yo-yo";
+   bool evil = true;
+}
+
+struct node {
+  int val = 0;
+  node link = null;
+}
 

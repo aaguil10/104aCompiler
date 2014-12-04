@@ -26,11 +26,12 @@ void insert_struct(string* key, symbol* obj){
 }
 
 void insert_ident(string* key, symbol* obj){
-   printf("OHHHHH\n");
-   //ident_table[key] = obj;
+   if(obj == NULL){ 
+      fprintf(stderr,"ERROR: obj == NULL on insert_ident()");
+   }
    symbol_entry e = {key, obj};
    ident_table.insert(e);
-   std::cout << "mymap.size() is " << ident_table.size() << std::endl;
+   //std::cout << "mymap.size() is " << ident_table.size() << std::endl;
 }
 
 void print_table(string s, symbol_table mymap){

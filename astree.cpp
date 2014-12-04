@@ -135,8 +135,7 @@ astree* adoptsym (astree* root, int symbol) {
       node->attr[ATTR_const] = 1;
    }
 }*/
-void set_declid(astree* node);
-void set_field(astree* node);
+
 void set_kw_void(astree* node);
 void set_kw_bool(astree* node);
 void set_kw_char(astree* node);
@@ -149,6 +148,8 @@ void set_charcon(astree* node);
 void set_intcon(astree* node);
 void set_kw_false(astree* node);
 void set_kw_true(astree* node);
+void set_typeid(astree* node);
+
 void set_plus_minus(astree* node);
 void set_arith(astree* node);
 void set_lookup(astree* node);
@@ -156,12 +157,6 @@ void set_lookup(astree* node);
 void assign_attr(astree* node){
    //printf("Ahhhhh");
    switch (node->symbol){
-      case TOK_DECLID:
-         set_declid(node);
-         break;
-      case TOK_FIELD:
-         set_field(node);
-         break;
       case TOK_KW_IDENT:
          set_lookup(node);
       case TOK_KW_VOID:
@@ -199,6 +194,9 @@ void assign_attr(astree* node){
          break;
       case TOK_KW_TRUE:
          set_kw_true(node);
+         break;
+      case TOK_TYPEID:
+         set_typeid(node);
          break;
       case '+':
       case '-':
@@ -320,35 +318,16 @@ astree* find_sym(astree* root, char* symbol){
 }
 
 //*******************set fuctions in switch stament**********************
-string* return_type(astree* node){
-   if(node->attr[ATTR_void]){
-      std::string someString("void"); 
-      return &someString; 
-   }
-   //if(node->attr[ATTR_bool]){ return "bool"; }
-   //if(node->attr[ATTR_char]){ return "char"; }
-   if(node->attr[ATTR_int]){ 
-      std::string someString("int"); 
-      return &someString; 
-   }
-   //if(node->attr[ATTR_string]){ return "string"; }
-   printf("ERROR: type not found!");
-}
 
 void insert_symbol(astree* node){
   printf("inserting %s\n", node->lexinfo->c_str());
   symbol* curr = new_symbol(node->filenr,node->linenr,node->offset,
                             node->attr, node->fields);
-  string* key = return_type(node);
-  insert_ident(key, curr);
-}
+  string* key = new string(node->lexinfo->c_str());
 
-void set_declid(astree* node){
-   //printf("seting declid\n");
-}
-
-void set_field(astree* node){
-   //printf("seting field\n");
+   std::cout << "mymap.size() is " << ident_table.size() << std::endl;
+   insert_ident(key,curr);
+	
 }
 
 void set_lookup(astree* node){
@@ -365,44 +344,52 @@ void set_kw_void(astree* node){
 
 void set_kw_bool(astree* node){
    node->attr[ATTR_bool] = 1;
-   node->attr[ATTR_const] = 1;
+   astree* tmp = NULL;
    if(node->children.size() == 1){
-      astree* tmp = node->children[0];
+      tmp = node->children[0];
       tmp->attr[ATTR_bool] = 1;
+      tmp->attr[ATTR_variable] = 1;
    }else if(node->children.size() == 2){
-      astree* tmp = node->children[1];
+      tmp = node->children[1];
       tmp->attr[ATTR_bool] = 1;
       tmp->attr[ATTR_array] = 1;
+      tmp->attr[ATTR_variable] = 1;
    }else{
      fprintf(stderr,"ERROR:on astree.cpp function:set_kw_bool(astree* node)");
    }
+   insert_symbol(tmp);
 }
 
 void set_kw_char(astree* node){
    node->attr[ATTR_char] = 1;
-   //node->attr[ATTR_const] = 1;
+   astree* tmp = NULL;
    if(node->children.size() == 1){
-      astree* tmp = node->children[0];
+      tmp = node->children[0];
       tmp->attr[ATTR_char] = 1;
+      tmp->attr[ATTR_variable] = 1;
    }else if(node->children.size() == 2){
-      astree* tmp = node->children[1];
+      tmp = node->children[1];
       tmp->attr[ATTR_char] = 1;
       tmp->attr[ATTR_array] = 1;
+      tmp->attr[ATTR_variable] = 1;
    }else{
      fprintf(stderr,"ERROR: on astree.cpp function:set_kw_char(astree* node)");
    }
+   insert_symbol(tmp);
 }
 
 void set_kw_int(astree* node){
    node->attr[ATTR_int] = 1;
-   astree* tmp;
+   astree* tmp = NULL;
    if(node->children.size() == 1){
       tmp = node->children[0];
       tmp->attr[ATTR_int] = 1;
+      tmp->attr[ATTR_variable] = 1;
    }else if(node->children.size() == 2){
       tmp = node->children[1];
       tmp->attr[ATTR_int] = 1;
       tmp->attr[ATTR_array] = 1;
+      tmp->attr[ATTR_variable] = 1;
    }else{
      fprintf(stderr,"ERROR: on astree.cpp function:set_kw_int(astree* node)");
      return;
@@ -417,27 +404,33 @@ void set_kw_null(astree* node){
 
 void set_kw_string(astree* node){
    node->attr[ATTR_string] = 1;
-   //node->attr[ATTR_const] = 1;
+   astree* tmp = NULL;
    if(node->children.size() == 1){
-      astree* tmp = node->children[0];
+      tmp = node->children[0];
       tmp->attr[ATTR_string] = 1;
+      tmp->attr[ATTR_variable] = 1;
    }else if(node->children.size() == 2){
-      astree* tmp = node->children[1];
+      tmp = node->children[1];
       tmp->attr[ATTR_string] = 1;
       tmp->attr[ATTR_array] = 1;
+      tmp->attr[ATTR_variable] = 1;
    }else{
      fprintf(stderr,"ERROR: on astree.cpp function:set_kw_string(astree* node)");
    }
+   insert_symbol(tmp);
 }
 
 void set_kw_struct(astree* node){
-   node->attr[ATTR_struct] = 1; 
-   /*astree* tmp = find_sym(node, (char*)"TOK_TYPEID");
-   printf("****%s****\n", (char*)tmp->lexinfo->c_str());
-   symbol* curr = new_symbol (tmp->filenr, tmp->linenr,
-                              tmp->offset, 5);
-   std::string someString(tmp->lexinfo->c_str());
-   make_struct(&someString, curr);*/
+   /*node->attr[ATTR_struct] = 1; 
+   astree* tmp = NULL;
+   if(node->children.size() == 1){
+      tmp = node->children[0];
+      tmp->attr[ATTR_struct] = 1;
+      //tmp->attr[ATTR_variable] = 1;
+   }else{
+     fprintf(stderr,"ERROR: on astree.cpp function:set_kw_string(astree* node)");
+   }
+   insert_symbol(tmp);*/
 }
 
 void set_stringcon(astree* node){
@@ -461,6 +454,18 @@ void set_kw_false(astree* node){
 void set_kw_true(astree* node){
    node->attr[ATTR_bool] = 1;
    node->attr[ATTR_const] = 1;
+}
+
+void set_typeid(astree* node){
+   node->attr[ATTR_function] = 1;
+   astree* tmp = NULL;
+   if(node->children.size() == 1){
+      tmp = node->children[0];
+      tmp->attr[ATTR_function] = 1;
+   }else{
+     fprintf(stderr,"ERROR: on astree.cpp function:set_typeid(astree* node)");
+   }
+   insert_symbol(tmp);
 }
 
 void set_plus_minus(astree* node){

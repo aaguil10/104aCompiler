@@ -27,6 +27,8 @@ string yyin_cpp_command;
 extern FILE* yyin;
 FILE* tok_file;
 FILE* sym_file;
+   //symbol_table ident_table;
+   //symbol_table typenames_table;
 
 vector<symbol_table*> symbol_stack;
 //extern int next_block;
@@ -124,8 +126,8 @@ int main (int argc, char **argv) {
    yy_flex_debug = 0;
    yydebug = 0;
 
-   symbol_table ident_table;
-   symbol_table typenames_table;
+   //symbol_table ident_table;
+   //symbol_table typenames_table;
 
    while ((c = getopt (argc, argv, "ly@:D:")) != -1){
       switch (c){
@@ -171,10 +173,11 @@ int main (int argc, char **argv) {
 
 
   symbol_table global;
-  string* keyA = new string("Key A");
-  symbol* a = new_symbol(0,0,0,NULL,NULL);
-  global[keyA] = a;
+  //string* keyA = new string("Key A");
+  //symbol* a = new_symbol(0,0,0,NULL,NULL);
+  //ident_table[keyA] = a;
    print_table(s, ident_table);
+std::cout << "mymap.size() is " << ident_table.size() << std::endl;
    free_ast (yyparse_astree);
 
    return get_exitstatus();

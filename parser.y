@@ -94,13 +94,13 @@ mfielddecl: mfielddecl fielddecl ';'         {free_ast($3);
 
 fielddecl: basetype TOK_KW_IDENT             {adoptsym($2, TOK_FIELD);
                                               $$ = adopt1($1, $2);}
-        | basetype TOK_sNEWARRAY TOK_KW_IDENT    { adoptsym($3, TOK_FIELD);
-                                                  $$ = adopt2($1, $2, $3);}
+        | basetype TOK_sNEWARRAY TOK_KW_IDENT{ adoptsym($3, TOK_FIELD);
+                                               $$ = adopt2($1, $2, $3);}
         ;
 
 basetype: TOK_KW_VOID | TOK_KW_BOOL | TOK_KW_INT 
         | TOK_KW_CHAR | TOK_KW_STRING 
-	| TOK_KW_IDENT                          { $$ = adoptsym ($1, TOK_TYPEID);}
+        | TOK_KW_IDENT                     {$$=adoptsym($1,TOK_TYPEID);}
         ;
 
 funcargs: funcargs ',' identdecl             {free_ast($2); 
@@ -111,120 +111,131 @@ funcargs: funcargs ',' identdecl             {free_ast($2);
         ;
 
 param   : '(' funcargs ')'                   {free_ast($3);
-                                              adoptsym($1,TOK_PARAMLIST);
-                                                 $$ = adopt1($1, $2);
-                                                 delmiddle($1, 0);}
+                                             adoptsym($1,TOK_PARAMLIST);
+                                             $$ = adopt1($1, $2);
+                                             delmiddle($1, 0);}
         ;
 
-function: identdecl param block	                { $$ = function1($1, $2, $3); }
+function: identdecl param block              {$$=function1($1,$2,$3);}
         ;
 
-identdecl: basetype TOK_KW_IDENT                { adoptsym ($2, TOK_DECLID);
-                                                  $$ = adopt1 ($1, $2); }
-        | basetype TOK_sNEWARRAY TOK_KW_IDENT   { adoptsym ($3, TOK_DECLID);
-                                                  $$ = adopt2 ($1, $2, $3); }
+identdecl: basetype TOK_KW_IDENT             {adoptsym($2,TOK_DECLID);
+                                              $$ = adopt1 ($1, $2); }
+        | basetype TOK_sNEWARRAY TOK_KW_IDENT{adoptsym($3,TOK_DECLID);
+                                              $$ = adopt2($1,$2,$3);}
         ;
 
-blokargs: blokargs statement                    { $$ = adopt1 ($1, $2); }
-        |                                       { $$ = new_parseroot(""); }
+blokargs: blokargs statement                 {$$ = adopt1 ($1, $2);}
+        |                                    {$$ = new_parseroot("");}
         ;
 
-block   : '{' blokargs '}'                      { free_ast($3);
-                                                  adoptsym ($1, TOK_BLOCK);
-                                                  $$ = adopt1 ($1, $2); 
-                                                  delmiddle($1, 0);}
-        | ';'                                   { $$ = $1 }
+block   : '{' blokargs '}'                   {free_ast($3);
+                                              adoptsym($1,TOK_BLOCK);
+                                              $$ = adopt1 ($1, $2); 
+                                              delmiddle($1, 0);}
+        | ';'                                { $$ = $1 }
         ; 
 
-statement: block                                { $$ = $1 }
-        | vardecl                               { $$ = $1 }
-        | while	                                { $$ = $1 }
-        | ifelse                                { $$ = $1 }
-        | return                                { $$ = $1 }		 
-        | expr ';'                              { free_ast($2); $$ = $1 }
+statement: block                             { $$ = $1 }
+        | vardecl                            { $$ = $1 }
+        | while                              { $$ = $1 }
+        | ifelse                             { $$ = $1 }
+        | return                             { $$ = $1 }
+        | expr ';'                           {free_ast($2);
+                                              $$ = $1 }
         ;
 
-vardecl : identdecl '=' expr ';'               { free_ast($4);
-                                                 adoptsym ($2, TOK_VARDECL);
-                                                 $$ = adopt2 ($2, $1, $3); }
+vardecl : identdecl '=' expr ';'             {free_ast($4);
+                                              adoptsym($2,TOK_VARDECL);
+                                              $$ = adopt2($2,$1,$3);}
         ;
 
-while   : TOK_KW_WHILE '(' expr ')' statement  { free_ast2($2, $4); $$ = adopt2 ($1, $3, $5); }
+while   : TOK_KW_WHILE '(' expr ')' statement { free_ast2($2, $4); 
+                                                $$ = adopt2($1,$3,$5);}
         ;
 
-ifelse  : TOK_KW_IF '(' expr ')' statement     { free_ast2($2, $4); 
-                                                 $$ = adopt2 ($1, $3, $5); }
-        | TOK_KW_IF '(' expr ')' statement TOK_KW_ELSE statement { free_ast2($2, $4);
-                                                 free_ast($6);
-                                                 adoptsym ($1, TOK_IFELSE); 
-                                                 $$ = adopt3 ($1, $3, $5, $7); }
+ifelse  : TOK_KW_IF '(' expr ')' statement    {free_ast2($2, $4); 
+                                               $$ = adopt2($1,$3,$5);}
+        | TOK_KW_IF '(' expr ')' statement TOK_KW_ELSE statement { 
+                                               free_ast2($2, $4);
+                                               free_ast($6);
+                                               adoptsym($1,TOK_IFELSE); 
+                                               $$=adopt3($1,$3,$5,$7);}
         ;
 
-return  : TOK_KW_RETURN	';'                     { free_ast($2); $$ = $1 }
-        | TOK_KW_RETURN expr ';'                { free_ast($3); $$ = adopt1 ($1, $2); }
+return  : TOK_KW_RETURN ';'                    {free_ast($2); 
+                                                $$ = $1 }
+        | TOK_KW_RETURN expr ';'               {free_ast($3);
+                                                $$ = adopt1($1,$2);}
         ;
 
-expr    : expr '+' expr	                        { $$ = adopt2 ($2, $1, $3); }
-        | expr '-' expr	                        { $$ = adopt2 ($2, $1, $3); }
-        | expr '*' expr	                        { $$ = adopt2 ($2, $1, $3); }
-        | expr '/' expr	                        { $$ = adopt2 ($2, $1, $3); }
-        | expr '%' expr	                        { $$ = adopt2 ($2, $1, $3); }
-        | expr '=' expr	                        { $$ = adopt2 ($2, $1, $3); }
-        | expr TOK_EQUALS expr	                { $$ = adopt2 ($2, $1, $3); }
-        | expr TOK_NEQUAL expr                  { $$ = adopt2 ($2, $1, $3); }
-        | expr '<' expr                         { $$ = adopt2 ($2, $1, $3); }
-        | expr TOK_GREAEQU expr	                { $$ = adopt2 ($2, $1, $3); }
-        | expr '>' expr	                        { $$ = adopt2 ($2, $1, $3); }
-        | expr TOK_LESSEQU expr	                { $$ = adopt2 ($2, $1, $3); }
-        | '+'  expr                             { adoptsym ($1, TOK_POS); 
-                                                  $$ = adopt1 ($1, $2); }
-        | '-' expr                              { adoptsym ($1, TOK_NEG);
-                                                  $$ = adopt1 ($1, $2); }
-        | '!' expr                              { $$ = adopt1 ($1, $2); }
-        | TOK_KW_ORD expr                       { $$ = adopt1 ($1, $2); }
-        | TOK_KW_CHR expr                       { $$ = adopt1 ($1, $2); }
-        | allocator                             { $$ = $1 }
-        | call                                  { $$ = $1 }
-        | '(' expr ')'                          { free_ast2($1, $3); $$ = $2 }
-        | variable                              { $$ = $1 }
-        | constant                              { $$ = $1 }
+expr    : expr '+' expr                        {$$ = adopt2($2,$1,$3);}
+        | expr '-' expr                        {$$ = adopt2($2,$1,$3);}
+        | expr '*' expr                        {$$ = adopt2($2,$1,$3);}
+        | expr '/' expr                        {$$ = adopt2($2,$1,$3);}
+        | expr '%' expr                        {$$ = adopt2($2,$1,$3);}
+        | expr '=' expr                        {$$ = adopt2($2,$1,$3);}
+        | expr TOK_EQUALS expr                 {$$ = adopt2($2,$1,$3);}
+        | expr TOK_NEQUAL expr                 {$$ = adopt2($2,$1,$3);}
+        | expr '<' expr                        {$$ = adopt2($2,$1,$3);}
+        | expr TOK_GREAEQU expr                {$$ = adopt2($2,$1,$3);}
+        | expr '>' expr                        {$$ = adopt2($2,$1,$3);}
+        | expr TOK_LESSEQU expr                {$$ = adopt2($2,$1,$3);}
+        | '+'  expr                            {adoptsym($1,TOK_POS); 
+                                                $$ = adopt1 ($1, $2); }
+        | '-' expr                             {adoptsym($1,TOK_NEG);
+                                                $$ = adopt1($1, $2); }
+        | '!' expr                             {$$ = adopt1 ($1, $2); }
+        | TOK_KW_ORD expr                      {$$ = adopt1 ($1, $2); }
+        | TOK_KW_CHR expr                      {$$ = adopt1 ($1, $2); }
+        | allocator                            {$$ = $1 }
+        | call                                 {$$ = $1 }
+        | '(' expr ')'                         {free_ast2($1,$3);
+                                                $$ = $2 }
+        | variable                             {$$ = $1 }
+        | constant                             {$$ = $1 }
         ;
 
-allocator: TOK_KW_NEW TOK_KW_IDENT '(' ')'      { free_ast2($3, $4);
-                                                  adoptsym ($2, TOK_TYPEID); 
-                                                  $$ = adopt1 ($1, $2); }
-         | TOK_KW_NEW TOK_KW_STRING '(' expr ')'{ free_ast2($3, $5);
-                                                  free_ast($2);
-                                                  adoptsym ($1, TOK_NEWSTRING);
-                                                  $$ = adopt1 ($1, $4); }
-         | TOK_KW_NEW basetype '[' expr ']'      { free_ast2 ($3, $5);
-                                                   adoptsym ($1, TOK_NEWARRAY);
-                                                   adoptsym ($2, TOK_TYPEID);
-                                                   $$ = adopt2 ($1, $2, $4); }
+allocator: TOK_KW_NEW TOK_KW_IDENT '(' ')'     {free_ast2($3, $4);
+                                               adoptsym($2,TOK_TYPEID); 
+                                               $$ = adopt1 ($1, $2); }
+         | TOK_KW_NEW TOK_KW_STRING '(' expr ')'{
+                                               free_ast2($3, $5);
+                                               free_ast($2);
+                                           adoptsym($1,TOK_NEWSTRING);
+                                               $$ = adopt1 ($1, $4); }
+         | TOK_KW_NEW basetype '[' expr ']'    {free_ast2 ($3, $5);
+                                            adoptsym($1,TOK_NEWARRAY);
+                                            adoptsym ($2, TOK_TYPEID);
+                                               $$ = adopt2($1,$2,$4);}
          ;
 
-args    : args ',' expr                          { free_ast($2); $$ = adopt1 ($1, $3); }
-        | expr                                   { $$ = adopt1 (new_parseroot(""), $1);}
-        |                                        { $$ = new_parseroot(""); }
+args    : args ',' expr                        {free_ast($2); 
+                                                $$ = adopt1($1,$3);}
+        | expr                     {$$=adopt1(new_parseroot(""), $1);}
+        |                                      {$$=new_parseroot("");}
         ;
 
-call    : TOK_KW_IDENT '(' args ')'              { $$ = call1($1,$2,$3,$4); 
-                                                   delRoots ($2); }
+call    : TOK_KW_IDENT '(' args ')'            {$$=call1($1,$2,$3,$4); 
+                                                delRoots ($2); }
         ;
 
-variable: TOK_KW_IDENT                          { $$ = $1 }
-        | expr '[' expr ']'                     { free_ast2($2, $4); 
-                                                  $$ = adopt1 ($1, $3); }
-        | expr '.' TOK_KW_IDENT	                { adoptsym ($3, TOK_FIELD);
-                                                  $$ = adopt2 ($2, $3, $1); }
+variable: TOK_KW_IDENT                         {$$ = $1 }
+        | expr '[' expr ']'                    {free_ast2($2, $4); 
+                                                $$ = adopt1($1,$3);}
+        | expr '.' TOK_KW_IDENT                {adoptsym($3,TOK_FIELD);
+                                                $$ = adopt2($2,$3,$1);}
         ;
 
-constant: TOK_LIT_INT                           { adoptsym ($1, TOK_INTCON); $$ = $1; }
-        | TOK_LIT_CHAR                          { adoptsym ($1, TOK_CHARCON); $$ = $1; }
-        | TOK_LIT_STRING                        { adoptsym ($1, TOK_STRINGCON); $$ = $1; }
-        | TOK_KW_FALSE                          { $$ = $1; }
-        | TOK_KW_TRUE                           { $$ = $1; }
-        | TOK_KW_NULL                           { $$ = $1; }
+constant: TOK_LIT_INT                         {adoptsym($1,TOK_INTCON);
+                                                 $$ = $1; }
+        | TOK_LIT_CHAR                       {adoptsym($1,TOK_CHARCON);
+                                                 $$ = $1; }
+        | TOK_LIT_STRING                   {adoptsym($1,TOK_STRINGCON);
+                                                 $$ = $1; }
+        | TOK_KW_FALSE                         { $$ = $1; }
+        | TOK_KW_TRUE                          { $$ = $1; }
+        | TOK_KW_NULL                          { $$ = $1; }
         ;
 
 %%

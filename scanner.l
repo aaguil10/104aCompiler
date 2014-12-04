@@ -40,7 +40,7 @@ TOK_KW_ORD      ord
 TOK_KW_CHR      chr
 TOK_KW_NEW      new
 TOK_LIT_CHAR    ('([^\\'\n]|\\[\\'"0nt])')
-NOTCHAR 	'([^\\'\n]|\\[\\'"0nt])
+NOTCHAR         '([^\\'\n]|\\[\\'"0nt])
 TOK_LIT_STRING  (\"([^\\"\n]|\\[\\'"0nt])*\")
 MANTISSA        ({DIGIT}+\.?{DIGIT}*|\.{DIGIT}+)
 EXPONENT        ([Ee][+-]?{DIGIT}+)
