@@ -24,8 +24,8 @@ using symbol_table = unordered_map<string*,symbol*>;
 using symbol_entry = pair<string*,symbol*>;
 
 extern FILE* sym_file;
-//extern symbol_table typenames_table;
-//extern symbol_table ident_table;
+extern symbol_table typenames_table;
+extern symbol_table ident_table;
 extern int next_block;
 
 struct symbol {

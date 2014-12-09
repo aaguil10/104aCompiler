@@ -17,8 +17,6 @@ using namespace std;
 #include "lyutils.h"
 #include "symboltable.h"
 
-//extern symbol_table typenames_table;
-
 bool debug = false;
 void  db(string m){ if(debug){ cerr << m << endl;} };
 const string CPP = "/usr/bin/cpp";
@@ -27,8 +25,6 @@ string yyin_cpp_command;
 extern FILE* yyin;
 FILE* tok_file;
 FILE* sym_file;
-   //symbol_table ident_table;
-   //symbol_table typenames_table;
 
 vector<symbol_table*> symbol_stack;
 //extern int next_block;
@@ -126,9 +122,6 @@ int main (int argc, char **argv) {
    yy_flex_debug = 0;
    yydebug = 0;
 
-   //symbol_table ident_table;
-   //symbol_table typenames_table;
-
    while ((c = getopt (argc, argv, "ly@:D:")) != -1){
       switch (c){
          case 'l':
@@ -169,14 +162,14 @@ int main (int argc, char **argv) {
 
    FILE* ast_name = make_ast_file(filename);
    dump_astree (ast_name, yyparse_astree);
-   string s = "ident";
+   string s = "typenames_table";
 
 
   symbol_table global;
   //string* keyA = new string("Key A");
   //symbol* a = new_symbol(0,0,0,NULL,NULL);
   //ident_table[keyA] = a;
-   print_table(s, ident_table);
+   print_table(s, typenames_table);
 std::cout << "mymap.size() is " << ident_table.size() << std::endl;
    free_ast (yyparse_astree);
 

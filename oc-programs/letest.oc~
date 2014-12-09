@@ -8,7 +8,7 @@ function rise(){
 }
 
 struct node {
-  int val = 0;
-  node link = null;
+  int val;
+  node link;
 }
 

@@ -42,6 +42,7 @@ symbol* new_symbol (size_t filenr, size_t linenr, size_t offset,
  attr_bitset a, symbol_table* f);
 void insert_struct(string* key, symbol* obj);
 void insert_ident(string* key, symbol* obj);
+void insert_field(symbol* stru, string* key, symbol* obj);
 // lookup();
 //void set_declid();
 //void set_kw_int();

@@ -22,7 +22,11 @@ symbol* new_symbol (size_t filenr, size_t linenr, size_t offset,
 }
 
 void insert_struct(string* key, symbol* obj){
-   //typenames_table[key] = obj;
+   if(obj == NULL){ 
+      fprintf(stderr,"ERROR: obj == NULL on insert_struct()");
+   }
+   symbol_entry e = {key, obj};
+   typenames_table.insert(e);
 }
 
 void insert_ident(string* key, symbol* obj){
@@ -31,7 +35,19 @@ void insert_ident(string* key, symbol* obj){
    }
    symbol_entry e = {key, obj};
    ident_table.insert(e);
-   //std::cout << "mymap.size() is " << ident_table.size() << std::endl;
+}
+
+void insert_field(symbol* stru, string* key, symbol* obj){
+   if(obj == NULL || stru == NULL){ 
+      fprintf(stderr,"ERROR: obj == NULL on insert_field()");
+   }
+   symbol_entry e = {key, obj};
+   if(stru->fields == NULL){
+      //printf("Stru: %p\n",stru->fields);
+      stru->fields = new symbol_table;
+   }
+   (*((stru)->fields)).insert(e);
+   //std::cout << "*****field_table.size() is " << (*(stru->fields)).size() << std::endl;
 }
 
 void print_table(string s, symbol_table mymap){

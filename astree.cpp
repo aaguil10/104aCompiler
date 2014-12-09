@@ -319,15 +319,20 @@ astree* find_sym(astree* root, char* symbol){
 
 //*******************set fuctions in switch stament**********************
 
-void insert_symbol(astree* node){
-  printf("inserting %s\n", node->lexinfo->c_str());
+symbol* insert_symbol(astree* node){
+  //printf("inserting %s\n", node->lexinfo->c_str());
   symbol* curr = new_symbol(node->filenr,node->linenr,node->offset,
                             node->attr, node->fields);
   string* key = new string(node->lexinfo->c_str());
 
-   std::cout << "mymap.size() is " << ident_table.size() << std::endl;
-   insert_ident(key,curr);
-	
+  if(node->attr[ATTR_variable] || node->attr[ATTR_function]){
+     insert_ident(key,curr);
+  }
+
+  if(node->attr[ATTR_struct]){
+     insert_struct(key,curr);
+     return curr;
+  }
 }
 
 void set_lookup(astree* node){
@@ -421,16 +426,20 @@ void set_kw_string(astree* node){
 }
 
 void set_kw_struct(astree* node){
-   /*node->attr[ATTR_struct] = 1; 
-   astree* tmp = NULL;
-   if(node->children.size() == 1){
-      tmp = node->children[0];
-      tmp->attr[ATTR_struct] = 1;
-      //tmp->attr[ATTR_variable] = 1;
-   }else{
-     fprintf(stderr,"ERROR: on astree.cpp function:set_kw_string(astree* node)");
+   node->attr[ATTR_struct] = 1; 
+   astree* tmp = node->children[0];
+   tmp->attr[ATTR_struct] = 1;
+   tmp->attr[ATTR_void] = 0;
+   symbol* curr = insert_symbol(tmp);
+   for(int i = 1; i < node->children.size(); i++){
+      astree* tmp = node->children[i]->children[0];
+      tmp->attr[ATTR_variable] = 0;
+      tmp->attr[ATTR_field] = 1;
+      symbol* tmp_sym = new_symbol(tmp->filenr,tmp->linenr,tmp->offset,
+                                   tmp->attr, tmp->fields);
+      string* tmp_key = new string(tmp->lexinfo->c_str());
+      insert_field(curr, tmp_key, tmp_sym);
    }
-   insert_symbol(tmp);*/
 }
 
 void set_stringcon(astree* node){

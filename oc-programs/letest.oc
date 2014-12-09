@@ -12,3 +12,8 @@ struct node {
   node link;
 }
 
+
+struct julio {
+  int val;
+  node link;
+}
