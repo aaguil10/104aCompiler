@@ -2,39 +2,48 @@ ROOT "" (0.0.0) {0}
    KW_STRUCT "struct" (3.1.0) {0} struct 
       KW_IDENT "node" (3.1.7) {0} struct typeid 
       KW_INT "int" (3.2.2) {0} int 
-         FIELD "val" (3.2.6) {0} int field 
-      TYPEID "node" (3.3.2) {0} 
-         FIELD "link" (3.3.7) {0} field 
-   KW_STRUCT "struct" (3.7.0) {0} struct 
-      KW_IDENT "julio" (3.7.7) {0} struct typeid 
-      KW_INT "int" (3.8.2) {0} int 
-         FIELD "val" (3.8.6) {0} int field 
-      TYPEID "node" (3.9.2) {0} 
-         FIELD "link" (3.9.7) {0} field 
+         FIELD "val" (3.2.6) {0} int field lval 
+      TYPEID "node" (3.3.2) {0} typeid 
+         FIELD "link" (3.3.7) {0} field lval 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      TYPEID "function" (3.6.0) {0} 
+         DECLID "rise" (3.6.9) {0} 
+      PARAMLIST "(" (3.6.13) {0} 
+         KW_INT "int" (3.6.14) {0} int 
+            DECLID "x" (3.6.18) {0} int variable param lval 
+         KW_CHAR "char" (3.6.21) {0} char 
+            DECLID "y" (3.6.26) {0} char variable param lval 
+      ';' ";" (3.6.28) {0} 
+   KW_STRUCT "struct" (3.8.0) {0} struct 
+      KW_IDENT "julio" (3.8.7) {0} struct typeid 
+      KW_INT "int" (3.9.2) {0} int 
+         FIELD "val" (3.9.6) {0} int field lval 
+      TYPEID "node" (3.10.2) {0} typeid 
+         FIELD "link" (3.10.7) {0} field lval 
    ROOT "TOK_FUNCTION" (0.0.0) {0} function 
-      TYPEID "function" (3.12.0) {0} 
-         DECLID "rise" (3.12.9) {0} function 
-      PARAMLIST "(" (3.12.13) {0} 
-         KW_INT "int" (3.12.14) {0} int 
-            DECLID "x" (3.12.18) {0} int variable param 
-         KW_CHAR "char" (3.12.21) {0} char 
-            DECLID "y" (3.12.26) {0} char variable param 
-      BLOCK "{" (3.12.28) {0} 
-         VARDECL "=" (3.13.9) {0} 
-            KW_INT "int" (3.13.3) {0} int 
-               DECLID "a" (3.13.7) {0} int variable 
-            '+' "+" (3.13.13) {0} 
-               INTCON "5" (3.13.11) {0} int const 
-               INTCON "5" (3.13.15) {0} int const 
-         VARDECL "=" (3.14.12) {0} 
-            KW_CHAR "char" (3.14.3) {0} char 
-               DECLID "goo" (3.14.8) {0} char variable 
-            CHARCON "'g'" (3.14.14) {0} char const 
-         VARDECL "=" (3.15.13) {0} 
-            KW_STRING "string" (3.15.3) {0} string 
-               DECLID "yo" (3.15.10) {0} string variable 
-            STRINGCON ""yo-yo"" (3.15.15) {0} string const 
+      TYPEID "function" (3.13.0) {0} 
+         DECLID "rise" (3.13.9) {0} function 
+      PARAMLIST "(" (3.13.13) {0} 
+         KW_INT "int" (3.13.14) {0} int 
+            DECLID "x" (3.13.18) {0} int variable param lval 
+         KW_CHAR "char" (3.13.21) {0} char 
+            DECLID "y" (3.13.26) {0} char variable param lval 
+      BLOCK "{" (3.13.28) {0} 
+         VARDECL "=" (3.14.9) {0} 
+            KW_INT "int" (3.14.3) {0} int 
+               DECLID "a" (3.14.7) {0} int variable lval 
+            '+' "+" (3.14.13) {0} 
+               INTCON "5" (3.14.11) {0} int const 
+               INTCON "5" (3.14.15) {0} int const 
+         VARDECL "=" (3.15.12) {0} 
+            KW_CHAR "char" (3.15.3) {0} char 
+               DECLID "goo" (3.15.8) {0} char variable lval 
+            CHARCON "'g'" (3.15.14) {0} char const 
          VARDECL "=" (3.16.13) {0} 
-            KW_BOOL "bool" (3.16.3) {0} bool 
-               DECLID "evil" (3.16.8) {0} bool variable 
-            KW_TRUE "true" (3.16.15) {0} bool const 
+            KW_STRING "string" (3.16.3) {0} string 
+               DECLID "yo" (3.16.10) {0} string variable lval 
+            STRINGCON ""yo-yo"" (3.16.15) {0} string const 
+         VARDECL "=" (3.17.14) {0} 
+            TYPEID "julio" (3.17.3) {0} typeid 
+               DECLID "evil" (3.17.9) {0} variable lval 
+            INTCON "5" (3.17.16) {0} int const 

@@ -362,11 +362,13 @@ void set_kw_bool(astree* node){
       tmp = node->children[0];
       tmp->attr[ATTR_bool] = 1;
       tmp->attr[ATTR_variable] = 1;
+      tmp->attr[ATTR_lval] = 1;
    }else if(node->children.size() == 2){
       tmp = node->children[1];
       tmp->attr[ATTR_bool] = 1;
       tmp->attr[ATTR_array] = 1;
       tmp->attr[ATTR_variable] = 1;
+      tmp->attr[ATTR_lval] = 1;
    }else{
      fprintf(stderr,"ERROR:on astree.cpp function:set_kw_bool(astree* node)");
    }
@@ -380,11 +382,13 @@ void set_kw_char(astree* node){
       tmp = node->children[0];
       tmp->attr[ATTR_char] = 1;
       tmp->attr[ATTR_variable] = 1;
+      tmp->attr[ATTR_lval] = 1;
    }else if(node->children.size() == 2){
       tmp = node->children[1];
       tmp->attr[ATTR_char] = 1;
       tmp->attr[ATTR_array] = 1;
       tmp->attr[ATTR_variable] = 1;
+      tmp->attr[ATTR_lval] = 1;
    }else{
      fprintf(stderr,"ERROR: on astree.cpp function:set_kw_char(astree* node)");
    }
@@ -398,11 +402,13 @@ void set_kw_int(astree* node){
       tmp = node->children[0];
       tmp->attr[ATTR_int] = 1;
       tmp->attr[ATTR_variable] = 1;
+      tmp->attr[ATTR_lval] = 1;
    }else if(node->children.size() == 2){
       tmp = node->children[1];
       tmp->attr[ATTR_int] = 1;
       tmp->attr[ATTR_array] = 1;
       tmp->attr[ATTR_variable] = 1;
+      tmp->attr[ATTR_lval] = 1;
    }else{
      fprintf(stderr,"ERROR: on astree.cpp function:set_kw_int(astree* node)");
      return;
@@ -422,11 +428,13 @@ void set_kw_string(astree* node){
       tmp = node->children[0];
       tmp->attr[ATTR_string] = 1;
       tmp->attr[ATTR_variable] = 1;
+      tmp->attr[ATTR_lval] = 1;
    }else if(node->children.size() == 2){
       tmp = node->children[1];
       tmp->attr[ATTR_string] = 1;
       tmp->attr[ATTR_array] = 1;
       tmp->attr[ATTR_variable] = 1;
+      tmp->attr[ATTR_lval] = 1;
    }else{
      fprintf(stderr,"ERROR: on astree.cpp function:set_kw_string(astree* node)");
    }
@@ -485,6 +493,24 @@ void set_function(astree* node){
 }
 
 void set_typeid(astree* node){
+   if( strcmp((char*)node->lexinfo->c_str(),"function") == 0 ){
+      return;
+   }
+   astree* tmp = NULL;
+   node->attr[ATTR_typeid] = 1;
+   if(node->children.size() == 1){
+      tmp = node->children[0];
+      tmp->attr[ATTR_variable] = 1;
+      tmp->attr[ATTR_lval] = 1;
+   }else if(node->children.size() == 2){
+      tmp = node->children[1];
+      tmp->attr[ATTR_array] = 1;
+      tmp->attr[ATTR_variable] = 1;
+      tmp->attr[ATTR_lval] = 1;
+   }else{
+     fprintf(stderr,"ERROR: on astree.cpp function:set_typeid(astree* node)");
+   }
+   insert_symbol(tmp);
 }
 
 void set_paramlist(astree* node){ 

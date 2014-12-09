@@ -3,6 +3,7 @@ struct node {
   node link;
 }
 
+function rise(int x, char y);
 
 struct julio {
   int val;
@@ -13,6 +14,6 @@ function rise(int x, char y){
    int a = 5 + 5;
    char goo = 'g';
    string yo = "yo-yo";
-   bool evil = true;
+   julio evil = 5;
 }
 
