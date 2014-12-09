@@ -148,7 +148,9 @@ void set_charcon(astree* node);
 void set_intcon(astree* node);
 void set_kw_false(astree* node);
 void set_kw_true(astree* node);
+void set_function(astree* node);
 void set_typeid(astree* node);
+void set_paramlist(astree* node);
 
 void set_plus_minus(astree* node);
 void set_arith(astree* node);
@@ -195,8 +197,14 @@ void assign_attr(astree* node){
       case TOK_KW_TRUE:
          set_kw_true(node);
          break;
+      case TOK_ROOT:
+         set_function(node);
+         break;
       case TOK_TYPEID:
          set_typeid(node);
+         break;
+      case TOK_PARAMLIST:
+         set_paramlist(node);
          break;
       case '+':
       case '-':
@@ -320,7 +328,7 @@ astree* find_sym(astree* root, char* symbol){
 //*******************set fuctions in switch stament**********************
 
 symbol* insert_symbol(astree* node){
-  printf("inserting %s\n", node->lexinfo->c_str());
+  //printf("inserting %s\n", node->lexinfo->c_str());
   symbol* curr = new_symbol(node->filenr,node->linenr,node->offset,
                             node->attr, node->fields);
   string* key = new string(node->lexinfo->c_str());
@@ -330,19 +338,9 @@ symbol* insert_symbol(astree* node){
   }
 
   if(node->attr[ATTR_struct]){
-     /*printf("Le Size: %d\n", node->children.size());
-     for(int i = 1; i < node->children.size(); i++){
-        astree* tmp = node->children[i]->children[0];
-        symbol* tmp_sym = new_symbol(tmp->filenr,tmp->linenr,tmp->offset,
-                                     tmp->attr, tmp->fields);
-        string* tmp_key = new string(tmp->lexinfo->c_str());
-        insert_field(curr, tmp_key, tmp_sym);
-        printf("=]\n");
-     }*/
-     //std::cout << "field_table.size() is " << (*(curr->fields)).size() << std::endl;
      insert_struct(key,curr);
      return curr;
-   }
+  }
 }
 
 void set_lookup(astree* node){
@@ -440,6 +438,7 @@ void set_kw_struct(astree* node){
    astree* tmp = node->children[0];
    tmp->attr[ATTR_struct] = 1;
    tmp->attr[ATTR_void] = 0;
+   tmp->attr[ATTR_typeid] = 1;
    symbol* curr = insert_symbol(tmp);
    for(int i = 1; i < node->children.size(); i++){
       astree* tmp = node->children[i]->children[0];
@@ -449,7 +448,6 @@ void set_kw_struct(astree* node){
                                    tmp->attr, tmp->fields);
       string* tmp_key = new string(tmp->lexinfo->c_str());
       insert_field(curr, tmp_key, tmp_sym);
-      printf("=]\n");
    }
 }
 
@@ -476,7 +474,26 @@ void set_kw_true(astree* node){
    node->attr[ATTR_const] = 1;
 }
 
+void set_function(astree* node){
+   printf("***** Func: %s\n", (char*)node->lexinfo->c_str() );
+   if( strcmp((char*)node->lexinfo->c_str(),"TOK_FUNCTION") ){
+      return;
+   }
+   node->attr[ATTR_function] = 1;
+   astree* tmp = node->children[0]->children[0];
+   //if(node->children.size() == 1){
+      //tmp = node->children[0];
+      tmp->attr[ATTR_function] = 1;
+   //}else{
+   //  fprintf(stderr,"ERROR: on astree.cpp function:set_typeid(astree* node)");
+   //}
+   insert_symbol(tmp);
+}
+
 void set_typeid(astree* node){
+   /*if(is_in_table((string*)node->lexinfo->c_str(), typenames_table)){
+      return;
+   } 
    node->attr[ATTR_function] = 1;
    astree* tmp = NULL;
    if(node->children.size() == 1){
@@ -485,7 +502,16 @@ void set_typeid(astree* node){
    }else{
      fprintf(stderr,"ERROR: on astree.cpp function:set_typeid(astree* node)");
    }
-   insert_symbol(tmp);
+   insert_symbol(tmp);*/
+}
+
+void set_paramlist(astree* node){ 
+   //astree* tmp = node->children[0];
+   //symbol* curr = insert_symbol(tmp);
+   for(int i = 0; i < node->children.size(); i++){
+      astree* tmp = node->children[i]->children[0];
+      tmp->attr[ATTR_param] = 1; 
+   }
 }
 
 void set_plus_minus(astree* node){

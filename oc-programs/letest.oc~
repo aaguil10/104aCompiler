@@ -1,6 +1,6 @@
 
 
-function rise(){
+function rise(int x, char y){
    int a = 5 + 5;
    char goo = 'g';
    string yo = "yo-yo";
@@ -12,3 +12,8 @@ struct node {
   node link;
 }
 
+
+struct julio {
+  int val;
+  node link;
+}

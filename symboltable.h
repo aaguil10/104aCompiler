@@ -47,7 +47,7 @@ void insert_field(symbol* stru, string* key, symbol* obj);
 //void set_declid();
 //void set_kw_int();
 
-
+int is_in_table(string* key, symbol_table mymap);
 void print_table(string s, symbol_table mymap);
 
 #endif

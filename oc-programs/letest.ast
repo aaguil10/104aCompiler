@@ -1,36 +1,40 @@
 ROOT "" (0.0.0) {0} 
-   ROOT "TOK_FUNCTION" (0.0.0) {0} 
-      TYPEID "function" (3.3.0) {0} function 
-         DECLID "rise" (3.3.9) {0} function 
-      PARAMLIST "(" (3.3.13) {0} 
-      BLOCK "{" (3.3.15) {0} 
-         VARDECL "=" (3.4.9) {0} 
-            KW_INT "int" (3.4.3) {0} int 
-               DECLID "a" (3.4.7) {0} int variable 
-            '+' "+" (3.4.13) {0} 
-               INTCON "5" (3.4.11) {0} int const 
-               INTCON "5" (3.4.15) {0} int const 
-         VARDECL "=" (3.5.12) {0} 
-            KW_CHAR "char" (3.5.3) {0} char 
-               DECLID "goo" (3.5.8) {0} char variable 
-            CHARCON "'g'" (3.5.14) {0} char const 
-         VARDECL "=" (3.6.13) {0} 
-            KW_STRING "string" (3.6.3) {0} string 
-               DECLID "yo" (3.6.10) {0} string variable 
-            STRINGCON ""yo-yo"" (3.6.15) {0} string const 
-         VARDECL "=" (3.7.13) {0} 
-            KW_BOOL "bool" (3.7.3) {0} bool 
-               DECLID "evil" (3.7.8) {0} bool variable 
-            KW_TRUE "true" (3.7.15) {0} bool const 
-   KW_STRUCT "struct" (3.10.0) {0} struct 
-      KW_IDENT "node" (3.10.7) {0} struct 
-      KW_INT "int" (3.11.2) {0} int 
-         FIELD "val" (3.11.6) {0} int field 
-      TYPEID "node" (3.12.2) {0} function 
-         FIELD "link" (3.12.7) {0} function field 
-   KW_STRUCT "struct" (3.16.0) {0} struct 
-      KW_IDENT "julio" (3.16.7) {0} struct 
-      KW_INT "int" (3.17.2) {0} int 
-         FIELD "val" (3.17.6) {0} int field 
-      TYPEID "node" (3.18.2) {0} function 
-         FIELD "link" (3.18.7) {0} function field 
+   KW_STRUCT "struct" (3.1.0) {0} struct 
+      KW_IDENT "node" (3.1.7) {0} struct typeid 
+      KW_INT "int" (3.2.2) {0} int 
+         FIELD "val" (3.2.6) {0} int field 
+      TYPEID "node" (3.3.2) {0} 
+         FIELD "link" (3.3.7) {0} field 
+   KW_STRUCT "struct" (3.7.0) {0} struct 
+      KW_IDENT "julio" (3.7.7) {0} struct typeid 
+      KW_INT "int" (3.8.2) {0} int 
+         FIELD "val" (3.8.6) {0} int field 
+      TYPEID "node" (3.9.2) {0} 
+         FIELD "link" (3.9.7) {0} field 
+   ROOT "TOK_FUNCTION" (0.0.0) {0} function 
+      TYPEID "function" (3.12.0) {0} 
+         DECLID "rise" (3.12.9) {0} function 
+      PARAMLIST "(" (3.12.13) {0} 
+         KW_INT "int" (3.12.14) {0} int 
+            DECLID "x" (3.12.18) {0} int variable param 
+         KW_CHAR "char" (3.12.21) {0} char 
+            DECLID "y" (3.12.26) {0} char variable param 
+      BLOCK "{" (3.12.28) {0} 
+         VARDECL "=" (3.13.9) {0} 
+            KW_INT "int" (3.13.3) {0} int 
+               DECLID "a" (3.13.7) {0} int variable 
+            '+' "+" (3.13.13) {0} 
+               INTCON "5" (3.13.11) {0} int const 
+               INTCON "5" (3.13.15) {0} int const 
+         VARDECL "=" (3.14.12) {0} 
+            KW_CHAR "char" (3.14.3) {0} char 
+               DECLID "goo" (3.14.8) {0} char variable 
+            CHARCON "'g'" (3.14.14) {0} char const 
+         VARDECL "=" (3.15.13) {0} 
+            KW_STRING "string" (3.15.3) {0} string 
+               DECLID "yo" (3.15.10) {0} string variable 
+            STRINGCON ""yo-yo"" (3.15.15) {0} string const 
+         VARDECL "=" (3.16.13) {0} 
+            KW_BOOL "bool" (3.16.3) {0} bool 
+               DECLID "evil" (3.16.8) {0} bool variable 
+            KW_TRUE "true" (3.16.15) {0} bool const 

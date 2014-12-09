@@ -50,6 +50,15 @@ void insert_field(symbol* stru, string* key, symbol* obj){
    //std::cout << "*****field_table.size() is " << (*(stru->fields)).size() << std::endl;
 }
 
+int is_in_table(string* key, symbol_table mymap){
+   if ( mymap.find(key) == mymap.end() ){
+      return 0;
+   }else{
+      //std::cout << got->first << " is " << got->second;
+      return 1;
+   }
+}
+
 void print_table(string s, symbol_table mymap){
   std::cout << s << " contains:";
   for ( auto it = mymap.begin(); it != mymap.end(); ++it )
