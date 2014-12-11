@@ -45,11 +45,7 @@ void insert_struct(string* key, symbol* obj);
 void insert_ident(string* key, symbol* obj);
 void insert_field(symbol* stru, string* key, symbol* obj);
 void add_symbol_stack();
-// lookup();
-//void set_declid();
-//void set_kw_int();
 
-int is_in_table(string* key, symbol_table mymap);
 symbol* get_symbol(string* key);
 void print_table(string s, symbol_table mymap);
 

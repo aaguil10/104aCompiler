@@ -9,14 +9,14 @@ vector<symbol_table*> symbol_stack;
 int next_block;
 
 symbol* new_symbol (size_t filenr, size_t linenr, size_t offset, 
-                    attr_bitset a, symbol_table* f){
+                    size_t block_nr, attr_bitset a, symbol_table* f){
    symbol* mySym = new symbol();
    mySym->attr = a;
    mySym->fields = f;
    mySym->filenr = filenr;
    mySym->linenr = linenr;
    mySym->offset = offset;
-   mySym->block_nr = next_block - 1;
+   mySym->block_nr = block_nr;
    mySym->parameters = NULL;
    //fprintf(sym_file, "Made new symbol: attr(%p) b(%p)\n", mySym->attr, mySym->fields); 
    return mySym;

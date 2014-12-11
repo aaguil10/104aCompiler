@@ -172,6 +172,7 @@ void assign_attr(astree* node){
 }
 
 void make_tables(astree* root){
+   printf("next_block: %d\n", next_block);
    switch (root->symbol){
       case TOK_BLOCK:
          next_block++;
@@ -254,13 +255,13 @@ void traverseAST(astree* root, int depth){
 
 void traverseASTForward(astree* root, int depth){
    char* tok = (char*)get_yytname (root->symbol);
-   printf("%s(%s)\n",tok,root->lexinfo->c_str());
+   //printf(">>>%s(%s)\n",tok,root->lexinfo->c_str());
    make_tables(root);
    for (size_t child = 0; child < root->children.size(); ++child) {
-      traverseAST(root->children[child], depth + 1);
+      traverseASTForward(root->children[child], depth + 1);
    }
    for(int i = 0; i < depth; i++){
-      printf("   ");
+      //printf("   ");
    }
 }
 
@@ -318,7 +319,7 @@ symbol* insert_symbol(astree* node){
   }
   //printf("inserting %s\n", node->lexinfo->c_str());
   symbol* curr = new_symbol(node->filenr,node->linenr,node->offset,
-                            node->attr, node->fields);
+                            node->block_nr, node->attr, node->fields);
   //string* key = new string(node->lexinfo->c_str());
   string* key = (string*)node->lexinfo;
 
@@ -440,7 +441,7 @@ void set_kw_struct(astree* node){
       tmp->attr[ATTR_variable] = 0;
       tmp->attr[ATTR_field] = 1;
       symbol* tmp_sym = new_symbol(tmp->filenr,tmp->linenr,tmp->offset,
-                                   tmp->attr, tmp->fields);
+                                   tmp->block_nr, tmp->attr, tmp->fields);
       string* tmp_key = new string(tmp->lexinfo->c_str());
       insert_field(curr, tmp_key, tmp_sym);
    }
@@ -510,15 +511,21 @@ void set_paramlist(astree* node){
 }
 
 void set_block(astree* node){
+   fprintf(stderr,"block_num: %d\n", next_block);
    if(node == NULL){ return; }
+   node->block_nr = next_block;
+   add_symbol_stack();
+   for (int child = 0; child < (int)node->children.size(); ++child) {
+      set_block(node->children[child]);
+   }
    //fprintf(stderr,"node->block_nr: %d\n", node->block_nr);
-   if((int)node->block_nr == 0){
+   /*if((int)node->block_nr == 0){
       node->block_nr = next_block;
       add_symbol_stack();
       for (int child = 0; child < (int)node->children.size(); ++child) {
          set_block(node->children[child]);
       }
-   }
+   }*/
 }
 
 

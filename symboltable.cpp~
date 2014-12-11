@@ -58,15 +58,6 @@ void add_symbol_stack(){
   //std::cout << "NextBlock: " << next_block << endl;
 }
 
-int is_in_table(string* key, symbol_table mymap){
-  /* if ( mymap.find(key) == mymap.end() ){
-      return 0;
-   }else{
-      std::cout << got->first << " is " << got->second;
-      return mymap.find(key);
-   }*/
-}
-
 symbol* get_symbol(string* key){
    auto curr = ident_table.find(key);
    if(curr != ident_table.end() ){

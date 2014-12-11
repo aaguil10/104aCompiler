@@ -158,19 +158,16 @@ int main (int argc, char **argv) {
    FILE* str_name = make_str_file(filename);
    dump_stringset (str_name);
 
+   traverseASTForward(yyparse_astree, 0);
    traverseAST(yyparse_astree,0);
 
    FILE* ast_name = make_ast_file(filename);
    dump_astree (ast_name, yyparse_astree);
+
    string s = "typenames_table";
-
-
-  symbol_table global;
-  //string* keyA = new string("Key A");
-  //symbol* a = new_symbol(0,0,0,NULL,NULL);
-  //ident_table[keyA] = a;
    print_table(s, ident_table);
-std::cout << "mymap.size() is " << ident_table.size() << std::endl;
+   std::cout << "mymap.size() is " << ident_table.size() << std::endl;
+
    free_ast (yyparse_astree);
 
    return get_exitstatus();
