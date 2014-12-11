@@ -54,8 +54,18 @@ void insert_field(symbol* stru, string* key, symbol* obj){
 
 void add_symbol_stack(){
   symbol_stack.push_back(NULL);
-  //next_block++;
-  //std::cout << "NextBlock: " << next_block << endl;
+}
+
+void pop_symbol_stack(){
+  symbol_stack.pop_back();
+}
+
+void insert_symbol_stack(symbol* node){
+  symbol_table* curr = symbol_stack[symbol_stack.size()];
+  if(curr == NULL){
+     symbol_table* tmp;
+  }
+
 }
 
 symbol* get_symbol(string* key){

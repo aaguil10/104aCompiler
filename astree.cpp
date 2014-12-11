@@ -106,12 +106,76 @@ void set_function(astree* node);
 void set_typeid(astree* node);
 void set_paramlist(astree* node);
 void set_block(astree* node);
+void set_lookup(astree* node);
 
 void assign_attr(astree* node){
-   //printf("Ahhhhh");
    switch (node->symbol){
       /*case TOK_KW_IDENT:
          set_lookup(node);*/
+      /*case TOK_KW_VOID:
+         set_kw_void(node);
+         break;
+      case TOK_KW_BOOL:
+         set_kw_bool(node);
+         break;
+      case TOK_KW_CHAR:
+         set_kw_char(node);
+         break;
+      case TOK_KW_INT:
+         set_kw_int(node);
+         break;
+      case TOK_KW_NULL:
+         set_kw_null(node);
+         break;
+      case TOK_KW_STRING:
+         set_kw_string(node);
+         break;
+      case TOK_KW_STRUCT:
+         set_kw_struct(node);
+         break;
+      case TOK_STRINGCON:
+         set_stringcon(node);
+         break;
+      case TOK_CHARCON:
+         set_charcon(node);
+         break;
+      case TOK_INTCON:
+         set_intcon(node);
+         break;
+      case TOK_KW_FALSE:
+         set_kw_false(node);
+         break;
+      case TOK_KW_TRUE:
+         set_kw_true(node);
+         break;
+      case TOK_ROOT:
+         set_function(node);
+         break;
+      case TOK_TYPEID:
+         set_typeid(node);
+         break;
+      case TOK_PARAMLIST:
+         set_paramlist(node);
+         break;
+      case TOK_BLOCK:
+         next_block++;
+         set_block(node);
+         break;*/
+      case '+':
+      case '-':
+         break;
+      case '*':
+      case '/':
+      case '%':
+         break;
+   }
+}
+
+void make_tables(astree* node){
+   //printf("next_block: %d\n", next_block);
+   switch (node->symbol){
+      case TOK_KW_IDENT:
+         set_lookup(node);
       case TOK_KW_VOID:
          set_kw_void(node);
          break;
@@ -157,26 +221,9 @@ void assign_attr(astree* node){
       case TOK_PARAMLIST:
          set_paramlist(node);
          break;
-      /*case TOK_BLOCK:
-         next_block++;
-         set_block(node);
-         break;*/
-      case '+':
-      case '-':
-         break;
-      case '*':
-      case '/':
-      case '%':
-         break;
-   }
-}
-
-void make_tables(astree* root){
-   printf("next_block: %d\n", next_block);
-   switch (root->symbol){
       case TOK_BLOCK:
          next_block++;
-         set_block(root);
+         set_block(node);
          break;
    }
 }
@@ -254,7 +301,7 @@ void traverseAST(astree* root, int depth){
 }
 
 void traverseASTForward(astree* root, int depth){
-   char* tok = (char*)get_yytname (root->symbol);
+   //char* tok = (char*)get_yytname (root->symbol);
    //printf(">>>%s(%s)\n",tok,root->lexinfo->c_str());
    make_tables(root);
    for (size_t child = 0; child < root->children.size(); ++child) {
@@ -510,22 +557,34 @@ void set_paramlist(astree* node){
    }
 }
 
+void set_block_rec(astree* node){
+   if(node == NULL){ return; }
+   if(node->symbol == TOK_BLOCK){
+      return;
+   }
+   node->block_nr = next_block;
+   if(node->symbol == TOK_KW_IDENT){
+      insert_symbol_stack();
+   }
+   for (int child = 0; child < (int)node->children.size(); ++child) {
+      set_block_rec(node->children[child]);
+   }
+}
+
 void set_block(astree* node){
-   fprintf(stderr,"block_num: %d\n", next_block);
    if(node == NULL){ return; }
    node->block_nr = next_block;
    add_symbol_stack();
    for (int child = 0; child < (int)node->children.size(); ++child) {
-      set_block(node->children[child]);
+      set_block_rec(node->children[child]);
    }
-   //fprintf(stderr,"node->block_nr: %d\n", node->block_nr);
-   /*if((int)node->block_nr == 0){
-      node->block_nr = next_block;
-      add_symbol_stack();
-      for (int child = 0; child < (int)node->children.size(); ++child) {
-         set_block(node->children[child]);
-      }
-   }*/
+   pop_symbol_stack();
 }
+
+void set_lookup(astree* node){
+
+
+}
+
 
 

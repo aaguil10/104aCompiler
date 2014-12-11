@@ -45,6 +45,8 @@ void insert_struct(string* key, symbol* obj);
 void insert_ident(string* key, symbol* obj);
 void insert_field(symbol* stru, string* key, symbol* obj);
 void add_symbol_stack();
+void pop_symbol_stack();
+void insert_symbol_stack();
 
 symbol* get_symbol(string* key);
 void print_table(string s, symbol_table mymap);
