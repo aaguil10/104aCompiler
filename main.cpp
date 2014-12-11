@@ -15,7 +15,7 @@ using namespace std;
 #include "auxlib.h"
 #include "astree.h"
 #include "lyutils.h"
-#include "symboltable.h"
+#include "symboltable.h"                                                                           
 
 bool debug = false;
 void  db(string m){ if(debug){ cerr << m << endl;} };
@@ -26,7 +26,7 @@ extern FILE* yyin;
 FILE* tok_file;
 FILE* sym_file;
 
-vector<symbol_table*> symbol_stack;
+//vector<symbol_table*> symbol_stack;
 //extern int next_block;
 
 bool want_echo () {
@@ -118,7 +118,7 @@ int main (int argc, char **argv) {
    char* filename = argv[argc - 1];
    tok_file = make_tok_file(filename, 1);
    sym_file = make_sym_file(filename);
-   //int next_block = 1;
+   int next_block = 1;
    yy_flex_debug = 0;
    yydebug = 0;
 
@@ -169,7 +169,7 @@ int main (int argc, char **argv) {
   //string* keyA = new string("Key A");
   //symbol* a = new_symbol(0,0,0,NULL,NULL);
   //ident_table[keyA] = a;
-   print_table(s, typenames_table);
+   print_table(s, ident_table);
 std::cout << "mymap.size() is " << ident_table.size() << std::endl;
    free_ast (yyparse_astree);
 

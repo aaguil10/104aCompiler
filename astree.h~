@@ -27,7 +27,6 @@ struct astree {
 
 astree* new_astree (int symbol, int filenr, int linenr, int offset,
                     const char* lexinfo);
-//void changeSymbol(astree* tree, int myStr);
 astree* adopt1 (astree* root, astree* child);
 astree* adopt2 (astree* root, astree* left, astree* right);
 astree* adopt3 (astree* root, astree* one, astree* two, astree* three);

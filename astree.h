@@ -42,6 +42,7 @@ void make_symboltable(astree* p, astree* c);
 
 void dump_astree (FILE* outfile, astree* root);
 void traverseAST(astree* root, int depth);
+void traverseASTForward(astree* root, int depth);
 void yyprint (FILE* outfile, unsigned short toknum, astree* yyvaluep);
 void free_ast (astree* tree);
 void free_ast2 (astree* tree1, astree* tree2);

@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include <utility>
 #include<string>                                                                                           
 #include "astree.h"
 #include "stringset.h"
@@ -151,6 +152,7 @@ void set_kw_true(astree* node);
 void set_function(astree* node);
 void set_typeid(astree* node);
 void set_paramlist(astree* node);
+void set_block(astree* node);
 
 void set_plus_minus(astree* node);
 void set_arith(astree* node);
@@ -206,6 +208,10 @@ void assign_attr(astree* node){
       case TOK_PARAMLIST:
          set_paramlist(node);
          break;
+      case TOK_BLOCK:
+         next_block++;
+         set_block(node);
+         break;
       case '+':
       case '-':
          set_plus_minus(node);
@@ -217,6 +223,13 @@ void assign_attr(astree* node){
          break;
    }
 }
+
+void make_tables(astree* root){
+
+
+}
+
+
 
 /*void make_symboltable(astree* p, astree* c){
    //printf("Making bacon...\n");
@@ -243,7 +256,14 @@ static void dump_node (FILE* outfile, astree* node) {
    if(attr[ATTR_field]){ fprintf(outfile, "field "); }
    if(attr[ATTR_typeid]){ fprintf(outfile, "typeid "); }
    if(attr[ATTR_param]){ fprintf(outfile, "param "); }
-   if(attr[ATTR_lval]){ fprintf(outfile, "lval "); }
+   if(attr[ATTR_lval]){ 
+      fprintf(outfile, "lval "); 
+      string s ( (string)node->lexinfo->c_str() );
+      symbol* c = get_symbol((string*)node->lexinfo);
+      if(c != NULL){
+      fprintf (outfile, " (%ld.%ld.%ld) " , c->filenr, c->linenr, c->offset);
+      }
+   }
    if(attr[ATTR_const]){ fprintf(outfile, "const "); }
    if(attr[ATTR_vreg]){ fprintf(outfile, "vreg "); }
    if(attr[ATTR_vaddr]){ fprintf(outfile, "vaddr "); }
@@ -280,6 +300,19 @@ void traverseAST(astree* root, int depth){
    printf("%s(%s)\n",tok,root->lexinfo->c_str());
    assign_attr(root);
 }
+
+void traverseASTForward(astree* root, int depth){
+   char* tok = (char*)get_yytname (root->symbol);
+   printf("%s(%s)\n",tok,root->lexinfo->c_str());
+   make_tables(root);
+   for (size_t child = 0; child < root->children.size(); ++child) {
+      traverseAST(root->children[child], depth + 1);
+   }
+   for(int i = 0; i < depth; i++){
+      printf("   ");
+   }
+}
+
 
 void yyprint (FILE* outfile, unsigned short toknum, astree* yyvaluep) {
    DEBUGF ('f', "toknum = %d, yyvaluep = %p\n", toknum, yyvaluep);
@@ -328,10 +361,16 @@ astree* find_sym(astree* root, char* symbol){
 //*******************set fuctions in switch stament**********************
 
 symbol* insert_symbol(astree* node){
+  if(node == NULL){
+     fprintf(stderr, "ERROR: In astree.pp function instert_symbol()\n");
+     return NULL;
+  }
   //printf("inserting %s\n", node->lexinfo->c_str());
   symbol* curr = new_symbol(node->filenr,node->linenr,node->offset,
                             node->attr, node->fields);
   string* key = new string(node->lexinfo->c_str());
+  //string* key = (string*)node->lexinfo;
+
 
   if(node->attr[ATTR_variable] || node->attr[ATTR_function]){
      insert_ident(key,curr);
@@ -370,7 +409,7 @@ void set_kw_bool(astree* node){
       tmp->attr[ATTR_variable] = 1;
       tmp->attr[ATTR_lval] = 1;
    }else{
-     fprintf(stderr,"ERROR:on astree.cpp function:set_kw_bool(astree* node)");
+     fprintf(stderr,"ERROR:on astree.cpp function:set_kw_bool(astree* node)\n");
    }
    insert_symbol(tmp);
 }
@@ -390,7 +429,7 @@ void set_kw_char(astree* node){
       tmp->attr[ATTR_variable] = 1;
       tmp->attr[ATTR_lval] = 1;
    }else{
-     fprintf(stderr,"ERROR: on astree.cpp function:set_kw_char(astree* node)");
+     fprintf(stderr,"ERROR: on astree.cpp function:set_kw_char(astree* node)\n");
    }
    insert_symbol(tmp);
 }
@@ -410,7 +449,7 @@ void set_kw_int(astree* node){
       tmp->attr[ATTR_variable] = 1;
       tmp->attr[ATTR_lval] = 1;
    }else{
-     fprintf(stderr,"ERROR: on astree.cpp function:set_kw_int(astree* node)");
+     fprintf(stderr,"ERROR: on astree.cpp function:set_kw_int(astree* node)\n");
      return;
    }
    insert_symbol(tmp);
@@ -436,7 +475,7 @@ void set_kw_string(astree* node){
       tmp->attr[ATTR_variable] = 1;
       tmp->attr[ATTR_lval] = 1;
    }else{
-     fprintf(stderr,"ERROR: on astree.cpp function:set_kw_string(astree* node)");
+     fprintf(stderr,"ERROR: on astree.cpp function:set_kw_string(astree* node)\n");
    }
    insert_symbol(tmp);
 }
@@ -496,11 +535,11 @@ void set_typeid(astree* node){
    if( strcmp((char*)node->lexinfo->c_str(),"function") == 0 ){
       return;
    }
-   printf("***str: %s\n", (char*)node->lexinfo->c_str() );
-   printf("***val: %d\n", strcmp((char*)node->lexinfo->c_str(),"function") );
    astree* tmp = NULL;
    node->attr[ATTR_typeid] = 1;
-   if(node->children.size() == 1){
+   if(node->children.size() == 0){
+        return;
+   }else if(node->children.size() == 1){
       tmp = node->children[0];
       tmp->attr[ATTR_variable] = 1;
       tmp->attr[ATTR_lval] = 1;
@@ -510,7 +549,7 @@ void set_typeid(astree* node){
       tmp->attr[ATTR_variable] = 1;
       tmp->attr[ATTR_lval] = 1;
    }else{
-     fprintf(stderr,"ERROR: on astree.cpp function:set_typeid(astree* node)");
+     fprintf(stderr,"ERROR: on astree.cpp function:set_typeid(astree* node)\n");
    }
    insert_symbol(tmp);
 }
@@ -519,6 +558,18 @@ void set_paramlist(astree* node){
    for(int i = 0; i < node->children.size(); i++){
       astree* tmp = node->children[i]->children[0];
       tmp->attr[ATTR_param] = 1; 
+   }
+}
+
+void set_block(astree* node){
+   if(node == NULL){ return; }
+   //fprintf(stderr,"node->block_nr: %d\n", node->block_nr);
+   if((int)node->block_nr == 0){
+      node->block_nr = next_block;
+      add_symbol_stack();
+      for (int child = 0; child < node->children.size(); ++child) {
+         set_block(node->children[child]);
+      }
    }
 }
 

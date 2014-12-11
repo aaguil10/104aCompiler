@@ -5,6 +5,7 @@
 extern FILE* sym_file;
 symbol_table typenames_table;
 symbol_table ident_table;
+vector<symbol_table*> symbol_stack;
 int next_block;
 
 symbol* new_symbol (size_t filenr, size_t linenr, size_t offset, 
@@ -15,7 +16,7 @@ symbol* new_symbol (size_t filenr, size_t linenr, size_t offset,
    mySym->filenr = filenr;
    mySym->linenr = linenr;
    mySym->offset = offset;
-   mySym->block_nr = next_block;
+   mySym->block_nr = next_block - 1;
    mySym->parameters = NULL;
    //fprintf(sym_file, "Made new symbol: attr(%p) b(%p)\n", mySym->attr, mySym->fields); 
    return mySym;
@@ -50,13 +51,29 @@ void insert_field(symbol* stru, string* key, symbol* obj){
    //std::cout << "*****field_table.size() is " << (*(stru->fields)).size() << std::endl;
 }
 
+
+void add_symbol_stack(){
+  symbol_stack.push_back(NULL);
+  //next_block++;
+  //std::cout << "NextBlock: " << next_block << endl;
+}
+
 int is_in_table(string* key, symbol_table mymap){
-   if ( mymap.find(key) == mymap.end() ){
+  /* if ( mymap.find(key) == mymap.end() ){
       return 0;
    }else{
-      //std::cout << got->first << " is " << got->second;
-      return 1;
+      std::cout << got->first << " is " << got->second;
+      return mymap.find(key);
+   }*/
+}
+
+symbol* get_symbol(string* key){
+   auto curr = ident_table.find(key);
+   if(curr != ident_table.end() ){
+      symbol* c = curr->second;
+      return c;
    }
+   return NULL;
 }
 
 void print_table(string s, symbol_table mymap){
