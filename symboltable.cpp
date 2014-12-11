@@ -8,6 +8,8 @@ symbol_table ident_table;
 vector<symbol_table*> symbol_stack;
 int next_block;
 
+
+
 symbol* new_symbol (size_t filenr, size_t linenr, size_t offset, 
                     size_t block_nr, attr_bitset a, symbol_table* f){
    symbol* mySym = new symbol();
@@ -35,7 +37,17 @@ void insert_ident(string* key, symbol* obj){
       fprintf(stderr,"ERROR: obj == NULL on insert_ident()");
    }
    symbol_entry e = {key, obj};
-   ident_table.insert(e);
+   symbol_table* curr = symbol_stack[symbol_stack.size()-1];
+   if(curr == NULL){
+      printf("Cross the delta\n");
+      symbol_table tmp;
+      tmp.insert(e);
+      symbol_stack[symbol_stack.size()-1] = &tmp;
+   }else{
+      (*curr).insert(e);
+   }
+   cout << "Bu Size: " << symbol_stack.size() << endl;
+   //ident_table.insert(e);
 }
 
 void insert_field(symbol* stru, string* key, symbol* obj){
@@ -54,23 +66,30 @@ void insert_field(symbol* stru, string* key, symbol* obj){
 
 void add_symbol_stack(){
   symbol_stack.push_back(NULL);
+  cout << "Pu Size: " << symbol_stack.size() << endl;
 }
 
 void pop_symbol_stack(){
   symbol_stack.pop_back();
+  cout << "Pan Size: " << symbol_stack.size() << endl;
 }
 
-void insert_symbol_stack(symbol* node){
-  symbol_table* curr = symbol_stack[symbol_stack.size()];
-  if(curr == NULL){
-     symbol_table* tmp;
+symbol* lookup(string* key){
+  for(int i = symbol_stack.size()-1; i >= 0; i--){
+     symbol_table* curr = symbol_stack[i];
+     if(curr != NULL){
+        symbol* tmp = get_symbol(key, curr);
+        if(tmp != NULL){
+           return tmp;
+        }
+     }  
   }
-
+  return NULL;
 }
 
-symbol* get_symbol(string* key){
-   auto curr = ident_table.find(key);
-   if(curr != ident_table.end() ){
+symbol* get_symbol(string* key, symbol_table* st){
+   auto curr = (*st).find(key);
+   if(curr != (*st).end() ){
       symbol* c = curr->second;
       return c;
    }

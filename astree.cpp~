@@ -258,7 +258,7 @@ static void dump_node (FILE* outfile, astree* node) {
    if(attr[ATTR_lval]){ 
       fprintf(outfile, "lval "); 
       string s ( (string)node->lexinfo->c_str() );
-      symbol* c = get_symbol((string*)node->lexinfo);
+      symbol* c = get_symbol((string*)node->lexinfo, &ident_table);
       if(c != NULL){
       fprintf (outfile, " (%ld.%ld.%ld) " , c->filenr, c->linenr, c->offset);
       }
@@ -301,14 +301,9 @@ void traverseAST(astree* root, int depth){
 }
 
 void traverseASTForward(astree* root, int depth){
-   //char* tok = (char*)get_yytname (root->symbol);
-   //printf(">>>%s(%s)\n",tok,root->lexinfo->c_str());
    make_tables(root);
    for (size_t child = 0; child < root->children.size(); ++child) {
       traverseASTForward(root->children[child], depth + 1);
-   }
-   for(int i = 0; i < depth; i++){
-      //printf("   ");
    }
 }
 
@@ -367,7 +362,6 @@ symbol* insert_symbol(astree* node){
   //printf("inserting %s\n", node->lexinfo->c_str());
   symbol* curr = new_symbol(node->filenr,node->linenr,node->offset,
                             node->block_nr, node->attr, node->fields);
-  //string* key = new string(node->lexinfo->c_str());
   string* key = (string*)node->lexinfo;
 
 
@@ -553,7 +547,28 @@ void set_typeid(astree* node){
 void set_paramlist(astree* node){ 
    for(int i = 0; i < (int)node->children.size(); i++){
       astree* tmp = node->children[i]->children[0];
-      tmp->attr[ATTR_param] = 1; 
+      tmp->attr[ATTR_param] = 1;
+   }
+}
+
+void set_block_rec(astree* node){
+   if(node == NULL){ return; }
+   if(node->symbol == TOK_BLOCK){
+      return;
+   }
+   node->block_nr = next_block;
+   if(node->symbol == TOK_KW_IDENT){
+      symbol* curr = lookup( (string*)node->lexinfo );
+      if(curr == NULL){
+         fprintf(stderr, "ERROR: %s is not decalred!\n", (node->lexinfo->c_str()));
+      }else{
+         node->attr = curr->attr;
+         node->attr[ATTR_variable] = 0;
+         node->attr[ATTR_lval] = 0;
+      }
+   }
+   for (int child = 0; child < (int)node->children.size(); ++child) {
+      set_block_rec(node->children[child]);
    }
 }
 
@@ -565,20 +580,6 @@ void set_block(astree* node){
       set_block_rec(node->children[child]);
    }
    pop_symbol_stack();
-}
-
-void set_block_rec(astree* node){
-   if(node == NULL){ return; }
-   if(node->symbol == TOK_BLOCK){
-      return;
-   }
-   node->block_nr = next_block;
-   if(node->symbol == TOK_KW_IDENT){
-      insert_symbol_stack();
-   }
-   for (int child = 0; child < (int)node->children.size(); ++child) {
-      set_block_rec(node->children[child]);
-   }
 }
 
 void set_lookup(astree* node){

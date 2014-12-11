@@ -118,7 +118,9 @@ int main (int argc, char **argv) {
    char* filename = argv[argc - 1];
    tok_file = make_tok_file(filename, 1);
    sym_file = make_sym_file(filename);
-   //int next_block = 1;
+
+   symbol_stack.push_back(&ident_table);
+
    yy_flex_debug = 0;
    yydebug = 0;
 

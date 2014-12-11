@@ -2,7 +2,7 @@ struct node {
   int val;
   node link;
 }
-
+bool g = true;
 function rise(int x, char y);
 
 struct julio {
