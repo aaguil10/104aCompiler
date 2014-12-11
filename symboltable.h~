@@ -50,7 +50,7 @@ void add_symbol_stack();
 //void set_kw_int();
 
 int is_in_table(string* key, symbol_table mymap);
-symbol* print_intitiazation(string* key);
+symbol* get_symbol(string* key);
 void print_table(string s, symbol_table mymap);
 
 #endif

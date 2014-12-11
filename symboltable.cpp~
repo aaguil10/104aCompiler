@@ -68,10 +68,8 @@ int is_in_table(string* key, symbol_table mymap){
 }
 
 symbol* get_symbol(string* key){
-   cout << "Key: " << *key << endl;
    auto curr = ident_table.find(key);
    if(curr != ident_table.end() ){
-      printf("Size: %d\n", ident_table.size() );
       symbol* c = curr->second;
       return c;
    }

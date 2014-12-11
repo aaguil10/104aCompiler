@@ -28,29 +28,29 @@ ROOT "" (0.0.0) {0}
             DECLID "x" (3.13.18) {0} int variable param lval  (3.6.18) 
          KW_CHAR "char" (3.13.21) {0} char 
             DECLID "y" (3.13.26) {0} char variable param lval  (3.6.26) 
-      BLOCK "{" (3.13.28) {2} 
-         VARDECL "=" (3.14.9) {2} 
-            KW_INT "int" (3.14.3) {2} int 
-               DECLID "x" (3.14.7) {2} int variable lval  (3.6.18) 
-            INTCON "1" (3.14.11) {2} int const 
-         VARDECL "=" (3.15.12) {2} 
-            KW_STRING "string" (3.15.3) {2} string 
-               DECLID "a" (3.15.10) {2} string variable lval  (3.15.10) 
-            NEWARRAY "new" (3.15.14) {2} 
-               TYPEID "string" (3.15.18) {2} typeid 
-               INTCON "5" (3.15.25) {2} int const 
-         VARDECL "=" (3.16.14) {2} 
-            TYPEID "julio" (3.16.3) {2} typeid 
-               DECLID "evil" (3.16.9) {2} variable lval  (3.16.9) 
-            KW_NEW "new" (3.16.16) {2} 
-               TYPEID "julio" (3.16.20) {2} typeid 
-         KW_IF "if" (3.17.3) {2} 
-            '>' ">" (3.17.8) {2} 
-               KW_IDENT "x" (3.17.6) {2} void 
-               INTCON "5" (3.17.10) {2} int const 
-            BLOCK "{" (3.17.12) {1} 
-               '=' "=" (3.18.7) {1} 
-                  KW_IDENT "x" (3.18.5) {1} void 
-                  '+' "+" (3.18.11) {1} 
-                     KW_IDENT "x" (3.18.9) {1} void 
-                     KW_IDENT "x" (3.18.13) {1} void 
+      BLOCK "{" (3.13.28) {0} 
+         VARDECL "=" (3.14.9) {0} 
+            KW_INT "int" (3.14.3) {0} int 
+               DECLID "x" (3.14.7) {0} int variable lval  (3.6.18) 
+            INTCON "1" (3.14.11) {0} int const 
+         VARDECL "=" (3.15.12) {0} 
+            KW_STRING "string" (3.15.3) {0} string 
+               DECLID "a" (3.15.10) {0} string variable lval  (3.15.10) 
+            NEWARRAY "new" (3.15.14) {0} 
+               TYPEID "string" (3.15.18) {0} typeid 
+               INTCON "5" (3.15.25) {0} int const 
+         VARDECL "=" (3.16.14) {0} 
+            TYPEID "julio" (3.16.3) {0} typeid 
+               DECLID "evil" (3.16.9) {0} variable lval  (3.16.9) 
+            KW_NEW "new" (3.16.16) {0} 
+               TYPEID "julio" (3.16.20) {0} typeid 
+         KW_IF "if" (3.17.3) {0} 
+            '>' ">" (3.17.8) {0} 
+               KW_IDENT "x" (3.17.6) {0} 
+               INTCON "5" (3.17.10) {0} int const 
+            BLOCK "{" (3.17.12) {0} 
+               '=' "=" (3.18.7) {0} 
+                  KW_IDENT "x" (3.18.5) {0} 
+                  '+' "+" (3.18.11) {0} 
+                     KW_IDENT "x" (3.18.9) {0} 
+                     KW_IDENT "x" (3.18.13) {0} 

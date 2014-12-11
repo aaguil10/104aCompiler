@@ -90,53 +90,6 @@ astree* adoptsym (astree* root, int symbol) {
    return root;
 }
 
-/*void assign_attr(astree* node){
-   char* tok = (char*)get_yytname (node->symbol);
-   char* keyword = (char*)node->lexinfo->c_str();
-
-   switch (node->symbol) {
-     case TOK_INT:  .... break;
-     case ...
-   
-
-   //printf("Found: %s\n", tok);
-   if(strcmp(tok,(char*)"TOK_DECLID") == 0 |
-      strcmp(tok,(char*)"TOK_FIELD") == 0 ){
-      if(strcmp(keyword,(char*)"void") == 0){
-         node->attr[ATTR_void] = 1;
-      }
-      if(strcmp(keyword,(char*)"bool") == 0){
-         node->attr[ATTR_bool] = 1;
-         node->attr[ATTR_const] = 1;
-      }
-      if(strcmp(keyword,(char*)"char") == 0){
-         node->attr[ATTR_char] = 1;
-         node->attr[ATTR_const] = 1;
-      }
-      if(strcmp(keyword,(char*)"int") == 0){
-         node->attr[ATTR_int] = 1;
-         node->attr[ATTR_const] = 1;
-      }
-      if(strcmp(keyword,(char*)"string") == 0){
-         node->attr[ATTR_string] = 1;
-         node->attr[ATTR_const] = 1;
-      }
-   }
-   if(strcmp(tok,(char*)"TOK_KW_STRUCT") == 0){
-      node->attr[ATTR_struct] = 1; 
-      astree* tmp = find_sym(node, (char*)"TOK_TYPEID");
-      printf("****%s****\n", (char*)tmp->lexinfo->c_str());
-      symbol* curr = new_symbol (tmp->filenr, tmp->linenr,
-                              tmp->offset, 5);
-      std::string someString(tmp->lexinfo->c_str());
-      make_struct(&someString, curr);
-   }
-   if(strcmp(tok,(char*)"TOK_KW_NULL") == 0){
-      node->attr[ATTR_null] = 1;
-      node->attr[ATTR_const] = 1;
-   }
-}*/
-
 void set_kw_void(astree* node);
 void set_kw_bool(astree* node);
 void set_kw_char(astree* node);
@@ -154,15 +107,11 @@ void set_typeid(astree* node);
 void set_paramlist(astree* node);
 void set_block(astree* node);
 
-void set_plus_minus(astree* node);
-void set_arith(astree* node);
-void set_lookup(astree* node);
-
 void assign_attr(astree* node){
    //printf("Ahhhhh");
    switch (node->symbol){
-      case TOK_KW_IDENT:
-         set_lookup(node);
+      /*case TOK_KW_IDENT:
+         set_lookup(node);*/
       case TOK_KW_VOID:
          set_kw_void(node);
          break;
@@ -208,25 +157,27 @@ void assign_attr(astree* node){
       case TOK_PARAMLIST:
          set_paramlist(node);
          break;
-      case TOK_BLOCK:
+      /*case TOK_BLOCK:
          next_block++;
          set_block(node);
-         break;
+         break;*/
       case '+':
       case '-':
-         set_plus_minus(node);
          break;
       case '*':
       case '/':
       case '%':
-         set_arith(node);
          break;
    }
 }
 
 void make_tables(astree* root){
-
-
+   switch (root->symbol){
+      case TOK_BLOCK:
+         next_block++;
+         set_block(root);
+         break;
+   }
 }
 
 
@@ -380,10 +331,7 @@ symbol* insert_symbol(astree* node){
      insert_struct(key,curr);
      return curr;
   }
-}
-
-void set_lookup(astree* node){
-  
+  return NULL;
 }
 
 void set_kw_void(astree* node){
@@ -487,7 +435,7 @@ void set_kw_struct(astree* node){
    tmp->attr[ATTR_void] = 0;
    tmp->attr[ATTR_typeid] = 1;
    symbol* curr = insert_symbol(tmp);
-   for(int i = 1; i < node->children.size(); i++){
+   for(int i = 1; i < (int)node->children.size(); i++){
       astree* tmp = node->children[i]->children[0];
       tmp->attr[ATTR_variable] = 0;
       tmp->attr[ATTR_field] = 1;
@@ -555,7 +503,7 @@ void set_typeid(astree* node){
 }
 
 void set_paramlist(astree* node){ 
-   for(int i = 0; i < node->children.size(); i++){
+   for(int i = 0; i < (int)node->children.size(); i++){
       astree* tmp = node->children[i]->children[0];
       tmp->attr[ATTR_param] = 1; 
    }
@@ -567,25 +515,10 @@ void set_block(astree* node){
    if((int)node->block_nr == 0){
       node->block_nr = next_block;
       add_symbol_stack();
-      for (int child = 0; child < node->children.size(); ++child) {
+      for (int child = 0; child < (int)node->children.size(); ++child) {
          set_block(node->children[child]);
       }
    }
 }
 
-void set_plus_minus(astree* node){
-  /* if(node->children.size() == 1){
-      astree* tmp = node->children[0];
-      tmp->attr[ATTR_int] = 1;
-      tmp->attr[ATTR_int] = 1;
-   }else{
-      astree* tmp = node->children[1];
-      tmp->attr[ATTR_string] = 1;
-      tmp->attr[ATTR_array] = 1;
-   }*/
-}
-
-void set_arith(astree* node){
-
-}
 

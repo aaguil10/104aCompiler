@@ -169,7 +169,7 @@ int main (int argc, char **argv) {
   //string* keyA = new string("Key A");
   //symbol* a = new_symbol(0,0,0,NULL,NULL);
   //ident_table[keyA] = a;
-   print_table(s, typenames_table);
+   print_table(s, ident_table);
 std::cout << "mymap.size() is " << ident_table.size() << std::endl;
    free_ast (yyparse_astree);
 
