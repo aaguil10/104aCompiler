@@ -18,6 +18,7 @@ ATTR_variable, ATTR_field, ATTR_typeid, ATTR_param, ATTR_lval,
 ATTR_const, ATTR_vreg, ATTR_vaddr, ATTR_bitset_size,
 };
 using attr_bitset = bitset<ATTR_bitset_size>;
+void print_attributes(FILE* outfile, const attr_bitset& attr);
 
 struct symbol;
 using symbol_table = unordered_map<string*,symbol*>;

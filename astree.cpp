@@ -108,6 +108,11 @@ void set_paramlist(astree* node);
 void set_block(astree* node);
 void set_lookup(astree* node);
 
+void set_unary_arithmetic(astree* node);
+void set_binary_arithmetic(astree* node);
+void set_binary_comparison(astree* node);
+void set_binary_equality(astree* node);
+
 void assign_attr(astree* node){
    switch (node->symbol){
       /*case TOK_KW_IDENT:
@@ -225,6 +230,28 @@ void make_tables(astree* node){
          next_block++;
          set_block(node);
          break;
+      case '+':
+      case '-':
+      case '*':
+      case '/':
+      case '%':
+         set_binary_arithmetic(node);
+         break;
+      case TOK_NEG:
+      case TOK_POS:
+         set_unary_arithmetic(node);
+         break;
+      case '<':
+      case '>':
+      case TOK_GREAEQU:
+      case TOK_LESSEQU:
+         set_binary_comparison(node);
+         break;
+      case TOK_EQUALS:
+      case TOK_NEQUAL:
+         set_binary_equality(node);
+         break;
+         //TOK_EQUALS TOK_NEQUAL '<' TOK_GREAEQU '>' TOK_LESSEQU 
    }
 }
 
@@ -242,19 +269,8 @@ static void dump_node (FILE* outfile, astree* node) {
    fprintf (outfile, "%s \"%s\" (%ld.%ld.%ld) {%d} " ,tname , node->lexinfo->c_str(), 
              node->filenr, node->linenr, node->offset, (int)node->block_nr);
    attr_bitset attr = node->attr;
-   if(attr[ATTR_void]){ fprintf(outfile, "void "); }
-   if(attr[ATTR_bool]){ fprintf(outfile, "bool "); }
-   if(attr[ATTR_char]){ fprintf(outfile, "char "); }
-   if(attr[ATTR_int]){ fprintf(outfile, "int "); }
-   if(attr[ATTR_null]){ fprintf(outfile, "NULL "); }
-   if(attr[ATTR_string]){ fprintf(outfile, "string "); }
-   if(attr[ATTR_struct]){ fprintf(outfile, "struct "); }
-   if(attr[ATTR_array]){ fprintf(outfile, "array "); }
-   if(attr[ATTR_function]){ fprintf(outfile, "function "); }
-   if(attr[ATTR_variable]){ fprintf(outfile, "variable "); }
-   if(attr[ATTR_field]){ fprintf(outfile, "field "); }
-   if(attr[ATTR_typeid]){ fprintf(outfile, "typeid "); }
-   if(attr[ATTR_param]){ fprintf(outfile, "param "); }
+
+   print_attributes(outfile, attr);
    if(attr[ATTR_lval]){ 
       fprintf(outfile, "lval "); 
       string s ( (string)node->lexinfo->c_str() );
@@ -263,10 +279,6 @@ static void dump_node (FILE* outfile, astree* node) {
       fprintf (outfile, " (%ld.%ld.%ld) " , c->filenr, c->linenr, c->offset);
       }
    }
-   if(attr[ATTR_const]){ fprintf(outfile, "const "); }
-   if(attr[ATTR_vreg]){ fprintf(outfile, "vreg "); }
-   if(attr[ATTR_vaddr]){ fprintf(outfile, "vaddr "); }
-   if(attr[ATTR_vaddr]){ fprintf(outfile, "vaddr "); }
 }
 
 static void dump_astree_rec (FILE* outfile, astree* root, int depth) {
@@ -569,7 +581,7 @@ void set_block_rec(astree* node){
          node->attr[ATTR_lval] = 0;
       }
    }
-   for (int child = 0; child < (int)node->children.size(); ++child) {
+   for (int child = 0; child < (int)node->children.size(); ++child) { //make_tables(node->children[child]);
       set_block_rec(node->children[child]);
    }
 }
@@ -578,7 +590,7 @@ void set_block(astree* node){
    if(node == NULL){ return; }
    node->block_nr = next_block;
    add_symbol_stack();
-   for (int child = 0; child < (int)node->children.size(); ++child) {
+   for (int child = 0; child < (int)node->children.size(); ++child) { //make_tables(node->children[child]);
       set_block_rec(node->children[child]);
    }
    pop_symbol_stack();
@@ -591,3 +603,85 @@ void set_lookup(astree* node){
 
 
 
+void check_parameters(astree* node, unsigned desired_number) {
+   std::string oper_type = "___";
+   if (desired_number == 1) oper_type = "unary";
+   if (desired_number == 2) oper_type = "binary";
+
+   if (node->children.size() != desired_number) {
+      fprintf(stderr,"ERROR: incorrect number of parameters for "
+                     "%s operation: %ld:%ld:%ld\n", oper_type.c_str(),
+                     node->filenr, node->linenr, node->offset);
+   }
+}
+
+bool is_primitive_type(const attr_bitset& attr) {
+   if (attr[ATTR_bool]) return true;
+   if (attr[ATTR_char]) return true;
+   if (attr[ATTR_int]) return true;
+   return false;
+}
+
+void set_binary_arithmetic(astree* node){
+   check_parameters(node, 2);
+
+   astree* left_param = node->children[0];
+   astree* right_param = node->children[1];
+
+   make_tables(left_param);
+   make_tables(right_param);
+
+   if (left_param->attr[ATTR_int] != 1 ||
+       right_param->attr[ATTR_int] != 1) {
+      fprintf(stderr,"ERROR: unable to perform binary arithmetic on "
+                     "non-integer types: %ld:%ld:%ld\n", node->filenr,
+                     node->linenr, node->offset);
+   }
+
+   node->attr[ATTR_int] = 1;
+   node->attr[ATTR_vreg] = 1;
+}
+
+void set_unary_arithmetic(astree* node){
+   check_parameters(node, 1);
+
+   astree* param = node->children[0];
+
+   make_tables(param);
+
+   if (param->attr[ATTR_int] != 1) {
+      fprintf(stderr,"ERROR: unable to perform unary arithmetic on "
+                     "non-integer types: %ld:%ld:%ld\n", node->filenr,
+                     node->linenr, node->offset);
+   }
+
+   node->attr[ATTR_int] = 1;
+   node->attr[ATTR_vreg] = 1;
+}
+
+void set_binary_comparison(astree* node) {
+   check_parameters(node, 2);
+
+   astree* left_param = node->children[0];
+   astree* right_param = node->children[1];
+
+   make_tables(left_param);
+   make_tables(right_param);
+
+   if ( !is_primitive_type(left_param->attr) ||
+        !is_primitive_type(right_param->attr) ) {
+      fprintf(stderr,"ERROR: unable to perform binary comparison on "
+                     "non-primitive types: %ld:%ld:%ld\n", node->filenr,
+                     node->linenr, node->offset);
+   }
+
+   node->attr[ATTR_bool] = 1;
+   node->attr[ATTR_vreg] = 1;
+}
+
+void set_binary_equality(astree* node) {
+   check_parameters(node, 2);
+
+   node->attr[ATTR_bool] = 1;
+   node->attr[ATTR_vreg] = 1;
+}
