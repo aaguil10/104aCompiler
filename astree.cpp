@@ -399,6 +399,7 @@ astree* find_sym(astree* root, char* symbol){
 bool is_primitive_type(const attr_bitset& attr);
 bool are_types_compatible(const attr_bitset& attrA,
                           const attr_bitset& attrB);
+void write_type(astree* node, attr_bitset& outAttr);
 
 //*******************set fuctions in switch stament**********************
 
@@ -422,15 +423,15 @@ void set_kw_newstring(astree* node){
 
 }
 
-void set_lit_int(astree* node){
+void set_lit_int(astree* node){ // unused?
 
 }
 
-void set_lit_char(astree* node){
+void set_lit_char(astree* node){ // unused?
 
 }
 
-void set_lit_string(astree* node){
+void set_lit_string(astree* node){ // unused?
 
 }
 
@@ -479,7 +480,7 @@ void set_vardecl(astree* node){
                      node->filenr, node->linenr, node->offset);
    }
 
-   if (left_param->attr[ATTR_lval] == false) {
+   if (left_param->children[0]->attr[ATTR_lval] == false) {
       fprintf(stderr,"ERROR: unable to assign to "
                      "non-lvalue type: %ld:%ld:%ld\n",
                      node->filenr, node->linenr, node->offset);
@@ -504,9 +505,35 @@ symbol* insert_symbol(astree* node){
      return NULL;
   }
   //printf("inserting %s\n", node->lexinfo->c_str());
-  symbol* curr = new_symbol(node->filenr,node->linenr,node->offset,
-                            node->block_nr, node->attr, node->fields);
-  string* key = (string*)node->lexinfo;
+
+  symbol* curr;
+  string* key;
+
+  if (!node->attr[ATTR_function]) {
+    curr = new_symbol(node->filenr,node->linenr,node->offset,
+                      node->block_nr, node->attr, node->fields);
+    key = (string*)node->lexinfo;
+  }
+  else { // handle function node: chilren are name and params
+    astree* func = node->children[0]->children[0];
+    astree* params = node->children[1];
+
+    curr = new_symbol(func->filenr,func->linenr,func->offset,
+                      func->block_nr, func->attr, func->fields);
+    key = (string*)func->lexinfo;
+    //std::cout << *key << std::endl;
+    //std::cout << func->attr[ATTR_int] << std::endl;
+
+    curr->parameters = new std::vector<symbol*>(params->children.size());
+    for (unsigned i = 0; i < params->children.size(); i++) {
+      astree* param = params->children[i]->children[0];
+      //std::cout << *(param->lexinfo) << std::endl;
+      //std::cout << param->attr[ATTR_int] << std::endl;
+
+      (*(curr->parameters))[i] = new_symbol(param->filenr, param->linenr,
+           param->offset, param->block_nr, param->attr, param->fields);
+    }
+  }
 
 
   if(node->attr[ATTR_variable] || node->attr[ATTR_function]){
@@ -663,9 +690,20 @@ void set_function(astree* node){
       return;
    }
    node->attr[ATTR_function] = 1;
-   astree* tmp = node->children[0]->children[0];
-   tmp->attr[ATTR_function] = 1;
-   insert_symbol(tmp);
+
+   astree* type = node->children[0];
+   astree* id = type->children[0];
+
+   write_type(type, id->attr);
+
+   //make_tables(node->children[0]);
+   make_tables(node->children[1]);
+
+   id->attr[ATTR_function] = 1;
+   //insert_symbol(tmp);
+   insert_symbol(node);
+
+   make_tables(node->children[2]);
 }
 
 void set_typeid(astree* node){
@@ -693,8 +731,10 @@ void set_typeid(astree* node){
 
 void set_paramlist(astree* node){ 
    for(int i = 0; i < (int)node->children.size(); i++){
-      astree* tmp = node->children[i]->children[0];
-      tmp->attr[ATTR_param] = 1;
+      astree* type = node->children[i];
+      astree* id = type->children[0];
+      write_type(type, id->attr);
+      id->attr[ATTR_param] = 1;
    }
 }
 
@@ -768,6 +808,13 @@ bool are_types_compatible(const attr_bitset& attrA,
    if (attrA[ATTR_array] != attrB[ATTR_array]) return false;
 
    return true;
+}
+
+void write_type(astree* node, attr_bitset& outAttr) {
+   if (node->symbol == TOK_KW_BOOL) outAttr[ATTR_bool] = true;
+   if (node->symbol == TOK_KW_CHAR) outAttr[ATTR_char] = true;
+   if (node->symbol == TOK_KW_INT) outAttr[ATTR_int] = true;
+   if (node->symbol == TOK_KW_STRING) outAttr[ATTR_string] = true;
 }
 
 void set_binary_arithmetic(astree* node){
@@ -856,6 +903,7 @@ void set_assignment(astree* node) {
    }
 
    node->attr = left_param->attr;
+   node->attr[ATTR_vreg] = true;
 }
 
 
