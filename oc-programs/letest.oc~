@@ -2,7 +2,7 @@ struct node {
   int val;
   node link;
 }
-
+bool g = true;
 function rise(int x, char y);
 
 struct julio {
@@ -11,11 +11,17 @@ struct julio {
 }
 
 function rise(int x, char y){
+   int x = 1;
    string a = new string[5];
    julio evil = new julio();
    if(x > 5){
      x = x + x;
    }
 
+}
+
+if (g == true) {
+   int x;
+   x = 5;
 }
 

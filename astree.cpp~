@@ -89,6 +89,26 @@ astree* adoptsym (astree* root, int symbol) {
    root->symbol = symbol;
    return root;
 }
+void set_kw_ident(astree* node);
+void set_kw_while(astree* node);
+void set_kw_return(astree* node);
+void set_kw_new(astree* node);
+void set_kw_newstring(astree* node);
+void set_lit_int(astree* node);
+void set_lit_char(astree* node);
+void set_lit_string(astree* node);
+void set_field(astree* node);
+void set_declid(astree* node);
+void set_call(astree* node);
+void set_newarray(astree* node);
+void set_snewarray(astree* node);
+void set_kw_if(astree* node);
+void set_kw_else(astree* node);
+void set_ifelse(astree* node);
+void set_vardecl(astree* node);
+void set_exclamation(astree* node);
+void set_kw_ord(astree* node);
+void set_kw_chr(astree* node);
 
 void set_kw_void(astree* node);
 void set_kw_bool(astree* node);
@@ -102,16 +122,16 @@ void set_charcon(astree* node);
 void set_intcon(astree* node);
 void set_kw_false(astree* node);
 void set_kw_true(astree* node);
-void set_function(astree* node);
 void set_typeid(astree* node);
 void set_paramlist(astree* node);
 void set_block(astree* node);
-void set_lookup(astree* node);
 
 void set_unary_arithmetic(astree* node);
 void set_binary_arithmetic(astree* node);
 void set_binary_comparison(astree* node);
 void set_binary_equality(astree* node);
+
+void set_assignment(astree* node);
 
 void assign_attr(astree* node){
    switch (node->symbol){
@@ -128,6 +148,67 @@ void assign_attr(astree* node){
 void make_tables(astree* node){
    //printf("next_block: %d\n", next_block);
    switch (node->symbol){
+      case TOK_KW_IDENT:
+         set_kw_ident(node);
+         break;
+      case TOK_KW_WHILE:
+         set_kw_while(node);
+         break;
+      case TOK_KW_RETURN:
+         set_kw_return(node);
+         break;
+
+      case TOK_KW_NEW:
+         set_kw_new(node);
+         break;
+      case TOK_NEWSTRING:
+         set_kw_newstring(node);
+         break;
+      case TOK_LIT_INT:
+         set_lit_int(node);
+         break;
+      case TOK_LIT_CHAR:
+         set_lit_char(node);
+         break;
+      case TOK_LIT_STRING:
+         set_lit_string(node);
+         break;
+      case TOK_FIELD:
+         set_field(node);
+         break;
+      case TOK_DECLID:
+         set_declid(node);
+         break;
+      case TOK_CALL:
+         set_call(node);
+         break;
+      case TOK_NEWARRAY:
+         set_newarray(node);
+         break;
+      case  TOK_sNEWARRAY:
+         set_snewarray(node);
+         break;
+      case TOK_KW_IF:
+         set_kw_if(node);
+         break;
+      case TOK_KW_ELSE:
+         set_kw_else(node);
+         break;
+      case TOK_IFELSE:
+         set_ifelse(node);
+         break;
+      case TOK_VARDECL:
+         set_vardecl(node);
+         break;
+      case '!':
+         set_exclamation(node);
+         break;
+      case TOK_KW_ORD:
+         set_kw_ord(node);
+         break;
+      case TOK_KW_CHR:
+         set_kw_chr(node);
+         break;
       case TOK_KW_VOID:
          set_kw_void(node);
          break;
@@ -146,9 +227,6 @@ void make_tables(astree* node){
       case TOK_KW_STRING:
          set_kw_string(node);
          break;
-      case TOK_KW_STRUCT:
-         set_kw_struct(node);
-         break;
       case TOK_STRINGCON:
          set_stringcon(node);
          break;
@@ -163,6 +241,9 @@ void make_tables(astree* node){
          break;
       case TOK_KW_TRUE:
          set_kw_true(node);
+         break;
+      case TOK_KW_STRUCT:
+         set_kw_struct(node);
          break;
       case TOK_ROOT:
          set_function(node);
@@ -198,7 +279,9 @@ void make_tables(astree* node){
       case TOK_NEQUAL:
          set_binary_equality(node);
          break;
-         //TOK_EQUALS TOK_NEQUAL '<' TOK_GREAEQU '>' TOK_LESSEQU 
+      case '=':
+         set_assignment(node);
+         break;
    }
 }
 
@@ -256,7 +339,7 @@ void traverseAST(astree* root, int depth){
    }
    char* tok = (char*)get_yytname (root->symbol);
    printf("%s(%s)\n",tok,root->lexinfo->c_str());
-   assign_attr(root);
+   //assign_attr(root);
 }
 
 void traverseASTForward(astree* root, int depth){
@@ -312,6 +395,86 @@ astree* find_sym(astree* root, char* symbol){
 }
 
 //*******************set fuctions in switch stament**********************
+
+void set_kw_ident(astree* node){
+
+}
+
+void set_kw_while(astree* node){
+
+}
+
+void set_kw_return(astree* node){
+
+}
+
+void set_kw_new(astree* node){
+
+}
+
+void set_kw_newstring(astree* node){
+
+}
+
+void set_lit_int(astree* node){
+
+}
+
+void set_lit_char(astree* node){
+
+}
+
+void set_lit_string(astree* node){
+
+}
+
+void set_field(astree* node){
+
+}
+
+void set_declid(astree* node){
+
+}
+
+void set_call(astree* node){
+
+}
+
+void set_newarray(astree* node){
+
+}
+
+void set_snewarray(astree* node){
+
+}
+
+void set_kw_if(astree* node){
+
+}
+
+void set_kw_else(astree* node){
+
+}
+
+void set_ifelse(astree* node){
+
+}
+
+void set_vardecl(astree* node){
+
+}
+
+void set_exclamation(astree* node){
+
+}
+
+void set_kw_ord(astree* node){
+
+}
+
+void set_kw_chr(astree* node){
+
+}
 
 symbol* insert_symbol(astree* node){
   if(node == NULL){
@@ -472,6 +635,9 @@ void set_kw_true(astree* node){
 
 void set_function(astree* node){
    if( strcmp((char*)node->lexinfo->c_str(),"TOK_FUNCTION") ){
+      for(int i = 0; i < (int)node->children.size(); i++){
+         make_tables(node->children[i]);
+      }
       return;
    }
    node->attr[ATTR_function] = 1;
@@ -510,7 +676,7 @@ void set_paramlist(astree* node){
    }
 }
 
-void set_block_rec(astree* node){
+/*void set_block_rec(astree* node){
    if(node == NULL){ return; }
    if(node->symbol == TOK_BLOCK){
       return;
@@ -528,18 +694,23 @@ void set_block_rec(astree* node){
          node->attr[ATTR_lval] = 0;
       }
    }
-   for (int child = 0; child < (int)node->children.size(); ++child) { //make_tables(node->children[child]);
+   for (int child = 0; child < (int)node->children.size(); ++child) { 
+      //assign_attr(node->children[child]);
       set_block_rec(node->children[child]);
    }
-}
+}*/
 
 void set_block(astree* node){
    if(node == NULL){ return; }
    node->block_nr = next_block;
    add_symbol_stack();
-   for (int child = 0; child < (int)node->children.size(); ++child) { //make_tables(node->children[child]);
-      set_block_rec(node->children[child]);
-   }
+   /*for (int child = 0; child < (int)node->children.size(); ++child) { //make_tables(node->children[child]);
+      //if (node->children[child]->symbol == TOK_KW_INT) assign_attr(node->children[child]);
+      //else {
+         make_tables(node->children[child]);
+      //}
+      //set_block(node->children[child]);
+   }*/
    pop_symbol_stack();
 }
 
@@ -627,3 +798,16 @@ void set_binary_equality(astree* node) {
    node->attr[ATTR_bool] = 1;
    node->attr[ATTR_vreg] = 1;
 }
+
+void set_assignment(astree* node) {
+   check_parameters(node, 2);
+
+   astree* left_param = node->children[0];
+   astree* right_param = node->children[1];
+
+   if (left_param->symbol == TOK_LIT_INT) {
+      
+   }
+}
+
+

@@ -20,3 +20,7 @@ function rise(int x, char y){
 
 }
 
+if (g == true) {
+   int x = 0;
+}
+

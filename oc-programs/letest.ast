@@ -1,60 +1,69 @@
 ROOT "" (0.0.0) {0} 
    KW_STRUCT "struct" (3.1.0) {0} struct 
       KW_IDENT "node" (3.1.7) {0} struct typeid 
-      KW_INT "int" (3.2.2) {0} int 
-         FIELD "val" (3.2.6) {0} int variable field lval  (3.2.6) 
-      TYPEID "node" (3.3.2) {0} typeid 
-         FIELD "link" (3.3.7) {0} variable field lval  (3.3.7) 
+      KW_INT "int" (3.2.2) {0} 
+         FIELD "val" (3.2.6) {0} field 
+      TYPEID "node" (3.3.2) {0} 
+         FIELD "link" (3.3.7) {0} field 
    VARDECL "=" (3.5.7) {0} 
-      KW_BOOL "bool" (3.5.0) {0} bool 
-         DECLID "g" (3.5.5) {0} bool variable lval  (3.5.5) 
-      KW_TRUE "true" (3.5.9) {0} bool const 
+      KW_BOOL "bool" (3.5.0) {0} 
+         DECLID "g" (3.5.5) {0} 
+      KW_TRUE "true" (3.5.9) {0} 
    ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
       TYPEID "function" (3.6.0) {0} 
          DECLID "rise" (3.6.9) {0} 
       PARAMLIST "(" (3.6.13) {0} 
-         KW_INT "int" (3.6.14) {0} int 
-            DECLID "x" (3.6.18) {0} int variable param lval  (3.6.18) 
-         KW_CHAR "char" (3.6.21) {0} char 
-            DECLID "y" (3.6.26) {0} char variable param lval  (3.6.26) 
+         KW_INT "int" (3.6.14) {0} 
+            DECLID "x" (3.6.18) {0} param 
+         KW_CHAR "char" (3.6.21) {0} 
+            DECLID "y" (3.6.26) {0} param 
       ';' ";" (3.6.28) {0} 
    KW_STRUCT "struct" (3.8.0) {0} struct 
       KW_IDENT "julio" (3.8.7) {0} struct typeid 
-      KW_INT "int" (3.9.2) {0} int 
-         FIELD "val" (3.9.6) {0} int variable field lval  (3.2.6) 
-      TYPEID "node" (3.10.2) {0} typeid 
-         FIELD "link" (3.10.7) {0} variable field lval  (3.3.7) 
+      KW_INT "int" (3.9.2) {0} 
+         FIELD "val" (3.9.6) {0} field 
+      TYPEID "node" (3.10.2) {0} 
+         FIELD "link" (3.10.7) {0} field 
    ROOT "TOK_FUNCTION" (0.0.0) {0} function 
       TYPEID "function" (3.13.0) {0} 
          DECLID "rise" (3.13.9) {0} function 
       PARAMLIST "(" (3.13.13) {0} 
-         KW_INT "int" (3.13.14) {0} int 
-            DECLID "x" (3.13.18) {0} int variable param lval  (3.6.18) 
-         KW_CHAR "char" (3.13.21) {0} char 
-            DECLID "y" (3.13.26) {0} char variable param lval  (3.6.26) 
-      BLOCK "{" (3.13.28) {1} 
-         VARDECL "=" (3.14.9) {1} 
-            KW_INT "int" (3.14.3) {1} int 
-               DECLID "x" (3.14.7) {1} int variable lval  (3.6.18) 
-            INTCON "1" (3.14.11) {1} int const 
-         VARDECL "=" (3.15.12) {1} 
-            KW_STRING "string" (3.15.3) {1} string 
-               DECLID "a" (3.15.10) {1} string variable lval  (3.15.10) 
-            NEWARRAY "new" (3.15.14) {1} 
-               TYPEID "string" (3.15.18) {1} typeid 
-               INTCON "5" (3.15.25) {1} int const 
-         VARDECL "=" (3.16.14) {1} 
-            TYPEID "julio" (3.16.3) {1} typeid 
-               DECLID "evil" (3.16.9) {1} variable lval  (3.16.9) 
-            KW_NEW "new" (3.16.16) {1} 
-               TYPEID "julio" (3.16.20) {1} typeid 
-         KW_IF "if" (3.17.3) {1} 
-            '>' ">" (3.17.8) {1} bool vreg 
-               KW_IDENT "x" (3.17.6) {1} int 
-               INTCON "5" (3.17.10) {1} int const 
-            BLOCK "{" (3.17.12) {2} 
-               '=' "=" (3.18.7) {2} 
-                  KW_IDENT "x" (3.18.5) {2} int 
-                  '+' "+" (3.18.11) {2} int vreg 
-                     KW_IDENT "x" (3.18.9) {2} int 
-                     KW_IDENT "x" (3.18.13) {2} int 
+         KW_INT "int" (3.13.14) {0} 
+            DECLID "x" (3.13.18) {0} 
+         KW_CHAR "char" (3.13.21) {0} 
+            DECLID "y" (3.13.26) {0} 
+      BLOCK "{" (3.13.28) {0} 
+         VARDECL "=" (3.14.9) {0} 
+            KW_INT "int" (3.14.3) {0} 
+               DECLID "x" (3.14.7) {0} 
+            INTCON "1" (3.14.11) {0} 
+         VARDECL "=" (3.15.12) {0} 
+            KW_STRING "string" (3.15.3) {0} 
+               DECLID "a" (3.15.10) {0} 
+            NEWARRAY "new" (3.15.14) {0} 
+               TYPEID "string" (3.15.18) {0} 
+               INTCON "5" (3.15.25) {0} 
+         VARDECL "=" (3.16.14) {0} 
+            TYPEID "julio" (3.16.3) {0} 
+               DECLID "evil" (3.16.9) {0} 
+            KW_NEW "new" (3.16.16) {0} 
+               TYPEID "julio" (3.16.20) {0} 
+         KW_IF "if" (3.17.3) {0} 
+            '>' ">" (3.17.8) {0} 
+               KW_IDENT "x" (3.17.6) {0} 
+               INTCON "5" (3.17.10) {0} 
+            BLOCK "{" (3.17.12) {0} 
+               '=' "=" (3.18.7) {0} 
+                  KW_IDENT "x" (3.18.5) {0} 
+                  '+' "+" (3.18.11) {0} 
+                     KW_IDENT "x" (3.18.9) {0} 
+                     KW_IDENT "x" (3.18.13) {0} 
+   KW_IF "if" (3.23.0) {0} 
+      EQUALS "==" (3.23.6) {0} 
+         KW_IDENT "g" (3.23.4) {0} 
+         KW_TRUE "true" (3.23.9) {0} 
+      BLOCK "{" (3.23.15) {0} 
+         VARDECL "=" (3.24.9) {0} 
+            KW_INT "int" (3.24.3) {0} 
+               DECLID "x" (3.24.7) {0} 
+            INTCON "0" (3.24.11) {0} 
