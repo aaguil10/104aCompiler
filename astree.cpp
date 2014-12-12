@@ -394,6 +394,12 @@ astree* find_sym(astree* root, char* symbol){
    return NULL;
 }
 
+// prototypes of helper functions for set functions (see end of file)
+
+bool is_primitive_type(const attr_bitset& attr);
+bool are_types_compatible(const attr_bitset& attrA,
+                          const attr_bitset& attrB);
+
 //*******************set fuctions in switch stament**********************
 
 void set_kw_ident(astree* node){
@@ -461,7 +467,23 @@ void set_ifelse(astree* node){
 }
 
 void set_vardecl(astree* node){
+   astree* left_param = node->children[0];
+   astree* right_param = node->children[1];
 
+   make_tables(left_param);
+   make_tables(right_param);
+
+   if (!are_types_compatible(left_param->attr, right_param->attr)) {
+      fprintf(stderr,"ERROR: unable to perform assignment on "
+                     "non-compatible types: %ld:%ld:%ld\n",
+                     node->filenr, node->linenr, node->offset);
+   }
+
+   if (left_param->attr[ATTR_lval] == false) {
+      fprintf(stderr,"ERROR: unable to assign to "
+                     "non-lvalue type: %ld:%ld:%ld\n",
+                     node->filenr, node->linenr, node->offset);
+   }
 }
 
 void set_exclamation(astree* node){
@@ -735,6 +757,19 @@ bool is_primitive_type(const attr_bitset& attr) {
    return false;
 }
 
+bool are_types_compatible(const attr_bitset& attrA,
+                          const attr_bitset& attrB) {
+
+   if (attrA[ATTR_bool] != attrB[ATTR_bool]) return false;
+   if (attrA[ATTR_char] != attrB[ATTR_char]) return false;
+   if (attrA[ATTR_int] != attrB[ATTR_int]) return false;
+   if (attrA[ATTR_string] != attrB[ATTR_string]) return false;
+   if (attrA[ATTR_struct] != attrB[ATTR_struct]) return false;
+   if (attrA[ATTR_array] != attrB[ATTR_array]) return false;
+
+   return true;
+}
+
 void set_binary_arithmetic(astree* node){
    check_parameters(node, 2);
 
@@ -784,8 +819,8 @@ void set_binary_comparison(astree* node) {
    if ( !is_primitive_type(left_param->attr) ||
         !is_primitive_type(right_param->attr) ) {
       fprintf(stderr,"ERROR: unable to perform binary comparison on "
-                     "non-primitive types: %ld:%ld:%ld\n", node->filenr,
-                     node->linenr, node->offset);
+                     "non-primitive types: %ld:%ld:%ld\n",
+                     node->filenr, node->linenr, node->offset);
    }
 
    node->attr[ATTR_bool] = 1;
@@ -805,9 +840,22 @@ void set_assignment(astree* node) {
    astree* left_param = node->children[0];
    astree* right_param = node->children[1];
 
-   if (left_param->symbol == TOK_LIT_INT) {
-      
+   make_tables(left_param);
+   make_tables(right_param);
+
+   if (!are_types_compatible(left_param->attr, right_param->attr)) {
+      fprintf(stderr,"ERROR: unable to perform assignment on "
+                     "non-compatible types: %ld:%ld:%ld\n",
+                     node->filenr, node->linenr, node->offset);
    }
+
+   if (left_param->attr[ATTR_lval] == false) {
+      fprintf(stderr,"ERROR: unable to assign to "
+                     "non-lvalue type: %ld:%ld:%ld\n",
+                     node->filenr, node->linenr, node->offset);
+   }
+
+   node->attr = left_param->attr;
 }
 
 
