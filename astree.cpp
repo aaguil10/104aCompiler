@@ -106,7 +106,6 @@ void set_function(astree* node);
 void set_typeid(astree* node);
 void set_paramlist(astree* node);
 void set_block(astree* node);
-void set_lookup(astree* node);
 
 void set_unary_arithmetic(astree* node);
 void set_binary_arithmetic(astree* node);
@@ -115,57 +114,6 @@ void set_binary_equality(astree* node);
 
 void assign_attr(astree* node){
    switch (node->symbol){
-      /*case TOK_KW_IDENT:
-         set_lookup(node);*/
-      /*case TOK_KW_VOID:
-         set_kw_void(node);
-         break;
-      case TOK_KW_BOOL:
-         set_kw_bool(node);
-         break;
-      case TOK_KW_CHAR:
-         set_kw_char(node);
-         break;
-      case TOK_KW_INT:
-         set_kw_int(node);
-         break;
-      case TOK_KW_NULL:
-         set_kw_null(node);
-         break;
-      case TOK_KW_STRING:
-         set_kw_string(node);
-         break;
-      case TOK_KW_STRUCT:
-         set_kw_struct(node);
-         break;
-      case TOK_STRINGCON:
-         set_stringcon(node);
-         break;
-      case TOK_CHARCON:
-         set_charcon(node);
-         break;
-      case TOK_INTCON:
-         set_intcon(node);
-         break;
-      case TOK_KW_FALSE:
-         set_kw_false(node);
-         break;
-      case TOK_KW_TRUE:
-         set_kw_true(node);
-         break;
-      case TOK_ROOT:
-         set_function(node);
-         break;
-      case TOK_TYPEID:
-         set_typeid(node);
-         break;
-      case TOK_PARAMLIST:
-         set_paramlist(node);
-         break;
-      case TOK_BLOCK:
-         next_block++;
-         set_block(node);
-         break;*/
       case '+':
       case '-':
          break;
@@ -179,8 +127,6 @@ void assign_attr(astree* node){
 void make_tables(astree* node){
    //printf("next_block: %d\n", next_block);
    switch (node->symbol){
-      case TOK_KW_IDENT:
-         set_lookup(node);
       case TOK_KW_VOID:
          set_kw_void(node);
          break;
@@ -594,11 +540,6 @@ void set_block(astree* node){
       set_block_rec(node->children[child]);
    }
    pop_symbol_stack();
-}
-
-void set_lookup(astree* node){
-
-
 }
 
 

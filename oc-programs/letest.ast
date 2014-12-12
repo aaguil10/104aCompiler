@@ -1,6 +1,6 @@
 ROOT "" (0.0.0) {0} 
    KW_STRUCT "struct" (3.1.0) {0} struct 
-      KW_IDENT "node" (3.1.7) {0} void struct typeid 
+      KW_IDENT "node" (3.1.7) {0} struct typeid 
       KW_INT "int" (3.2.2) {0} int 
          FIELD "val" (3.2.6) {0} int variable field lval  (3.2.6) 
       TYPEID "node" (3.3.2) {0} typeid 
@@ -19,7 +19,7 @@ ROOT "" (0.0.0) {0}
             DECLID "y" (3.6.26) {0} char variable param lval  (3.6.26) 
       ';' ";" (3.6.28) {0} 
    KW_STRUCT "struct" (3.8.0) {0} struct 
-      KW_IDENT "julio" (3.8.7) {0} void struct typeid 
+      KW_IDENT "julio" (3.8.7) {0} struct typeid 
       KW_INT "int" (3.9.2) {0} int 
          FIELD "val" (3.9.6) {0} int variable field lval  (3.2.6) 
       TYPEID "node" (3.10.2) {0} typeid 
@@ -49,12 +49,12 @@ ROOT "" (0.0.0) {0}
             KW_NEW "new" (3.16.16) {1} 
                TYPEID "julio" (3.16.20) {1} typeid 
          KW_IF "if" (3.17.3) {1} 
-            '>' ">" (3.17.8) {1} 
-               KW_IDENT "x" (3.17.6) {1} void int 
+            '>' ">" (3.17.8) {1} bool vreg 
+               KW_IDENT "x" (3.17.6) {1} int 
                INTCON "5" (3.17.10) {1} int const 
             BLOCK "{" (3.17.12) {2} 
                '=' "=" (3.18.7) {2} 
-                  KW_IDENT "x" (3.18.5) {2} void int 
-                  '+' "+" (3.18.11) {2} 
-                     KW_IDENT "x" (3.18.9) {2} void int 
-                     KW_IDENT "x" (3.18.13) {2} void int 
+                  KW_IDENT "x" (3.18.5) {2} int 
+                  '+' "+" (3.18.11) {2} int vreg 
+                     KW_IDENT "x" (3.18.9) {2} int 
+                     KW_IDENT "x" (3.18.13) {2} int 
