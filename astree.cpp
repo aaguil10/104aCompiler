@@ -406,6 +406,12 @@ void set_kw_ident(astree* node){
 }
 
 void set_kw_while(astree* node){
+   if (node->children[0]->attr[ATTR_bool] != true) {
+      fprintf(stderr,"ERROR: cannot test non-boolean condition "
+                     "for while statements: %ld:%ld:%ld\n",
+                     node->filenr, node->linenr, node->offset);
+   }
+
    for(int i = 0; i < (int)node->children.size(); i++){
       make_tables(node->children[i]);
    }
@@ -505,12 +511,24 @@ void set_snewarray(astree* node){
 }
 
 void set_kw_if(astree* node){
+   if (node->children[0]->attr[ATTR_bool] != true) {
+      fprintf(stderr,"ERROR: cannot test non-boolean condition "
+                     "for if statements: %ld:%ld:%ld\n",
+                     node->filenr, node->linenr, node->offset);
+   }
+
    for(int i = 0; i < (int)node->children.size(); i++){
       make_tables(node->children[i]);
    }
 }
 
 void set_ifelse(astree* node){
+   if (node->children[0]->attr[ATTR_bool] != true) {
+      fprintf(stderr,"ERROR: cannot test non-boolean condition "
+                     "for if statements: %ld:%ld:%ld\n",
+                     node->filenr, node->linenr, node->offset);
+   }
+
    for(int i = 0; i < (int)node->children.size(); i++){
       make_tables(node->children[i]);
    }
@@ -575,13 +593,13 @@ void set_kw_chr(astree* node){
 
    make_tables(param);
 
-   if (param->attr[ATTR_char] != 1) {
-      fprintf(stderr,"ERROR: unable to perform ORD on non-character "
+   if (param->attr[ATTR_int] != 1) {
+      fprintf(stderr,"ERROR: unable to perform CHR on non-integer "
                      "types: %ld:%ld:%ld\n", node->filenr,
                      node->linenr, node->offset);
    }
 
-   node->attr[ATTR_int] = 1;
+   node->attr[ATTR_char] = 1;
    node->attr[ATTR_vreg] = 1;
 }
 

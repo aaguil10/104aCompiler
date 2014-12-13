@@ -17,3 +17,9 @@ int add(int a, int b) {
 
 c = add(a,b);
 
+bool f = !true;
+char g = chr 54;
+int h = ord g;
+
+if (5) {a = 5;}
+while (a) {;}
