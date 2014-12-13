@@ -94,16 +94,12 @@ void set_kw_while(astree* node);
 void set_kw_return(astree* node);
 void set_kw_new(astree* node);
 void set_kw_newstring(astree* node);
-void set_lit_int(astree* node);
-void set_lit_char(astree* node);
-void set_lit_string(astree* node);
 void set_field(astree* node);
 void set_declid(astree* node);
 void set_call(astree* node);
 void set_newarray(astree* node);
 void set_snewarray(astree* node);
 void set_kw_if(astree* node);
-void set_kw_else(astree* node);
 void set_ifelse(astree* node);
 void set_vardecl(astree* node);
 void set_exclamation(astree* node);
@@ -158,21 +154,11 @@ void make_tables(astree* node){
       case TOK_KW_RETURN:
          set_kw_return(node);
          break;
-
       case TOK_KW_NEW:
          set_kw_new(node);
          break;
       case TOK_NEWSTRING:
          set_kw_newstring(node);
-         break;
-      case TOK_LIT_INT:
-         set_lit_int(node);
-         break;
-      case TOK_LIT_CHAR:
-         set_lit_char(node);
-         break;
-      case TOK_LIT_STRING:
-         set_lit_string(node);
          break;
       case TOK_FIELD:
          set_field(node);
@@ -191,9 +177,6 @@ void make_tables(astree* node){
          break;
       case TOK_KW_IF:
          set_kw_if(node);
-         break;
-      case TOK_KW_ELSE:
-         set_kw_else(node);
          break;
       case TOK_IFELSE:
          set_ifelse(node);
@@ -439,17 +422,6 @@ void set_kw_newstring(astree* node){
 
 }
 
-void set_lit_int(astree* node){ // unused?
-
-}
-
-void set_lit_char(astree* node){ // unused?
-
-}
-
-void set_lit_string(astree* node){ // unused?
-
-}
 
 void set_field(astree* node){
 
@@ -506,10 +478,6 @@ void set_snewarray(astree* node){
 }
 
 void set_kw_if(astree* node){
-
-}
-
-void set_kw_else(astree* node){
 
 }
 
