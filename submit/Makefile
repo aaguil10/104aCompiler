@@ -56,11 +56,13 @@ lis : test
 	        Makefile test.out test.err
 
 submit : main.cpp stringset.cpp stringset.h auxlib.cpp auxlib.h \
-         symboltable.cpp symboltable.h Makefile oclib.c oclib.oh README
-	submit cmps104a-wm.f14 asg2 main.cpp stringset.cpp scanner.l\
+         symboltable.cpp symboltable.h Makefile oclib.c oclib.oh \
+         scanner.l parser.y lyutils.h lyutils.cpp astree.h \
+         astree.cpp README PARTNER
+	submit cmps104a-wm.f14 asg5 main.cpp stringset.cpp scanner.l\
         stringset.h auxlib.cpp auxlib.h parser.y lyutils.h lyutils.cpp\
         astree.h astree.cpp symboltable.cpp symboltable.h Makefile \
-        oclib.c oclib.oh README
+        oclib.c oclib.oh README PARTNER
 
 
 ## Build the scanner.

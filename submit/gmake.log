@@ -1,1 +1,10 @@
-gmake: Nothing to be done for `all'.
+g++ -g -O0 -Wall -std=gnu++11 -c main.cpp
+g++ -g -O0 -Wall -std=gnu++11 -c stringset.cpp
+g++ -g -O0 -Wall -std=gnu++11 -c auxlib.cpp
+g++ -g -O0 -Wall -std=gnu++11 -c astree.cpp
+g++ -g -O0 -Wall -std=gnu++11 -c lyutils.cpp
+g++ -g -O0 -Wall -std=gnu++11 -c yylex.cpp
+g++ -g -O0 -Wall -std=gnu++11 -c yyparse.cpp
+g++ -g -O0 -Wall -std=gnu++11 main.o stringset.o auxlib.o astree.o \
+               lyutils.o yylex.o yyparse.o symboltable.cpp \
+               symboltable.h -o oc

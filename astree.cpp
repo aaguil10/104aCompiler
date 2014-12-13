@@ -699,11 +699,15 @@ void set_kw_true(astree* node){
 }
 
 void set_function(astree* node){
-   if( strcmp((char*)node->lexinfo->c_str(),"TOK_FUNCTION") ){
+   if( strcmp((char*)node->lexinfo->c_str(),"TOK_FUNCTION") ||
+       strcmp((char*)node->lexinfo->c_str(),"TOK_PROTOTYPE") ){
       for(int i = 0; i < (int)node->children.size(); i++){
          make_tables(node->children[i]);
       }
       return;
+   }
+   if(!strcmp((char*)node->lexinfo->c_str(),"TOK_PROTOTYPE") ){
+      fprintf(stderr,"ERROR: found prototype!\n");
    }
    node->attr[ATTR_function] = 1;
 

@@ -10,13 +10,12 @@ using namespace std;
 #include <string.h>
 #include <unistd.h>
 
+#include <string>
 #include "stringset.h"
 #include "auxlib.h"
 #include "astree.h"
 #include "lyutils.h"
-#include "symboltable.h"
-
-//extern symbol_table typenames_table;
+#include "symboltable.h"                                                                           
 
 bool debug = false;
 void  db(string m){ if(debug){ cerr << m << endl;} };
@@ -27,7 +26,7 @@ extern FILE* yyin;
 FILE* tok_file;
 FILE* sym_file;
 
-vector<symbol_table*> symbol_stack;
+//vector<symbol_table*> symbol_stack;
 //extern int next_block;
 
 bool want_echo () {
@@ -118,13 +117,12 @@ int main (int argc, char **argv) {
    int c;
    char* filename = argv[argc - 1];
    tok_file = make_tok_file(filename, 1);
-   //sym_file = make_sym_file(filename);
-   //int next_block = 1;
+   sym_file = make_sym_file(filename);
+
+   symbol_stack.push_back(&ident_table);
+
    yy_flex_debug = 0;
    yydebug = 0;
-
-   symbol_table ident_table;
-   symbol_table typenames_table;
 
    while ((c = getopt (argc, argv, "ly@:D:")) != -1){
       switch (c){
@@ -162,10 +160,16 @@ int main (int argc, char **argv) {
    FILE* str_name = make_str_file(filename);
    dump_stringset (str_name);
 
+   //traverseASTForward(yyparse_astree, 0);
+   set_function(yyparse_astree);
    //traverseAST(yyparse_astree,0);
 
    FILE* ast_name = make_ast_file(filename);
    dump_astree (ast_name, yyparse_astree);
+
+   string s = "typenames_table";
+   //print_table(s, ident_table);
+   //std::cout << "mymap.size() is " << ident_table.size() << std::endl;
 
    free_ast (yyparse_astree);
 

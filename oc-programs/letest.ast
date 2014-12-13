@@ -1,50 +1,76 @@
 ROOT "" (0.0.0) {0} 
-   VARDECL "=" (3.1.12) {0} 
-      KW_CHAR "char" (3.1.0) {0} char 
-         DECLID "budunc" (3.1.5) {0} char variable lval  (3.1.5) 
-      CHARCON "'b'" (3.1.14) {0} char const 
-   ROOT "TOK_FUNCTION" (0.0.0) {0} function 
-      KW_INT "int" (3.3.0) {0} 
-         DECLID "rise" (3.3.4) {0} int function 
-      PARAMLIST "(" (3.3.8) {0} 
-      BLOCK "{" (3.3.10) {1} 
-         VARDECL "=" (3.4.9) {0} 
-            KW_INT "int" (3.4.3) {0} int 
-               DECLID "x" (3.4.7) {0} int variable lval 
-            INTCON "1" (3.4.11) {0} int const 
-         VARDECL "=" (3.5.12) {0} 
-            KW_CHAR "char" (3.5.3) {0} char 
-               DECLID "foo" (3.5.8) {0} char variable lval 
-            CHARCON "'f'" (3.5.14) {0} char const 
-         VARDECL "=" (3.6.12) {0} 
-            KW_BOOL "bool" (3.6.3) {0} bool 
-               DECLID "bar" (3.6.8) {0} bool variable lval 
-            KW_FALSE "false" (3.6.14) {0} bool const 
-         KW_IF "if" (3.7.3) {0} 
-            '<' "<" (3.7.8) {0} bool vreg 
-               KW_IDENT "x" (3.7.6) {0} int variable lval 
-               INTCON "0" (3.7.10) {0} int const 
-            BLOCK "{" (3.7.12) {2} 
-               VARDECL "=" (3.8.12) {0} 
-                  KW_INT "int" (3.8.6) {0} int 
-                     DECLID "d" (3.8.10) {0} int variable lval 
-                  INTCON "8" (3.8.14) {0} int const 
-               IFELSE "if" (3.9.6) {0} 
-                  '>' ">" (3.9.11) {0} bool vreg 
-                     KW_IDENT "d" (3.9.9) {0} int variable lval 
-                     INTCON "7" (3.9.13) {0} int const 
-                  BLOCK "{" (3.9.15) {3} 
-                     VARDECL "=" (3.10.14) {0} 
-                        KW_INT "int" (3.10.8) {0} int 
-                           DECLID "a" (3.10.12) {0} int variable lval 
-                        INTCON "9" (3.10.15) {0} int const 
-                  BLOCK "{" (3.11.11) {4} 
-                     KW_RETURN "return" (3.12.9) {0} 
-         KW_WHILE "while" (3.15.3) {0} 
-            '>' ">" (3.15.11) {0} bool vreg 
-               KW_IDENT "x" (3.15.9) {0} int variable lval 
-               INTCON "9" (3.15.13) {0} int const 
-            BLOCK "{" (3.15.15) {5} 
-               POS "+" (3.16.6) {0} int vreg 
-                  POS "+" (3.16.7) {0} int vreg 
-                     KW_IDENT "x" (3.16.8) {0} int variable lval 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.30.0) {0} void 
+         DECLID "__assert_fail" (5.30.5) {0} void 
+      PARAMLIST "(" (5.30.19) {0} 
+         KW_STRING "string" (5.30.20) {0} 
+            DECLID "expr" (5.30.27) {0} string param 
+         KW_STRING "string" (5.30.33) {0} 
+            DECLID "file" (5.30.40) {0} string param 
+         KW_INT "int" (5.30.46) {0} 
+            DECLID "line" (5.30.50) {0} int param 
+      ';' ";" (5.30.55) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.33.0) {0} void 
+         DECLID "putb" (5.33.5) {0} void 
+      PARAMLIST "(" (5.33.10) {0} 
+         KW_BOOL "bool" (5.33.11) {0} 
+            DECLID "b" (5.33.16) {0} bool param 
+      ';' ";" (5.33.18) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.34.0) {0} void 
+         DECLID "putc" (5.34.5) {0} void 
+      PARAMLIST "(" (5.34.10) {0} 
+         KW_CHAR "char" (5.34.11) {0} 
+            DECLID "c" (5.34.16) {0} char param 
+      ';' ";" (5.34.18) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.35.0) {0} void 
+         DECLID "puti" (5.35.5) {0} void 
+      PARAMLIST "(" (5.35.10) {0} 
+         KW_INT "int" (5.35.11) {0} 
+            DECLID "i" (5.35.15) {0} int param 
+      ';' ";" (5.35.17) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.36.0) {0} void 
+         DECLID "puts" (5.36.5) {0} void 
+      PARAMLIST "(" (5.36.10) {0} 
+         KW_STRING "string" (5.36.11) {0} 
+            DECLID "s" (5.36.18) {0} string param 
+      ';' ";" (5.36.20) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.37.0) {0} void 
+         DECLID "endl" (5.37.5) {0} void 
+      PARAMLIST "(" (5.37.10) {0} 
+      ';' ";" (5.37.12) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_INT "int" (5.38.0) {0} int 
+         DECLID "getc" (5.38.4) {0} int variable lval  (5.38.4) 
+      PARAMLIST "(" (5.38.9) {0} 
+      ';' ";" (5.38.11) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_STRING "string" (5.39.0) {0} string 
+         DECLID "getw" (5.39.7) {0} string variable lval  (5.39.7) 
+      PARAMLIST "(" (5.39.12) {0} 
+      ';' ";" (5.39.14) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_STRING "string" (5.40.0) {0} string 
+         DECLID "getln" (5.40.7) {0} string variable lval  (5.40.7) 
+      PARAMLIST "(" (5.40.13) {0} 
+      ';' ";" (5.40.15) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_STRING "string" (5.41.0) {0} string 
+         sNEWARRAY "[]" (5.41.6) {0} 
+         DECLID "getargv" (5.41.9) {0} string array variable lval  (5.41.9) 
+      PARAMLIST "(" (5.41.17) {0} 
+      ';' ";" (5.41.19) {0} 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
+      KW_VOID "void" (5.42.0) {0} void 
+         DECLID "exit" (5.42.5) {0} void 
+      PARAMLIST "(" (5.42.10) {0} 
+         KW_INT "int" (5.42.11) {0} 
+            DECLID "status" (5.42.15) {0} int param 
+      ';' ";" (5.42.22) {0} 
+   CALL "(" (6.6.5) {0} 
+      KW_IDENT "puts" (6.6.0) {0} 
+      STRINGCON ""Hello, world!\n"" (6.6.6) {0} 

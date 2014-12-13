@@ -45,6 +45,7 @@ clean :
 	rm *.str
 	rm *.tok
 	rm *.ast
+	rm *.sym
 
 test : oc
 	#./oc -ly -@ Set_debugflags -D OCLIB_OH oc-programs/03-test3.oc 
@@ -55,7 +56,8 @@ lis : test
 	        Makefile test.out test.err
 
 submit : main.cpp stringset.cpp stringset.h auxlib.cpp auxlib.h \
-         symboltable.cpp symboltable.h Makefile oclib.c oclib.oh README
+         symboltable.cpp symboltable.h Makefile oclib.c oclib.oh \
+         scanner.l parser.y lyutils.h lyutils.cpp README
 	submit cmps104a-wm.f14 asg2 main.cpp stringset.cpp scanner.l\
         stringset.h auxlib.cpp auxlib.h parser.y lyutils.h lyutils.cpp\
         astree.h astree.cpp symboltable.cpp symboltable.h Makefile \
