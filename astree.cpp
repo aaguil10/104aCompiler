@@ -388,21 +388,14 @@ void write_type(astree* node, attr_bitset& outAttr);
 //*******************set fuctions in switch stament**********************
 
 void set_kw_ident(astree* node){
-   int iter;
-   const string* key = node->lexinfo;
-   symbol_table::const_iterator got;
+   symbol* found = lookup((string*)(node->lexinfo));
 
-   for (iter = symbol_stack.size() - 1; iter >= 0; iter--) {
-      got = symbol_stack[iter]->find(key);
-      if ( got != symbol_stack[iter]->end() ) break;
-   }
-
-   if (iter == -1) {
+   if (found == NULL) {
       fprintf(stderr,"ERROR: undeclared variable found, "
                      "cannot determine type: %ld:%ld:%ld\n",
                      node->filenr, node->linenr, node->offset);
    } else {
-      node->attr = got->second->attr;
+      node->attr = found->attr;
    }
 }
 
@@ -432,22 +425,13 @@ void set_declid(astree* node){
 }
 
 void set_call(astree* node){
-   int iter;
-   const string* key = node->children[0]->lexinfo;
-   symbol_table::const_iterator got;
+   symbol* found = lookup((string*)(node->children[0]->lexinfo));
 
-   for (iter = symbol_stack.size() - 1; iter >= 0; iter--) {
-      got = symbol_stack[iter]->find(key);
-      if ( got != symbol_stack[iter]->end() ) break;
-   }
-
-   if (iter == -1) {
+   if (found == NULL) {
       fprintf(stderr,"ERROR: undeclared function found, "
                      "cannot determine type: %ld:%ld:%ld\n",
                      node->filenr, node->linenr, node->offset);
    } else {
-      symbol* found = got->second;
-
       if (found->parameters == NULL) {
          fprintf(stderr,"ERROR: identifier is not a function, "
                         "cannot call non-functions: %ld:%ld:%ld\n",
@@ -461,6 +445,8 @@ void set_call(astree* node){
       }
 
       for (unsigned i = 1; i < node->children.size(); i++) {
+         make_tables(node->children[i]);
+
          attr_bitset& callAttr = node->children[i]->attr;
          attr_bitset& paramAttr = (*(found->parameters))[i-1]->attr;
 
@@ -471,7 +457,7 @@ void set_call(astree* node){
          }
       }
 
-      node->attr = got->second->attr;
+      node->attr = found->attr;
    }
 }
 
