@@ -1,6 +1,6 @@
 int b = 2;
-int[] a = new int[5];
+bool[] a = new bool[5];
 
-a[4] = 0;
+a[4] = false;
 
 

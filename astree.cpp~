@@ -477,13 +477,25 @@ void set_newarray(astree* node){
    make_tables(left_param);
    make_tables(right_param);
 
-   if (left_param->attr[ATTR_int] == 1 ||
+   /*if (left_param->attr[ATTR_int] == 1 ||
        right_param->attr[ATTR_int] == 1) {
       node->attr[ATTR_int] = 1;
    }
    if (left_param->attr[ATTR_char] == 1 ||
        right_param->attr[ATTR_char] == 1) {
       node->attr[ATTR_char] = 1;
+   }*/
+   if (left_param->attr[ATTR_int] == 1) {
+      node->attr[ATTR_int] = 1;
+   }
+   if (left_param->attr[ATTR_char] == 1) {
+      node->attr[ATTR_char] = 1;
+   }
+   if (left_param->attr[ATTR_bool] == 1) {
+      node->attr[ATTR_bool] = 1;
+   }
+   if (left_param->attr[ATTR_string] == 1) {
+      node->attr[ATTR_string] = 1;
    }
    node->attr[ATTR_vreg] = 1; 
 }
@@ -759,25 +771,15 @@ void set_kw_true(astree* node){
 }
 
 void set_function(astree* node){
-<<<<<<< HEAD
-   if( strcmp((char*)node->lexinfo->c_str(),"TOK_FUNCTION") ||
-       strcmp((char*)node->lexinfo->c_str(),"TOK_PROTOTYPE") ){
-=======
+
    // is root
    if( strcmp((char*)node->lexinfo->c_str(),"") == 0 ){
->>>>>>> 2fa45f5c08a61cd7cb1cf1a04fd0576fe13444e5
       for(int i = 0; i < (int)node->children.size(); i++){
          make_tables(node->children[i]);
       }
       return;
    }
-<<<<<<< HEAD
-   if(!strcmp((char*)node->lexinfo->c_str(),"TOK_PROTOTYPE") ){
-      fprintf(stderr,"ERROR: found prototype!\n");
-   }
-=======
 
->>>>>>> 2fa45f5c08a61cd7cb1cf1a04fd0576fe13444e5
    node->attr[ATTR_function] = 1;
 
    astree* type = node->children[0];

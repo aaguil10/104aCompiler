@@ -477,13 +477,25 @@ void set_newarray(astree* node){
    make_tables(left_param);
    make_tables(right_param);
 
-   if (left_param->attr[ATTR_int] == 1 ||
+   /*if (left_param->attr[ATTR_int] == 1 ||
        right_param->attr[ATTR_int] == 1) {
       node->attr[ATTR_int] = 1;
    }
    if (left_param->attr[ATTR_char] == 1 ||
        right_param->attr[ATTR_char] == 1) {
       node->attr[ATTR_char] = 1;
+   }*/
+   if (left_param->attr[ATTR_int] == 1) {
+      node->attr[ATTR_int] = 1;
+   }
+   if (left_param->attr[ATTR_char] == 1) {
+      node->attr[ATTR_char] = 1;
+   }
+   if (left_param->attr[ATTR_bool] == 1) {
+      node->attr[ATTR_bool] = 1;
+   }
+   if (left_param->attr[ATTR_string] == 1) {
+      node->attr[ATTR_string] = 1;
    }
    node->attr[ATTR_vreg] = 1; 
 }
@@ -712,7 +724,8 @@ void set_kw_string(astree* node){
       tmp->attr[ATTR_variable] = 1;
       tmp->attr[ATTR_lval] = 1;
    }else{
-     fprintf(stderr,"ERROR: on astree.cpp function:set_kw_string(astree* node)\n");
+     //fprintf(stderr,"ERROR: on astree.cpp function:set_kw_string(astree* node)\n");
+     return;
    }
    insert_symbol(tmp);
 }
