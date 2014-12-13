@@ -1,76 +1,16 @@
 ROOT "" (0.0.0) {0} 
-   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
-      KW_VOID "void" (5.30.0) {0} void 
-         DECLID "__assert_fail" (5.30.5) {0} void 
-      PARAMLIST "(" (5.30.19) {0} 
-         KW_STRING "string" (5.30.20) {0} 
-            DECLID "expr" (5.30.27) {0} string param 
-         KW_STRING "string" (5.30.33) {0} 
-            DECLID "file" (5.30.40) {0} string param 
-         KW_INT "int" (5.30.46) {0} 
-            DECLID "line" (5.30.50) {0} int param 
-      ';' ";" (5.30.55) {0} 
-   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
-      KW_VOID "void" (5.33.0) {0} void 
-         DECLID "putb" (5.33.5) {0} void 
-      PARAMLIST "(" (5.33.10) {0} 
-         KW_BOOL "bool" (5.33.11) {0} 
-            DECLID "b" (5.33.16) {0} bool param 
-      ';' ";" (5.33.18) {0} 
-   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
-      KW_VOID "void" (5.34.0) {0} void 
-         DECLID "putc" (5.34.5) {0} void 
-      PARAMLIST "(" (5.34.10) {0} 
-         KW_CHAR "char" (5.34.11) {0} 
-            DECLID "c" (5.34.16) {0} char param 
-      ';' ";" (5.34.18) {0} 
-   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
-      KW_VOID "void" (5.35.0) {0} void 
-         DECLID "puti" (5.35.5) {0} void 
-      PARAMLIST "(" (5.35.10) {0} 
-         KW_INT "int" (5.35.11) {0} 
-            DECLID "i" (5.35.15) {0} int param 
-      ';' ";" (5.35.17) {0} 
-   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
-      KW_VOID "void" (5.36.0) {0} void 
-         DECLID "puts" (5.36.5) {0} void 
-      PARAMLIST "(" (5.36.10) {0} 
-         KW_STRING "string" (5.36.11) {0} 
-            DECLID "s" (5.36.18) {0} string param 
-      ';' ";" (5.36.20) {0} 
-   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
-      KW_VOID "void" (5.37.0) {0} void 
-         DECLID "endl" (5.37.5) {0} void 
-      PARAMLIST "(" (5.37.10) {0} 
-      ';' ";" (5.37.12) {0} 
-   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
-      KW_INT "int" (5.38.0) {0} int 
-         DECLID "getc" (5.38.4) {0} int variable lval  (5.38.4) 
-      PARAMLIST "(" (5.38.9) {0} 
-      ';' ";" (5.38.11) {0} 
-   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
-      KW_STRING "string" (5.39.0) {0} string 
-         DECLID "getw" (5.39.7) {0} string variable lval  (5.39.7) 
-      PARAMLIST "(" (5.39.12) {0} 
-      ';' ";" (5.39.14) {0} 
-   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
-      KW_STRING "string" (5.40.0) {0} string 
-         DECLID "getln" (5.40.7) {0} string variable lval  (5.40.7) 
-      PARAMLIST "(" (5.40.13) {0} 
-      ';' ";" (5.40.15) {0} 
-   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
-      KW_STRING "string" (5.41.0) {0} string 
-         sNEWARRAY "[]" (5.41.6) {0} 
-         DECLID "getargv" (5.41.9) {0} string array variable lval  (5.41.9) 
-      PARAMLIST "(" (5.41.17) {0} 
-      ';' ";" (5.41.19) {0} 
-   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
-      KW_VOID "void" (5.42.0) {0} void 
-         DECLID "exit" (5.42.5) {0} void 
-      PARAMLIST "(" (5.42.10) {0} 
-         KW_INT "int" (5.42.11) {0} 
-            DECLID "status" (5.42.15) {0} int param 
-      ';' ";" (5.42.22) {0} 
-   CALL "(" (6.6.5) {0} 
-      KW_IDENT "puts" (6.6.0) {0} 
-      STRINGCON ""Hello, world!\n"" (6.6.6) {0} 
+   VARDECL "=" (3.1.6) {0} 
+      KW_INT "int" (3.1.0) {0} int 
+         DECLID "b" (3.1.4) {0} int variable lval  (3.1.4) 
+      INTCON "2" (3.1.8) {0} int const 
+   VARDECL "=" (3.2.8) {0} 
+      KW_INT "int" (3.2.0) {0} int 
+         sNEWARRAY "[]" (3.2.3) {0} 
+         DECLID "a" (3.2.6) {0} int array variable lval  (3.2.6) 
+      NEWARRAY "new" (3.2.10) {0} int vreg 
+         KW_INT "int" (3.2.14) {0} int 
+         INTCON "5" (3.2.18) {0} int const 
+   '=' "=" (3.4.5) {0} int variable vreg lval 
+      KW_IDENT "a" (3.4.0) {0} int variable lval  (3.2.6) 
+         INTCON "4" (3.4.2) {0} 
+      INTCON "0" (3.4.7) {0} int const 

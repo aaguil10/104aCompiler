@@ -1,4 +1,2 @@
-   getc (5.38.4) {0} int variable 
-   getw (5.39.7) {0} string variable 
-   getln (5.40.7) {0} string variable 
-   getargv (5.41.9) {0} string array variable 
+   b (3.1.4) {0} int variable 
+   a (3.2.6) {0} int array variable 

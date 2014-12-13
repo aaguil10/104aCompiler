@@ -142,8 +142,8 @@ void set_assignment(astree* node);
 }*/
 
 void make_tables(astree* node){
-   //char* tok = (char*)get_yytname (node->symbol);
-   //printf("%s(%s)\n",tok,node->lexinfo->c_str());
+   char* tok = (char*)get_yytname (node->symbol);
+   printf("%s(%s)\n",tok,node->lexinfo->c_str());
    switch (node->symbol){
       case TOK_KW_IDENT:
          set_kw_ident(node);
@@ -396,6 +396,12 @@ void set_kw_ident(astree* node){
                      node->filenr, node->linenr, node->offset);
    } else {
       node->attr = found->attr;
+      //if we find a[6] it should be base type not array type 
+      if(node->children.size() == 1){
+         if(node->children[0]->symbol == TOK_INTCON){
+            node->attr[ATTR_array] = 0; 
+         }
+      }
    }
 }
 
@@ -464,7 +470,17 @@ void set_call(astree* node){
 }
 
 void set_newarray(astree* node){
-   node = node;
+   astree* left_param = node->children[0];
+   astree* right_param = node->children[1];
+
+   make_tables(left_param);
+   make_tables(right_param);
+
+   if (left_param->attr[ATTR_int] == 1 ||
+       right_param->attr[ATTR_int] == 1) {
+      node->attr[ATTR_int] = 1;
+   }
+   node->attr[ATTR_vreg] = 1; 
 }
 
 void set_snewarray(astree* node){
@@ -497,9 +513,13 @@ void set_vardecl(astree* node){
    }
 
    if (left_param->children[0]->attr[ATTR_lval] == false) {
-      fprintf(stderr,"ERROR: unable to assign to "
-                     "non-lvalue type: %ld:%ld:%ld\n",
-                     node->filenr, node->linenr, node->offset);
+      if(left_param->children.size() == 2){
+         if (left_param->children[1]->attr[ATTR_lval] == false) {
+            fprintf(stderr,"ERROR: unable to assign to "
+                    "non-lvalue type: %ld:%ld:%ld\n",
+                    node->filenr, node->linenr, node->offset);
+         }
+      }
    }
 }
 
@@ -626,7 +646,7 @@ void set_kw_int(astree* node){
       tmp->attr[ATTR_variable] = 1;
       tmp->attr[ATTR_lval] = 1;
    }else{
-     fprintf(stderr,"ERROR: on astree.cpp function:set_kw_int(astree* node)\n");
+     //fprintf(stderr,"ERROR: on astree.cpp function:set_kw_int(astree* node)\n");
      return;
    }
    insert_symbol(tmp);
