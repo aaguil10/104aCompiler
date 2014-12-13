@@ -1,1 +1,5 @@
-   rise (3.13.9) {0} function 
+   budunc (3.1.5) {0} char variable 
+   rise (3.3.4) {0} int function 
+      x (3.4.7) {0} int variable 
+      foo (3.5.8) {0} char variable 
+      bar (3.6.8) {0} bool variable 

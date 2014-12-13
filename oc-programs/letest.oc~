@@ -1,27 +1,11 @@
-struct node {
-  int val;
-  node link;
-}
-bool g = true;
-function rise(int x, char y);
+char budunc = 'b';
 
-struct julio {
-  int val;
-  node link;
-}
-
-function rise(int x, char y){
+function rise(){
    int x = 1;
-   string a = new string[5];
-   julio evil = new julio();
-   if(x > 5){
-     x = x + x;
+   char foo = 'f';
+   bool bar = false;
+   if(x < 0){
+      int d = 8;
+      return;
    }
-
 }
-
-if (g == true) {
-   int x;
-   x = 5;
-}
-

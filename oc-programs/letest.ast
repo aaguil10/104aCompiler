@@ -1,69 +1,32 @@
 ROOT "" (0.0.0) {0} 
-   KW_STRUCT "struct" (3.1.0) {0} struct 
-      KW_IDENT "node" (3.1.7) {0} struct typeid 
-      KW_INT "int" (3.2.2) {0} 
-         FIELD "val" (3.2.6) {0} field 
-      TYPEID "node" (3.3.2) {0} 
-         FIELD "link" (3.3.7) {0} field 
-   VARDECL "=" (3.5.7) {0} 
-      KW_BOOL "bool" (3.5.0) {0} 
-         DECLID "g" (3.5.5) {0} 
-      KW_TRUE "true" (3.5.9) {0} 
-   ROOT "TOK_PROTOTYPE" (0.0.0) {0} 
-      TYPEID "function" (3.6.0) {0} 
-         DECLID "rise" (3.6.9) {0} 
-      PARAMLIST "(" (3.6.13) {0} 
-         KW_INT "int" (3.6.14) {0} 
-            DECLID "x" (3.6.18) {0} param 
-         KW_CHAR "char" (3.6.21) {0} 
-            DECLID "y" (3.6.26) {0} param 
-      ';' ";" (3.6.28) {0} 
-   KW_STRUCT "struct" (3.8.0) {0} struct 
-      KW_IDENT "julio" (3.8.7) {0} struct typeid 
-      KW_INT "int" (3.9.2) {0} 
-         FIELD "val" (3.9.6) {0} field 
-      TYPEID "node" (3.10.2) {0} 
-         FIELD "link" (3.10.7) {0} field 
+   VARDECL "=" (3.1.12) {0} 
+      KW_CHAR "char" (3.1.0) {0} char 
+         DECLID "budunc" (3.1.5) {0} char variable lval  (3.1.5) 
+      CHARCON "'b'" (3.1.14) {0} char const 
    ROOT "TOK_FUNCTION" (0.0.0) {0} function 
-      TYPEID "function" (3.13.0) {0} 
-         DECLID "rise" (3.13.9) {0} function 
-      PARAMLIST "(" (3.13.13) {0} 
-         KW_INT "int" (3.13.14) {0} 
-            DECLID "x" (3.13.18) {0} 
-         KW_CHAR "char" (3.13.21) {0} 
-            DECLID "y" (3.13.26) {0} 
-      BLOCK "{" (3.13.28) {0} 
-         VARDECL "=" (3.14.9) {0} 
-            KW_INT "int" (3.14.3) {0} 
-               DECLID "x" (3.14.7) {0} 
-            INTCON "1" (3.14.11) {0} 
-         VARDECL "=" (3.15.12) {0} 
-            KW_STRING "string" (3.15.3) {0} 
-               DECLID "a" (3.15.10) {0} 
-            NEWARRAY "new" (3.15.14) {0} 
-               TYPEID "string" (3.15.18) {0} 
-               INTCON "5" (3.15.25) {0} 
-         VARDECL "=" (3.16.14) {0} 
-            TYPEID "julio" (3.16.3) {0} 
-               DECLID "evil" (3.16.9) {0} 
-            KW_NEW "new" (3.16.16) {0} 
-               TYPEID "julio" (3.16.20) {0} 
-         KW_IF "if" (3.17.3) {0} 
-            '>' ">" (3.17.8) {0} 
-               KW_IDENT "x" (3.17.6) {0} 
-               INTCON "5" (3.17.10) {0} 
-            BLOCK "{" (3.17.12) {0} 
-               '=' "=" (3.18.7) {0} 
-                  KW_IDENT "x" (3.18.5) {0} 
-                  '+' "+" (3.18.11) {0} 
-                     KW_IDENT "x" (3.18.9) {0} 
-                     KW_IDENT "x" (3.18.13) {0} 
-   KW_IF "if" (3.23.0) {0} 
-      EQUALS "==" (3.23.6) {0} 
-         KW_IDENT "g" (3.23.4) {0} 
-         KW_TRUE "true" (3.23.9) {0} 
-      BLOCK "{" (3.23.15) {0} 
-         VARDECL "=" (3.24.9) {0} 
-            KW_INT "int" (3.24.3) {0} 
-               DECLID "x" (3.24.7) {0} 
-            INTCON "0" (3.24.11) {0} 
+      KW_INT "int" (3.3.0) {0} 
+         DECLID "rise" (3.3.4) {0} int function 
+      PARAMLIST "(" (3.3.8) {0} 
+      BLOCK "{" (3.3.10) {1} 
+         VARDECL "=" (3.4.9) {0} 
+            KW_INT "int" (3.4.3) {0} int 
+               DECLID "x" (3.4.7) {0} int variable lval 
+            INTCON "1" (3.4.11) {0} int const 
+         VARDECL "=" (3.5.12) {0} 
+            KW_CHAR "char" (3.5.3) {0} char 
+               DECLID "foo" (3.5.8) {0} char variable lval 
+            CHARCON "'f'" (3.5.14) {0} char const 
+         VARDECL "=" (3.6.12) {0} 
+            KW_BOOL "bool" (3.6.3) {0} bool 
+               DECLID "bar" (3.6.8) {0} bool variable lval 
+            KW_FALSE "false" (3.6.14) {0} bool const 
+         KW_IF "if" (3.7.3) {0} 
+            '<' "<" (3.7.8) {0} 
+               KW_IDENT "x" (3.7.6) {0} 
+               INTCON "0" (3.7.10) {0} 
+            BLOCK "{" (3.7.12) {0} 
+               VARDECL "=" (3.8.12) {0} 
+                  KW_INT "int" (3.8.6) {0} 
+                     DECLID "d" (3.8.10) {0} 
+                  INTCON "8" (3.8.14) {0} 
+               KW_RETURN "return" (3.9.6) {0} 
