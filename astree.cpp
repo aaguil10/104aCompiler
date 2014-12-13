@@ -459,7 +459,7 @@ void set_declid(astree* node){
 }
 
 void set_call(astree* node){
-/*   int iter;
+   int iter;
    const string* key = node->children[0]->lexinfo;
    symbol_table::const_iterator got;
 
@@ -488,12 +488,18 @@ void set_call(astree* node){
       }
 
       for (unsigned i = 1; i < node->children.size(); i++) {
-         attr& callAttr = node->children[i]->attr;
-         attr& paramAttr = (*(found->parameters))[i]
+         attr_bitset& callAttr = node->children[i]->attr;
+         attr_bitset& paramAttr = (*(found->parameters))[i-1]->attr;
+
+         if (!are_types_compatible(callAttr, paramAttr)) {
+            fprintf(stderr,"ERROR: incompatible parameter %d, "
+                           "cannot call function: %ld:%ld:%ld\n",
+                          i, node->filenr, node->linenr, node->offset);
+         }
       }
 
       node->attr = got->second->attr;
-   }*/
+   }
 }
 
 void set_newarray(astree* node){
@@ -778,7 +784,7 @@ void set_typeid(astree* node){
    insert_symbol(tmp);
 }
 
-void set_paramlist(astree* node){ 
+void set_paramlist(astree* node){ std::cout << "called" << std::endl;
    for(int i = 0; i < (int)node->children.size(); i++){
       astree* type = node->children[i];
       astree* id = type->children[0];
