@@ -142,8 +142,8 @@ void set_assignment(astree* node);
 }*/
 
 void make_tables(astree* node){
-   char* tok = (char*)get_yytname (node->symbol);
-   printf("%s(%s)\n",tok,node->lexinfo->c_str());
+   //char* tok = (char*)get_yytname (node->symbol);
+   //printf("%s(%s)\n",tok,node->lexinfo->c_str());
    switch (node->symbol){
       case TOK_KW_IDENT:
          set_kw_ident(node);
@@ -388,66 +388,52 @@ void write_type(astree* node, attr_bitset& outAttr);
 //*******************set fuctions in switch stament**********************
 
 void set_kw_ident(astree* node){
-   int iter;
-   const string* key = node->lexinfo;
-   symbol_table::const_iterator got;
+   symbol* found = lookup((string*)(node->lexinfo));
 
-   for (iter = symbol_stack.size() - 1; iter >= 0; iter--) {
-      got = symbol_stack[iter]->find(key);
-      if ( got != symbol_stack[iter]->end() ) break;
-   }
-
-   if (iter == -1) {
+   if (found == NULL) {
       fprintf(stderr,"ERROR: undeclared variable found, "
                      "cannot determine type: %ld:%ld:%ld\n",
                      node->filenr, node->linenr, node->offset);
    } else {
-      node->attr = got->second->attr;
+      node->attr = found->attr;
    }
 }
 
 void set_kw_while(astree* node){
-
+   for(int i = 0; i < (int)node->children.size(); i++){
+      make_tables(node->children[i]);
+   }
 }
 
 void set_kw_return(astree* node){
-
+   node = node;
 }
 
 void set_kw_new(astree* node){
-
+   node = node;
 }
 
 void set_kw_newstring(astree* node){
-
+   node = node;
 }
 
 
 void set_field(astree* node){
-
+   node = node;
 }
 
 void set_declid(astree* node){
-
+   node = node;
 }
 
 void set_call(astree* node){
-/*   int iter;
-   const string* key = node->children[0]->lexinfo;
-   symbol_table::const_iterator got;
+   symbol* found = lookup((string*)(node->children[0]->lexinfo));
 
-   for (iter = symbol_stack.size() - 1; iter >= 0; iter--) {
-      got = symbol_stack[iter]->find(key);
-      if ( got != symbol_stack[iter]->end() ) break;
-   }
-
-   if (iter == -1) {
+   if (found == NULL) {
       fprintf(stderr,"ERROR: undeclared function found, "
                      "cannot determine type: %ld:%ld:%ld\n",
                      node->filenr, node->linenr, node->offset);
    } else {
-      symbol* found = got->second;
-
       if (found->parameters == NULL) {
          fprintf(stderr,"ERROR: identifier is not a function, "
                         "cannot call non-functions: %ld:%ld:%ld\n",
@@ -461,31 +447,40 @@ void set_call(astree* node){
       }
 
       for (unsigned i = 1; i < node->children.size(); i++) {
-         attr& callAttr = node->children[i]->attr;
-         attr& paramAttr = (*(found->parameters))[i]
+         make_tables(node->children[i]);
+
+         attr_bitset& callAttr = node->children[i]->attr;
+         attr_bitset& paramAttr = (*(found->parameters))[i-1]->attr;
+
+         if (!are_types_compatible(callAttr, paramAttr)) {
+            fprintf(stderr,"ERROR: incompatible parameter %d, "
+                           "cannot call function: %ld:%ld:%ld\n",
+                          i, node->filenr, node->linenr, node->offset);
+         }
       }
 
-      node->attr = got->second->attr;
-   }*/
+      node->attr = found->attr;
+   }
 }
 
 void set_newarray(astree* node){
-
+   node = node;
 }
 
 void set_snewarray(astree* node){
-
+   node = node;
 }
 
 void set_kw_if(astree* node){
    for(int i = 0; i < (int)node->children.size(); i++){
       make_tables(node->children[i]);
    }
-
 }
 
 void set_ifelse(astree* node){
-
+   for(int i = 0; i < (int)node->children.size(); i++){
+      make_tables(node->children[i]);
+   }
 }
 
 void set_vardecl(astree* node){
@@ -509,15 +504,15 @@ void set_vardecl(astree* node){
 }
 
 void set_exclamation(astree* node){
-
+   node = node;
 }
 
 void set_kw_ord(astree* node){
-
+   node = node;
 }
 
 void set_kw_chr(astree* node){
-
+   node = node;
 }
 
 symbol* insert_symbol(astree* node){
@@ -750,7 +745,7 @@ void set_typeid(astree* node){
    insert_symbol(tmp);
 }
 
-void set_paramlist(astree* node){ 
+void set_paramlist(astree* node){ std::cout << "called" << std::endl;
    for(int i = 0; i < (int)node->children.size(); i++){
       astree* type = node->children[i];
       astree* id = type->children[0];

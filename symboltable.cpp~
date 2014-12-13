@@ -76,7 +76,7 @@ void insert_ident(string* key, symbol* obj){
       tmp->insert(e);
       symbol_stack[symbol_stack.size()-1] = tmp;
    }else{
-      //(*curr).insert(e);
+      (*curr).insert(e);
       printf("   inserting to curr symbol table.\n");
    }
    //cout << "Bu Size: " << symbol_stack.size() << endl;

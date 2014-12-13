@@ -142,8 +142,8 @@ void set_assignment(astree* node);
 }*/
 
 void make_tables(astree* node){
-   char* tok = (char*)get_yytname (node->symbol);
-   printf("%s(%s)\n",tok,node->lexinfo->c_str());
+   //char* tok = (char*)get_yytname (node->symbol);
+   //printf("%s(%s)\n",tok,node->lexinfo->c_str());
    switch (node->symbol){
       case TOK_KW_IDENT:
          set_kw_ident(node);
@@ -400,28 +400,30 @@ void set_kw_ident(astree* node){
 }
 
 void set_kw_while(astree* node){
-
+   for(int i = 0; i < (int)node->children.size(); i++){
+      make_tables(node->children[i]);
+   }
 }
 
 void set_kw_return(astree* node){
-
+   node = node;
 }
 
 void set_kw_new(astree* node){
-
+   node = node;
 }
 
 void set_kw_newstring(astree* node){
-
+   node = node;
 }
 
 
 void set_field(astree* node){
-
+   node = node;
 }
 
 void set_declid(astree* node){
-
+   node = node;
 }
 
 void set_call(astree* node){
@@ -462,11 +464,11 @@ void set_call(astree* node){
 }
 
 void set_newarray(astree* node){
-
+   node = node;
 }
 
 void set_snewarray(astree* node){
-
+   node = node;
 }
 
 void set_kw_if(astree* node){
@@ -502,15 +504,15 @@ void set_vardecl(astree* node){
 }
 
 void set_exclamation(astree* node){
-
+   node = node;
 }
 
 void set_kw_ord(astree* node){
-
+   node = node;
 }
 
 void set_kw_chr(astree* node){
-
+   node = node;
 }
 
 symbol* insert_symbol(astree* node){
@@ -743,7 +745,8 @@ void set_typeid(astree* node){
    insert_symbol(tmp);
 }
 
-void set_paramlist(astree* node){ std::cout << "called" << std::endl;
+void set_paramlist(astree* node){
+   //std::cout << "called" << std::endl;
    for(int i = 0; i < (int)node->children.size(); i++){
       astree* type = node->children[i];
       astree* id = type->children[0];

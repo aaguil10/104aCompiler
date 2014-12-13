@@ -7,10 +7,12 @@ int rise(){
    if(x < 0){
       int d = 8;
       if(d > 7){
-        
+        int a =9;
       }else{
-     
          return;
       }
+   }
+   while(x > 9){
+      ++x;
    }
 }

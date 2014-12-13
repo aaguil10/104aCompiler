@@ -34,5 +34,17 @@ ROOT "" (0.0.0) {0}
                      KW_IDENT "d" (3.9.9) {0} int variable lval 
                      INTCON "7" (3.9.13) {0} int const 
                   BLOCK "{" (3.9.15) {3} 
+                     VARDECL "=" (3.10.14) {0} 
+                        KW_INT "int" (3.10.8) {0} int 
+                           DECLID "a" (3.10.12) {0} int variable lval 
+                        INTCON "9" (3.10.15) {0} int const 
                   BLOCK "{" (3.11.11) {4} 
-                     KW_RETURN "return" (3.13.9) {0} 
+                     KW_RETURN "return" (3.12.9) {0} 
+         KW_WHILE "while" (3.15.3) {0} 
+            '>' ">" (3.15.11) {0} bool vreg 
+               KW_IDENT "x" (3.15.9) {0} int variable lval 
+               INTCON "9" (3.15.13) {0} int const 
+            BLOCK "{" (3.15.15) {5} 
+               POS "+" (3.16.6) {0} int vreg 
+                  POS "+" (3.16.7) {0} int vreg 
+                     KW_IDENT "x" (3.16.8) {0} int variable lval 

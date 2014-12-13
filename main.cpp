@@ -168,8 +168,8 @@ int main (int argc, char **argv) {
    dump_astree (ast_name, yyparse_astree);
 
    string s = "typenames_table";
-   print_table(s, ident_table);
-   std::cout << "mymap.size() is " << ident_table.size() << std::endl;
+   //print_table(s, ident_table);
+   //std::cout << "mymap.size() is " << ident_table.size() << std::endl;
 
    free_ast (yyparse_astree);
 

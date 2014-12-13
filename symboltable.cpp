@@ -71,16 +71,14 @@ void insert_ident(string* key, symbol* obj){
    symbol_entry e = {key, obj};
    symbol_table* curr = symbol_stack[symbol_stack.size()-1];
    if(curr == NULL){
-      printf("   Making New Symbol table.\n");
+      //printf("   Making New Symbol table.\n");
       symbol_table* tmp = new symbol_table;
       tmp->insert(e);
       symbol_stack[symbol_stack.size()-1] = tmp;
    }else{
       (*curr).insert(e);
-      printf("   inserting to curr symbol table.\n");
+      //printf("   inserting to curr symbol table.\n");
    }
-   //cout << "Bu Size: " << symbol_stack.size() << endl;
-   //ident_table.insert(e);
 }
 
 void insert_field(symbol* stru, string* key, symbol* obj){
