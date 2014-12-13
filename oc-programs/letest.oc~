@@ -1,6 +1,15 @@
-int b = 2;
-bool[] a = new bool[5];
 
-a[4] = false;
+struct node{
+   int a;
+   char h;
+   bool well;
+   node self;
+}
 
 
+struct face{
+   bool eyes;
+   int noses;
+}
+
+node god = new node();

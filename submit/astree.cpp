@@ -396,11 +396,25 @@ void set_kw_ident(astree* node){
                      node->filenr, node->linenr, node->offset);
    } else {
       node->attr = found->attr;
+      //if we find a[6] it should be base type not array type 
+      if(node->children.size() == 1){
+         if(node->children[0]->symbol == TOK_INTCON){
+            node->attr[ATTR_array] = 0; 
+         }
+      }
    }
 }
 
 void set_kw_while(astree* node){
-   for(int i = 0; i < (int)node->children.size(); i++){
+   make_tables(node->children[0]);
+
+   if (node->children[0]->attr[ATTR_bool] != true) {
+      fprintf(stderr,"ERROR: cannot test non-boolean condition "
+                     "for while statements: %ld:%ld:%ld\n",
+                     node->filenr, node->linenr, node->offset);
+   }
+
+   for(int i = 1; i < (int)node->children.size(); i++){
       make_tables(node->children[i]);
    }
 }
@@ -460,11 +474,38 @@ void set_call(astree* node){
       }
 
       node->attr = found->attr;
+      node->attr[ATTR_vreg] = true;
    }
 }
 
 void set_newarray(astree* node){
-   node = node;
+   astree* left_param = node->children[0];
+   astree* right_param = node->children[1];
+
+   make_tables(left_param);
+   make_tables(right_param);
+
+   /*if (left_param->attr[ATTR_int] == 1 ||
+       right_param->attr[ATTR_int] == 1) {
+      node->attr[ATTR_int] = 1;
+   }
+   if (left_param->attr[ATTR_char] == 1 ||
+       right_param->attr[ATTR_char] == 1) {
+      node->attr[ATTR_char] = 1;
+   }*/
+   if (left_param->attr[ATTR_int] == 1) {
+      node->attr[ATTR_int] = 1;
+   }
+   if (left_param->attr[ATTR_char] == 1) {
+      node->attr[ATTR_char] = 1;
+   }
+   if (left_param->attr[ATTR_bool] == 1) {
+      node->attr[ATTR_bool] = 1;
+   }
+   if (left_param->attr[ATTR_string] == 1) {
+      node->attr[ATTR_string] = 1;
+   }
+   node->attr[ATTR_vreg] = 1; 
 }
 
 void set_snewarray(astree* node){
@@ -472,13 +513,29 @@ void set_snewarray(astree* node){
 }
 
 void set_kw_if(astree* node){
-   for(int i = 0; i < (int)node->children.size(); i++){
+   make_tables(node->children[0]);
+
+   if (node->children[0]->attr[ATTR_bool] != true) {
+      fprintf(stderr,"ERROR: cannot test non-boolean condition "
+                     "for if statements: %ld:%ld:%ld\n",
+                     node->filenr, node->linenr, node->offset);
+   }
+
+   for(int i = 1; i < (int)node->children.size(); i++){
       make_tables(node->children[i]);
    }
 }
 
 void set_ifelse(astree* node){
-   for(int i = 0; i < (int)node->children.size(); i++){
+   make_tables(node->children[0]);
+
+   if (node->children[0]->attr[ATTR_bool] != true) {
+      fprintf(stderr,"ERROR: cannot test non-boolean condition "
+                     "for if statements: %ld:%ld:%ld\n",
+                     node->filenr, node->linenr, node->offset);
+   }
+
+   for(int i = 1; i < (int)node->children.size(); i++){
       make_tables(node->children[i]);
    }
 }
@@ -497,22 +554,59 @@ void set_vardecl(astree* node){
    }
 
    if (left_param->children[0]->attr[ATTR_lval] == false) {
-      fprintf(stderr,"ERROR: unable to assign to "
-                     "non-lvalue type: %ld:%ld:%ld\n",
-                     node->filenr, node->linenr, node->offset);
+      if(left_param->children.size() == 2){
+         if (left_param->children[1]->attr[ATTR_lval] == false) {
+            fprintf(stderr,"ERROR: unable to assign to "
+                    "non-lvalue type: %ld:%ld:%ld\n",
+                    node->filenr, node->linenr, node->offset);
+         }
+      }
    }
 }
 
 void set_exclamation(astree* node){
-   node = node;
+   astree* param = node->children[0];
+
+   make_tables(param);
+
+   if (param->attr[ATTR_bool] != 1) {
+      fprintf(stderr,"ERROR: unable to perform unary NOT on "
+                     "non-boolean types: %ld:%ld:%ld\n", node->filenr,
+                     node->linenr, node->offset);
+   }
+
+   node->attr[ATTR_bool] = 1;
+   node->attr[ATTR_vreg] = 1;
 }
 
 void set_kw_ord(astree* node){
-   node = node;
+   astree* param = node->children[0];
+
+   make_tables(param);
+
+   if (param->attr[ATTR_char] != 1) {
+      fprintf(stderr,"ERROR: unable to perform ORD on non-character "
+                     "types: %ld:%ld:%ld\n", node->filenr,
+                     node->linenr, node->offset);
+   }
+
+   node->attr[ATTR_int] = 1;
+   node->attr[ATTR_vreg] = 1;
 }
 
 void set_kw_chr(astree* node){
-   node = node;
+   astree* param = node->children[0];
+
+   make_tables(param);
+
+   if (param->attr[ATTR_int] != 1) {
+      fprintf(stderr,"ERROR: unable to perform CHR on non-integer "
+                     "types: %ld:%ld:%ld\n", node->filenr,
+                     node->linenr, node->offset);
+   }
+
+   node->attr[ATTR_char] = 1;
+   node->attr[ATTR_vreg] = 1;
 }
 
 symbol* insert_symbol(astree* node){
@@ -586,7 +680,8 @@ void set_kw_bool(astree* node){
       tmp->attr[ATTR_variable] = 1;
       tmp->attr[ATTR_lval] = 1;
    }else{
-     fprintf(stderr,"ERROR:on astree.cpp function:set_kw_bool(astree* node)\n");
+     //fprintf(stderr,"ERROR:on astree.cpp function:set_kw_bool(astree* node)\n");
+     return;
    }
    insert_symbol(tmp);
 }
@@ -606,7 +701,8 @@ void set_kw_char(astree* node){
       tmp->attr[ATTR_variable] = 1;
       tmp->attr[ATTR_lval] = 1;
    }else{
-     fprintf(stderr,"ERROR: on astree.cpp function:set_kw_char(astree* node)\n");
+     //fprintf(stderr,"ERROR: on astree.cpp function:set_kw_char(astree* node)\n");
+     return;
    }
    insert_symbol(tmp);
 }
@@ -626,7 +722,7 @@ void set_kw_int(astree* node){
       tmp->attr[ATTR_variable] = 1;
       tmp->attr[ATTR_lval] = 1;
    }else{
-     fprintf(stderr,"ERROR: on astree.cpp function:set_kw_int(astree* node)\n");
+     //fprintf(stderr,"ERROR: on astree.cpp function:set_kw_int(astree* node)\n");
      return;
    }
    insert_symbol(tmp);
@@ -652,7 +748,8 @@ void set_kw_string(astree* node){
       tmp->attr[ATTR_variable] = 1;
       tmp->attr[ATTR_lval] = 1;
    }else{
-     fprintf(stderr,"ERROR: on astree.cpp function:set_kw_string(astree* node)\n");
+     //fprintf(stderr,"ERROR: on astree.cpp function:set_kw_string(astree* node)\n");
+     return;
    }
    insert_symbol(tmp);
 }
@@ -699,25 +796,61 @@ void set_kw_true(astree* node){
 }
 
 void set_function(astree* node){
-   if( strcmp((char*)node->lexinfo->c_str(),"TOK_FUNCTION") ){
+
+   // is root
+   if( strcmp((char*)node->lexinfo->c_str(),"") == 0 ){
       for(int i = 0; i < (int)node->children.size(); i++){
          make_tables(node->children[i]);
       }
       return;
    }
+
    node->attr[ATTR_function] = 1;
 
    astree* type = node->children[0];
    astree* id = type->children[0];
-
    write_type(type, id->attr);
 
-   //make_tables(node->children[0]);
-   make_tables(node->children[1]);
+   astree* params = node->children[1];
+   make_tables(params);
 
    id->attr[ATTR_function] = 1;
-   //insert_symbol(tmp);
-   insert_symbol(node);
+
+   // is prototype
+   if (strcmp((char*)node->lexinfo->c_str(),"TOK_PROTOTYPE") == 0) {
+      symbol* found = lookup((string*)(id->lexinfo));
+
+      if (found == NULL) insert_symbol(node);
+      else {
+         fprintf(stderr,"ERROR: multiple function prototypes, "
+                 "please use only one: %ld:%ld:%ld\n", id->filenr,
+                 id->linenr, id->offset);
+      }
+   } else { // is function
+      symbol* found = lookup((string*)(id->lexinfo));
+
+      if (found == NULL) insert_symbol(node);
+      else {
+         if (found->parameters->size() != params->children.size()) {
+            fprintf(stderr,"ERROR: number of parameters different "
+                           "from previous prototype: %ld:%ld:%ld\n",
+                            id->filenr, id->linenr, id->offset);
+            return;
+         } 
+
+         for (unsigned i = 0; i < params->children.size(); i++) {
+            attr_bitset& callAttr =
+               params->children[i]->children[0]->attr;
+            attr_bitset& paramAttr = (*(found->parameters))[i]->attr;
+
+            if (!are_types_compatible(callAttr, paramAttr)) {
+               fprintf(stderr,"ERROR: incompatible parameter %d, "
+                              "cannot define function: %ld:%ld:%ld\n",
+                          i+1, id->filenr, id->linenr, id->offset);
+            }
+         }
+      }
+   }
 
    make_tables(node->children[2]);
 }
@@ -916,7 +1049,7 @@ void set_assignment(astree* node) {
                      node->filenr, node->linenr, node->offset);
    }
 
-   node->attr = left_param->attr;
+   node->attr = right_param->attr;
    node->attr[ATTR_vreg] = true;
 }
 

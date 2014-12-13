@@ -18,7 +18,6 @@ ATTR_variable, ATTR_field, ATTR_typeid, ATTR_param, ATTR_lval,
 ATTR_const, ATTR_vreg, ATTR_vaddr, ATTR_bitset_size,
 };
 using attr_bitset = bitset<ATTR_bitset_size>;
-void print_attributes(FILE* outfile, const attr_bitset& attr);
 
 struct symbol;
 using symbol_table = unordered_map<const string*,symbol*>;
@@ -40,6 +39,7 @@ struct symbol {
    vector <symbol*>* parameters;
 };
 
+void print_attributes(FILE* outfile, const attr_bitset& attr, char* type);
 symbol* new_symbol (size_t filenr, size_t linenr, size_t offset,
  size_t block_nr, attr_bitset a, symbol_table* f);
 void insert_struct(string* key, symbol* obj);

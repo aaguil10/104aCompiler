@@ -1,6 +1,17 @@
-int b = 2;
-string[] a = new string[5];
 
-a[4] = "how u feel";
+struct node{
+   int a;
+   char h;
+   bool well;
+   node self;
+}
 
 
+struct face{
+   bool eyes;
+   int noses;
+}
+
+node god = new node();
+
+string foo = new string(7);

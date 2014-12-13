@@ -10,7 +10,7 @@ int next_block;
 
 
 
-void print_attributes(FILE* outfile, const attr_bitset& attr) {
+void print_attributes(FILE* outfile, const attr_bitset& attr, char* type) {
    if(attr[ATTR_void]){ fprintf(outfile, "void "); }
    if(attr[ATTR_bool]){ fprintf(outfile, "bool "); }
    if(attr[ATTR_char]){ fprintf(outfile, "char "); }
@@ -22,7 +22,10 @@ void print_attributes(FILE* outfile, const attr_bitset& attr) {
    if(attr[ATTR_function]){ fprintf(outfile, "function "); }
    if(attr[ATTR_variable]){ fprintf(outfile, "variable "); }
    if(attr[ATTR_field]){ fprintf(outfile, "field "); }
-   if(attr[ATTR_typeid]){ fprintf(outfile, "typeid "); }
+   if(attr[ATTR_typeid]){
+      //fprintf(outfile, "typeid ");
+      fprintf(outfile, "%s ", type); 
+   }
    if(attr[ATTR_param]){ fprintf(outfile, "param "); }
    if(attr[ATTR_const]){ fprintf(outfile, "const "); }
    if(attr[ATTR_vreg]){ fprintf(outfile, "vreg "); }
@@ -51,7 +54,7 @@ void print_symbol(string* key, symbol* obj) {//std::cout << "PRINT CALLED" << st
    }
    fprintf(sym_file, "%s (%ld.%ld.%ld) {%ld} ", key->c_str(),
            obj->filenr, obj->linenr, obj->offset, obj->block_nr);
-   print_attributes(sym_file, obj->attr);
+   print_attributes(sym_file, obj->attr, (char*)key);
    fprintf(sym_file, "\n");
 }
 
@@ -71,16 +74,14 @@ void insert_ident(string* key, symbol* obj){
    symbol_entry e = {key, obj};
    symbol_table* curr = symbol_stack[symbol_stack.size()-1];
    if(curr == NULL){
-      printf("   Making New Symbol table.\n");
+      //printf("   Making New Symbol table.\n");
       symbol_table* tmp = new symbol_table;
       tmp->insert(e);
       symbol_stack[symbol_stack.size()-1] = tmp;
    }else{
       (*curr).insert(e);
-      printf("   inserting to curr symbol table.\n");
+      //printf("   inserting to curr symbol table.\n");
    }
-   //cout << "Bu Size: " << symbol_stack.size() << endl;
-   //ident_table.insert(e);
 }
 
 void insert_field(symbol* stru, string* key, symbol* obj){

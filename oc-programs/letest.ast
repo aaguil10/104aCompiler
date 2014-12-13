@@ -1,16 +1,27 @@
 ROOT "" (0.0.0) {0} 
-   VARDECL "=" (3.1.6) {0} 
-      KW_INT "int" (3.1.0) {0} int 
-         DECLID "b" (3.1.4) {0} int variable lval  (3.1.4) 
-      INTCON "2" (3.1.8) {0} int const 
-   VARDECL "=" (3.2.11) {0} 
-      KW_STRING "string" (3.2.0) {0} string 
-         sNEWARRAY "[]" (3.2.6) {0} 
-         DECLID "a" (3.2.9) {0} string array variable lval  (3.2.9) 
-      NEWARRAY "new" (3.2.13) {0} string vreg 
-         KW_STRING "string" (3.2.17) {0} string 
-         INTCON "5" (3.2.24) {0} int const 
-   '=' "=" (3.4.5) {0} string const vreg 
-      KW_IDENT "a" (3.4.0) {0} string variable lval  (3.2.9) 
-         INTCON "4" (3.4.2) {0} 
-      STRINGCON ""how u feel"" (3.4.7) {0} string const 
+   KW_STRUCT "struct" (3.2.0) {0} struct 
+      KW_IDENT "node" (3.2.7) {0} struct node 
+      KW_INT "int" (3.3.3) {0} 
+         FIELD "a" (3.3.7) {0} field 
+      KW_CHAR "char" (3.4.3) {0} 
+         FIELD "h" (3.4.8) {0} field 
+      KW_BOOL "bool" (3.5.3) {0} 
+         FIELD "well" (3.5.8) {0} field 
+      TYPEID "node" (3.6.3) {0} 
+         FIELD "self" (3.6.8) {0} field 
+   KW_STRUCT "struct" (3.10.0) {0} struct 
+      KW_IDENT "face" (3.10.7) {0} struct face 
+      KW_BOOL "bool" (3.11.3) {0} 
+         FIELD "eyes" (3.11.8) {0} field 
+      KW_INT "int" (3.12.3) {0} 
+         FIELD "noses" (3.12.7) {0} field 
+   VARDECL "=" (3.15.9) {0} 
+      TYPEID "node" (3.15.0) {0} node vreg 
+         DECLID "god" (3.15.5) {0} variable lval  (3.15.5) 
+      KW_NEW "new" (3.15.11) {0} 
+         TYPEID "node" (3.15.15) {0} node vreg 
+   VARDECL "=" (3.17.11) {0} 
+      KW_STRING "string" (3.17.0) {0} string 
+         DECLID "foo" (3.17.7) {0} string variable vreg  (3.17.7) 
+      NEWSTRING "new" (3.17.13) {0} 
+         INTCON "7" (3.17.24) {0} 

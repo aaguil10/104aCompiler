@@ -206,7 +206,6 @@ allocator: TOK_KW_NEW TOK_KW_IDENT '(' ')'     {free_ast2($3, $4);
                                                $$ = adopt1 ($1, $4); }
          | TOK_KW_NEW basetype '[' expr ']'    {free_ast2 ($3, $5);
                                             adoptsym($1,TOK_NEWARRAY);
-                                            adoptsym ($2, TOK_TYPEID);
                                                $$ = adopt2($1,$2,$4);}
          ;
 

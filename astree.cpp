@@ -284,9 +284,9 @@ static void dump_node (FILE* outfile, astree* node) {
              node->filenr, node->linenr, node->offset, (int)node->block_nr);
    attr_bitset attr = node->attr;
 
-   print_attributes(outfile, attr);
-   if(attr[ATTR_lval]){ 
-      fprintf(outfile, "lval "); 
+   print_attributes(outfile, attr, (char*)node->lexinfo->c_str());
+   if(attr[ATTR_lval] || attr[ATTR_vreg]){ 
+      //fprintf(outfile, "lval "); 
       string s ( (string)node->lexinfo->c_str() );
       symbol* c = get_symbol((string*)node->lexinfo, &ident_table);
       if(c != NULL){
@@ -424,7 +424,9 @@ void set_kw_return(astree* node){
 }
 
 void set_kw_new(astree* node){
-   node = node;
+   for(int i = 0; i < (int)node->children.size(); i++){
+      make_tables(node->children[i]);
+   }
 }
 
 void set_kw_newstring(astree* node){
@@ -548,6 +550,11 @@ void set_vardecl(astree* node){
    make_tables(right_param);
 
    if (!are_types_compatible(left_param->attr, right_param->attr)) {
+      if(right_param->symbol == TOK_NEWSTRING){
+         left_param->children[0]->attr[ATTR_lval] = 0;
+         left_param->children[0]->attr[ATTR_vreg] = 1;
+         return;
+      }
       fprintf(stderr,"ERROR: unable to perform assignment on "
                      "non-compatible types: %ld:%ld:%ld\n",
                      node->filenr, node->linenr, node->offset);
@@ -861,6 +868,7 @@ void set_typeid(astree* node){
    }
    astree* tmp = NULL;
    node->attr[ATTR_typeid] = 1;
+   node->attr[ATTR_vreg] = 1;
    if(node->children.size() == 0){
         return;
    }else if(node->children.size() == 1){
@@ -953,6 +961,10 @@ bool are_types_compatible(const attr_bitset& attrA,
    if (attrA[ATTR_string] != attrB[ATTR_string]) return false;
    if (attrA[ATTR_struct] != attrB[ATTR_struct]) return false;
    if (attrA[ATTR_array] != attrB[ATTR_array]) return false;
+   if (attrA[ATTR_struct] == attrB[ATTR_struct]){
+      
+
+   }
 
    return true;
 }

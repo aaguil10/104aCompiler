@@ -1,2 +1,2 @@
-   b (3.1.4) {0} int variable 
-   a (3.2.9) {0} string array variable 
+   god (3.15.5) {0} variable lval 
+   foo (3.17.7) {0} string variable lval 

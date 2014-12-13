@@ -10,7 +10,7 @@ int next_block;
 
 
 
-void print_attributes(FILE* outfile, const attr_bitset& attr) {
+void print_attributes(FILE* outfile, const attr_bitset& attr, char* type) {
    if(attr[ATTR_void]){ fprintf(outfile, "void "); }
    if(attr[ATTR_bool]){ fprintf(outfile, "bool "); }
    if(attr[ATTR_char]){ fprintf(outfile, "char "); }
@@ -22,11 +22,14 @@ void print_attributes(FILE* outfile, const attr_bitset& attr) {
    if(attr[ATTR_function]){ fprintf(outfile, "function "); }
    if(attr[ATTR_variable]){ fprintf(outfile, "variable "); }
    if(attr[ATTR_field]){ fprintf(outfile, "field "); }
-   if(attr[ATTR_typeid]){ fprintf(outfile, "typeid "); }
+   if(attr[ATTR_typeid]){
+      //fprintf(outfile, "typeid ");
+      fprintf(outfile, "%s ", type); 
+   }
    if(attr[ATTR_param]){ fprintf(outfile, "param "); }
    if(attr[ATTR_const]){ fprintf(outfile, "const "); }
    if(attr[ATTR_vreg]){ fprintf(outfile, "vreg "); }
-   if(attr[ATTR_vaddr]){ fprintf(outfile, "vaddr "); }
+   if(attr[ATTR_lval]){ fprintf(outfile, "lval "); }
    if(attr[ATTR_vaddr]){ fprintf(outfile, "vaddr "); }
 }
 
@@ -51,7 +54,7 @@ void print_symbol(string* key, symbol* obj) {//std::cout << "PRINT CALLED" << st
    }
    fprintf(sym_file, "%s (%ld.%ld.%ld) {%ld} ", key->c_str(),
            obj->filenr, obj->linenr, obj->offset, obj->block_nr);
-   print_attributes(sym_file, obj->attr);
+   print_attributes(sym_file, obj->attr, (char*)key);
    fprintf(sym_file, "\n");
 }
 
