@@ -404,7 +404,22 @@ void write_type(astree* node, attr_bitset& outAttr);
 //*******************set fuctions in switch stament**********************
 
 void set_kw_ident(astree* node){
+   int iter;
+   const string* key = node->lexinfo;
+   symbol_table::const_iterator got;
 
+   for (iter = symbol_stack.size() - 1; iter >= 0; iter--) {
+      got = symbol_stack[iter]->find(key);
+      if ( got != symbol_stack[iter]->end() ) break;
+   }
+
+   if (iter == -1) {
+      fprintf(stderr,"ERROR: undeclared variable found, "
+                     "cannot determine type: %ld:%ld:%ld\n",
+                     node->filenr, node->linenr, node->offset);
+   } else {
+      node->attr = got->second->attr;
+   }
 }
 
 void set_kw_while(astree* node){

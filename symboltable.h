@@ -21,8 +21,8 @@ using attr_bitset = bitset<ATTR_bitset_size>;
 void print_attributes(FILE* outfile, const attr_bitset& attr);
 
 struct symbol;
-using symbol_table = unordered_map<string*,symbol*>;
-using symbol_entry = pair<string*,symbol*>;
+using symbol_table = unordered_map<const string*,symbol*>;
+using symbol_entry = pair<const string*,symbol*>;
 
 extern FILE* sym_file;
 extern symbol_table typenames_table;
