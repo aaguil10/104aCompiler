@@ -23,3 +23,5 @@ int h = ord g;
 
 if (5) {a = 5;}
 while (a) {;}
+
+if (true) {f = false;}

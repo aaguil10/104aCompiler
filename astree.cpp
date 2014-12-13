@@ -406,13 +406,15 @@ void set_kw_ident(astree* node){
 }
 
 void set_kw_while(astree* node){
+   make_tables(node->children[0]);
+
    if (node->children[0]->attr[ATTR_bool] != true) {
       fprintf(stderr,"ERROR: cannot test non-boolean condition "
                      "for while statements: %ld:%ld:%ld\n",
                      node->filenr, node->linenr, node->offset);
    }
 
-   for(int i = 0; i < (int)node->children.size(); i++){
+   for(int i = 1; i < (int)node->children.size(); i++){
       make_tables(node->children[i]);
    }
 }
@@ -511,25 +513,29 @@ void set_snewarray(astree* node){
 }
 
 void set_kw_if(astree* node){
+   make_tables(node->children[0]);
+
    if (node->children[0]->attr[ATTR_bool] != true) {
       fprintf(stderr,"ERROR: cannot test non-boolean condition "
                      "for if statements: %ld:%ld:%ld\n",
                      node->filenr, node->linenr, node->offset);
    }
 
-   for(int i = 0; i < (int)node->children.size(); i++){
+   for(int i = 1; i < (int)node->children.size(); i++){
       make_tables(node->children[i]);
    }
 }
 
 void set_ifelse(astree* node){
+   make_tables(node->children[0]);
+
    if (node->children[0]->attr[ATTR_bool] != true) {
       fprintf(stderr,"ERROR: cannot test non-boolean condition "
                      "for if statements: %ld:%ld:%ld\n",
                      node->filenr, node->linenr, node->offset);
    }
 
-   for(int i = 0; i < (int)node->children.size(); i++){
+   for(int i = 1; i < (int)node->children.size(); i++){
       make_tables(node->children[i]);
    }
 }
