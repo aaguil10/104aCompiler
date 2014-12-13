@@ -459,7 +459,41 @@ void set_declid(astree* node){
 }
 
 void set_call(astree* node){
+/*   int iter;
+   const string* key = node->children[0]->lexinfo;
+   symbol_table::const_iterator got;
 
+   for (iter = symbol_stack.size() - 1; iter >= 0; iter--) {
+      got = symbol_stack[iter]->find(key);
+      if ( got != symbol_stack[iter]->end() ) break;
+   }
+
+   if (iter == -1) {
+      fprintf(stderr,"ERROR: undeclared function found, "
+                     "cannot determine type: %ld:%ld:%ld\n",
+                     node->filenr, node->linenr, node->offset);
+   } else {
+      symbol* found = got->second;
+
+      if (found->parameters == NULL) {
+         fprintf(stderr,"ERROR: identifier is not a function, "
+                        "cannot call non-functions: %ld:%ld:%ld\n",
+                        node->filenr, node->linenr, node->offset);
+      }
+
+      if (found->parameters->size() != node->children.size() - 1) {
+         fprintf(stderr,"ERROR: incorrect number of parameters, "
+                        "cannot call function: %ld:%ld:%ld\n",
+                        node->filenr, node->linenr, node->offset);
+      }
+
+      for (unsigned i = 1; i < node->children.size(); i++) {
+         attr& callAttr = node->children[i]->attr;
+         attr& paramAttr = (*(found->parameters))[i]
+      }
+
+      node->attr = got->second->attr;
+   }*/
 }
 
 void set_newarray(astree* node){
