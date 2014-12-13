@@ -49,19 +49,35 @@ symbol* new_symbol (size_t filenr, size_t linenr, size_t offset,
 }
 
 void print_symbol(string* key, symbol* obj) {//std::cout << "PRINT CALLED" << std::endl;
-   for ( unsigned i = 0; i < symbol_stack.size(); ++i){
+   for ( unsigned i = 1; i < symbol_stack.size(); ++i){
       fprintf(sym_file, "   ");
    }
    fprintf(sym_file, "%s (%ld.%ld.%ld) {%ld} ", key->c_str(),
            obj->filenr, obj->linenr, obj->offset, obj->block_nr);
    print_attributes(sym_file, obj->attr, (char*)key);
    fprintf(sym_file, "\n");
+
+   if (obj->parameters != NULL) {
+      for (unsigned i = 0; i < obj->parameters->size(); i++) {
+         for ( unsigned j = 0; j < symbol_stack.size(); ++j){
+            fprintf(sym_file, "   ");
+         }
+
+         symbol* param = (*(obj->parameters))[i];
+         fprintf(sym_file, "%s (%ld.%ld.%ld) {%ld} ", key->c_str(),
+                 param->filenr, param->linenr, param->offset,
+                 param->block_nr);
+         print_attributes(sym_file, param->attr);
+         fprintf(sym_file, "\n");
+      }
+   }
 }
 
 void insert_struct(string* key, symbol* obj){
    if(obj == NULL){ 
       fprintf(stderr,"ERROR: obj == NULL on insert_struct()");
    }
+   print_symbol(key, obj);
    symbol_entry e = {key, obj};
    typenames_table.insert(e);
 }
@@ -88,6 +104,10 @@ void insert_field(symbol* stru, string* key, symbol* obj){
    if(obj == NULL || stru == NULL){ 
       fprintf(stderr,"ERROR: obj == NULL on insert_field()");
    }
+   fprintf(sym_file, "   %s (%ld.%ld.%ld) ", key->c_str(),
+           obj->filenr, obj->linenr, obj->offset);
+   print_attributes(sym_file, obj->attr);
+   fprintf(sym_file, "\n");
    symbol_entry e = {key, obj};
    if(stru->fields == NULL){
       //printf("Stru: %p\n",stru->fields);

@@ -25,3 +25,11 @@ if (5) {a = 5;}
 while (a) {;}
 
 if (true) {f = false;}
+
+struct vec {
+  int x;
+  int y;
+}
+
+vec t = new vec();
+t.x = 5;
