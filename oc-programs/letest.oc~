@@ -1,6 +1,6 @@
 char budunc = 'b';
 
-function rise(){
+int rise(){
    int x = 1;
    char foo = 'f';
    bool bar = false;

@@ -478,11 +478,15 @@ void set_snewarray(astree* node){
 }
 
 void set_kw_if(astree* node){
-
+   for(int i = 0; i < (int)node->children.size(); i++){
+      make_tables(node->children[i]);
+   }
 }
 
 void set_ifelse(astree* node){
-
+   for(int i = 0; i < (int)node->children.size(); i++){
+      make_tables(node->children[i]);
+   }
 }
 
 void set_vardecl(astree* node){
