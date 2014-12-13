@@ -1,0 +1,86 @@
+ROOT "" (0.0.0) {0} 
+   VARDECL "=" (3.1.6) {0} 
+      KW_INT "int" (3.1.0) {0} int 
+         DECLID "a" (3.1.4) {0} int variable lval  (3.1.4) 
+      INTCON "5" (3.1.8) {0} int const 
+   VARDECL "=" (3.2.6) {0} 
+      KW_INT "int" (3.2.0) {0} int 
+         DECLID "b" (3.2.4) {0} int variable lval  (3.2.4) 
+      '+' "+" (3.2.15) {0} int vreg 
+         '*' "*" (3.2.10) {0} int vreg 
+            INTCON "3" (3.2.8) {0} int const 
+            NEG "-" (3.2.12) {0} int vreg 
+               INTCON "4" (3.2.13) {0} int const 
+         '*' "*" (3.2.19) {0} int vreg 
+            INTCON "1" (3.2.17) {0} int const 
+            POS "+" (3.2.21) {0} int vreg 
+               '%' "%" (3.2.24) {0} int vreg 
+                  INTCON "2" (3.2.22) {0} int const 
+                  INTCON "4" (3.2.26) {0} int const 
+   VARDECL "=" (3.3.6) {0} 
+      KW_INT "int" (3.3.0) {0} int 
+         DECLID "c" (3.3.4) {0} int variable lval  (3.3.4) 
+      '+' "+" (3.3.10) {0} int vreg 
+         KW_IDENT "a" (3.3.8) {0} int variable lval  (3.1.4) 
+         KW_IDENT "b" (3.3.12) {0} int variable lval  (3.2.4) 
+   IFELSE "if" (3.5.0) {0} 
+      EQUALS "==" (3.5.6) {0} bool vreg 
+         KW_IDENT "a" (3.5.4) {0} 
+         INTCON "5" (3.5.9) {0} 
+      BLOCK "{" (3.5.12) {1} 
+         '=' "=" (3.6.4) {0} int vreg 
+            KW_IDENT "c" (3.6.2) {0} int variable lval  (3.3.4) 
+            '-' "-" (3.6.20) {0} int vreg 
+               '+' "+" (3.6.12) {0} int vreg 
+                  '*' "*" (3.6.8) {0} int vreg 
+                     INTCON "5" (3.6.6) {0} int const 
+                     KW_IDENT "a" (3.6.10) {0} int variable lval  (3.1.4) 
+                  '*' "*" (3.6.16) {0} int vreg 
+                     INTCON "6" (3.6.14) {0} int const 
+                     KW_IDENT "c" (3.6.18) {0} int variable lval  (3.3.4) 
+               '*' "*" (3.6.24) {0} int vreg 
+                  INTCON "7" (3.6.22) {0} int const 
+                  KW_IDENT "b" (3.6.26) {0} int variable lval  (3.2.4) 
+         VARDECL "=" (3.7.8) {0} 
+            KW_INT "int" (3.7.2) {0} int 
+               DECLID "d" (3.7.6) {0} int variable lval 
+            '+' "+" (3.7.16) {0} int vreg 
+               '*' "*" (3.7.12) {0} int vreg 
+                  INTCON "6" (3.7.10) {0} int const 
+                  INTCON "8" (3.7.14) {0} int const 
+               INTCON "7" (3.7.18) {0} int const 
+      BLOCK "{" (3.8.7) {2} 
+         VARDECL "=" (3.9.8) {0} 
+            KW_INT "int" (3.9.2) {0} int 
+               DECLID "e" (3.9.6) {0} int variable lval 
+            '+' "+" (3.9.12) {0} int vreg 
+               INTCON "7" (3.9.10) {0} int const 
+               INTCON "9" (3.9.14) {0} int const 
+   ROOT "TOK_PROTOTYPE" (0.0.0) {0} function 
+      KW_INT "int" (3.12.0) {0} 
+         DECLID "add" (3.12.4) {0} int function 
+      PARAMLIST "(" (3.12.7) {0} 
+         KW_INT "int" (3.12.8) {0} 
+            DECLID "a" (3.12.12) {0} int param 
+         KW_INT "int" (3.12.15) {0} 
+            DECLID "b" (3.12.19) {0} int param 
+      ';' ";" (3.12.21) {0} 
+   ROOT "TOK_FUNCTION" (0.0.0) {0} function 
+      KW_INT "int" (3.14.0) {0} 
+         DECLID "add" (3.14.4) {0} int function 
+      PARAMLIST "(" (3.14.7) {0} 
+         KW_INT "int" (3.14.8) {0} 
+            DECLID "a" (3.14.12) {0} int param 
+         KW_INT "int" (3.14.15) {0} 
+            DECLID "b" (3.14.19) {0} int param 
+      BLOCK "{" (3.14.22) {3} 
+         KW_RETURN "return" (3.15.2) {0} 
+            '+' "+" (3.15.11) {0} 
+               KW_IDENT "a" (3.15.9) {0} 
+               KW_IDENT "b" (3.15.13) {0} 
+   '=' "=" (3.18.2) {0} int function vreg 
+      KW_IDENT "c" (3.18.0) {0} int variable lval  (3.3.4) 
+      CALL "(" (3.18.7) {0} int function vreg 
+         KW_IDENT "add" (3.18.4) {0} 
+         KW_IDENT "a" (3.18.8) {0} int variable lval  (3.1.4) 
+         KW_IDENT "b" (3.18.10) {0} int variable lval  (3.2.4) 
