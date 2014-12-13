@@ -648,6 +648,10 @@ symbol* insert_symbol(astree* node){
 
   if(node->attr[ATTR_variable] || node->attr[ATTR_function]){
      insert_ident(key,curr);
+
+     if (node->attr[ATTR_function]) {
+        
+     }
   }
 
   if(node->attr[ATTR_struct]){
@@ -763,6 +767,9 @@ void set_kw_struct(astree* node){
    symbol* curr = insert_symbol(tmp);
    for(int i = 1; i < (int)node->children.size(); i++){
       astree* tmp = node->children[i]->children[0];
+
+      write_type(node->children[i], tmp->attr);
+
       tmp->attr[ATTR_variable] = 0;
       tmp->attr[ATTR_field] = 1;
       symbol* tmp_sym = new_symbol(tmp->filenr,tmp->linenr,tmp->offset,
