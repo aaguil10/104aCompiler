@@ -8,3 +8,12 @@ if (a == 5) {
 } else {
   int e = 7 + 9;
 }
+
+int add(int a, int b);
+
+int add(int a, int b) {
+  return a + b;
+}
+
+c = add(a,b);
+

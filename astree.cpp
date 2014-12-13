@@ -460,6 +460,7 @@ void set_call(astree* node){
       }
 
       node->attr = found->attr;
+      node->attr[ATTR_vreg] = true;
    }
 }
 
@@ -504,15 +505,48 @@ void set_vardecl(astree* node){
 }
 
 void set_exclamation(astree* node){
-   node = node;
+   astree* param = node->children[0];
+
+   make_tables(param);
+
+   if (param->attr[ATTR_bool] != 1) {
+      fprintf(stderr,"ERROR: unable to perform unary NOT on "
+                     "non-boolean types: %ld:%ld:%ld\n", node->filenr,
+                     node->linenr, node->offset);
+   }
+
+   node->attr[ATTR_bool] = 1;
+   node->attr[ATTR_vreg] = 1;
 }
 
 void set_kw_ord(astree* node){
-   node = node;
+   astree* param = node->children[0];
+
+   make_tables(param);
+
+   if (param->attr[ATTR_char] != 1) {
+      fprintf(stderr,"ERROR: unable to perform ORD on non-character "
+                     "types: %ld:%ld:%ld\n", node->filenr,
+                     node->linenr, node->offset);
+   }
+
+   node->attr[ATTR_int] = 1;
+   node->attr[ATTR_vreg] = 1;
 }
 
 void set_kw_chr(astree* node){
-   node = node;
+   astree* param = node->children[0];
+
+   make_tables(param);
+
+   if (param->attr[ATTR_char] != 1) {
+      fprintf(stderr,"ERROR: unable to perform ORD on non-character "
+                     "types: %ld:%ld:%ld\n", node->filenr,
+                     node->linenr, node->offset);
+   }
+
+   node->attr[ATTR_int] = 1;
+   node->attr[ATTR_vreg] = 1;
 }
 
 symbol* insert_symbol(astree* node){
@@ -699,25 +733,60 @@ void set_kw_true(astree* node){
 }
 
 void set_function(astree* node){
-   if( strcmp((char*)node->lexinfo->c_str(),"TOK_FUNCTION") ){
+   // is root
+   if( strcmp((char*)node->lexinfo->c_str(),"") == 0 ){
       for(int i = 0; i < (int)node->children.size(); i++){
          make_tables(node->children[i]);
       }
       return;
    }
+
    node->attr[ATTR_function] = 1;
 
    astree* type = node->children[0];
    astree* id = type->children[0];
-
    write_type(type, id->attr);
 
-   //make_tables(node->children[0]);
-   make_tables(node->children[1]);
+   astree* params = node->children[1];
+   make_tables(params);
 
    id->attr[ATTR_function] = 1;
-   //insert_symbol(tmp);
-   insert_symbol(node);
+
+   // is prototype
+   if (strcmp((char*)node->lexinfo->c_str(),"TOK_PROTOTYPE") == 0) {
+      symbol* found = lookup((string*)(id->lexinfo));
+
+      if (found == NULL) insert_symbol(node);
+      else {
+         fprintf(stderr,"ERROR: multiple function prototypes, "
+                 "please use only one: %ld:%ld:%ld\n", id->filenr,
+                 id->linenr, id->offset);
+      }
+   } else { // is function
+      symbol* found = lookup((string*)(id->lexinfo));
+
+      if (found == NULL) insert_symbol(node);
+      else {
+         if (found->parameters->size() != params->children.size()) {
+            fprintf(stderr,"ERROR: number of parameters different "
+                           "from previous prototype: %ld:%ld:%ld\n",
+                            id->filenr, id->linenr, id->offset);
+            return;
+         } 
+
+         for (unsigned i = 0; i < params->children.size(); i++) {
+            attr_bitset& callAttr =
+               params->children[i]->children[0]->attr;
+            attr_bitset& paramAttr = (*(found->parameters))[i]->attr;
+
+            if (!are_types_compatible(callAttr, paramAttr)) {
+               fprintf(stderr,"ERROR: incompatible parameter %d, "
+                              "cannot define function: %ld:%ld:%ld\n",
+                          i+1, id->filenr, id->linenr, id->offset);
+            }
+         }
+      }
+   }
 
    make_tables(node->children[2]);
 }
@@ -916,7 +985,7 @@ void set_assignment(astree* node) {
                      node->filenr, node->linenr, node->offset);
    }
 
-   node->attr = left_param->attr;
+   node->attr = right_param->attr;
    node->attr[ATTR_vreg] = true;
 }
 
