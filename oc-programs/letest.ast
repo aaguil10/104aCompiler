@@ -21,12 +21,18 @@ ROOT "" (0.0.0) {0}
                DECLID "bar" (3.6.8) {0} bool variable lval 
             KW_FALSE "false" (3.6.14) {0} bool const 
          KW_IF "if" (3.7.3) {0} 
-            '<' "<" (3.7.8) {0} 
-               KW_IDENT "x" (3.7.6) {0} 
-               INTCON "0" (3.7.10) {0} 
-            BLOCK "{" (3.7.12) {0} 
+            '<' "<" (3.7.8) {0} bool vreg 
+               KW_IDENT "x" (3.7.6) {0} int variable lval 
+               INTCON "0" (3.7.10) {0} int const 
+            BLOCK "{" (3.7.12) {2} 
                VARDECL "=" (3.8.12) {0} 
-                  KW_INT "int" (3.8.6) {0} 
-                     DECLID "d" (3.8.10) {0} 
-                  INTCON "8" (3.8.14) {0} 
-               KW_RETURN "return" (3.9.6) {0} 
+                  KW_INT "int" (3.8.6) {0} int 
+                     DECLID "d" (3.8.10) {0} int variable lval 
+                  INTCON "8" (3.8.14) {0} int const 
+               IFELSE "if" (3.9.6) {0} 
+                  '>' ">" (3.9.11) {0} bool vreg 
+                     KW_IDENT "d" (3.9.9) {0} int variable lval 
+                     INTCON "7" (3.9.13) {0} int const 
+                  BLOCK "{" (3.9.15) {3} 
+                  BLOCK "{" (3.11.11) {4} 
+                     KW_RETURN "return" (3.13.9) {0} 

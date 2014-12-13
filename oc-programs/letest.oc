@@ -6,6 +6,11 @@ int rise(){
    bool bar = false;
    if(x < 0){
       int d = 8;
-      return;
+      if(d > 7){
+        
+      }else{
+     
+         return;
+      }
    }
 }

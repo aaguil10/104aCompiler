@@ -3,3 +3,4 @@
       x (3.4.7) {0} int variable 
       foo (3.5.8) {0} char variable 
       bar (3.6.8) {0} bool variable 
+         d (3.8.10) {0} int variable 
