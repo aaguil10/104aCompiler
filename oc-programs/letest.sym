@@ -1,2 +1,10 @@
-   god (3.15.5) {0} variable lval 
-   foo (3.17.7) {0} string variable lval 
+node (3.2.7) {0} struct øzv 
+   a (3.3.7) int field 
+   h (3.4.8) char field 
+   well (3.5.8) bool field 
+   self (3.6.8) field 
+face (3.10.7) {0} struct ¸ƒv 
+   eyes (3.11.8) bool field 
+   noses (3.12.7) int field 
+god (3.15.5) {0} variable lval 
+foo (3.17.7) {0} string variable lval 

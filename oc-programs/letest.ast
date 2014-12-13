@@ -2,19 +2,19 @@ ROOT "" (0.0.0) {0}
    KW_STRUCT "struct" (3.2.0) {0} struct 
       KW_IDENT "node" (3.2.7) {0} struct node 
       KW_INT "int" (3.3.3) {0} 
-         FIELD "a" (3.3.7) {0} field 
+         FIELD "a" (3.3.7) {0} int field 
       KW_CHAR "char" (3.4.3) {0} 
-         FIELD "h" (3.4.8) {0} field 
+         FIELD "h" (3.4.8) {0} char field 
       KW_BOOL "bool" (3.5.3) {0} 
-         FIELD "well" (3.5.8) {0} field 
+         FIELD "well" (3.5.8) {0} bool field 
       TYPEID "node" (3.6.3) {0} 
          FIELD "self" (3.6.8) {0} field 
    KW_STRUCT "struct" (3.10.0) {0} struct 
       KW_IDENT "face" (3.10.7) {0} struct face 
       KW_BOOL "bool" (3.11.3) {0} 
-         FIELD "eyes" (3.11.8) {0} field 
+         FIELD "eyes" (3.11.8) {0} bool field 
       KW_INT "int" (3.12.3) {0} 
-         FIELD "noses" (3.12.7) {0} field 
+         FIELD "noses" (3.12.7) {0} int field 
    VARDECL "=" (3.15.9) {0} 
       TYPEID "node" (3.15.0) {0} node vreg 
          DECLID "god" (3.15.5) {0} variable lval  (3.15.5) 

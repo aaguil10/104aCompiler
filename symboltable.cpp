@@ -67,7 +67,7 @@ void print_symbol(string* key, symbol* obj) {//std::cout << "PRINT CALLED" << st
          fprintf(sym_file, "%s (%ld.%ld.%ld) {%ld} ", key->c_str(),
                  param->filenr, param->linenr, param->offset,
                  param->block_nr);
-         print_attributes(sym_file, param->attr);
+         print_attributes(sym_file, param->attr, (char*)key);
          fprintf(sym_file, "\n");
       }
    }
@@ -106,7 +106,7 @@ void insert_field(symbol* stru, string* key, symbol* obj){
    }
    fprintf(sym_file, "   %s (%ld.%ld.%ld) ", key->c_str(),
            obj->filenr, obj->linenr, obj->offset);
-   print_attributes(sym_file, obj->attr);
+   print_attributes(sym_file, obj->attr, (char*)key);
    fprintf(sym_file, "\n");
    symbol_entry e = {key, obj};
    if(stru->fields == NULL){
