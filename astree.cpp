@@ -146,7 +146,8 @@ void set_assignment(astree* node);
 }*/
 
 void make_tables(astree* node){
-   //printf("next_block: %d\n", next_block);
+   char* tok = (char*)get_yytname (node->symbol);
+   printf("%s(%s)\n",tok,node->lexinfo->c_str());
    switch (node->symbol){
       case TOK_KW_IDENT:
          set_kw_ident(node);
@@ -818,16 +819,13 @@ void set_paramlist(astree* node){ std::cout << "called" << std::endl;
 }*/
 
 void set_block(astree* node){
+    //fprintf(stderr,"Crawling\n");
    if(node == NULL){ return; }
    node->block_nr = next_block;
    add_symbol_stack();
-   /*for (int child = 0; child < (int)node->children.size(); ++child) { //make_tables(node->children[child]);
-      //if (node->children[child]->symbol == TOK_KW_INT) assign_attr(node->children[child]);
-      //else {
+   for (int child = 0; child < (int)node->children.size(); ++child) {
          make_tables(node->children[child]);
-      //}
-      //set_block(node->children[child]);
-   }*/
+   }
    pop_symbol_stack();
 }
 

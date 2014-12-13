@@ -71,14 +71,15 @@ void insert_ident(string* key, symbol* obj){
    symbol_entry e = {key, obj};
    symbol_table* curr = symbol_stack[symbol_stack.size()-1];
    if(curr == NULL){
-      printf("Cross the delta\n");
-      symbol_table tmp;
-      tmp.insert(e);
-      symbol_stack[symbol_stack.size()-1] = &tmp;
+      printf("   Making New Symbol table.\n");
+      symbol_table* tmp = new symbol_table;
+      tmp->insert(e);
+      symbol_stack[symbol_stack.size()-1] = tmp;
    }else{
       (*curr).insert(e);
+      printf("   inserting to curr symbol table.\n");
    }
-   cout << "Bu Size: " << symbol_stack.size() << endl;
+   //cout << "Bu Size: " << symbol_stack.size() << endl;
    //ident_table.insert(e);
 }
 
@@ -98,12 +99,10 @@ void insert_field(symbol* stru, string* key, symbol* obj){
 
 void add_symbol_stack(){//std::cout << "ADD CALLED" << std::endl;
   symbol_stack.push_back(NULL);
-  cout << "Pu Size: " << symbol_stack.size() << endl;
 }
 
 void pop_symbol_stack(){//std::cout << "POP CALLED" << std::endl;
   symbol_stack.pop_back();
-  cout << "Pan Size: " << symbol_stack.size() << endl;
 }
 
 symbol* lookup(string* key){
