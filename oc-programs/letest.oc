@@ -1,6 +1,6 @@
 int b = 2;
-int[] a = new int[5];
+char[] a = new char[5];
 
-a[4] = 0;
+a[4] = 'u';
 
 

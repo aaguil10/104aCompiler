@@ -3,14 +3,14 @@ ROOT "" (0.0.0) {0}
       KW_INT "int" (3.1.0) {0} int 
          DECLID "b" (3.1.4) {0} int variable lval  (3.1.4) 
       INTCON "2" (3.1.8) {0} int const 
-   VARDECL "=" (3.2.8) {0} 
-      KW_INT "int" (3.2.0) {0} int 
-         sNEWARRAY "[]" (3.2.3) {0} 
-         DECLID "a" (3.2.6) {0} int array variable lval  (3.2.6) 
-      NEWARRAY "new" (3.2.10) {0} int vreg 
-         KW_INT "int" (3.2.14) {0} int 
-         INTCON "5" (3.2.18) {0} int const 
-   '=' "=" (3.4.5) {0} int variable vreg lval 
-      KW_IDENT "a" (3.4.0) {0} int variable lval  (3.2.6) 
+   VARDECL "=" (3.2.9) {0} 
+      KW_CHAR "char" (3.2.0) {0} char 
+         sNEWARRAY "[]" (3.2.4) {0} 
+         DECLID "a" (3.2.7) {0} char array variable lval  (3.2.7) 
+      NEWARRAY "new" (3.2.11) {0} char int vreg 
+         KW_CHAR "char" (3.2.15) {0} char 
+         INTCON "5" (3.2.20) {0} int const 
+   '=' "=" (3.4.5) {0} char variable vreg lval 
+      KW_IDENT "a" (3.4.0) {0} char variable lval  (3.2.7) 
          INTCON "4" (3.4.2) {0} 
-      INTCON "0" (3.4.7) {0} int const 
+      CHARCON "'u'" (3.4.7) {0} char const 

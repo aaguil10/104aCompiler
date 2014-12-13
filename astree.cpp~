@@ -476,16 +476,14 @@ void set_newarray(astree* node){
    make_tables(left_param);
    make_tables(right_param);
 
-   if (left_param->attr[ATTR_int] != 1 ||
-       right_param->attr[ATTR_int] != 1) {
-      fprintf(stderr,"ERROR: unable to perform binary arithmetic on "
-                     "non-integer types: %ld:%ld:%ld\n", node->filenr,
-                     node->linenr, node->offset);
-   }else{
+   if (left_param->attr[ATTR_int] == 1 ||
+       right_param->attr[ATTR_int] == 1) {
       node->attr[ATTR_int] = 1;
    }
-
-   //node->attr[ATTR_int] = 1;
+   if (left_param->attr[ATTR_char] == 1 ||
+       right_param->attr[ATTR_char] == 1) {
+      node->attr[ATTR_char] = 1;
+   }
    node->attr[ATTR_vreg] = 1; 
 }
 
